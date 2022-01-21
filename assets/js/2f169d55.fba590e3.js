@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[226],{6637:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/azure","name":"azure","count":1,"permalink":"/blog/tags/azure"}')}}]);

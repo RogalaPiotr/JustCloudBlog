@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[195],{2841:function(u,t,e){e.r(t),e.d(t,{default:function(){return l}});var n=e(7294),c=e(5977);function l(){return n.createElement(c.l_,{to:"/"})}}}]);

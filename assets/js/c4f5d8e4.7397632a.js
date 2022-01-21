@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[195],{2841:function(t,u,o){o.r(u),o.d(u,{default:function(){return n}});var e=o(7294),l=o(5977);function n(){return e.createElement(l.l_,{to:"https://rogalapiotr.github.io/JustCloudBlog"})}}}]);

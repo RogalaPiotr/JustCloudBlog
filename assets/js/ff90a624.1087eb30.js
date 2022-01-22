@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[970],{9191:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/devops","name":"devops","count":1,"permalink":"/tags/devops"}')}}]);

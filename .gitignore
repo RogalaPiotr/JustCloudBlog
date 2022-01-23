@@ -20,7 +20,7 @@ yarn-debug.log*
 yarn-error.log*
 
 supervisord.log
-supervisord.production
+supervisord.pid
 
 **/.DS_Store
 */.DS_Store

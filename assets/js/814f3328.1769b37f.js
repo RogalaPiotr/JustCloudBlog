@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[535],{5641:function(t){t.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Test GitHub Actions","permalink":"/testghactions"},{"title":"Nowa ods\u0142ona","permalink":"/welcome"}]}')}}]);

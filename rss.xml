@@ -4,9 +4,15 @@
         <title>JustCloud Blog Blog</title>
         <link>https://blog.justcloud.pl/</link>
         <description>JustCloud Blog Blog</description>
-        <lastBuildDate>Sat, 22 Jan 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 23 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Test GitHub Actions]]></title>
+            <link>https://blog.justcloud.pl/testghactions</link>
+            <guid>testghactions</guid>
+            <pubDate>Sun, 23 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Nowa odsłona]]></title>
             <link>https://blog.justcloud.pl/welcome</link>

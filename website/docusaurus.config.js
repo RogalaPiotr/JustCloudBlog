@@ -18,7 +18,6 @@ const config = {
   trailingSlash: false,
 
   plugins: [
-    // ... Your other plugins.
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
@@ -29,6 +28,7 @@ const config = {
         blogRouteBasePath: "/"
       },
     ],
+    require.resolve('docusaurus-plugin-image-zoom')
   ],
 
   presets: [
@@ -52,6 +52,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      zoom: {
+        selector: '.markdown :not(em) > img',
+        config: {
+          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+          background: {
+            light: 'rgb(255, 255, 255)',
+            dark: 'rgb(50, 50, 50)'
+          }
+        }
+      },
       navbar: {
         title: 'JustCloud.pl',
         logo: {
@@ -78,7 +88,7 @@ const config = {
             title: 'JustCloud links',
             items: [
               {
-                label: 'https://justcloud.pl',
+                label: 'Web: JustCloud.pl',
                 to: 'https://justcloud.pl',
               },
               {
@@ -99,26 +109,22 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Meetup',
+                label: 'Azure Poland',
+                href: 'https://azurepoland.pl/',
+              },
+              {
+                label: 'Meetup MAUGP',
                 href: 'https://www.meetup.com/Microsoft-Azure-Users-Group-Poland/',
               },
               {
                 label: 'Blog',
                 to: '/',
-              },
+              }
             ],
           },
           {
             title: 'Stay in touch!',
             items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/RogalaPiotr/justcloudpublic',
-              },
-              {
-                label: 'RSS Feed',
-                href: 'https://blog.justcloud.pl/rss.xml',
-              },
               {
                 label: 'Twiter',
                 href: 'https://twitter.com/RogalaPiotr',
@@ -126,6 +132,10 @@ const config = {
               {
                 label: 'LinkedIn',
                 href: 'https://pl.linkedin.com/in/rogalapiotr',
+              },
+              {
+                label: 'RSS Feed',
+                href: 'https://blog.justcloud.pl/rss.xml',
               }
             ],
           },

@@ -101,20 +101,32 @@ const config = {
               {
                 label: 'Meetup',
                 href: 'https://www.meetup.com/Microsoft-Azure-Users-Group-Poland/',
-              }
-            ],
-          },
-          {
-            title: 'More',
-            items: [
+              },
               {
                 label: 'Blog',
                 to: '/',
               },
+            ],
+          },
+          {
+            title: 'Stay in touch!',
+            items: [
               {
                 label: 'GitHub',
                 href: 'https://github.com/RogalaPiotr/justcloudpublic',
               },
+              {
+                label: 'RSS Feed',
+                href: 'https://blog.justcloud.pl/rss.xml',
+              },
+              {
+                label: 'Twiter',
+                href: 'https://twitter.com/RogalaPiotr',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://pl.linkedin.com/in/rogalapiotr',
+              }
             ],
           },
         ],

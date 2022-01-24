@@ -14,5 +14,19 @@
             <pubDate>Sat, 22 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Witam na nowej stronie gdzię będę wrzucał nowe posty związane z Microsoft Azure oraz Cloud☁️. Nowy rok 2022 mam nadzieję że przyniesie wiele pozytywnych zmian. Dlatego zapraszam do kontaktu i odwiedzin mojej strony.]]></description>
         </item>
+        <item>
+            <title><![CDATA[Przyspieszenie pracy nad tagowaniem zasobów za pomocą PowerShell - Tag raport Microsoft Azure]]></title>
+            <link>https://blog.justcloud.pl/tags-in-azure</link>
+            <guid>tags-in-azure</guid>
+            <pubDate>Thu, 03 Jun 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Kiedyś przygotowałem ten skrypt żeby szybko móc otagować wiele zasobów wdrożonych na platformie Microsoft Azure. Jest wiele możliwości jak to zrobić szybko, prosto, ale starałem się zrobić uniwersalne rozwiązanie będące łatwe oraz bezpieczne w użyciu. Dlatego postanowiłem zrobić jeden skrypt, który generuje nam wszystkie zasoby do pliku CSV. A drugi skrypt na podstawie pliku CSV będzie pobierał z niego dane zasobów i nadpisywał je na platformie.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Wysłanie żądania API z PowerShell do Azure DevOps]]></title>
+            <link>https://blog.justcloud.pl/wyslanie-zadania-api-z-powershell-do-azure-devops</link>
+            <guid>wyslanie-zadania-api-z-powershell-do-azure-devops</guid>
+            <pubDate>Mon, 13 Apr 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Często stajemy przed wyzwaniem zintegrowania ze sobą wielu narzędzi. Jeżeli stosujemy PowerShell w celu automatyzacji swojej infrastruktury bądź budowy prostych skryptów może nam się przydać zastosowanie użycia wywołania żądania API za pomocą PowerShell. Poniższy przykład zaprezentuje użycie wysłania żądania za pomocą API do Azure DevOps w celu dodania puli agentowej.]]></description>
+        </item>
     </channel>
 </rss>

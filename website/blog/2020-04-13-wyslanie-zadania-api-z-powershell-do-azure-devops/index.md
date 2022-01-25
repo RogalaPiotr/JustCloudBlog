@@ -1,6 +1,7 @@
 ---
 slug: wyslanie-zadania-api-z-powershell-do-azure-devops
 title: "Wysłanie żądania API z PowerShell do Azure DevOps"
+description: "PowerShell to nie tylko automatyzacja za pomocą modułów. Możemy go również wykorzystać do wysyłania zapytań za pomocą API do różnych serwisów. W tym artykule zobaczysz jak to zrobić."
 date: "2020-04-13"
 authors: [progala]
 tags: 

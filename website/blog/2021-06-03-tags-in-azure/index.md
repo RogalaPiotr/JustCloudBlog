@@ -1,6 +1,7 @@
 ---
 slug: tags-in-azure
 title: "Przyspieszenie pracy nad tagowaniem zasobów za pomocą PowerShell - Tag raport Microsoft Azure"
+description: "Zastanawiasz się jak tagować zasoby w Azure? W tym artykule dokładnie opisuje jak to zrobić dla małych i dużych środowisk w Auzre."
 date: "2021-06-03"
 authors: [progala]
 tags: 

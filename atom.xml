@@ -12,7 +12,7 @@
         <id>welcome</id>
         <link href="https://blog.justcloud.pl/welcome"/>
         <updated>2022-01-22T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Witam na nowej stronie gdzię będę wrzucał nowe posty związane z Microsoft Azure oraz Cloud☁️. Nowy rok 2022 mam nadzieję że przyniesie wiele pozytywnych zmian. Dlatego zapraszam do kontaktu i odwiedzin mojej strony.]]></summary>
+        <summary type="html"><![CDATA[Nowy rok 2022 będzie czasem zmian dla moich aktywności w Internecie. Rozpoczynam od zmian związanych z blogiem i aktywnościami IT w community.]]></summary>
         <author>
             <name>Piotr Rogala</name>
             <uri>https://github.com/RogalaPiotr</uri>
@@ -23,7 +23,7 @@
         <id>tags-in-azure</id>
         <link href="https://blog.justcloud.pl/tags-in-azure"/>
         <updated>2021-06-03T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Kiedyś przygotowałem ten skrypt żeby szybko móc otagować wiele zasobów wdrożonych na platformie Microsoft Azure. Jest wiele możliwości jak to zrobić szybko, prosto, ale starałem się zrobić uniwersalne rozwiązanie będące łatwe oraz bezpieczne w użyciu. Dlatego postanowiłem zrobić jeden skrypt, który generuje nam wszystkie zasoby do pliku CSV. A drugi skrypt na podstawie pliku CSV będzie pobierał z niego dane zasobów i nadpisywał je na platformie.]]></summary>
+        <summary type="html"><![CDATA[Zastanawiasz się jak tagować zasoby w Azure? W tym artykule dokładnie opisuje jak to zrobić dla małych i dużych środowisk w Auzre.]]></summary>
         <author>
             <name>Piotr Rogala</name>
             <uri>https://github.com/RogalaPiotr</uri>
@@ -34,7 +34,7 @@
         <id>wyslanie-zadania-api-z-powershell-do-azure-devops</id>
         <link href="https://blog.justcloud.pl/wyslanie-zadania-api-z-powershell-do-azure-devops"/>
         <updated>2020-04-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Często stajemy przed wyzwaniem zintegrowania ze sobą wielu narzędzi. Jeżeli stosujemy PowerShell w celu automatyzacji swojej infrastruktury bądź budowy prostych skryptów może nam się przydać zastosowanie użycia wywołania żądania API za pomocą PowerShell. Poniższy przykład zaprezentuje użycie wysłania żądania za pomocą API do Azure DevOps w celu dodania puli agentowej.]]></summary>
+        <summary type="html"><![CDATA[PowerShell to nie tylko automatyzacja za pomocą modułów. Możemy go również wykorzystać do wysyłania zapytań za pomocą API do różnych serwisów. W tym artykule zobaczysz jak to zrobić.]]></summary>
         <author>
             <name>Piotr Rogala</name>
             <uri>https://github.com/RogalaPiotr</uri>

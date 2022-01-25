@@ -12,6 +12,7 @@ tags:
   - "tag"
   - "tagging"
   - "tags"
+keywords: [justcloud, powershell, api, tagowanie, tags, automatyzacja, automation, csv, azure, microsoft azure]
 ---
 
 Kiedyś przygotowałem ten skrypt żeby szybko móc otagować wiele zasobów wdrożonych na platformie Microsoft Azure. Jest wiele możliwości jak to zrobić szybko, prosto, ale starałem się zrobić uniwersalne rozwiązanie będące łatwe oraz bezpieczne w użyciu. Dlatego postanowiłem zrobić jeden skrypt, który generuje nam wszystkie zasoby do pliku CSV. A drugi skrypt na podstawie pliku CSV będzie pobierał z niego dane zasobów i nadpisywał je na platformie.

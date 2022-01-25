@@ -9,7 +9,9 @@ tags:
   - "azure"
   - "azure-devops"
   - "powershell"
+keywords: [justcloud, powershell, api, automatyzacja, automation, azure, microsoft azure, ado, agents]
 ---
+
 
 Często stajemy przed wyzwaniem zintegrowania ze sobą wielu narzędzi. Jeżeli stosujemy PowerShell w celu automatyzacji swojej infrastruktury bądź budowy prostych skryptów może nam się przydać zastosowanie użycia wywołania żądania API za pomocą PowerShell. Poniższy przykład zaprezentuje użycie wysłania żądania za pomocą API do Azure DevOps w celu dodania puli agentowej.
 

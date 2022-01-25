@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'JustCloud Blog',
-  tagline: 'JustCloud Blog',
+  tagline: 'Technical articles',
   url: 'https://blog.justcloud.pl',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -52,6 +52,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{ name: 'JustCloud the best quality of knowledge', content: 'azure, aws, gcp, devops, automation, azure devops, blog, microsoft, linux, azure policy, cloud transformation, digital transformation, governance, security, pipelines, github'}],
       zoom: {
         selector: '.markdown :not(em) > img',
         config: {

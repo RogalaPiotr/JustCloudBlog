@@ -36,7 +36,7 @@ Sprawdzenie co wyświetli poleniecenie Test-ARMExistingResource:
 
 Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\\azuredeploy.json -TemplateParameterFile .\\azuredeploy.parameters.json -Verbose
 
-[![](images/2019-09-15_12h46_05-1-1024x334.png)]()
+[![](images/2019-09-15_12h46_05.png)]()
 
 Wynikiem jest informacja co zostanie utworzone. Super sprawa, to teraz zrobie deployment szablonu i sprawdzimy ponownie.
 
@@ -46,7 +46,7 @@ Niestety miałem problem z modułem Shutdown i szablon wdrożył się niepoprawn
 
 Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\\azuredeploy.json -TemplateParameterFile .\\azuredeploy.parameters.json -Verbose
 
-[![](images/2019-09-15_13h01_42-1024x269.png)]()
+[![](images/2019-09-15_13h01_42.png)]()
 
 Jak widać polecenie poprawnie zwróciło co jest do poprawienia i co zostanie zmienione(inkrementalnie).
 
@@ -54,7 +54,7 @@ Ostatni test to z argumentem "-Mode Complete" czyli wykonanie szablonu, który d
 
 Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\\azuredeploy.json -TemplateParameterFile .\\azuredeploy.parameters.json -Verbose -Mode Complete
 
-[![](images/2019-09-15_13h02_32-1024x330.png)]()
+[![](images/2019-09-15_13h02_32.png)]()
 
 Teraz można być pewniejszym co się stanie z wdrożeniem po małych zmianach w szablonie.
 

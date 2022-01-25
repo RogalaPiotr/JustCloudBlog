@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'https://raw.githubusercontent.com/RogalaPiotr/JustCloudWeb/main/assets/images/favicon-new.ico',
+  favicon: 'https://raw.githubusercontent.com/RogalaPiotr/JustCloudWeb/gh-pages/assets/images/favicon-new-1.ico',
   organizationName: 'RogalaPiotr', // Usually your GitHub org/user name.
   projectName: 'JustCloudBlog', // Usually your repo name.
   trailingSlash: false,

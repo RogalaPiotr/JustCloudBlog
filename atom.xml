@@ -62,4 +62,15 @@
             <uri>https://github.com/RogalaPiotr</uri>
         </author>
     </entry>
+    <entry>
+        <title type="html"><![CDATA[Auto deployment VM with VSTS agent for pool]]></title>
+        <id>auto-deployment-vm-with-vsts-agent-for-pool</id>
+        <link href="https://blog.justcloud.pl/auto-deployment-vm-with-vsts-agent-for-pool"/>
+        <updated>2018-05-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Azure DevOps agent to ważny element wszystkich wdrożeń. Potrzebujesz stworzyć własnego agenta ADO? Zobacz jak to zrobić w prosty i automatyczny sposób! Wszystko znajdziesz we wpisie.]]></summary>
+        <author>
+            <name>Piotr Rogala</name>
+            <uri>https://github.com/RogalaPiotr</uri>
+        </author>
+    </entry>
 </feed>

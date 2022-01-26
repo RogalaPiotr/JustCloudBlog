@@ -42,5 +42,12 @@
             <pubDate>Sun, 18 Nov 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[Chcesz zacząć nauke o Microsoft Azure? W tym artykule znajdziesz linki, które napewno Cię zainteresują!]]></description>
         </item>
+        <item>
+            <title><![CDATA[Auto deployment VM with VSTS agent for pool]]></title>
+            <link>https://blog.justcloud.pl/auto-deployment-vm-with-vsts-agent-for-pool</link>
+            <guid>auto-deployment-vm-with-vsts-agent-for-pool</guid>
+            <pubDate>Sun, 27 May 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[Azure DevOps agent to ważny element wszystkich wdrożeń. Potrzebujesz stworzyć własnego agenta ADO? Zobacz jak to zrobić w prosty i automatyczny sposób! Wszystko znajdziesz we wpisie.]]></description>
+        </item>
     </channel>
 </rss>

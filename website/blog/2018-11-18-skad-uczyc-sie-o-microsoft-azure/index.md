@@ -20,7 +20,7 @@ Po ostatniej prezentacji naszedł mnie pomysł związany z utworzeniem miejsca s
 
 Jeśli wiesz czego konkretnie szukasz możesz użyć wyszukiwarki aby skoncentrować się na danym problemie: 
 
-[![](https://img.youtube.com/vi/Rkxg03z2PEo/0.jpg)](https://www.youtube.com/watch?v=Rkxg03z2PEo)
+<iframe src="https://www.youtube.com/embed/Rkxg03z2PEo" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 A, tak na poważnie możesz zaczerpnąć wiedzy w poniższych miejscach.
 

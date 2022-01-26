@@ -26,6 +26,8 @@ Za pomocą komendy: Test-ARMExistingResource możemy zbudować polecenie, które
 Użyłem szablonu z mojego repo: [https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-shutdown-on-time](https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-shutdown-on-time)  
 Wykonuje kolejno komendy:
 
+<!--truncate-->
+
 Tworzenie nowej resource groupy:
 
 New-AzResourceGroup -Name 'simple-vm-shutdown-on-time' -Location westeurope

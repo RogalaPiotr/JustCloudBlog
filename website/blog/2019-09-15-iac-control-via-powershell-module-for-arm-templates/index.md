@@ -2,6 +2,7 @@
 slug: iac-control-via-powershell-module-for-arm-templates
 title: "IaC control via PowerShell module for ARM templates"
 description: Walidowanie szablonów ARM za pomocą modułu PowerShell jest możliwe dzięki nowemu modułowi. Użycie tego modułu pomoże Ci sprawdzić czy szablon jest poprawny i jakie zmiany wprowadzi na wdrażanym środowisku Azure.
+authors: [progala]
 date: "2019-09-15"
 tags: 
   - "arm"

@@ -72,7 +72,7 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
 - **AccessRDPFrom** - wyświetli adres IP który został dodany do NSG, aby miał dostęp do RDP
 
 # Szablon:
-
+```
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
@@ -390,16 +390,17 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
       }
     }
   }
+```
 
 # **Przykład:**
 
 ### **Aby wykonać deployment należy utworzyć Resource Group'ę:**
 
-New-AzureRMResourceGroup -Name VSTS -Location westeurope
+`New-AzureRMResourceGroup -Name VSTS -Location westeurope`
 
 ### **Wykonanie deployment’u:**
 
-New-AzureRMResourceGroupDeployment -ResourceGroupName VSTS -TemplateURI "https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/azuredeploy.json" -Verbose
+`New-AzureRMResourceGroupDeployment -ResourceGroupName VSTS -TemplateURI "https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/azuredeploy.json" -Verbose`
 
 **Efekt w portalu po deploy’mencie:**
 

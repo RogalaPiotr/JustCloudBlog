@@ -13,7 +13,6 @@ tags:
 keywords: [justcloud, powershell, api, automatyzacja, automation, azure, microsoft azure, ado, agents]
 ---
 
-
 Często stajemy przed wyzwaniem zintegrowania ze sobą wielu narzędzi. Jeżeli stosujemy PowerShell w celu automatyzacji swojej infrastruktury bądź budowy prostych skryptów może nam się przydać zastosowanie użycia wywołania żądania API za pomocą PowerShell. Poniższy przykład zaprezentuje użycie wysłania żądania za pomocą API do Azure DevOps w celu dodania puli agentowej.
 
 Referencje API do Azure DevOps są dostępne tutaj: 
@@ -31,15 +30,15 @@ Na początku definiujemy zmienne:
 - $body - informacje do przekazania w wysyłanym żądaniu
 
 <!--truncate-->
-
+```
 $urlvsts = 'https://dev.azure.com/PROJECT-NAME'
 $token = 'YOUR-PAT-TOKEN'
 $pool = 'YOUR-POOL-NAME'
 $encodedPat = \[System.Convert\]::ToBase64String(\[System.Text.Encoding\]::UTF8.GetBytes( ":$token"))
 $body = "{name:\`"$pool\`", autoProvision: \`"true\`"}"
-
-Komenda Invoke-WebRequest wykonuje wysłania żądania podając wcześniej zdefiniowane zmienne oraz zawiera Uri, czyli miejsce, w które zapuka żądanie, aby ustawić nową pulę w Azure DevOps.
-
+```
+Komenda `Invoke-WebRequest` wykonuje wysłania żądania podając wcześniej zdefiniowane zmienne oraz zawiera Uri, czyli miejsce, w które zapuka żądanie, aby ustawić nową pulę w Azure DevOps.
+```
 Invoke-WebRequest \`
     -Method POST \`
     -Uri "$urlvsts/\_apis/distributedtask/pools?api-version=5.0-preview.1" \`
@@ -47,7 +46,7 @@ Invoke-WebRequest \`
     -Headers @{Authorization = "Basic $encodedPat"} \`
     -Body $body \`
     -ContentType "application/json"
-
+```
 Screens:
 
 Code:

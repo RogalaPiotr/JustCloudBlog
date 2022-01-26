@@ -8,7 +8,7 @@ tags:
   - "api"
   - "automation"
   - "azure"
-  - "azure-devops"
+  - "azure devops"
   - "powershell"
 keywords: [justcloud, powershell, api, automatyzacja, automation, azure, microsoft azure, ado, agents]
 ---

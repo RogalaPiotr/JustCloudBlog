@@ -7,7 +7,7 @@ authors: [progala]
 tags: 
   - "azutomation"
   - "csv"
-  - "microsoft-azure"
+  - "microsoft azure"
   - "raport"
   - "report"
   - "tag"

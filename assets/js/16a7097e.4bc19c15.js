@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[6158],{222:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/nauka","name":"nauka","count":1,"permalink":"/tags/nauka"}')}}]);

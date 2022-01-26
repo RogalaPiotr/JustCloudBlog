@@ -35,5 +35,12 @@
             <pubDate>Sun, 15 Sep 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[Walidowanie szablonów ARM za pomocą modułu PowerShell jest możliwe dzięki nowemu modułowi. Użycie tego modułu pomoże Ci sprawdzić czy szablon jest poprawny i jakie zmiany wprowadzi na wdrażanym środowisku Azure.]]></description>
         </item>
+        <item>
+            <title><![CDATA[Skąd uczyć się o Microsoft Azure?]]></title>
+            <link>https://blog.justcloud.pl/skad-uczyc-sie-o-microsoft-azure</link>
+            <guid>skad-uczyc-sie-o-microsoft-azure</guid>
+            <pubDate>Sun, 18 Nov 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[Chcesz zacząć nauke o Microsoft Azure? W tym artykule znajdziesz linki, które napewno Cię zainteresują!]]></description>
+        </item>
     </channel>
 </rss>

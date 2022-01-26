@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[2334],{5287:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/azure-devops","name":"azure devops","count":1,"permalink":"/tags/azure-devops"}')}}]);

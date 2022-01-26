@@ -51,4 +51,15 @@
             <uri>https://github.com/RogalaPiotr</uri>
         </author>
     </entry>
+    <entry>
+        <title type="html"><![CDATA[Skąd uczyć się o Microsoft Azure?]]></title>
+        <id>skad-uczyc-sie-o-microsoft-azure</id>
+        <link href="https://blog.justcloud.pl/skad-uczyc-sie-o-microsoft-azure"/>
+        <updated>2018-11-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Chcesz zacząć nauke o Microsoft Azure? W tym artykule znajdziesz linki, które napewno Cię zainteresują!]]></summary>
+        <author>
+            <name>Piotr Rogala</name>
+            <uri>https://github.com/RogalaPiotr</uri>
+        </author>
+    </entry>
 </feed>

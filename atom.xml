@@ -40,4 +40,11 @@
             <uri>https://github.com/RogalaPiotr</uri>
         </author>
     </entry>
+    <entry>
+        <title type="html"><![CDATA[IaC control via PowerShell module for ARM templates]]></title>
+        <id>iac-control-via-powershell-module-for-arm-templates</id>
+        <link href="https://blog.justcloud.pl/iac-control-via-powershell-module-for-arm-templates"/>
+        <updated>2019-09-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Walidowanie szablonów ARM za pomocą modułu PowerShell jest możliwe dzięki nowemu modułowi. Użycie tego modułu pomoże Ci sprawdzić czy szablon jest poprawny i jakie zmiany wprowadzi na wdrażanym środowisku Azure.]]></summary>
+    </entry>
 </feed>

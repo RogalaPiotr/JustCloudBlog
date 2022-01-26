@@ -28,5 +28,12 @@
             <pubDate>Mon, 13 Apr 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[PowerShell to nie tylko automatyzacja za pomocą modułów. Możemy go również wykorzystać do wysyłania zapytań za pomocą API do różnych serwisów. W tym artykule zobaczysz jak to zrobić.]]></description>
         </item>
+        <item>
+            <title><![CDATA[IaC control via PowerShell module for ARM templates]]></title>
+            <link>https://blog.justcloud.pl/iac-control-via-powershell-module-for-arm-templates</link>
+            <guid>iac-control-via-powershell-module-for-arm-templates</guid>
+            <pubDate>Sun, 15 Sep 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Walidowanie szablonów ARM za pomocą modułu PowerShell jest możliwe dzięki nowemu modułowi. Użycie tego modułu pomoże Ci sprawdzić czy szablon jest poprawny i jakie zmiany wprowadzi na wdrażanym środowisku Azure.]]></description>
+        </item>
     </channel>
 </rss>

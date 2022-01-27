@@ -26,3 +26,4 @@ supervisord.pid
 */.DS_Store
 
 backup-wordpress
+package-lock.json

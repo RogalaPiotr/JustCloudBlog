@@ -42,7 +42,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '14.x'
 
       - name: Get yarn cache
         id: yarn-cache
@@ -55,7 +55,6 @@ jobs:
           key: ${{ runner.os }}-${{ env.WORKDIR }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ env.WORKDIR }}-
-      - run: npx yarn-deduplicate yarn.lock
       - run: yarn install --frozen-lockfile
       - run: yarn build
 

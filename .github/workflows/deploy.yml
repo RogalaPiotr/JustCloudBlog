@@ -55,6 +55,7 @@ jobs:
           key: ${{ runner.os }}-${{ env.WORKDIR }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ env.WORKDIR }}-
+      - run: npx yarn-deduplicate yarn.lock
       - run: yarn install --frozen-lockfile
       - run: yarn build
 

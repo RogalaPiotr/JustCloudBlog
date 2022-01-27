@@ -14,6 +14,7 @@ tags:
   - "vsts"
   - "ado"
 keywords: [justcloud, ado, azure, microsoft azure, devops, agent, pipelines, deployment, azure devops agents]
+hide_table_of_contents: true
 ---
 
 Wszyscy który robią depyolemnty z VSTS spotykają się z sytuacją, kiedy standardowe 240min się kończy i trzeba stworzyć sobie taką maszynę. Sam robiłem taką maszynę parę razy i kiedy znów pojawiła się ta konieczność postanowiłem stworzyć automatyczny deployment który nam stworzy z JSON'a cała maszynkę i podepnie ją do Agent pool w VSTS.
@@ -28,7 +29,7 @@ Założenie dotyczące szablonu: chciałbym dodać informację, gdzie ważnym je
 
 # Opis szablonu
 
-## Sekcja Parameters:
+## **Sekcja Parameters:**
 
 w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automatycznego podłączenia do VSTS'a.
 
@@ -43,7 +44,7 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
 - **AccessIPNSG** - adres, który tutaj podacie zostanie dodany do NSG i tylko z tego adresu dostaniecie się po RDP do maszyny,
 - **Tag** - tagi mogą ulec waszej modyfikacji ustawione są na Project: VSTSAgent.
 
-## Sekcja Variables:
+## **Sekcja Variables:**
 
 - **vmsize** - ustawiony na "Standard\_B1s" - dosyć tani i wystarczający na maszynę deployment’owy - pamiętaj, aby sprawdzić, czy masz możliwość deploy’owania tej maszyny w swojej subskrypcji w innym przypadku zgłoś request do supportu Microsoft w celu uruchomienia wielkości B\_size.
 - **urldonwloadagent** - w tym miejscu jest podany link do ściągnięcia aktualnego zip'a z agentem VSTS - w razie zmiany wersji należy zaktualizować link na aktualny
@@ -53,7 +54,7 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
 - **filescriptName** - kolejna fajna funkcja, gdzie na podstawie powyższego splita zabieramy nazwę skryptu, który posłuży nam do instalacji w CustomScriptExtension,
 - **agentname** - każdy dodany Agent do puli w VSTS będzie nosił nazwę NazwaMaszynyagent.
 
-## Sekcja Resources:
+## **Sekcja Resources:**
 
 - **type: Microsoft.Network/networkSecurityGroups** - NSG z dostępem RDP tylko z adresu IP który dodamy podczas deploy’mentu parametr: AccessIPNSG
 - **type: Microsoft.Network/publicIPAddresses** - Publiczny adres dla naszej VM, aby móc się do niej podłączyć z zewnątrz.
@@ -62,7 +63,7 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
     - **type: Microsoft.Compute/virtualMachines/extensions** - instalacja agenta VSTS, bazując na napisanym skrypcie i udostępnionym na GitHubie: vstsagent.ps1 zostanie on użyty podczas deplyoment’u a podczas jego wykonywaniu dodamy informację związane z url VSTS, tokenem itp. Pełna komenda w linii 257: "commandToExecute"
 - **type: Microsoft.DevTestLab/schedules** - dzięki temu nasza maszynie będzie wyłączana codziennie o 18:00 zona: W. Europe Standard Time - ten feature działa tylko kiedy maszyna jest włączona pozwoli to nam zapomnieć o wyłączaniu, a mimo wszystko nie będziemy tracić pieniędzy za jej bezczynność.
 
-## Sekcja Outputs:
+## **Sekcja Outputs:**
 
 - **PublicDNS** - po wykonaniu deployment’u wyświetli nam publiczny adres DNS dla VM,
 - **Hostname** - wyświetli nazwę maszyny, którą wprowadziliśmy w parametrach,
@@ -409,17 +410,17 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
 }
 ```
 
-# Przykład:
+# **Przykład:**
 
-## Aby wykonać deployment należy utworzyć Resource Group'ę:
+### **Aby wykonać deployment należy utworzyć Resource Group'ę:**
 
 `New-AzureRMResourceGroup -Name VSTS -Location westeurope`
 
-## Wykonanie deployment’u:
+### **Wykonanie deployment’u:**
 
 `New-AzureRMResourceGroupDeployment -ResourceGroupName VSTS -TemplateURI "https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/azuredeploy.json" -Verbose`
 
-Efekt w portalu po deploy’mencie:
+**Efekt w portalu po deploy’mencie:**
 
 [![](images/Clipboard21.jpg)](images/Clipboard21.jpg)
 

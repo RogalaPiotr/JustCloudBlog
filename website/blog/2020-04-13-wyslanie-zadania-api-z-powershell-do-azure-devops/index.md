@@ -34,17 +34,17 @@ Na początku definiujemy zmienne:
 $urlvsts = 'https://dev.azure.com/PROJECT-NAME'
 $token = 'YOUR-PAT-TOKEN'
 $pool = 'YOUR-POOL-NAME'
-$encodedPat = \[System.Convert\]::ToBase64String(\[System.Text.Encoding\]::UTF8.GetBytes( ":$token"))
-$body = "{name:\`"$pool\`", autoProvision: \`"true\`"}"
+$encodedPat = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes( ":$token"))
+$body = "{name:"$pool", autoProvision: "true"}"
 ```
 Komenda `Invoke-WebRequest` wykonuje wysłania żądania podając wcześniej zdefiniowane zmienne oraz zawiera Uri, czyli miejsce, w które zapuka żądanie, aby ustawić nową pulę w Azure DevOps.
 ```
-Invoke-WebRequest \`
-    -Method POST \`
-    -Uri "$urlvsts/\_apis/distributedtask/pools?api-version=5.0-preview.1" \`
-    -UseBasicParsing \`
-    -Headers @{Authorization = "Basic $encodedPat"} \`
-    -Body $body \`
+Invoke-WebRequest `
+    -Method POST `
+    -Uri "$urlvsts\_apis/distributedtask/pools?api-version=5.0-preview.1" `
+    -UseBasicParsing `
+    -Headers @{Authorization = "Basic $encodedPat"} `
+    -Body $body `
     -ContentType "application/json"
 ```
 Screens:

@@ -74,322 +74,339 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
 # Szablon:
 ```
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-      "adminUsername": {
-        "type": "string",
-        "metadata": {
-          "description": "Username for the Virtual Machine."
-        }
-      },
-      "adminPassword": {
-        "type": "securestring",
-        "metadata": {
-          "description": "Password for the Virtual Machine."
-        }
-      },
-      "dnsLabelPrefix": {
-        "type": "string",
-        "defaultValue": "\[concat('x', uniqueString(resourceGroup().id))\]",
-        
-        "metadata": {
-          "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
-        }
-      },
-      "vmName": {
-        "type": "string",
-        "metadata": {
-          "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
-        }
-      },
-      "urlvsts": {
-        "type": "string",
-        "metadata": {
-          "description": "URL for your VSTS Project ex. https://project1.visualstudio.com."
-        }
-      },
-      "auth": {
-        "type": "string",
-        "defaultValue": "pat",
-        "metadata": {
-          "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
-        }
-      },
-      "token": {
-        "type": "securestring",
-        "metadata": {
-          "description": "Security token for VSTS project."
-        }
-      },
-      "pool": {
-        "type": "string",
-        "defaultValue": "default",
-        "metadata": {
-          "description": "Pool name in VSTS - Default is a main."
-        }
-      },
-      "AccessIPNSG": {
-        "type": "string",
-        "metadata": {
-          "description": "Your publif IP it will added for NSG for connection via RDP."
-        }
-      },
-      "tag": {
-        "type": "object",
-        "defaultValue": {
-            "key1": "Project",
-            "value1": "VSTSAgent"
-        },
-        "metadata": {
-            "description": "Tag Values"
-        }
-    }
-  },
-    "variables": {
-      "windowsOSVersion": "2016-Datacenter",
-      "vmsize": "Standard\_B1s",
-      "publicIPAddressName": "\[concat(parameters('vmName'), '-pip')\]",
-      "virtualNetworkName": "\[concat(parameters('vmName'), '-vnet')\]",
-      "NSGname": "\[concat(parameters('vmName'), '-nsg')\]",
-      "nicName": "\[concat(parameters('vmName'), '-nic')\]",
-      "subnetName": "\[concat(parameters('vmName'), '-subnet')\]",
-      "addressPrefix": "10.0.0.0/16",
-      "subnetPrefix": "10.0.0.0/24",
-      "subnetRef": "\[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))\]",
-      "urldonwloadagent": "https://vstsagentpackage.azureedge.net/agent/2.133.3/vsts-agent-win-x64-2.133.3.zip",
-      "filescriptURI": "https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/vstsagent.ps1",
-      "filescriptURISplit": "\[split(variables('filescriptURI'), '/')\]",
-      "filescriptName": "\[last(variables('filescriptURISplit'))\]",
-      "agentname": "\[concat(parameters('vmName'), 'agent')\]"
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "Username for the Virtual Machine."
+      }
     },
-    "resources": \[
-      {
-        "type": "Microsoft.Network/networkSecurityGroups",
-        "name": "\[variables('NSGName')\]",
-        "location": "\[resourceGroup().location\]",
-        "tags": {
-          "\[parameters('tag').key1\]": "\[parameters('tag').value1\]"
-        },
-        "apiVersion": "2018-03-01",
-        "properties": {
-          "securityRules": \[
-            {
-              "name": "RDP",
-              "properties": {
-                "description": "Allow IP for RDP",
-                "protocol": "TCP",
-                "sourcePortRange": "\*",
-                "destinationPortRange": "3389",
-                "sourceAddressPrefix": "\[parameters('AccessIPNSG')\]",
-                "destinationAddressPrefix": "\*",
-                "access": "Allow",
-                "priority": 100,
-                "direction": "Inbound"
-              }
-            }
-          \]
-        }
+    "adminPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Password for the Virtual Machine."
+      }
+    },
+    "dnsLabelPrefix": {
+      "type": "string",
+      "defaultValue": "[concat('x', uniqueString(resourceGroup().id))]",
+      "metadata": {
+        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+      }
+    },
+    "vmName": {
+      "type": "string",
+      "metadata": {
+        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+      }
+    },
+    "urlvsts": {
+      "type": "string",
+      "metadata": {
+        "description": "URL for your VSTS Project ex. https://project1.visualstudio.com."
+      }
+    },
+    "auth": {
+      "type": "string",
+      "defaultValue": "pat",
+      "metadata": {
+        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+      }
+    },
+    "token": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Security token for VSTS project."
+      }
+    },
+    "pool": {
+      "type": "string",
+      "metadata": {
+        "description": "Pool name in VSTS - Default is a main."
+      }
+    },
+    "AccessIPNSG": {
+      "type": "string",
+      "metadata": {
+        "description": "Your publif IP it will added for NSG for connection via RDP."
+      }
+    },
+    "numberagents": {
+      "type": "int",
+      "metadata": {
+        "description": "Numbers of agents for installation"
+      }
+    },
+    "tag": {
+      "type": "string",
+      "metadata": {
+          "description": "Tag Values"
+      }
+  }
+},
+  "variables": {
+    "storageAccountName": "[concat('stor', uniquestring(resourceGroup().id))]",
+    "windowsOSVersion": "2019-Datacenter",
+    "vmsize": "Standard_B2ms",
+    "publicIPAddressName": "[concat(parameters('vmName'), '-pip')]",
+    "virtualNetworkName": "[concat(parameters('vmName'), '-vnet')]",
+    "NSGname": "[concat(parameters('vmName'), '-nsg')]",
+    "nicName": "[concat(parameters('vmName'), '-nic')]",
+    "subnetName": "[concat(parameters('vmName'), '-subnet')]",
+    "addressPrefix": "10.0.0.0/16",
+    "subnetPrefix": "10.0.0.0/24",
+    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
+    "urldonwloadagent": "https://vstsagentpackage.azureedge.net/agent/2.155.1/vsts-agent-win-x64-2.155.1.zip",
+    "filescriptURI": "https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/vstsagent.ps1",
+    "filescriptURISplit": "[split(variables('filescriptURI'), '/')]",
+    "filescriptName": "[last(variables('filescriptURISplit'))]",
+    "agentname": "[parameters('vmName')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[variables('storageAccountName')]",
+      "apiVersion": "2015-06-15",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "Project": "[parameters('tag')]"
       },
-      {
-        "apiVersion": "2016-03-30",
-        "type": "Microsoft.Network/publicIPAddresses",
-        "name": "\[variables('publicIPAddressName')\]",
-        "location": "\[resourceGroup().location\]",
-        "tags": {
-          "\[parameters('tag').key1\]": "\[parameters('tag').value1\]"
-        },
-        "properties": {
-          "publicIPAllocationMethod": "Dynamic",
-          "dnsSettings": {
-            "domainNameLabel": "\[parameters('dnsLabelPrefix')\]"
-          }
-        }
+      "properties": {
+        "accountType": "Standard_LRS"
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[variables('NSGName')]",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "Project": "[parameters('tag')]"
       },
-      {
-        "apiVersion": "2016-03-30",
-        "type": "Microsoft.Network/virtualNetworks",
-        "name": "\[variables('virtualNetworkName')\]",
-        "dependsOn": \[
-          "\[resourceId('Microsoft.Network/networkSecurityGroups/', variables('NSGName'))\]"
-        \],
-        "location": "\[resourceGroup().location\]",
-        "tags": {
-          "\[parameters('tag').key1\]": "\[parameters('tag').value1\]"
-        },
-        "properties": {
-          "addressSpace": {
-            "addressPrefixes": \[
-              "\[variables('addressPrefix')\]"
-            \]
-          },
-          "subnets": \[
-            {
-              "name": "\[variables('subnetName')\]",
-              "properties": {
-                "addressPrefix": "\[variables('subnetPrefix')\]",
-                "networkSecurityGroup": {
-                  "id": "\[resourceId('Microsoft.Network/networkSecurityGroups',variables('NSGName'))\]"
-              }
-              }
-            }
-          \]
-        }
-      },
-      {
-        "apiVersion": "2016-03-30",
-        "type": "Microsoft.Network/networkInterfaces",
-        "name": "\[variables('nicName')\]",
-        "location": "\[resourceGroup().location\]",
-        "tags": {
-          "\[parameters('tag').key1\]": "\[parameters('tag').value1\]"
-        },
-        "dependsOn": \[
-          "\[resourceId('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))\]",
-          "\[resourceId('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))\]"
-        \],
-        "properties": {
-          "ipConfigurations": \[
-            {
-              "name": "ipconfig1",
-              "properties": {
-                "privateIPAllocationMethod": "Dynamic",
-                "publicIPAddress": {
-                  "id": "\[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))\]"
-                },
-                "subnet": {
-                  "id": "\[variables('subnetRef')\]"
-                }
-              }
-            }
-          \]
-        }
-      },
-      {
-        "apiVersion": "2016-04-30-preview",
-        "type": "Microsoft.Compute/virtualMachines",
-        "name": "\[parameters('vmName')\]",
-        "location": "\[resourceGroup().location\]",
-        "tags": {
-          "\[parameters('tag').key1\]": "\[parameters('tag').value1\]"
-        },
-        "dependsOn": \[
-          "\[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName'))\]"
-        \],
-        "properties": {
-          "licenseType": "Windows\_Server",
-          "hardwareProfile": {
-            "vmSize": "\[variables('vmsize')\]"
-          },
-          "osProfile": {
-            "computerName": "\[parameters('vmName')\]",
-            "adminUsername": "\[parameters('adminUsername')\]",
-            "adminPassword": "\[parameters('adminPassword')\]"
-          },
-          "storageProfile": {
-            "imageReference": {
-              "publisher": "MicrosoftWindowsServer",
-              "offer": "WindowsServer",
-              "sku": "\[variables('windowsOSVersion')\]",
-              "version": "latest"
-            },
-            "osDisk": {
-              "createOption": "FromImage",
-              "name": "\[concat(parameters('vmName'), '-osdisk')\]"
-            }
-          },
-          "networkProfile": {
-            "networkInterfaces": \[
-              {
-                "id": "\[resourceId('Microsoft.Network/networkInterfaces',variables('nicName'))\]"
-              }
-            \]
-          }
-        },
-        "resources": \[
+      "apiVersion": "2018-03-01",
+      "properties": {
+        "securityRules": [
           {
-            "name": "\[concat(parameters('vmName'),'/VSTSAgentInstall')\]",
-            "type": "Microsoft.Compute/virtualMachines/extensions",
-            "location": "\[resourceGroup().location\]",
-            "tags": {
-              "\[parameters('tag').key1\]": "\[parameters('tag').value1\]"
-            },
-            "dependsOn": \[
-              "\[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))\]"
-            \],
-            "apiVersion": "2015-06-15",
+            "name": "RDP",
             "properties": {
-              "publisher": "Microsoft.Compute",
-              "type": "CustomScriptExtension",
-              "typeHandlerVersion": "1.9",
-              "autoUpgradeMinorVersion": true,
-              "settings": {
-                "fileUris": \[
-                  "\[variables('filescriptURI')\]"
-                  \]
+              "description": "Allow IP for RDP",
+              "protocol": "TCP",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "[parameters('AccessIPNSG')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2016-03-30",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('publicIPAddressName')]",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "Project": "[parameters('tag')]"
+      },
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic",
+        "dnsSettings": {
+          "domainNameLabel": "[parameters('dnsLabelPrefix')]"
+        }
+      }
+    },
+    {
+      "apiVersion": "2016-03-30",
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[variables('virtualNetworkName')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups/', variables('NSGName'))]"
+      ],
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "Project": "[parameters('tag')]"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[variables('addressPrefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[variables('subnetName')]",
+            "properties": {
+              "addressPrefix": "[variables('subnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('NSGName'))]"
+            }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2016-03-30",
+      "type": "Microsoft.Network/networkInterfaces",
+      "name": "[variables('nicName')]",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "Project": "[parameters('tag')]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))]",
+        "[resourceId('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+      ],
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]"
               },
-              "protectedSettings": {
-                "commandToExecute": "\[concat('powershell -ExecutionPolicy Unrestricted -File ',variables('filescriptName'),' -url ',variables('urldonwloadagent'),' -urlvsts ',parameters('urlvsts'),' -auth ',parameters('auth'),' -token ',parameters('token'),' -pool ',parameters('pool'),' -agentname ',variables('agentname'))\]"
+              "subnet": {
+                "id": "[variables('subnetRef')]"
               }
             }
           }
-        \]
-  
+        ]
+      }
+    },
+    {
+      "apiVersion": "2016-04-30-preview",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[parameters('vmName')]",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "Project": "[parameters('tag')]"
       },
-      {
-        "apiVersion": "2016-05-15",
-        "type": "Microsoft.DevTestLab/schedules",
-        "name": "\[concat('shutdown-computevm-', parameters('vmName'))\]",
-        "location": "\[resourceGroup().location\]",
-        "tags": {
-          "\[parameters('tag').key1\]": "\[parameters('tag').value1\]"
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName'))]",
+        "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]"
+      ],
+      "properties": {
+        "licenseType": "Windows_Server",
+        "hardwareProfile": {
+          "vmSize": "[variables('vmsize')]"
         },
-        "dependsOn": \[
-          "\[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))\]"
-        \],
-        "properties": {
-          "status":"Enabled",
-          "timeZoneId":"W. Europe Standard Time",
-          "taskType":"ComputeVmShutdownTask",
-          "notificationSettings":{
-            "status":"Disabled",
-            "timeInMinutes":15,
-            "webhookUrl":null
+        "osProfile": {
+          "computerName": "[parameters('vmName')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPassword')]"
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "MicrosoftWindowsServer",
+            "offer": "WindowsServer",
+            "sku": "[variables('windowsOSVersion')]",
+            "version": "latest"
           },
-          "targetResourceId":"\[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))\]",
-          "dailyRecurrence":{
-            "time":"1800"
+          "osDisk": {
+            "name": "[concat(parameters('vmName'),'-os')]",
+            "vhd": {
+              "uri": "[concat('http://',variables('storageAccountName'),'.blob.core.windows.net/vhds/',parameters('vmName'),'-vm-os.vhd')]"
+            },
+            "caching": "ReadWrite",
+            "createOption": "FromImage"
+          }
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName'))]"
+            }
+          ]
+        }
+      },
+      "resources": [
+        {
+          "name": "[concat(parameters('vmName'),'/AzureDevOpsAgentInstall')]",
+          "type": "Microsoft.Compute/virtualMachines/extensions",
+          "location": "[resourceGroup().location]",
+          "tags": {
+            "Project": "[parameters('tag')]"
+          },
+          "dependsOn": [
+            "[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
+          ],
+          "apiVersion": "2015-06-15",
+          "properties": {
+            "publisher": "Microsoft.Compute",
+            "type": "CustomScriptExtension",
+            "typeHandlerVersion": "1.9",
+            "autoUpgradeMinorVersion": true,
+            "settings": {
+              "fileUris": [
+                "[variables('filescriptURI')]"
+                ]
+            },
+            "protectedSettings": {
+              "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ',variables('filescriptName'),' -url ',variables('urldonwloadagent'),' -urlvsts ',parameters('urlvsts'),' -auth ',parameters('auth'),' -token ',parameters('token'),' -pool ',parameters('pool'),' -agentname ',variables('agentname'), ' -numberagents ',parameters('numberagents'))]"
+            }
           }
         }
+      ]
+    },
+    {
+      "apiVersion": "2016-05-15",
+      "type": "Microsoft.DevTestLab/schedules",
+      "name": "[concat('shutdown-computevm-', parameters('vmName'))]",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "Project": "[parameters('tag')]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
+      ],
+      "properties": {
+        "status":"Enabled",
+        "timeZoneId":"W. Europe Standard Time",
+        "taskType":"ComputeVmShutdownTask",
+        "notificationSettings":{
+          "status":"Disabled",
+          "timeInMinutes":15,
+          "webhookUrl":null
+        },
+        "targetResourceId":"[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]",
+        "dailyRecurrence":{
+          "time":"1800"
+        }
       }
-    \],
-    "outputs": {
-      "PublicDNS": {
-        "type" : "string",
-        "value": "\[reference(variables('publicIPAddressName')).dnsSettings.fqdn\]"
-      },
-      "HostName": {
-        "type" : "string",
-        "value": "\[parameters('vmName')\]"
-      },
-      "VSTSAgentName": {
-        "type" : "string",
-        "value": "\[variables('agentname')\]"
-      },  
-      "VSTSProjectName": {
-        "type" : "string",
-        "value": "\[parameters('urlvsts')\]"
-      },  
-      "ScritpURI": {
-        "type" : "string",
-        "value": "\[variables('filescriptURI')\]"
-      },
-      "AccessRDPFrom": {
-        "type" : "string",
-        "value": "\[parameters('accessIPNSG')\]"
-      }
+    }
+  ],
+  "outputs": {
+    "PublicDNS": {
+      "type" : "string",
+      "value": "[reference(variables('publicIPAddressName')).dnsSettings.fqdn]"
+    },
+    "HostName": {
+      "type" : "string",
+      "value": "[parameters('vmName')]"
+    },
+    "VSTSAgentName": {
+      "type" : "string",
+      "value": "[variables('agentname')]"
+    },  
+    "VSTSProjectName": {
+      "type" : "string",
+      "value": "[parameters('urlvsts')]"
+    },  
+    "ScritpURI": {
+      "type" : "string",
+      "value": "[variables('filescriptURI')]"
+    },
+    "AccessRDPFrom": {
+      "type" : "string",
+      "value": "[parameters('accessIPNSG')]"
     }
   }
+}
 ```
 
 # **Przykład:**

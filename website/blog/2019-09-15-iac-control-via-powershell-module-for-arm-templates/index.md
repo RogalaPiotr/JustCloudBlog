@@ -35,17 +35,17 @@ Tworzenie nowej resource groupy:
 
 Sprawdzenie co wyświetli poleniecenie Test-ARMExistingResource:
 
-`Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\\azuredeploy.json -TemplateParameterFile .\\azuredeploy.parameters.json -Verbose`
+`Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose`
 
 ![](images/2019-09-15_12h46_05.png)
 
 Wynikiem jest informacja co zostanie utworzone. Super sprawa, to teraz zrobie deployment szablonu i sprawdzimy ponownie.
 
-`New-AzResourceGroupDeployment -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\\azuredeploy.json -TemplateParameterFile .\\azuredeploy.parameters.json -Verbose`
+`New-AzResourceGroupDeployment -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose`
 
 Niestety miałem problem z modułem Shutdown i szablon wdrożył się niepoprawnie, dlatego sprawdziłem co wyświetli Test-ARMExistResource.
 
-`Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\\azuredeploy.json -TemplateParameterFile .\\azuredeploy.parameters.json -Verbose`
+`Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose`
 
 ![](images/2019-09-15_13h01_42.png)
 
@@ -53,7 +53,7 @@ Jak widać polecenie poprawnie zwróciło co jest do poprawienia i co zostanie z
 
 Ostatni test to z argumentem "-Mode Complete" czyli wykonanie szablonu, który dostosuje wszystkie zasoby niezależnie od tego co jest stworzone w resource groupie do mojego szablonu.
 
-`Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\\azuredeploy.json -TemplateParameterFile .\\azuredeploy.parameters.json -Verbose -Mode Complete`
+`Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose -Mode Complete`
 
 ![](images/2019-09-15_13h02_32.png)
 

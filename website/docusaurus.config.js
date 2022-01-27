@@ -45,6 +45,14 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        googleAnalytics: {
+          trackingID: 'UA-23496885-4',
+          anonymizeIP: true,
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+        },
       }),
     ],
   ],
@@ -120,6 +128,14 @@ const config = {
               {
                 label: 'Blog',
                 to: '/',
+              },
+              {
+                label: 'Newsletter Workshops',
+                href: 'https://www.subscribepage.com/wroclaw-newsletter-workshops',
+              },
+              {
+                label: 'Prezentacje',
+                href: 'https://1drv.ms/u/s!AgOrfRkNEp-HbQ4CLIYRB4PhqME?e=YrqrWf',
               }
             ],
           },

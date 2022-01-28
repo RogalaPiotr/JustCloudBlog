@@ -56,8 +56,8 @@ Po zalogowaniu się z cmd do GCP możemy wywołać powyższy deployment używaj�
 
 Po wykonaniu tego polecenia rozpocznie się deployment a następnie zostanie uruchomiona maszyna z systemem ubuntu. Zapraszam do testowania i zadawani pytań.
 
-[![](images/capture_012_08102017_145512.jpg)](images/capture_012_08102017_145512.jpg)
+![](images/capture_012_08102017_145512.jpg)
 
-[![](images/capture_013_08102017_145520.jpg)](images/capture_013_08102017_145520.jpg)
+![](images/capture_013_08102017_145520.jpg)
 
-[![](images/capture_014_08102017_145606.jpg)](images/capture_014_08102017_145606.jpg)
+![](images/capture_014_08102017_145606.jpg)

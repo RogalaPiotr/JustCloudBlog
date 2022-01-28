@@ -422,11 +422,11 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
 
 **Efekt w portalu po deploy’mencie:**
 
-[![](images/Clipboard21.jpg)](images/Clipboard21.jpg)
+![](images/Clipboard21.jpg)
 
 **Widok puli agentów w VSTS:**
 
-[![](images/Clipboard22.jpg)](images/Clipboard22.jpg)
+![](images/Clipboard22.jpg)
 
 Maszyna jest gotowa do deploy’mentów, jeśli potrzebujesz więcej maszyn możesz bez oporu deploy’ować większą ilość :)
 

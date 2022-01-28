@@ -40,7 +40,8 @@ const config = {
         blog: {
           showReadingTime: true,
           editLocalizedFiles: false,
-          routeBasePath: '/'
+          routeBasePath: '/',
+          blogSidebarCount: 'ALL'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

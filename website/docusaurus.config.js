@@ -136,7 +136,7 @@ const config = {
               },
               {
                 label: 'Prezentacje',
-                href: 'https://1drv.ms/u/s!AgOrfRkNEp-HbQ4CLIYRB4PhqME?e=YrqrWf',
+                href: 'https://github.com/RogalaPiotr/Presentations',
               }
             ],
           },

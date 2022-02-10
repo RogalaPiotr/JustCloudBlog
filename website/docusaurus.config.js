@@ -41,14 +41,11 @@ const config = {
           showReadingTime: true,
           editLocalizedFiles: false,
           routeBasePath: '/',
-          blogSidebarCount: 'ALL'
+          blogSidebarCount: 'ALL',
+          postsPerPage: '4',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-        },
-        googleAnalytics: {
-          trackingID: 'UA-23496885-4',
-          anonymizeIP: true,
         },
         sitemap: {
           changefreq: 'weekly',
@@ -150,6 +147,10 @@ const config = {
               {
                 label: 'LinkedIn',
                 href: 'https://pl.linkedin.com/in/rogalapiotr',
+              },
+              {
+                label: 'Medium',
+                href: 'https://piotr-rogala.medium.com',
               },
               {
                 label: 'RSS Feed',

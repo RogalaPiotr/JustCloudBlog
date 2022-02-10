@@ -42,7 +42,7 @@ const config = {
           editLocalizedFiles: false,
           routeBasePath: '/',
           blogSidebarCount: 'ALL',
-          postsPerPage: '4',
+          postsPerPage: 4,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

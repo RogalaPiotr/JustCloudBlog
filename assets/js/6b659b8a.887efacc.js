@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[616],{8399:function(t){t.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/azurermcontext","name":"azurermcontext","count":1,"permalink":"/tags/azurermcontext"}')}}]);

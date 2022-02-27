@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[3431],{6067:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/auto-shutdown","name":"auto-shutdown","count":1,"permalink":"/tags/auto-shutdown"}')}}]);

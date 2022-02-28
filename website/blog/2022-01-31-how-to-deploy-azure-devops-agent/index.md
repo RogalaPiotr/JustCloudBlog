@@ -8,22 +8,22 @@ tags: [deploy, azure, devops, agent, agents, pipelines]
 keywords: [azure, devops, agent, pipelines]
 ---
 
-Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tak zwanych ["Microsoft-hosted"](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser#microsoft-hosted-agents) przez 1800 minut (30 godzin) na miesiąc. W momencie przekroczenia tego czasu nie możemy wykonywać deployment'ów. Jedyna opcja to dokupić unlimited access do agenta za $40 na miesiąc minuty albo korzystać ze swojego serwera, laptopa po zainstalowaniu agenta - ta opcja wdrażania zwana jest w dokumentacji ["Self-Hosted"](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser#install). Dodam tylko, że wykorzystywanie własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym 🙃.
+Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tak zwanych ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) przez 1800 minut (30 godzin) na miesiąc. W momencie przekroczenia tego czasu nie możemy wykonywać deployment'ów. Jedyna opcja to dokupić unlimited access do agenta za $40 na miesiąc minuty albo korzystać ze swojego serwera, laptopa po zainstalowaniu agenta - ta opcja wdrażania zwana jest w dokumentacji ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install). Dodam tylko, że wykorzystywanie własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym 🙃.
 
-Pricing page Azure DevOps: <https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/>
+Pricing page Azure DevOps: <https://azure.microsoft.com/pricing/details/devops/azure-devops-services/?WT.mc_id=AZ-MVP-5002690>
 
 Bardzo często słyszę pytanie, a po co mi własny serwer do wdrażania?
 
 [![](https://img.youtube.com/vi/OO3FANjwKHY/0.jpg)](https://www.youtube.com/watch?v=OO3FANjwKHY)
 
 Klasyczna odpowiedź: to zależy... Robiąc prace dyplomową na uczelnie albo projekt PoC dla znajomego, możecie wybrać opcje postawienia agenta na swoim laptopie. Jeśli pracujecie w grupie paru osób najlepiej byłoby skorzystać z własnego serwera. Jeśli jesteście firmą i dostarczacie rozwiązania to napewno powinniście rozważyć własny serwer lub dokupienie "Microsoft-hosted" za $40 - jeśli czas wdrażania przekracza 1800 minut na miesiąc.
-Ale jest jeszcze jedna sytuacja kiedy wybierzecie własny serwer z agentami. Wiele firm korzysta z prywatnych kontrolowanych wewnętrznych sieci z ograniczonym dostępem z zewnątrz. Wdrożenie własnego serwera w waszej sieci pozwoli wam na łatwą komunikacje z wdrożonymi rozwiązaniami na platformie Microsoft Azure, ale zwiększycie też bezpieczeństwo procesowanych danych. Pamiętajmy że agent ["Microsoft-hosted"](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser#microsoft-hosted-agents) to agent "publiczny" odizolowany od waszej sieci. ["Self-Hosted"](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser#install) może zostać wdrożony tak samo jako agent odizolowany, ale też możecie go połączyć lub wdrożyć we własnej sieci.
+Ale jest jeszcze jedna sytuacja kiedy wybierzecie własny serwer z agentami. Wiele firm korzysta z prywatnych kontrolowanych wewnętrznych sieci z ograniczonym dostępem z zewnątrz. Wdrożenie własnego serwera w waszej sieci pozwoli wam na łatwą komunikacje z wdrożonymi rozwiązaniami na platformie Microsoft Azure, ale zwiększycie też bezpieczeństwo procesowanych danych. Pamiętajmy że agent ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) to agent "publiczny" odizolowany od waszej sieci. ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install) może zostać wdrożony tak samo jako agent odizolowany, ale też możecie go połączyć lub wdrożyć we własnej sieci.
 
 <!--truncate-->
 
 Poniżej odsyłam was do dokumentacji gdzie możecie szczegółowo dowiedzieć się co Microsoft oferuje w kwestii Azure Pipelines agent.
 
-[MS Docs - Azure Pipelines agents](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser)
+[MS Docs - Azure Pipelines agents](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690)
 
 ![Communication to deploy to target servers
 ](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/media/agent-connections-devops.png?view=azure-devops)
@@ -199,8 +199,8 @@ Przygotowałem ilustracje związaną z całym projektem dla wdrożenia Azure Pip
             * group: 'justcloudpublickeyvault'
     2. Requirements - potrzebujesz zanim zaczniesz wdrażać
        1. Azure Subskrypcja
-       2. PAT - Personal Access Token - <https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows#create-a-pat>
-       3. Key Vault - <https://docs.microsoft.com/en-us/azure/devops/pipelines/release/azure-key-vault?view=azure-devops>
+       2. PAT - Personal Access Token - <https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows&WT.mc_id=AZ-MVP-5002690#create-a-pat>
+       3. Key Vault - <https://docs.microsoft.com/azure/devops/pipelines/release/azure-key-vault?view=azure-devops&WT.mc_id=AZ-MVP-5002690>
 
 Po wdrożeniu:
 1. Azure DevOps agents

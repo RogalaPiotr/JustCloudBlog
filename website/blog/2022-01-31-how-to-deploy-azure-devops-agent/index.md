@@ -8,7 +8,7 @@ tags: [deploy, azure, devops, agent, agents, pipelines]
 keywords: [azure, devops, agent, pipelines]
 ---
 
-Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tak zwanych ["Microsoft-hosted"](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser#microsoft-hosted-agents) przez 1800 minut (30 godzin) na miesiąc. W momencie przekroczenia tego czasu nie możemy wykonywać deployment'ów. Jedyna opcja to dokupić unlimited access do agenta za $40 na miesiąc minuty albo korzystać ze swojego serwera, laptopa po zainstalowaniu agenta - ta opcja wdrażania zwana jest w dokumentacji ["Self-Hosted"](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser#install). Dodam tylko, że wykorzystywania własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym 🙃.
+Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tak zwanych ["Microsoft-hosted"](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser#microsoft-hosted-agents) przez 1800 minut (30 godzin) na miesiąc. W momencie przekroczenia tego czasu nie możemy wykonywać deployment'ów. Jedyna opcja to dokupić unlimited access do agenta za $40 na miesiąc minuty albo korzystać ze swojego serwera, laptopa po zainstalowaniu agenta - ta opcja wdrażania zwana jest w dokumentacji ["Self-Hosted"](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser#install). Dodam tylko, że wykorzystywanie własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym 🙃.
 
 Pricing page Azure DevOps: <https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/>
 

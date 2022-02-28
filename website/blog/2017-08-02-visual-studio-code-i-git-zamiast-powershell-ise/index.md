@@ -4,8 +4,6 @@ title: "Visual Studio Code i Git zamiast PowerShell ISE - UPDATED"
 description: "Wykorzystaj w pełni Visual Studio Code oraz GIT! W tym artykule dowiesz się jak skonfigurować swoje środowisko do pracy."
 date: "2017-08-02"
 authors: [progala]
-categories: 
-  - "microsoft"
 tags: 
   - "microsoft"
   - "powershell"

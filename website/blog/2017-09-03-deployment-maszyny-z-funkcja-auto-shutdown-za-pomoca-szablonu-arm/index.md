@@ -4,9 +4,6 @@ title: "Deployment maszyny z funkcją Auto-Shutdown  za pomocą szablonu arm"
 description: "Jak wyłączyć maszynę automatycznie o danej godzinie? Zapomocą tego skryptu zrobisz to!"
 date: "2017-09-03"
 authors: [progala]
-categories: 
-  - "devops"
-  - "microsoft"
 tags: 
   - "arm"
   - "auto-shutdown"

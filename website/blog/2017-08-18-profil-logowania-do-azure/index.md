@@ -4,8 +4,6 @@ title: "Profil logowania do Azure"
 description: "Pracujesz dużo w konsoli PowerShell? Nie chcesz logować się co chwilę? Wykorzystaj plik z kontekstem, który ułatwi Ci pracę z konsolą!"
 date: "2017-08-18"
 authors: [progala]
-categories: 
-  - "microsoft"
 tags: 
   - "azure"
   - "azurermaccount"

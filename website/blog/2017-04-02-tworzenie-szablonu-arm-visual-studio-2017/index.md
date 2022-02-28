@@ -42,7 +42,7 @@ Następnie wybieramy template: Blank, który utworzy nam czysty szablon ARM.
 
 ![](images/Screenshot-from-2017-04-02-00-07-52.png)
 
-Gdy szablon się utworzy w prawej części zobaczymy pliki *.json oraz *.ps1. Plik azuredeploy.json jest głównym plikiem związanym z tworzeniem zasobów w resouce grup'ie, azuredeplyment.parameters.json jest plikiem definiującym parametry potrzebne do wykonania głównego pliku azuredeploy. Plik Deploy-AzureResourceGroup.ps1 odpowiada za sprawdzenie czy Resource Group'a jest utworzona i ewentualne utworzenie jej przed wykonaniem deploymentu, a końcu zdeploy'owanie projektu.
+Gdy szablon się utworzy w prawej części zobaczymy pliki *.json oraz *.ps1. Plik azuredeploy.json jest głównym plikiem związanym z tworzeniem zasobów w resouce group'ie, azuredeplyment.parameters.json jest plikiem definiującym parametry potrzebne do wykonania głównego pliku azuredeploy. Plik Deploy-AzureResourceGroup.ps1 odpowiada za sprawdzenie czy Resource Group'a jest utworzona i ewentualne utworzenie jej przed wykonaniem deploymentu, a końcu zdeploy'owanie projektu.
 
 ![](images/Screenshot-from-2017-04-02-00-09-02.png)
 
@@ -50,7 +50,9 @@ Plik azuredeploy.json jest zbudowany z 4 sekcji: parameters, variables, resource
 
 ![](images/Screenshot-from-2017-04-02-00-09-23.png)
 
-Plik azuredeploy.parameters.json jest plikiem ze zmiennymi w celu modyfikacji parametrów głównego pliku z szablonem(azuredeploy.json). Tak naprawdę nie musimy z niego korzystać możemy tworzyć projekt w oparciu o zdefiniowane parametry w pliku z deploymentem. Jeśli chcemy tworzyć projekt, który będzie wykonywany często z VS możemy skupić się na tworzeniu tego pliku, aby móc w estetyczny sposób edytować parametry podczas deplyomentu. Dokładnie zostanie to opisane w kolejnym wpisie na blogu. [![](images/Screenshot-from-2017-04-02-00-12-21-300x61.png)](/wp-content/uploads/2017/04/Screenshot-from-2017-04-02-00-12-21.png)
+Plik azuredeploy.parameters.json jest plikiem ze zmiennymi w celu modyfikacji parametrów głównego pliku z szablonem(azuredeploy.json). Tak naprawdę nie musimy z niego korzystać możemy tworzyć projekt w oparciu o zdefiniowane parametry w pliku z deploymentem. Jeśli chcemy tworzyć projekt, który będzie wykonywany często z VS możemy skupić się na tworzeniu tego pliku, aby móc w estetyczny sposób edytować parametry podczas deplyomentu. Dokładnie zostanie to opisane w kolejnym wpisie na blogu.
+
+![](images/Screenshot-from-2017-04-02-00-12-21.png)
 
 Po lewej stronie mamy zasoby szablonu w wizualnej formie. Możemy również dodawać nowe zasoby lub je usuwać za pośrednictwem widocznych dwóch ikonek z plusem i z x'ksem.
 

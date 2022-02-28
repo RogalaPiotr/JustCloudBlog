@@ -4,25 +4,9 @@
         <title>JustCloud Blog Blog</title>
         <link>https://blog.justcloud.pl/</link>
         <description>JustCloud Blog Blog</description>
-        <lastBuildDate>Sun, 20 Feb 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 31 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
-        <item>
-            <title><![CDATA[Jak wdrożyć Azure Pipelines agenta? (How to deploy Azure Pipelines agent?)]]></title>
-            <link>https://blog.justcloud.pl/azure global 2022</link>
-            <guid>azure global 2022</guid>
-            <pubDate>Sun, 20 Feb 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Potrzebujesz stworzyć własny serwer z agentem do deploymentów w Azure DevOps? W tym artykule opisałem cały proces oraz skrypty umożliwijące bardzo szybkie wdrożenie.]]></description>
-            <content:encoded><![CDATA[<p>Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tak zwanych "Microsoft-hosted" przez 1000 minut na miesiąc. W momencie przekroczenia tego czasu mużemy dokupić minuty albo wykorzystać swój serwer, laptop do kontynuowania wdrażania. Dodam tylko, że wykorzystywania wlasnego laptopa do wdrażania to nie jeste rozwiązanie produkcyjne 🙃.</p><p>Bardzo często słyszę, a po co mi własny serwer do wdrażania?</p><p>Klasyczna odpowiedź: to zależy... Robiąc prace dyplomową na uczelnie albo projekt PoC dla znajomego, możecie wybrać opcje postawienia agenta na swoim laptopie. Jeśli pracujecie w grupie paru osób należy skorzystać z własnego serwera. Jeśli jesteście firmą i dostarczacie rozwiązania i jest to wasz core dostarczania rozwiązań jest to napewno własny serer lub dokupienie "minut".
-Ale jest jeszcze jedna syutacja kiedy wybierzecie własny serwer z agentami. Macie złożoną sieć i restrykcyjny dostęp do niej. Wdrożenie własnego serwera w waszej sieci pozwoli wam na łatwą komunikacje z wdrożonymi rozwiązaniami na Microsoft Azure, ale też większe bezpieczeństwo procesowanych danych.</p><p>Poniżej odsyłam was do dokumentacji gdzie możecie szczegółowo dowiedzieć się co Microsoft oferje w kwestii Azure Pipelines agent.</p><p><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&amp;tabs=browser" target="_blank" rel="noopener noreferrer">MS Docs - Azure Pipelines agents</a></p><p><img src="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/media/agent-connections-devops.png?view=azure-devops" alt="Communication to deploy to target servers
-"></p><p>Przechodzimy zatem do wdrożenia własnego serwera z agentem.</p><ol><li>Opis z tym co jest w publicznym ADO</li><li>Opis kodu</li><li>Review wdrożenia</li></ol><p>Koniec</p><hr><p>Witam na nowej stronie gdzię będę wrzucał nowe posty związane z Microsoft Azure oraz Cloud☁️. Nowy rok 2022 mam nadzieję że przyniesie wiele pozytywnych zmian. Dlatego zapraszam do kontaktu i odwiedzin mojej strony.</p><p>Nowe linki i małe zmiany:</p><ul><li><a href="https://web.justcloud.pl" target="_blank" rel="noopener noreferrer">JustCloud ☁️ Page</a></li><li><a href="https://blog.justcloud.pl" target="_blank" rel="noopener noreferrer">JustCloud ☁️ Blog</a></li></ul><p>W najbliższym czasie&nbsp;ogarnę&nbsp;również uzupełnienie bloga o stare posty 🙃.</p><p>Dzięki i do zobaczenia!</p><p><img src="https://images.unsplash.com/photo-1472898965229-f9b06b9c9bbe?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" alt="welcome"></p>]]></content:encoded>
-            <category>deploy</category>
-            <category>azure</category>
-            <category>devops</category>
-            <category>agent</category>
-            <category>agents</category>
-            <category>pipelines</category>
-        </item>
         <item>
             <title><![CDATA[Jak wdrożyć Azure Pipelines agenta? (How to deploy Azure Pipelines agent?)]]></title>
             <link>https://blog.justcloud.pl/how to deploy azure pipelines agent</link>

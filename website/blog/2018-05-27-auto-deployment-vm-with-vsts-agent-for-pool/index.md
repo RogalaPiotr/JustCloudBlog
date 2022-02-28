@@ -46,7 +46,7 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
 
 ## **Sekcja Variables:**
 
-- **vmsize** - ustawiony na "Standard\_B1s" - dosyć tani i wystarczający na maszynę deployment’owy - pamiętaj, aby sprawdzić, czy masz możliwość deploy’owania tej maszyny w swojej subskrypcji w innym przypadku zgłoś request do supportu Microsoft w celu uruchomienia wielkości B\_size.
+- **vmsize** - ustawiony na "Standard_B1s" - dosyć tani i wystarczający na maszynę deployment’owy - pamiętaj, aby sprawdzić, czy masz możliwość deploy’owania tej maszyny w swojej subskrypcji w innym przypadku zgłoś request do supportu Microsoft w celu uruchomienia wielkości B_size.
 - **urldonwloadagent** - w tym miejscu jest podany link do ściągnięcia aktualnego zip'a z agentem VSTS - w razie zmiany wersji należy zaktualizować link na aktualny
 - **filescriptURI** - skrypt napisany przeze mnie w celu automatycznego pobrania i zainstalowania agenta na maszynie: https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/vstsagent.ps1
 - **filescriptURISplit** - bardzo ciekawa funkcja, która rozbija powyższy url na tekst tam, gdzie jest slah "/" co w efekcie generuje nam obiekt

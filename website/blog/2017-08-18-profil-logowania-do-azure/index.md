@@ -27,6 +27,8 @@ Spotkałem się ostatnio z bardzo ciekawym feature’m związanym z zapisaniem s
 
 **Dokumentacja:** Add-AzureRmAccount: [https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/add-azurermaccount?view=azurermps-3.8.0](https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/add-azurermaccount?view=azurermps-3.8.0) Save-AzureRmContext: [https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/save-azurermcontext?view=azurermps-3.8.0](https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/save-azurermcontext?view=azurermps-3.8.0) Import-AzureRmContext: [https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/import-azurermcontext?view=azurermps-4.2.0](https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/import-azurermcontext?view=azurermps-4.2.0) WebInstaller: [https://www.microsoft.com/web/downloads/platform.aspx](https://www.microsoft.com/web/downloads/platform.aspx)
 
+<!--truncate-->
+
 W moim przypadku mamy dwie subskrypcje i zapisując swój profil mogę zdefiniować jaka ma zostać wybrana subskrypcja w momencie kiedy będę go importował w dalszej części. Na początku pobiore ID Subskrypcji w klasyczny sposób: otwieram okno PowerShella loguję się używając _Login-AzureRmAccount_, a następnie wpisuję _Get-AzureRmSubscrpytion_ i dostaje taki wynik:
 
 ![](images/loginazure1.jpg)

@@ -29,17 +29,17 @@ Wykonuje kolejno komendy:
 
 <!--truncate-->
 
-Tworzenie nowej resource groupy:
+Tworzenie nowej resource grupy:
 
 `New-AzResourceGroup -Name 'simple-vm-shutdown-on-time' -Location westeurope`
 
-Sprawdzenie co wyświetli poleniecenie Test-ARMExistingResource:
+Sprawdzenie co wyświetli polecenie Test-ARMExistingResource:
 
 `Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose`
 
 ![](images/2019-09-15_12h46_05.png)
 
-Wynikiem jest informacja co zostanie utworzone. Super sprawa, to teraz zrobie deployment szablonu i sprawdzimy ponownie.
+Wynikiem jest informacja co zostanie utworzone. Super sprawa, to teraz zrobię deployment szablonu i sprawdzimy ponownie.
 
 `New-AzResourceGroupDeployment -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose`
 

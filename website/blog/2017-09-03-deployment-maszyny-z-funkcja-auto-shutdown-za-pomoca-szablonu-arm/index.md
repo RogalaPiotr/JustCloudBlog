@@ -36,6 +36,8 @@ W poprzendich moich postach możesz przeczytać jak zalogować się do Azure za 
 - Dokumentacja: [https://docs.microsoft.com/en-us/azure/templates/microsoft.devtestlab/schedules](https://docs.microsoft.com/en-us/azure/templates/microsoft.devtestlab/schedules)
 - Zones: [https://msdn.microsoft.com/en-us/library/gg154758.aspx](https://msdn.microsoft.com/en-us/library/gg154758.aspx)
 
+<!--truncate-->
+
 **Kod:**
 
 - Szablon dostępny jest na moim github'ie: [https://github.com/RogalaPiotr/JustCloudPublic/blob/master/simple-vm-shutdown-on-time/azuredeploy.json](https://github.com/RogalaPiotr/JustCloudPublic/blob/master/simple-vm-shutdown-on-time/azuredeploy.json)

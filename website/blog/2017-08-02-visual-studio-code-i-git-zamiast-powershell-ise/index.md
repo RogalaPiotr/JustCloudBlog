@@ -31,6 +31,8 @@ Do ściągnięcia z: [https://code.visualstudio.com/](https://code.visualstudio
 
 Instruktarz video: [https://channel9.msdn.com/Blogs/MVP-Azure/Transitioning-from-PowerShell-ISE-to-VS-Code](https://channel9.msdn.com/Blogs/MVP-Azure/Transitioning-from-PowerShell-ISE-to-VS-Code)
 
+<!--truncate-->
+
 Instalacja bardzo prosta: "next/next/next"
 
 Aby korzystać z comand line'u PowerShella należy doinstalować moduł: [https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

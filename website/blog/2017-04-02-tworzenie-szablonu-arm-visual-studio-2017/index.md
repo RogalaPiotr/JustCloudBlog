@@ -23,7 +23,7 @@ keywords:
 hide_table_of_contents: true
 ---
 
-Ten wpis jest przeznaczony dla osób chcących nauczyć się tworzenia szablonów ARM'owych do deployowania w Azure. Visual Studio ma tylko nam pomóc w pracy z szablonem natomiast moim zdaniem przydaje się na początku pracy z ARM oraz przy rozbudowanych szablonach. Po pierwsze podczas edycji plików .json w VS zobaczymy strukturę całego szablonu co pomoże nam zrozumieć co potrzebujemy, żeby działał poprawnie. Po drugie gdy mamy bardzo duże szablony VS pomaga nam odnaleźć się w nim poprzez JSON Outline, w którym w wygodny sposób możemy sprawdzić wszystkie elementy: parameters, variables, resources.
+Ten wpis jest przeznaczony dla osób chcących nauczyć się tworzenia szablonów ARM'owych do deploy'owania w Azure. Visual Studio ma tylko nam pomóc w pracy z szablonem natomiast moim zdaniem przydaje się na początku pracy z ARM oraz przy rozbudowanych szablonach. Po pierwsze podczas edycji plików .json w VS zobaczymy strukturę całego szablonu co pomoże nam zrozumieć co potrzebujemy, żeby działał poprawnie. Po drugie gdy mamy bardzo duże szablony VS pomaga nam odnaleźć się w nim poprzez JSON Outline, w którym w wygodny sposób możemy sprawdzić wszystkie elementy: parameters, variables, resources.
 
 Cel: Stworzyć czysty szablon ARM z wykorzystaniem Visual Studio 2017.
 

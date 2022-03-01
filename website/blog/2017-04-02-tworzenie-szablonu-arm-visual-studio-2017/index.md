@@ -1,7 +1,7 @@
 ---
 slug: tworzenie-szablonu-arm-visual-studio-2017
 title: "Tworzenie szablonu ARM - Visual Studio 2017"
-description: "Jak tworzyć wdroyć"
+description: "Jak tworzyć wdrożyć"
 authors: [progala]
 date: "2017-04-02"
 tags: 
@@ -46,11 +46,11 @@ Gdy szablon się utworzy w prawej części zobaczymy pliki *.json oraz *.ps1. Pl
 
 ![](images/Screenshot-from-2017-04-02-00-09-02.png)
 
-Plik azuredeploy.json jest zbudowany z 4 sekcji: parameters, variables, resources, output. Sekcja parameters związana jest z zdefiniowaniem parametrów, które mają być użyte w dalszej części projektu. Sekcja variables to zmienne gdzie definiujemy na "sztywno", które są wykorzystywane w sekcji resources. Sekcja resources jest najważniejsza ponieważ w niej definiujemy wszystkie zasoby, które mają zostać utworzone w czasie deploy'mentu. Sekcja output nie jest wymagana natomiast w niej możemy zdefiniować jakie dane wyświetlić, które zobaczymy po utworzeniu deploymentu np. IP serwera, nazwa serwera, itp.
+Plik azuredeploy.json jest zbudowany z 4 sekcji: parameters, variables, resources, output. Sekcja parameters związana jest z zdefiniowaniem parametrów, które mają być użyte w dalszej części projektu. Sekcja variables to zmienne gdzie definiujemy na "sztywno", które są wykorzystywane w sekcji resources. Sekcja resources jest najważniejsza ponieważ w niej definiujemy wszystkie zasoby, które mają zostać utworzone w czasie deploy'mentu. Sekcja output nie jest wymagana natomiast w niej możemy zdefiniować jakie dane wyświetlić, które zobaczymy po utworzeniu deploy'mentu np. IP serwera, nazwa serwera, itp.
 
 ![](images/Screenshot-from-2017-04-02-00-09-23.png)
 
-Plik azuredeploy.parameters.json jest plikiem ze zmiennymi w celu modyfikacji parametrów głównego pliku z szablonem(azuredeploy.json). Tak naprawdę nie musimy z niego korzystać możemy tworzyć projekt w oparciu o zdefiniowane parametry w pliku z deploymentem. Jeśli chcemy tworzyć projekt, który będzie wykonywany często z VS możemy skupić się na tworzeniu tego pliku, aby móc w estetyczny sposób edytować parametry podczas deplyomentu. Dokładnie zostanie to opisane w kolejnym wpisie na blogu.
+Plik azuredeploy.parameters.json jest plikiem ze zmiennymi w celu modyfikacji parametrów głównego pliku z szablonem(azuredeploy.json). Tak naprawdę nie musimy z niego korzystać możemy tworzyć projekt w oparciu o zdefiniowane parametry w pliku z deploy'mentem. Jeśli chcemy tworzyć projekt, który będzie wykonywany często z VS możemy skupić się na tworzeniu tego pliku, aby móc w estetyczny sposób edytować parametry podczas deploy'mentu. Dokładnie zostanie to opisane w kolejnym wpisie na blogu.
 
 ![](images/Screenshot-from-2017-04-02-00-12-21.png)
 

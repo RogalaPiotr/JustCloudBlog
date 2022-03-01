@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[3243],{227:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/konferencja","name":"konferencja","count":2,"permalink":"/tags/konferencja"}')}}]);

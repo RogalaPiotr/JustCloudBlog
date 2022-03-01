@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[5043],{6976:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/azureday","name":"azureday","count":2,"permalink":"/tags/azureday"}')}}]);

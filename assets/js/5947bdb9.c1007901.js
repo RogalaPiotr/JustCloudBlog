@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[6351],{9445:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/softserve","name":"softserve","count":1,"permalink":"/tags/softserve"}')}}]);

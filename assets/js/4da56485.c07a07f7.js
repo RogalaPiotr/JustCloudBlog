@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[8659],{216:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/chef","name":"chef","count":1,"permalink":"/tags/chef"}')}}]);

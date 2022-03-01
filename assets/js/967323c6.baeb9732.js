@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[2292],{9131:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/microsoft-azure-group-user-poland","name":"microsoft-azure-group-user-poland","count":1,"permalink":"/tags/microsoft-azure-group-user-poland"}')}}]);

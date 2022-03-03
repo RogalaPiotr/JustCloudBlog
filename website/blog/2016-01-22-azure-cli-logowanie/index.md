@@ -1,5 +1,5 @@
 ---
-slug: 
+slug: azure-cli-logowanie
 title: "Azure CLI – Logowanie"
 description: "Chcesz się zalogować do Azure używając Azure CLI?"
 authors: [progala]

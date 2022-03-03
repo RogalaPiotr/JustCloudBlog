@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[1435],{5050:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/wroclaw","name":"wroclaw","count":1,"permalink":"/tags/wroclaw"}')}}]);

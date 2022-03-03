@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[2053],{7680:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/azure-resource-manager","name":"azure-resource-manager","count":2,"permalink":"/tags/azure-resource-manager"}')}}]);

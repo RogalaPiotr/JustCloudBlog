@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[5991],{3885:function(e){e.exports=JSON.parse('{"permalink":"/","page":1,"postsPerPage":4,"totalPages":6,"totalCount":23,"previousPage":null,"nextPage":"/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

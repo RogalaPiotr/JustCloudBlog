@@ -411,4 +411,74 @@ Masz pytania? zapraszam do komentowania.</p>]]></content>
         <category label="azure-resource-manager" term="azure-resource-manager"/>
         <category label="powershell" term="powershell"/>
     </entry>
+    <entry>
+        <title type="html"><![CDATA[Azure Storage Explorer - review]]></title>
+        <id>azure-storage-explorer-review</id>
+        <link href="https://blog.justcloud.pl/azure-storage-explorer-review"/>
+        <updated>2014-11-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Azure Storage Explorer aplikacja do przeglądu danych ze Storage Account w Microsoft Azure.]]></summary>
+        <content type="html"><![CDATA[<p>Jeśli korzystacie z Azure i zastanawiałeś się jak możesz w prosty sposób zarządzać storage'ami polecam Azure Storage Explorer wydany przez CodePlex-a. Narzędzie możemy pobrać tu: <a href="http://bit.ly/1O4n0pX" target="_blank" rel="noopener noreferrer" title="https://azurestorageexplorer.codeplex.com/releases/view/54430">http://bit.ly/1O4n0pX</a>. Jak to połączyć z Azure-m? Logujesz się do portalu, klikasz na kontener z zawartością dysków. Na dole strony pojawi się ikona “Keys” dotyczy ona Manage Access Keys. Są to dane wygenerowane, które umożliwiają nam tworzenie federacji pomiędzy portalami lub programami takimi jak ASE.</p><p><img alt="image" src="/assets/images/image-2787c1c3649dd47327a06ac9c6201514.png" width="503" height="480"></p><p>Kopiujemy dane z okienka Manage Access Keys i wklejamy analogicznie do Azure Storage Explorer.</p><p><img alt="image" src="/assets/images/image1-bc2926783e4d623c773a68500cd8df82.png" width="640" height="480"></p><p>Efektem jest podpięcie storage-a gdzie możemy zarządzać dyskami bez logowania do portalu Azure-wego. Jednym z atutów jest proste przenoszenie dysków .vhd z lokalnego urządzenia do chmury. Nie będę sie rozpisywał i zachwalał, zapraszam do testów, jeśli masz pytania zapraszam.</p><p><img alt="image" src="/assets/images/image2-44e4fdb74637538b9f8aebc3fcfe02fa.png" width="640" height="398"></p>]]></content>
+        <author>
+            <name>Piotr Rogala</name>
+            <uri>https://github.com/RogalaPiotr</uri>
+        </author>
+        <category label="azure" term="azure"/>
+        <category label="microsoft-azure-storage-explorer" term="microsoft-azure-storage-explorer"/>
+        <category label="storage" term="storage"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Migracja dysku .vhd do Azure – Migration disc .vhd to Azure]]></title>
+        <id>migracja-dysku-vhd-do-azure-migration-disc-vhd-to-azure</id>
+        <link href="https://blog.justcloud.pl/migracja-dysku-vhd-do-azure-migration-disc-vhd-to-azure"/>
+        <updated>2014-10-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Migracja dysku vhd z on-prem do Azure krok po kroku.]]></summary>
+        <content type="html"><![CDATA[<p>W tym artykule opiszę jak możemy przemigrować do Azure dysk z Windows 10 TechPreview.</p><ol><li>Przygotowujemy dysk .vhd<ul><li>Jeśli posiadamy dysk .vhdx możemy użyć polecenia PS w celu przekonwertowania:</li></ul></li></ol><p>Convert-VHD –Path “D:\Hyper-V\Windows10\Virtual Hard Disks\Windows10.vhdx" –DestinationPath “D:\Hyper-V\Windows10\Virtual Hard Disks\Windows10.vhd</p><p><img alt="azure-migracja-1" src="/assets/images/102014_1550_Migracjadys1-03a3c4751869e8ceff79c8799292a1b4.png" width="604" height="402"></p><p><img alt="azure-migracja-2" src="/assets/images/102014_1550_Migracjadys2-b407990771072d04eb772c9a507df63b.png" width="605" height="154"></p><ol><li>Wybieramy storage, na który będziemy migrować dysk, najbardziej nas interesuje linki blobs.</li><li>Odpalamy PowerShell-a dla Azure<ul><li>Jeśli nie masz przystawki Azure-owej możesz pobrać ją tu: <a href="http://go.microsoft.com/?linkid=9811175" target="_blank" rel="noopener noreferrer">http://go.microsoft.com/?linkid=9811175</a></li></ul></li><li>W konsoli wklepujemy:</li></ol><div class="codeBlockContainer_I0IT theme-code-block"><div class="codeBlockContent_wNvx"><pre tabindex="0" class="prism-code language-text codeBlock_jd64 thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token plain">$cred = Get-Credential</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Add-AzureAccount -Credential $cred</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$sourceVHD = “D:\Hyper-V\Windows10\Virtual Hard Disks\Windows10.vhdx"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$destinationVHD="https://test-storage.blob.core.windows.net/vhds/Windows10-Test.vhd"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Add-AzureVhd -LocalFilePath $sourceVHD -Destination $destinationVHD -NumberOfUploaderThreads 5</span><br></span></code></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_wuS7 clean-btn">Copy</button></div></div><p><strong>Dla $source i $destynation zmieniamy analogicznie do naszych potrzeb</strong></p><ol start="5"><li>Efekt przenoszenia do Azure.</li></ol><p><img alt="azure-migracja-3" src="/assets/images/azure10prew-2a97d5d3375fb8fda82b84c62e896290.png" width="604" height="136"></p><ol start="6"><li><p>Przechodzimy do Virtual Machines &gt; Disk</p><ul><li><p>Tutaj wybieramy nasz .vhd i klikamy Create.</p></li><li><p>Wypełniamy nazwę obrazu oraz wskazujemy go w naszym kontenerze z dyskami.</p></li></ul></li></ol><p><img alt="azure-migracja-4" src="/assets/images/102014_1550_Migracjadys4-ee3d25f72eda2cf2e01030559ad2876f.png" width="605" height="484"></p><ol><li>Chcąc teraz skorzystać z naszego dysku przechodzimy do galerii z systemami New &gt; Compute &gt; Virtual Machine &gt; From Gallery<ul><li>Klikając na My Images zobaczymy nasz przygotowany dysk.</li></ul></li></ol><p>I tak udało nam się przenieść wirtualkę do Azure, może to być skonfigurowana gotowa do pracy bądź dysk bazowy „template” który możemy wykorzystywać przy tworzeniu innych maszyn.</p><p><strong>Opcja ściągnięcia dysku .vhd z Azure:</strong></p><ol><li>Odpalamy konsole PowerShell Azure<ul><li>Wklepujemy:</li></ul></li></ol><div class="codeBlockContainer_I0IT theme-code-block"><div class="codeBlockContent_wNvx"><pre tabindex="0" class="prism-code language-text codeBlock_jd64 thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token plain">$cred = Get-Credential</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Add-AzureAccount -Credential $cred</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$sourceVHD = "https://storage-test.blob.core.windows.net/vhds/Windows10Test.vhd"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$destinationVHD = "D:\Hyper-V\Windows10\Virtual Hard Disks\Windows10.vhd"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Save-AzureVhd -Source $sourceVHD -LocalFilePath $destinationVHD -NumberOfThreads 5</span><br></span></code></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_wuS7 clean-btn">Copy</button></div></div>]]></content>
+        <author>
+            <name>Piotr Rogala</name>
+            <uri>https://github.com/RogalaPiotr</uri>
+        </author>
+        <category label="azure" term="azure"/>
+        <category label="migracja" term="migracja"/>
+        <category label="powershell" term="powershell"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[RhinoApps – Uniwersalność, skalowalność i aplikacje – nowy wymiar usług Cloud Computing]]></title>
+        <id>rhinoapps-pilot</id>
+        <link href="https://blog.justcloud.pl/rhinoapps-pilot"/>
+        <updated>2013-10-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[RhinoApp to nowe najnowsze rozwiązanie do wirtualizacji aplikacji. W chmurze możemy wykorzystać aplikacje bez instalowania ich na swoim środowisku.]]></summary>
+        <content type="html"><![CDATA[<p>Codziennie jesteśmy bombardowani sloganami: "dane w chmurze", "przetwarzanie w chmurze" itp. Cloud-y stały się modne i każdy chce dołączyć się do tego trendu. Z tego powodu rzadko spotyka się naprawdę innowacyjne produkty, wykorzystujące w pełni możliwości, jakie dają nam chmury. Polski rynek IT jest jednym z przodujących na świecie, dlatego zaprezentuję wszystkim czytelnikom naprawdę nowoczesny projekt zespołu z Wrocławia. Rhino Team przedstawia rozwiązanie cloud-owe z pomocą, którego możemy korzystać z aplikacji bez ich instalacji. Idea opiera się na dostarczeniu aplikacji desktopowej z mocą obliczeniową serwerów w chmurze na każde urządzenie. W zależności od potrzeb możemy zbudować własne środowisko do pracy w oparciu o wydajny serwer obliczeniowy bez wiedzy na temat konfiguracji. Ostatecznie użytkownik otrzymuje gotowe rozwiązanie gdzie uruchamia wszystkie programy. Cała techniczna część działa w tle, będąc nie widoczną dla użytkownika końcowego. Pilot: Już 19.10.2013 ruszy portal z rejestracją. W skrócie zaprezentuję jak wygląda działanie aplikacji Rhino. Panel logowania jest bardzo prosty i zrozumiały wystarczy, że wpiszemy swoje dane, a następnie zostaniemy przeniesieni do store-a z aplikacjami.
+<img alt="screen-3" src="/assets/images/screen-3-21bde1d8714c6daa433dc3bee097870c.png" width="772" height="585">
+<img alt="screen-2" src="/assets/images/screen-2-fabdafb834cf489fc6069bbeaf3f5388.png" width="1030" height="297">
+Do wyboru mamy aplikacje freeware, ale oferta aplikacji będzie systematycznie rozwijana. Po kliknięciu na ikonę uruchamia nam się aplikacja bez konieczności instalacji na lokalnym komputerze. Ponadto możemy uruchomić tę samą aplikację na tablecie czy telefonie.
+<img alt="screen-1" src="/assets/images/screen-1-fb09900db0700129a2d00b8a9078e8ae.png" width="1354" height="986">
+W tym segmencie została zlikwidowana granica. Od teraz możemy używać dostępnych aplikacji na systemach Windows, Windows Phone, Linux, Mac, IOS, Android.&nbsp; Jeśli wykonujesz projekty na różnych komputerach wystarczy, że rozpoczniesz korzystanie z aplikacji w chmurze i swój program będziesz miał ze swoim projektem zawsze pod ręką.
+<img alt="screen-4" src="/assets/images/screen-4-66d8443e0591647abc1434dc829f7978.png" width="750" height="586">
+Zachęcam do rejestracji, która rusza 19.10.2013 o godzinie 20.00 na stronie
+<a href="http://rhinoapps.eu" target="_blank" rel="noopener noreferrer" title="http://rhinoapps.eu">www.rhinoapps.eu</a>
+Wszystkich dodatkowych informacji dowiemy się w raz z uruchomieniem kompletnej strony.</p>]]></content>
+        <author>
+            <name>Piotr Rogala</name>
+            <uri>https://github.com/RogalaPiotr</uri>
+        </author>
+        <category label="cloud" term="cloud"/>
+        <category label="cloud-apps" term="cloud-apps"/>
+        <category label="rhino-apps" term="rhino-apps"/>
+        <category label="rhino-team" term="rhino-team"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pierwsze testy nowej cloud-owej platformy. The first tests of the new cloud platform.]]></title>
+        <id>test-platformy-cloud</id>
+        <link href="https://blog.justcloud.pl/test-platformy-cloud"/>
+        <updated>2013-09-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Pierwsze testy nowej cloud-owej platformy. Używaj aplikacji na każdym urządzeniu bez ich instalacji, a o mocy potężnych serwerów obliczeniowych.]]></summary>
+        <content type="html"><![CDATA[<p>Witam, justcloud jako pierwszy otrzyma możliwość przetestowania nowej platformy cloud-owej. Polski zespół IT opracował bardzo ciekawe rozwiązanie aplikacji chmurowych. Swoją ofertę kierują zarówno do firm jak i osób prywatnych. Obecnie użytkownik ,w zależności od potrzeb, otrzymuje możliwość dowolnego skalowania swojego środowiska. Co ciekawe aplikacje będą działać na wszystkich platformach PC, Mac, Linux, Android, iPhone! Wszystkich informacji nie mogę teraz zdradzać, ale rozwiązanie jest naprawdę rewolucyjne, nie mogę się doczekać. W najbliższym czasie opublikuję test platformy, zapowiada się ciekawa notka, pozdrawiam!</p><p><img alt="clouds" src="/assets/images/clouds-790059fc51548e947aaa13d567644d40.png" width="388" height="600">]</p>]]></content>
+        <author>
+            <name>Piotr Rogala</name>
+            <uri>https://github.com/RogalaPiotr</uri>
+        </author>
+        <category label="chmura" term="chmura"/>
+        <category label="cloud" term="cloud"/>
+        <category label="cloud-applications" term="cloud-applications"/>
+    </entry>
 </feed>

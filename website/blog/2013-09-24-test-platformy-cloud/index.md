@@ -17,4 +17,4 @@ hide_table_of_contents: true
 
 Witam, justcloud jako pierwszy otrzyma możliwość przetestowania nowej platformy cloud-owej. Polski zespół IT opracował bardzo ciekawe rozwiązanie aplikacji chmurowych. Swoją ofertę kierują zarówno do firm jak i osób prywatnych. Obecnie użytkownik ,w zależności od potrzeb, otrzymuje możliwość dowolnego skalowania swojego środowiska. Co ciekawe aplikacje będą działać na wszystkich platformach PC, Mac, Linux, Android, iPhone! Wszystkich informacji nie mogę teraz zdradzać, ale rozwiązanie jest naprawdę rewolucyjne, nie mogę się doczekać. W najbliższym czasie opublikuję test platformy, zapowiada się ciekawa notka, pozdrawiam!
 
-![clouds](images/clouds.jpg)]
+![clouds](images/clouds.png)]

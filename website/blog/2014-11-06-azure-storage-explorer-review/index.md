@@ -9,7 +9,6 @@ tags:
   - "microsoft-azure-storage-explorer"
   - "storage"
 keywords:
-tags: 
   - "azure"
   - "microsoft-azure-storage-explorer"
   - "storage"

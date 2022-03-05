@@ -73,4 +73,4 @@ Kolejne kroki przypominają konfigurację z poprzedniego Windows Server 2008. Wy
 
 Aby sprawdzić czy działają nasze udostępnione aplikacje należy wejść na stronę: https://nazwa_serwera.domena/rdweb . Ciekawostką jaką zauważyłem jest możliwość uruchomienia strony Web Access z innych przeglądarek niż IE. Gdy konfigurowałem zdalne aplikacje pod Windows Server 2008R2 Web Access nie działało pod Chrome / FF itd., a w WS 2012 jak widać w chrome zadziałał bez problemu 🙂 :
 
-![](images/20-300x225.jpg)
+![](images/20.jpg)

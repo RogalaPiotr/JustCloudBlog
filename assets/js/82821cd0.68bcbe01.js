@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[8976],{7482:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/infomex","name":"infomex","count":1,"permalink":"/tags/infomex"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[2076],{1562:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/konfiguracja","name":"konfiguracja","count":1,"permalink":"/tags/konfiguracja"}')}}]);

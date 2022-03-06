@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[1506],{4512:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/teledysk","name":"teledysk","count":1,"permalink":"/tags/teledysk"}')}}]);

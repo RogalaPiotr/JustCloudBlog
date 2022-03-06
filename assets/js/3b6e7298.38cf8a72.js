@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[1833],{5964:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/ssd","name":"ssd","count":1,"permalink":"/tags/ssd"}')}}]);

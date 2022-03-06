@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[4878],{2846:function(u){u.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/cloud-computing","name":"cloud-computing","count":2,"permalink":"/tags/cloud-computing"}')}}]);

@@ -515,5 +515,49 @@ Kilka dni temu miałem okazję uczestniczyć na spotkaniu firmy Infomex, która 
             <category>remotefx</category>
             <category>webcast</category>
         </item>
+        <item>
+            <title><![CDATA[Citrix - Remote PC]]></title>
+            <link>https://blog.justcloud.pl/remote-pc</link>
+            <guid>remote-pc</guid>
+            <pubDate>Fri, 20 Jul 2012 00:00:00 GMT</pubDate>
+            <description><![CDATA[Citrix przedstawił bardzo fajny filmik przedstawiający możliwość używania jednego systemu na różnych urządzeniach za pomocą zdalnego pulpitu. Sądzę, że coraz bliżej nam do korzystania z jednego systemu nie zależnie od tego gdzie jesteśmy i jakie urządzenia są wokół nas.]]></description>
+            <content:encoded><![CDATA[<p>Citrix przedstawił bardzo fajny filmik przedstawiający możliwość używania jednego systemu na różnych urządzeniach za pomocą zdalnego pulpitu. Sądzę, że coraz bliżej nam do korzystania z jednego systemu nie zależnie od tego gdzie jesteśmy i jakie urządzenia są wokół nas. Filmik wygląda ciekawie, aczkolwiek interesuje mnie jak to działa w rzeczywistości 😉.</p><p><a href="https://www.youtube.com/watch?v=PtkZYe1lci8" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/PtkZYe1lci8/0.jpg"></a></p><p>Niestety video nie przetrwało próby czasu.</p>]]></content:encoded>
+            <category>citrix</category>
+            <category>rdp</category>
+            <category>remote</category>
+            <category>remote-pc</category>
+        </item>
+        <item>
+            <title><![CDATA[Awaria - e24cloud.pl]]></title>
+            <link>https://blog.justcloud.pl/awaria-e24cloud-pl</link>
+            <guid>awaria-e24cloud-pl</guid>
+            <pubDate>Thu, 07 Jun 2012 00:00:00 GMT</pubDate>
+            <description><![CDATA[4 czerwca w jednej z największych serwerowni w Polsce udostępniającej Cloud powstała awaria z poważnymi skutkami. Chodzi tu o serwerownię utrzymywaną przez firmę Beyond. Awaria została spowodowana przepięciem elektrycznym, jak tłumaczy Prezes Zarządu Michał Grzybkowski w krótkiej relacji na YouTube.]]></description>
+            <content:encoded><![CDATA[<p>4 czerwca w jednej z największych serwerowni w Polsce udostępniającej Cloud powstała awaria z poważnymi skutkami. Chodzi tu o serwerownię utrzymywaną przez firmę Beyond. Awaria została spowodowana przepięciem elektrycznym, jak tłumaczy Prezes Zarządu Michał Grzybkowski w krótkiej relacji na YouTube.</p><p><a href="https://www.youtube.com/watch?v=FXBIeetKuIk" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/FXBIeetKuIk/0.jpg"></a></p><p>Niestety video nie przetrwało próby czasu.</p><p>W relacji słyszymy o normach Tier-4,&nbsp; jakie spełnia serwerownia, a awaria powstała podczas testu zasilania, który odbywa się co 6 godzin. Awaria nastąpiła o godzinie 7.35 powodując wyłączenie największych polskich serwisów: Allegro.pl, Wykop.pl, Pay-U. Około 25 minut później dzięki agregatowi elektrycznemu serwisy zostały z powrotem powołane do życia. Jak mi wiadomo normy Tier-4 mówią o tym, że przerwania w działaniu serwerowni nie powinny mieć miejsca w związku z możliwością wykorzystania kilku osobnych aktywnych linii zasilających,&nbsp; zapobiegających awariom takim jak nagły zanik zasilania. Prezes Zarządu Michał Grzybkowski nie odniósł się w żaden sposób do awarii macierzy, jaka również powstała podczas zaniku zasilania. Na Fan Page-u e24cloud.com będącym produktem firmy Beyond pojawiały się informacje o tym, że owa awaria przyczyniła się do utraty danych z macierz dyskowych jak i backupów.</p><p>Utrata danych z dysków i backupów jest poważnym problemem, a klienci, którzy udostępniali swoje „usługi” kolejnym osobom są w większych tarapatach. E24cloud.com jest negatywnie komentowane na Fan Page-u przez swoich klientów, co ma swoje podstawy. Nikt nie brał pod uwagę rozpłynięcia się danych, niczym mgła, u największego dostawcy Public Cloud w Polsce, który zapewniał o 100% bezpieczeństwie przetrzymywania danych.</p><p>Głównie, chciałem skupić się na sprawie związanej z przewidywaniem awarii. Uważam, że w przypadku udostępniania takich usług, jakie oferuje e24cloud.pl kwestia bezpieczeństwa danych nie została w pełni zachowana, a na pewno przewidziana. Jak wiemy Cloud ma pomóc w przetrzymywaniu danych, ruchu danych, konsolidacji mocy obliczeniowych i tworzeniu nowych rozwiązań. Według mnie nie jest tu winny mechanizm chmury lecz wdrożony projekt mający zapewniać bezpieczeństwo backupów. Przechowywanie backupów wraz z macierzami na tej samej maszynie, jest narażeniem całości na awarie, powodujące utratę wszystkiego jednocześnie. Rozwiązań dla powstałego problemu jest, co najmniej kilka, więc dlaczego tak się stało? Ja tego niestety nie wiem.</p><p>Pod każdym z artykułów w sieci na temat awarii internauci negatywnie komentują rozwiązania Cloud-owe. Awarie się zdarzają i każdy powinien być tego świadomy. Natomiast trzeba wiedzieć gdzie leży popełniony błąd, a nie komentować tego słowami, że „Macie swoje chmury…” jak jeden z internautów. Cloud Computing nie jest nowością aczkolwiek jest nowo powstałym hasłem marketingowym.</p><p>Jestem ciekawy rozwiązania całej tej sprawy i efektów z odzyskiwania danych, ponieważ po 5 dniach nadal nie ma żadnych rewelacyjnych informacji. Uważam, że odzyskiwanie danych jest pokazaniem ze strony firmy zainteresowania i zadbaniem o swój wizerunek. Także wobec przyszłych klientów, którzy przeczytają w artykułach, że firma mimo wszystko próbowała odzyskać dane. Podsumowując, mogę tylko współczuć klientom, którzy utracili dane. Zaistniała awaria według relacji Michała Grzybkowskiego nie była tak naprawdę poważna i na pewno mogła roznieść się bez echa. Życzę powodzenia w odratowywaniu danych i w kolejnych pracach nad bezpiecznym przechowywaniem backupów.</p>]]></content:encoded>
+            <category>awaria</category>
+            <category>beyond</category>
+            <category>e24cloud</category>
+        </item>
+        <item>
+            <title><![CDATA[Cloud Computing]]></title>
+            <link>https://blog.justcloud.pl/cloud-computing</link>
+            <guid>cloud-computing</guid>
+            <pubDate>Thu, 08 Mar 2012 00:00:00 GMT</pubDate>
+            <description><![CDATA[Najważniejszym elementem rozpoczęcia budowy infrastruktury Cloud-owej w swojej firmie jest wiedza co możemy dzięki niej osiągnąć. Pozwoli to nam na wyciągnięcie maksymalnej ilości korzyści z nowego wdrożenia. Zaprezentowany poniżej film wyjaśnia niemal jak dla małego dziecka ideę działania chmur.]]></description>
+            <content:encoded><![CDATA[<p>Najważniejszym elementem rozpoczęcia budowy infrastruktury Cloud-owej w swojej firmie jest wiedza co możemy dzięki niej osiągnąć. Pozwoli to nam na wyciągnięcie maksymalnej ilości korzyści z nowego wdrożenia. Zaprezentowany poniżej film wyjaśnia niemal jak dla małego dziecka ideę działania chmur, zapraszam do oglądania:</p><p><a href="https://www.youtube.com/watch?v=Sgb62RQec8Q" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/Sgb62RQec8Q/0.jpg"></a></p><p>Niestety video nie przetrwało próby czasu.</p>]]></content:encoded>
+            <category>cloud-computing</category>
+            <category>ibm</category>
+        </item>
+        <item>
+            <title><![CDATA[Wizja przyszłości]]></title>
+            <link>https://blog.justcloud.pl/wizja-przyszlosci</link>
+            <guid>wizja-przyszlosci</guid>
+            <pubDate>Fri, 02 Mar 2012 00:00:00 GMT</pubDate>
+            <description><![CDATA[Pierwszy post rozpoczniemy krótką wizją przyszłości opracowanej według firmy Microsoft. Bardzo spodobał mi się styl filmu ponieważ jest przedstawiony w delikatnym klimacie.]]></description>
+            <content:encoded><![CDATA[<p>Pierwszy post rozpoczniemy krótką wizją przyszłości opracowanej według firmy Microsoft. Bardzo spodobał mi się styl filmu ponieważ jest przedstawiony w delikatnym klimacie, który trzyma fason. W zasadzie nie jestem fanem filmów obrazujących przyszłość ponieważ robią lekkiego smaku związanego z życiem "idealnym". Z czasem sami ocenimy czy wizja ma szansę się spełnić, zachęcam do obejrzenia.</p><p>Blog <strong>JustCloud.pl</strong> jest małym centrum informacji ze świata IT. Będziemy poruszać tematykę Cloud Computing - technologii jak i rozwiązań z nim związanych umożliwiające tworzenie infrastruktury "chmurowej". Zapraszam do częstszych odwiedzin, pozdrawiam!</p><p><a href="https://www.youtube.com/watch?v=KytMZOLyF4Q" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/KytMZOLyF4Q/0.jpg"></a></p>]]></content:encoded>
+            <category>cloud</category>
+            <category>microsoft</category>
+            <category>nowoczesnosc</category>
+        </item>
     </channel>
 </rss>

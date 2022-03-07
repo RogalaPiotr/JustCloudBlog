@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[9169],{5173:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/nowoczesnosc","name":"nowoczesnosc","count":1,"permalink":"/tags/nowoczesnosc"}')}}]);

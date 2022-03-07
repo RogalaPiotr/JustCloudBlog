@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[561],{7787:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/ibm","name":"ibm","count":1,"permalink":"/tags/ibm"}')}}]);

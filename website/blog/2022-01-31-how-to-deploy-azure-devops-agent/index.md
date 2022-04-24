@@ -91,7 +91,7 @@ Przygotowałem ilustracje związaną z całym projektem dla wdrożenia Azure Pip
                }
            }
             ```
-        3. [script-post-configuration.ps1](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/script-post-configuration.ps1&version=GBmain&_a=contents) - skrypt odpowiada za instalację agenta oraz przygotowanie potrzebnych paczek. Jeśli potrzebujesz doinstalować dodatkowe paczki dadaj je w sekcji: # Install Packages - najprościej jest skorzysta z paczek choco: <https://docs.chocolatey.org/en-us/choco/commands/list>
+        3. [script-post-configuration.ps1](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/script-post-configuration.ps1&version=GBmain&_a=contents) - skrypt odpowiada za instalację agenta oraz przygotowanie potrzebnych paczek. Jeśli potrzebujesz doinstalować dodatkowe paczki dadaj je w sekcji: # Install Packages - najprościej jest skorzystać z paczek choco: <https://docs.chocolatey.org/en-us/choco/commands/list>
            1. Opis zmiennych
                1. urlProjectADO [URL for your ADO project]
                2. auth (default set: PAT) [Authentication method for your ADO]

@@ -209,3 +209,10 @@ Po wdrożeniu:
 ![](images/2022-02-27_21-35-04.jpg)
 
 Jeśli masz jakieś pytania zapraszam do komentowania 🙂.
+
+[![](https://img.youtube.com/vi/bjtgALglU2o/0.jpg)](https://www.youtube.com/watch?v=bjtgALglU2o)
+
+Artykuł dostępny również na Medium i LinkedIn:
+
+* (EN) [https://piotr-rogala.medium.com/7223953d2e1f](https://piotr-rogala.medium.com/7223953d2e1f)
+* (PL) [https://www.linkedin.com/pulse/jak-wdro%25C5%25BCy%25C4%2587-azure-pipelines-agenta-piotr-rogala/](https://www.linkedin.com/pulse/jak-wdro%25C5%25BCy%25C4%2587-azure-pipelines-agenta-piotr-rogala/)

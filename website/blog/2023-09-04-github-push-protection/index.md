@@ -33,7 +33,8 @@ Aby skorzystać z funkcji "Push protection for repositories and organizations" d
 ![example](images/2023-09-04_13-43-26.png)
 
 <aside>
-💡 Dodatkowo można to skonfigurować w podobny sposób dla całej organizacji.
+
+**💡 Dodatkowo można to skonfigurować w podobny sposób dla całej organizacji.**
 </aside>
 
 Natomiast jesli chcesz to skonfigurowa na poziomie repozyotrium wykonaj te kroki:
@@ -46,5 +47,7 @@ Zapisz zmiany.
 
 ![example](images/2023-09-04_13-53-10.png)
 
-Link do pełnej dokumentacji: <https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/push-protection-for-repositories-and-organizations>
+Link do pełnej dokumentacji: 
+* <https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/push-protection-for-repositories-and-organizations>
+
 Jeśli masz jakieś pytania zapraszam do komentowania 🙂.

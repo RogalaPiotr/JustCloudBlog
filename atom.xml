@@ -2,11 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.justcloud.pl/</id>
     <title>JustCloud Blog Blog</title>
-    <updated>2022-01-31T00:00:00.000Z</updated>
+    <updated>2023-09-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.justcloud.pl/"/>
     <subtitle>JustCloud Blog Blog</subtitle>
     <icon>https://blog.justcloud.pl/https://raw.githubusercontent.com/RogalaPiotr/JustCloudWeb/gh-pages/assets/images/favicon-new-1.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Push protection w GitHub przed opublikowaniem haseł]]></title>
+        <id>github push protection leak credentials</id>
+        <link href="https://blog.justcloud.pl/github push protection leak credentials"/>
+        <updated>2023-09-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Wprowadzenie programistów i cloud inżynierów w funkcję 'Push protection for repositories and organizations' w GitHubie, która skutecznie zapobiega przesyłaniu nieautoryzowanych danych i zwiększa bezpieczeństwa repozytoriów. Przeczytaj, aby dowiedzieć się, w jaki sposób ta nowa funkcja GitHuba pomaga chronić wrażliwe dane przed przypadkowym przesyłaniem i zapewnia pełną kontrolę nad bezpieczeństwem Twojego repozytorium.]]></summary>
+        <content type="html"><![CDATA[<p>GitHub jako popularna platforma zarządzania kodem stale wprowadza nowe funkcje, aby zapewnić bezpieczne środowisko dla repozytoriów w organizacji i projektach prywatnych. Jednym z ulepszeń jest funkcja "Push protection for repositories and organizations" (Ochrona przed przesyłaniem do repozytoriów i organizacji), która przynosi wielu korzyści dla Programistów i Cloud Inżynierom czy DevOps-om. W tym artykule omówimy, jak ta nowa funkcja wpływa na Twoje repozytorium na GitHubie i w jaki sposób możesz skorzystać z jej zalet.</p><p>Czym jest "<strong>Push protection for repositories and organizations</strong>"?</p><p>"Push protection for repositories and organizations" to funkcja, która zapewnia ochronę przed nieautoryzowanymi zmianami w Twoim repozytorium na GitHubie. Działa na poziomie organizacji, chroniąc wszystkie repozytoria w niej zawarte, jak również można ją skonfigurować na poziomie indywidualnego repozytorium. Funkcja ta rozpoznaje potencjalnie wrażliwe dane, takie jak klucze API, hasła czy tokeny dostępowe, które są niezamierzenie przesyłane do repozytoriów.</p><p>Co ta funkcja zmienia w Twoim repozytorium?</p><ol><li>Wykrywanie i blokowanie przesyłania poufnych danych: Dzięki tej funkcji GitHub będzie automatycznie wykrywał poufne dane w wysyłanych plikach, w tym hasła, klucze API czy tokeny dostępowe. Przesyłanie takich danych do repozytorium jest częstym błędem i może prowadzić do naruszenia bezpieczeństwa. "Push protection for repositories and organizations" skutecznie zablokuje takie próby przesyłania, zapobiegając potencjalnym zagrożeniom.</li><li>Powiadamianie o potencjalnych naruszeniach: W przypadku wykrycia próby przesyłania poufnych danych, GitHub przekaże informacje o tym naruszeniu do właściciela repozytorium lub odpowiedniego zespołu bezpieczeństwa. To pomaga w wczesnym wykrywaniu i reagowaniu na potencjalne zagrożenia.</li><li>Personalizacja ochrony na różnych poziomach: Dzięki "Push protection for repositories and organizations" możesz dostosować ochronę na indywidualnym poziomie repozytorium oraz na poziomie organizacji. Możesz zdecydować, czy chcesz włączyć niestandardowe reguły dla swoich repozytoriów i jakie typy wrażliwych danych chcesz zablokować. To daje pełną kontrolę nad zapewnieniem bezpieczeństwa dla Twoich projektów.</li></ol><p>Jak skorzystać z "<strong>Push protection for repositories and organizations</strong>"?</p><p>Aby skorzystać z funkcji "Push protection for repositories and organizations" dla swojego profilu na GitHubie, wystarczy dokonać kilku kroków:</p><ol><li>Przejdź do Settings swojego profilu na GitHubie.</li><li>Wybierz zakładkę "Code security and analysis".</li><li>W sekcji "Push protection for yourself" wybierz "Enable" </li></ol><p><img alt="example" src="/assets/images/2023-09-04_13-43-26-ebd5707f6de2a93b68a3d8e9c9e29094.png" width="4136" height="2520"></p><aside>💡 Dodatkowo można to skonfigurować w podobny sposób dla całej organizacji.</aside><p>Natomiast jesli chcesz to skonfigurowa na poziomie repozyotrium wykonaj te kroki:</p><p>Przejdź do ustawień swojego repozytorium na GitHubie.
+Wybierz zakładkę "Security" (Bezpieczeństwo).
+W sekcji "Push protection" (Ochrona przed przesyłaniem) skonfiguruj preferowane ustawienia ochrony.
+Możesz zdecydować, które typy wrażliwych danych chcesz zablokować oraz czy chcesz włączyć powiadomienia o naruszeniach dla właściciela repozytorium lub odpowiedniego zespołu bezpieczeństwa.
+Zapisz zmiany.</p><p><img alt="example" src="/assets/images/2023-09-04_13-53-10-7caa548baf020c2192bcc88d0b0e689e.png" width="3230" height="3060"></p><p>Link do pełnej dokumentacji: <a href="https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/push-protection-for-repositories-and-organizations" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/push-protection-for-repositories-and-organizations</a>
+Jeśli masz jakieś&nbsp;pytania zapraszam do komentowania 🙂.</p>]]></content>
+        <author>
+            <name>Piotr Rogala</name>
+            <uri>https://github.com/RogalaPiotr</uri>
+        </author>
+        <category label="github" term="github"/>
+        <category label="push" term="push"/>
+        <category label="secrets" term="secrets"/>
+        <category label="credentials" term="credentials"/>
+        <category label="leak" term="leak"/>
+        <category label="repository" term="repository"/>
+        <category label="protection" term="protection"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Jak wdrożyć Azure Pipelines agenta? (How to deploy Azure Pipelines agent?)]]></title>
         <id>how to deploy azure pipelines agent</id>

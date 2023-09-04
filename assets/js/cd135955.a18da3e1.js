@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[2921],{7859:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/leak","name":"leak","count":1,"permalink":"/tags/leak"}')}}]);

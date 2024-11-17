@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[5641],{21383:e=>{e.exports=JSON.parse('{"tag":{"label":"gcp","permalink":"/tags/gcp","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/gcp","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

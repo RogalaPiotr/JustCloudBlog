@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2121],{5748:e=>{e.exports=JSON.parse('{"tag":{"label":"gcloud","permalink":"/tags/gcloud","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/gcloud","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

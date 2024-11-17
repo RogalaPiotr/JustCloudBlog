@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[8303],{87853:a=>{a.exports=JSON.parse('{"tag":{"label":"awaria","permalink":"/tags/awaria","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/awaria","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

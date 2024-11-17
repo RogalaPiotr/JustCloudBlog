@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[2186],{5646:function(l){l.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/xen-cloud-platform","name":"xen-cloud-platform","count":1,"permalink":"/tags/xen-cloud-platform"}')}}]);

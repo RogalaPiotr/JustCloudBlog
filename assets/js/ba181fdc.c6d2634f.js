@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[7247],{451:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/gpu-pass-thru","name":"gpu-pass-thru","count":1,"permalink":"/tags/gpu-pass-thru"}')}}]);

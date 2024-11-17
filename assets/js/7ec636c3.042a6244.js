@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[3381],{8770:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/cloud-applications","name":"cloud-applications","count":1,"permalink":"/tags/cloud-applications"}')}}]);

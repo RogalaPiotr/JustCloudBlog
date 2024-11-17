@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[7959],{5868:function(u){u.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/ubuntu","name":"ubuntu","count":1,"permalink":"/tags/ubuntu"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[4815],{10932:e=>{e.exports=JSON.parse('{"tag":{"label":"logowanie","permalink":"/tags/logowanie","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/logowanie","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

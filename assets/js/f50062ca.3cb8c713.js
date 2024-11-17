@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[5495],{9539:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/resource-manager","name":"resource-manager","count":1,"permalink":"/tags/resource-manager"}')}}]);

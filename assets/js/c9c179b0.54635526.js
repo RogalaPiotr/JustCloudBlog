@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[5425],{3333:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/free-xen","name":"free-xen","count":1,"permalink":"/tags/free-xen"}')}}]);

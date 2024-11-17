@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[6039],{82109:e=>{e.exports=JSON.parse('{"tag":{"label":"free-xen","permalink":"/tags/free-xen","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/free-xen","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

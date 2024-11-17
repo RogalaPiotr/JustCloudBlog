@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[1451],{42262:a=>{a.exports=JSON.parse('{"tag":{"label":"nauka","permalink":"/tags/nauka","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/nauka","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

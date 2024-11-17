@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[9643],{96594:a=>{a.exports=JSON.parse('{"tag":{"label":"nvidia","permalink":"/tags/nvidia","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/nvidia","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

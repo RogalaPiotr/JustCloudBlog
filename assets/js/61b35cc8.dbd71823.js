@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[8081],{2473:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/ws-2012","name":"ws2012","count":1,"permalink":"/tags/ws-2012"}')}}]);

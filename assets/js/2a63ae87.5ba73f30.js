@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[2794],{8536:function(l){l.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/google-cloud-platform","name":"google cloud-platform","count":1,"permalink":"/tags/google-cloud-platform"}')}}]);

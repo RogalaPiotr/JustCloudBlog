@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[3889],{68017:a=>{a.exports=JSON.parse('{"tag":{"label":"maugp","permalink":"/tags/maugp","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/maugp","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

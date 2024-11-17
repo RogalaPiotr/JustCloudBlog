@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[3820],{71802:e=>{e.exports=JSON.parse('{"tag":{"label":"remote-pc","permalink":"/tags/remote-pc","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/remote-pc","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

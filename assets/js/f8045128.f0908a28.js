@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[9253],{5046:e=>{e.exports=JSON.parse('{"tag":{"label":"remote","permalink":"/tags/remote","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/remote","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

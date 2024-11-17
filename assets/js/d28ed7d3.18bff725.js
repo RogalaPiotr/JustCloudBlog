@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjustcloudblog=self.webpackChunkjustcloudblog||[]).push([[7764],{4964:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/ati","name":"ati","count":1,"permalink":"/tags/ati"}')}}]);

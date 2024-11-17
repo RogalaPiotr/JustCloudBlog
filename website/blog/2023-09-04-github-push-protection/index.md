@@ -48,6 +48,6 @@ Zapisz zmiany.
 ![example](images/2023-09-04_13-53-10.png)
 
 Link do pełnej dokumentacji: 
-* <https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/push-protection-for-repositories-and-organizations>
+* (https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/push-protection-for-repositories-and-organizations)
 
 Jeśli masz jakieś pytania zapraszam do komentowania 🙂.

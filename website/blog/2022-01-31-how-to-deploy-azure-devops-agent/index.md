@@ -10,7 +10,7 @@ keywords: [azure, devops, agent, pipelines]
 
 Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tak zwanych ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) przez 1800 minut (30 godzin) na miesiąc. W momencie przekroczenia tego czasu nie możemy wykonywać deployment'ów. Jedyna opcja to dokupić unlimited access do agenta za $40 na miesiąc minuty albo korzystać ze swojego serwera, laptopa po zainstalowaniu agenta - ta opcja wdrażania zwana jest w dokumentacji ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install). Dodam tylko, że wykorzystywanie własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym 🙃.
 
-Pricing page Azure DevOps: <https://azure.microsoft.com/pricing/details/devops/azure-devops-services/?WT.mc_id=AZ-MVP-5002690>
+Pricing page Azure DevOps: (https://azure.microsoft.com/pricing/details/devops/azure-devops-services/?WT.mc_id=AZ-MVP-5002690)
 
 Bardzo często słyszę pytanie, a po co mi własny serwer do wdrażania?
 
@@ -36,8 +36,8 @@ Przygotowałem ilustracje związaną z całym projektem dla wdrożenia Azure Pip
 
 1. Linki - za pomocą tych linków macie dostęp do mojego przykładowego wdrożenia
 
-* Azure Repos: <https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents>
-* Azure Pipeline: <https://dev.azure.com/justcloudpublic/How%20to%20deploy%20ADO%20agent/_build?definitionId=2>
+* Azure Repos: (https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents)
+* Azure Pipeline: (https://dev.azure.com/justcloudpublic/How%20to%20deploy%20ADO%20agent/_build?definitionId=2)
 
 [![Build Status](https://dev.azure.com/justcloudpublic/How%20to%20deploy%20ADO%20agent/_apis/build/status/vm-azure-devops-self-hosted-agents?branchName=main)](https://dev.azure.com/justcloudpublic/How%20to%20deploy%20ADO%20agent/_build/latest?definitionId=2&branchName=main)
 
@@ -91,7 +91,7 @@ Przygotowałem ilustracje związaną z całym projektem dla wdrożenia Azure Pip
                }
            }
             ```
-        3. [script-post-configuration.ps1](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/script-post-configuration.ps1&version=GBmain&_a=contents) - skrypt odpowiada za instalację agenta oraz przygotowanie potrzebnych paczek. Jeśli potrzebujesz doinstalować dodatkowe paczki dadaj je w sekcji: # Install Packages - najprościej jest skorzystać z paczek choco: <https://docs.chocolatey.org/en-us/choco/commands/list>
+        3. [script-post-configuration.ps1](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/script-post-configuration.ps1&version=GBmain&_a=contents) - skrypt odpowiada za instalację agenta oraz przygotowanie potrzebnych paczek. Jeśli potrzebujesz doinstalować dodatkowe paczki dadaj je w sekcji: # Install Packages - najprościej jest skorzystać z paczek choco: (https://docs.chocolatey.org/en-us/choco/commands/list)
            1. Opis zmiennych
                1. urlProjectADO [URL for your ADO project]
                2. auth (default set: PAT) [Authentication method for your ADO]
@@ -199,8 +199,8 @@ Przygotowałem ilustracje związaną z całym projektem dla wdrożenia Azure Pip
             * group: 'justcloudpublickeyvault'
     2. Requirements - potrzebujesz zanim zaczniesz wdrażać
        1. Azure Subskrypcja
-       2. PAT - Personal Access Token - <https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows&WT.mc_id=AZ-MVP-5002690#create-a-pat>
-       3. Key Vault - <https://docs.microsoft.com/azure/devops/pipelines/release/azure-key-vault?view=azure-devops&WT.mc_id=AZ-MVP-5002690>
+       2. PAT - Personal Access Token - (https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows&WT.mc_id=AZ-MVP-5002690#create-a-pat)
+       3. Key Vault - (https://docs.microsoft.com/azure/devops/pipelines/release/azure-key-vault?view=azure-devops&WT.mc_id=AZ-MVP-5002690)
 
 Po wdrożeniu:
 1. Azure DevOps agents

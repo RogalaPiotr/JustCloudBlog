@@ -57,7 +57,7 @@ git clone link_do_projektu
 ```
 ![](images/capture_002_18022018_231506.jpg)
 
-Jeśli nie wiesz, gdzie jest ten link, poniższy screen powinien to wyjaśnić. Na stronie https://twoj\_projekt.visualstudio.com jest możliwość sprawdzenia dokładnie adresu repozytorium klikając po prawej stronie na górze "Clone"
+Jeśli nie wiesz, gdzie jest ten link, poniższy screen powinien to wyjaśnić. Na stronie https://your-project-name.visualstudio.com jest możliwość sprawdzenia dokładnie adresu repozytorium klikając po prawej stronie na górze "Clone"
 
 ![](images/capture_001_18022018_231008.jpg)
 

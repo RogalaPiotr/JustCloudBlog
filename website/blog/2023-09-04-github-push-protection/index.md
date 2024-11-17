@@ -6,6 +6,7 @@ authors: [progala]
 date: "2023-09-04"
 tags: [github, push, secrets, credentials, leak, repository, protection]
 keywords: [github, push, protection]
+comments: true
 ---
 
 GitHub jako popularna platforma zarządzania kodem stale wprowadza nowe funkcje, aby zapewnić bezpieczne środowisko dla repozytoriów w organizacji i projektach prywatnych. Jednym z ulepszeń jest funkcja "Push protection for repositories and organizations" (Ochrona przed przesyłaniem do repozytoriów i organizacji), która przynosi wielu korzyści dla Programistów i Cloud Inżynierom czy DevOps-om. W tym artykule omówimy, jak ta nowa funkcja wpływa na Twoje repozytorium na GitHubie i w jaki sposób możesz skorzystać z jej zalet.

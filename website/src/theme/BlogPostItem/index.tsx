@@ -22,7 +22,7 @@ export default function BlogPostItemWrapper(props: Props): JSX.Element {
       <DiscussionEmbed
         shortname='justcloud'
         config={{
-          url: slug,
+          url: `https://blog.justcloud.pl/${slug}`,
           identifier: slug,
           title: title,
           language: 'pl_PL',

@@ -6,7 +6,9 @@
 
 # Generated files
 .docusaurus
+**/.docusaurus
 .cache-loader
+**/.cache-loader
 **/package-lock.json
 */package-lock.json
 

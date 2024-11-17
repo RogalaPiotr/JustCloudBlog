@@ -1,58 +1,59 @@
 ---
 slug: how to deploy azure pipelines agent
 title: "Jak wdrożyć Azure Pipelines agenta? (How to deploy Azure Pipelines agent?)"
-description: "Potrzebujesz stworzyć własny serwer z agentem do deploymentów w Azure DevOps? W tym artykule opisałem cały proces oraz skrypty umożliwiające bardzo szybkie wdrożenie."
+description: "Szukasz sposobu na wdrożenie własnego serwera z agentem do deploymentów w Azure DevOps? Dowiedz się, jak szybko i łatwo zrealizować to zadanie dzięki szczegółowemu procesowi i skryptom opisanym w tym artykule."
 authors: [progala]
 date: "2022-01-31"
-tags: [deploy, azure, devops, agent, agents, pipelines]
-keywords: [azure, devops, agent, pipelines]
+tags: [deploy, Azure, DevOps, agent, pipelines]
+keywords: [Azure, DevOps, deployment, agent, pipelines, wdrożenie]
 ---
+import ReactPlayer from 'react-player'
 
-Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tak zwanych ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) przez 1800 minut (30 godzin) na miesiąc. W momencie przekroczenia tego czasu nie możemy wykonywać deployment'ów. Jedyna opcja to dokupić unlimited access do agenta za $40 na miesiąc minuty albo korzystać ze swojego serwera, laptopa po zainstalowaniu agenta - ta opcja wdrażania zwana jest w dokumentacji ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install). Dodam tylko, że wykorzystywanie własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym 🙃.
+Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tzw. ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) przez 1800 minut (30 godzin) miesięcznie. Po przekroczeniu tego czasu nie możemy wykonywać deploymentów. Można jednak dokupić nielimitowany dostęp do agenta za $40 miesięcznie lub korzystać ze swojego serwera, np. laptopa, instalując agenta — ta opcja wdrażania jest znana w dokumentacji jako ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install). Dodam tylko, że wykorzystywanie własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym 🙃.
 
-Pricing page Azure DevOps: (https://azure.microsoft.com/pricing/details/devops/azure-devops-services/?WT.mc_id=AZ-MVP-5002690)
+Strona z cenami Azure DevOps: (https://azure.microsoft.com/pricing/details/devops/azure-devops-services/?WT.mc_id=AZ-MVP-5002690)
 
-Bardzo często słyszę pytanie, a po co mi własny serwer do wdrażania?
+Bardzo często słyszę pytanie: po co mi własny serwer do wdrażania?
+<ReactPlayer style={{ display: 'block', margin: 'auto', marginBottom: '20px' }} controls url='[a komu to potrzebne](https://www.youtube.com/watch?v=OO3FANjwKHY)'/>
 
-[![](https://img.youtube.com/vi/OO3FANjwKHY/0.jpg)](https://www.youtube.com/watch?v=OO3FANjwKHY)
 
-Klasyczna odpowiedź: to zależy... Robiąc prace dyplomową na uczelnie albo projekt PoC dla znajomego, możecie wybrać opcje postawienia agenta na swoim laptopie. Jeśli pracujecie w grupie paru osób najlepiej byłoby skorzystać z własnego serwera. Jeśli jesteście firmą i dostarczacie rozwiązania to napewno powinniście rozważyć własny serwer lub dokupienie "Microsoft-hosted" za $40 - jeśli czas wdrażania przekracza 1800 minut na miesiąc.
-Ale jest jeszcze jedna sytuacja kiedy wybierzecie własny serwer z agentami. Wiele firm korzysta z prywatnych kontrolowanych wewnętrznych sieci z ograniczonym dostępem z zewnątrz. Wdrożenie własnego serwera w waszej sieci pozwoli wam na łatwą komunikacje z wdrożonymi rozwiązaniami na platformie Microsoft Azure, ale zwiększycie też bezpieczeństwo procesowanych danych. Pamiętajmy że agent ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) to agent "publiczny" odizolowany od waszej sieci. ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install) może zostać wdrożony tak samo jako agent odizolowany, ale też możecie go połączyć lub wdrożyć we własnej sieci.
+Klasyczna odpowiedź: to zależy... Przy pracy nad pracą dyplomową lub projektem PoC dla znajomego można postawić agenta na swoim laptopie. Jeśli pracujecie w grupie kilku osób, najlepiej byłoby skorzystać z własnego serwera. Jeśli jesteście firmą dostarczającą rozwiązania, zdecydowanie warto rozważyć własny serwer lub zakup agentów "Microsoft-hosted" za $40, jeśli czas wdrażania przekracza 1800 minut miesięcznie. Jest jeszcze jedna sytuacja, kiedy warto wybrać własny serwer z agentami: wiele firm korzysta z prywatnych, kontrolowanych wewnętrznych sieci z ograniczonym dostępem z zewnątrz. Wdrożenie własnego serwera w takiej sieci pozwoli na łatwą komunikację z wdrożonymi rozwiązaniami na platformie Microsoft Azure oraz zwiększy bezpieczeństwo procesowanych danych. Pamiętajmy, że agent ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) to agent "publiczny", odizolowany od waszej sieci. ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install) może zostać wdrożony jako agent odizolowany, ale można go również zintegrować z własną siecią.
 
 <!--truncate-->
 
-Poniżej odsyłam was do dokumentacji gdzie możecie szczegółowo dowiedzieć się co Microsoft oferuje w kwestii Azure Pipelines agent.
+Poniżej odsyłam was do dokumentacji, w której można dowiedzieć się więcej o możliwościach oferowanych przez Microsoft w zakresie agentów Azure Pipelines.
 
 [MS Docs - Azure Pipelines agents](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690)
 
-![Communication to deploy to target servers
-](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/media/agent-connections-devops.png?view=azure-devops)
+![Communication to deploy to target servers](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/media/agent-connections-devops.png?view=azure-devops)
 
 Przechodzimy zatem do wdrożenia własnego serwera z agentem.
 
-Przygotowałem ilustracje związaną z całym projektem dla wdrożenia Azure Pipelines agent w oparciu o ten post oraz potrzebne materiały do jego wdrożenia.
+Przygotowałem ilustracje związane z całym projektem dla wdrożenia Azure Pipelines agent w oparciu o ten post oraz potrzebne materiały do jego wdrożenia.
 
 ![steps](images/image1.jpg)
 
 1. Linki - za pomocą tych linków macie dostęp do mojego przykładowego wdrożenia
 
-* Azure Repos: (https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents)
-* Azure Pipeline: (https://dev.azure.com/justcloudpublic/How%20to%20deploy%20ADO%20agent/_build?definitionId=2)
+- Azure Repos: (https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents)
+- Azure Pipeline: (https://dev.azure.com/justcloudpublic/How%20to%20deploy%20ADO%20agent/_build?definitionId=2)
 
 [![Build Status](https://dev.azure.com/justcloudpublic/How%20to%20deploy%20ADO%20agent/_apis/build/status/vm-azure-devops-self-hosted-agents?branchName=main)](https://dev.azure.com/justcloudpublic/How%20to%20deploy%20ADO%20agent/_build/latest?definitionId=2&branchName=main)
 
-1. Scripts
+2. Skrypty
    1. Parametry
-        1. [azuredeploy.param.json](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/azuredeploy.param.json&version=GBmain&_a=contents) - te parametry możesz przerobi lub zmienić tak, aby odpowiadały temu co zostanie wdrożone. Ważne - te dane testów są nadpisywane podczas deployment'u - sprawdź to w pliku: [vm-azure-devops-self-hosted-agents-ci.yml](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/pipelines/vm-azure-devops-self-hosted-agents-ci.yml&version=GBmain&_a=contents) "overrideParameters".
-           1. Opis zmiennych
-              1. adminUsername [User name]
-              2. adminPassword [Password for user]
-              3. dnsLabelPrefix (default set: generated based on ResourceGroup.Id) [Public DNS for connection RDP]
-              4. vmName [VM Name for resource]
-              5. AccessIPNSG [IP will be added to NSG rule for RDP access]
-              6. tag [default set: "Project: AzureDevOpsAgent"]
-              7. DiskForVM [StorageAccount or Managed - choose disk for deployment VM]
-            ```
+      1. [azuredeploy.param.json](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/azuredeploy.param.json&version=GBmain&_a=contents) - te parametry możesz przerobić lub zmienić tak, aby odpowiadały potrzebom wdrożenia. Ważne: te dane testowe są nadpisywane podczas deploymentu — sprawdź to w pliku: [vm-azure-devops-self-hosted-agents-ci.yml](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/pipelines/vm-azure-devops-self-hosted-agents-ci.yml&version=GBmain&_a=contents) "overrideParameters".
+         
+         1. Opis zmiennych
+            1. adminUsername [nazwa użytkownika]
+            2. adminPassword [hasło użytkownika]
+            3. dnsLabelPrefix (domyślnie ustawiany: generowany na podstawie ResourceGroup.Id) [publiczny DNS do połączenia RDP]
+            4. vmName [nazwa maszyny wirtualnej]
+            5. AccessIPNSG [IP, które zostanie dodane do reguły NSG dla dostępu RDP]
+            6. tag [domyślnie ustawiony: "Project: AzureDevOpsAgent"]
+            7. DiskForVM [StorageAccount lub Managed - wybór dysku dla wdrożenia maszyny wirtualnej]
+
+            ```json
             "parameters": {
                 "adminUsername": {
                     "value": "test-user"
@@ -74,34 +75,38 @@ Przygotowałem ilustracje związaną z całym projektem dla wdrożenia Azure Pip
                 }
             }
             ```
-        2. [createresourcegroup-adoagent.param.json](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/createresourcegroup-adoagent.param.json&version=GBmain&_a=contents) - parametry definiują resource groupę.
-           ```
-           "parameters": {
-               "ResourceGroupLocation": {
-                   "value": "westeurope"
-               },
-               "ResourceGroupName": {
-                   "value": "vm-azure-devops-self-hosted-agents"
-               },
-               "tag": {
-                   "value": {
-                       "key1": "Project",
-                       "value1": "AzureDevOpsAgent"
-                   }
-               }
-           }
-            ```
-        3. [script-post-configuration.ps1](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/script-post-configuration.ps1&version=GBmain&_a=contents) - skrypt odpowiada za instalację agenta oraz przygotowanie potrzebnych paczek. Jeśli potrzebujesz doinstalować dodatkowe paczki dadaj je w sekcji: # Install Packages - najprościej jest skorzystać z paczek choco: (https://docs.chocolatey.org/en-us/choco/commands/list)
-           1. Opis zmiennych
-               1. urlProjectADO [URL for your ADO project]
-               2. auth (default set: PAT) [Authentication method for your ADO]
-               3. token [Security token for your ADO]
-               4. pool (default set: default) [Pool name for agent in ADO]
-               5. agentname [default is same as VM name]
-               6. numberagents [default is 1 - you can deploy from 1 to 20 agent on one server]
-               7. instalAddtionalPackages [default is $true and is installing all what is needed for simple deployment to Azure - if you need .NET etc. please add manually]
 
-            ```
+      2. [createresourcegroup-adoagent.param.json](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/createresourcegroup-adoagent.param.json&version=GBmain&_a=contents) - parametry definiujące grupę zasobów.
+
+         ```json
+         "parameters": {
+             "ResourceGroupLocation": {
+                 "value": "westeurope"
+             },
+             "ResourceGroupName": {
+                 "value": "vm-azure-devops-self-hosted-agents"
+             },
+             "tag": {
+                 "value": {
+                     "key1": "Project",
+                     "value1": "AzureDevOpsAgent"
+                 }
+             }
+         }
+         ```
+
+      3. [script-post-configuration.ps1](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/script-post-configuration.ps1&version=GBmain&_a=contents) - skrypt odpowiada za instalację agenta oraz przygotowanie potrzebnych paczek. Jeśli potrzebujesz doinstalować dodatkowe paczki, dodaj je w sekcji: # Install Packages - najprościej jest skorzystać z paczek choco: (https://docs.chocolatey.org/en-us/choco/commands/list)
+
+         1. Opis zmiennych
+            1. urlProjectADO [URL do projektu ADO]
+            2. auth (domyślnie ustawione: PAT) [metoda uwierzytelniania dla projektu ADO]
+            3. token [token bezpieczeństwa dla projektu ADO]
+            4. pool (domyślnie ustawione: default) [nazwa puli dla agenta w ADO]
+            5. agentname [domyślnie taka sama jak nazwa maszyny wirtualnej]
+            6. numberagents [domyślnie 1 - można wdrożyć od 1 do 20 agentów na jednym serwerze]
+            7. instalAddtionalPackages [domyślnie $true; instaluje wszystko, co potrzebne do prostego wdrożenia w Azure; jeśli potrzeba .NET itp., należy dodać ręcznie]
+
+            ```powershell
             param(
                 [Parameter(Mandatory = $true)][string] $urlProjectADO,
                 [Parameter(Mandatory = $false)][string] $auth = "pat",
@@ -163,7 +168,7 @@ Przygotowałem ilustracje związaną z całym projektem dla wdrożenia Azure Pip
                             $tmp = $(Invoke-WebRequest -Method POST -Uri "$urlProjectADO/_apis/distributedtask/pools?api-version=5.0-preview.1" -UseBasicParsing -Headers @{Authorization = "Basic $encodedPat" } -Body $body -ContentType "application/json") 2>$null
                         }
 
-                        # Install agenets
+                        # Install agents
                         $filename = $urlProjectADO.Split('/')[-1]
                         if (!(Test-Path "c:\temp\$filename")) { Invoke-WebRequest -Uri $downloadInstallURL -OutFile "c:\temp\$filename" }
 
@@ -182,37 +187,40 @@ Przygotowałem ilustracje związaną z całym projektem dla wdrożenia Azure Pip
                 Write-Verbose "Successfully installed Azure DevOps Job Agents"
             }
             ```
-    1. Pipelines
-       1. [vm-azure-devops-self-hosted-agents-ci.yml](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/pipelines/vm-azure-devops-self-hosted-agents-ci.yml&version=GBmain&_a=contents) - w tym pliku zdefiniuj dokładnie dane potrzebne do instalacji agentów - adres Twojego projektu ADO, nazwę pool, ilość agentów. Group oznacza grupę Library w Azure DevOps gdzie przekazujemy bezpiecznie poufne dane.
-            ```
-            variables:
-            - name: SPNName
-              value: 'Subscription-JustCloudPublic'
-            * name: location
-              value: 'westeurope'
-            * name: urlProjectADO
-              value: 'https://justcloudpublic.visualstudio.com'
-            * name: pool
-              value: 'Default'
-            * name: numberagents
-              value: 3
-            * group: 'justcloudpublickeyvault'
-    2. Requirements - potrzebujesz zanim zaczniesz wdrażać
-       1. Azure Subskrypcja
-       2. PAT - Personal Access Token - (https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows&WT.mc_id=AZ-MVP-5002690#create-a-pat)
-       3. Key Vault - (https://docs.microsoft.com/azure/devops/pipelines/release/azure-key-vault?view=azure-devops&WT.mc_id=AZ-MVP-5002690)
+   2. Pipelines
+      1. [vm-azure-devops-self-hosted-agents-ci.yml](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/pipelines/vm-azure-devops-self-hosted-agents-ci.yml&version=GBmain&_a=contents) - w tym pliku zdefiniuj dokładnie dane potrzebne do instalacji agentów — adres Twojego projektu ADO, nazwę puli oraz liczbę agentów. Grupa oznacza grupę Library w Azure DevOps, w której bezpiecznie przekazujemy poufne dane.
+
+         ```yaml
+         variables:
+         - name: SPNName
+           value: 'Subscription-JustCloudPublic'
+         * name: location
+           value: 'westeurope'
+         * name: urlProjectADO
+           value: 'https://justcloudpublic.visualstudio.com'
+         * name: pool
+           value: 'Default'
+         * name: numberagents
+           value: 3
+         * group: 'justcloudpublickeyvault'
+
+3. Wymagania - co potrzebujesz wiedzieć, zanim zaczniesz wdrażać:
+   1. Subskrypcja Azure
+   2. PAT — Personal Access Token — (https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows&WT.mc_id=AZ-MVP-5002690#create-a-pat)
+   3. Key Vault — (https://docs.microsoft.com/azure/devops/pipelines/release/azure-key-vault?view=azure-devops&WT.mc_id=AZ-MVP-5002690)
 
 Po wdrożeniu:
 1. Azure DevOps agents
-![](images/2022-02-26_20-11-11.jpg)
+   ![](images/2022-02-26_20-11-11.jpg)
 2. Azure Portal
-![](images/2022-02-27_21-35-04.jpg)
+   ![](images/2022-02-27_21-35-04.jpg)
 
-Jeśli masz jakieś pytania zapraszam do komentowania 🙂.
+## Instruktarz video:
+<ReactPlayer style={{ display: 'block', margin: 'auto', marginBottom: '20px' }} controls url='[How to deploy Azure Pipelines agent?](https://www.youtube.com/watch?v=bjtgALglU2o)'/>
 
-[![](https://img.youtube.com/vi/bjtgALglU2o/0.jpg)](https://www.youtube.com/watch?v=bjtgALglU2o)
+Jeśli masz jakieś pytania, zapraszam do komentowania 🙂.
 
 Artykuł dostępny również na Medium i LinkedIn:
 
-* (EN) [https://piotr-rogala.medium.com/7223953d2e1f](https://piotr-rogala.medium.com/7223953d2e1f)
-* (PL) [https://www.linkedin.com/pulse/jak-wdro%25C5%25BCy%25C4%2587-azure-pipelines-agenta-piotr-rogala/](https://www.linkedin.com/pulse/jak-wdro%25C5%25BCy%25C4%2587-azure-pipelines-agenta-piotr-rogala/)
+- (EN) [https://piotr-rogala.medium.com/7223953d2e1f](https://piotr-rogala.medium.com/7223953d2e1f)
+- (PL) [https://www.linkedin.com/pulse/jak-wdro%25C5%25BCy%25C4%2587-azure-pipelines-agenta-piotr-rogala/](https://www.linkedin.com/pulse/jak-wdro%25C5%25BCy%25C4%2587-azure-pipelines-agenta-piotr-rogala/)

@@ -56,3 +56,22 @@
 .row .col.col--7 {
   --ifm-col-width: 75%;
 }
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  justify-content: center;
+  /* Player ratio: 100 / (1280 / 720) */
+}
+
+.img_ev3q {
+  display: block;
+  margin: auto;
+}
+

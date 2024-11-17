@@ -16,10 +16,11 @@ keywords:
   - "e24cloud"
 hide_table_of_contents: true
 ---
+import ReactPlayer from 'react-player'
 
 4 czerwca w jednej z największych serwerowni w Polsce udostępniającej Cloud powstała awaria z poważnymi skutkami. Chodzi tu o serwerownię utrzymywaną przez firmę Beyond. Awaria została spowodowana przepięciem elektrycznym, jak tłumaczy Prezes Zarządu Michał Grzybkowski w krótkiej relacji na YouTube.
 
-[![](https://img.youtube.com/vi/FXBIeetKuIk/0.jpg)](https://www.youtube.com/watch?v=FXBIeetKuIk)
+<ReactPlayer style={{ display: 'block', margin: 'auto', marginBottom: '20px' }} controls url='[](https://www.youtube.com/watch?v=FXBIeetKuIk)'/>
 
 Niestety video nie przetrwało próby czasu.
 

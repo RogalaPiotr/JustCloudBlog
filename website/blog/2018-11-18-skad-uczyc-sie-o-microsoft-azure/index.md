@@ -15,12 +15,12 @@ tags:
   - "nauka"
 keywords: [justcloud, nauka, azure, microsoft azure, devops]
 ---
+import ReactPlayer from 'react-player'
 
 Po ostatniej prezentacji naszedł mnie pomysł związany z utworzeniem miejsca skąd można się uczyć chmury Microsoft Azure. Stąd postanowiłem zebrać interesujące linki w jednym miejscu gdzie znajdziecie rekomendowane przeze mnie jak i przez innych ekspertów miejsca do nauki. Większość z poniższych linków jest darmowa i takie będę starał się udostępniać. Jeśli chciałbyś dodać ciekawe miejsce, które rekomendujesz dodaj je w komentarzu, pomoże to w udoskonaleniu listy.
 
 Jeśli wiesz czego konkretnie szukasz możesz użyć wyszukiwarki aby skoncentrować się na danym problemie: 
-
-[![](https://img.youtube.com/vi/Rkxg03z2PEo/0.jpg)](https://www.youtube.com/watch?v=Rkxg03z2PEo)
+<ReactPlayer style={{ display: 'block', margin: 'auto', marginBottom: '20px' }} controls url='[Simpsons on Google](https://www.youtube.com/watch?v=Rkxg03z2PEo)'/>
 
 <!--truncate-->
 

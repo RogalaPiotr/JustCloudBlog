@@ -50,7 +50,6 @@
     --ifm-col-width: 100%;
   }
 }
-
 @media (min-width: 997px) {
   .row .col.col--7 {
     --ifm-col-width: 75%;
@@ -71,7 +70,6 @@
 .markdown {
   text-align: justify;
 }
-
 
 .react-player {
   position: absolute;

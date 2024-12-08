@@ -38,6 +38,26 @@
 *}
 */
 
+/* More on the sceen */
+:root {
+  --ifm-container-width-xl: 1600px;
+  --ifm-container-width: 1280px;
+}
+
+/* Remove right row for small and big screen - START */
+@media (max-width: 997px) {
+  .row .col.col--7 {
+    --ifm-col-width: 100%;
+  }
+}
+
+@media (min-width: 997px) {
+  .row .col.col--7 {
+    --ifm-col-width: 75%;
+  }
+}
+/* Remove right row for small and big screen - END*/
+
 .title_f1Hy {
   color: #00a7e4;
 }
@@ -52,10 +72,6 @@
   text-align: justify;
 }
 
-/* Removing right column in flex */
-.row .col.col--7 {
-  --ifm-col-width: 75%;
-}
 
 .react-player {
   position: absolute;
@@ -74,4 +90,3 @@
   display: block;
   margin: auto;
 }
-

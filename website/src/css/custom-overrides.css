@@ -693,6 +693,122 @@ main .admonition {
 }
 
 /* ============================================
+   TABLE OF CONTENTS - Minimalist Design
+   ============================================ */
+
+/* Main TOC container - remove default styling */
+.table-of-contents {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Remove left border default styling */
+.table-of-contents.table-of-contents__left-border {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+/* TOC list - reset all indentation */
+.table-of-contents ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+/* All nested lists - flat structure without indentation */
+.table-of-contents ul ul {
+  padding-left: 0 !important;
+  margin-top: var(--jc-spacing-xs) !important;
+  margin-bottom: var(--jc-spacing-xs) !important;
+}
+
+/* TOC list items - consistent spacing */
+.table-of-contents li {
+  margin-bottom: var(--jc-spacing-sm) !important;
+  padding: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Remove any bullets or markers */
+.table-of-contents li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* TOC links - minimalist style like Recent Posts */
+.table-of-contents a {
+  color: var(--jc-text-primary) !important;
+  text-decoration: none !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  display: block !important;
+  padding: var(--jc-spacing-xs) 0 !important;
+  transition: color 0.2s ease, padding-left 0.2s ease !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* TOC link hover state */
+.table-of-contents a:hover {
+  color: var(--jc-color-blue-primary) !important;
+  padding-left: var(--jc-spacing-sm) !important;
+}
+
+/* Active/current TOC item */
+.table-of-contents a.table-of-contents__link--active {
+  color: var(--jc-color-blue-primary) !important;
+  font-weight: 500 !important;
+}
+
+/* Dark mode TOC */
+[data-theme='dark'] .table-of-contents a {
+  color: var(--jc-text-primary) !important;
+}
+
+[data-theme='dark'] .table-of-contents a:hover,
+[data-theme='dark'] .table-of-contents a.table-of-contents__link--active {
+  color: var(--jc-color-blue-primary-dark) !important;
+}
+
+/* H2 level items - no indentation */
+.table-of-contents > ul > li {
+  padding-left: 0 !important;
+}
+
+/* H3 level items - minimal indentation (optional) */
+.table-of-contents > ul > li > ul > li {
+  padding-left: var(--jc-spacing-sm) !important;
+  font-size: 0.8125rem !important;
+}
+
+/* H4 and deeper - same as H3 */
+.table-of-contents > ul > li > ul > li > ul > li {
+  padding-left: var(--jc-spacing-sm) !important;
+  font-size: 0.8125rem !important;
+  opacity: 0.8;
+}
+
+/* TOC header (if present) */
+.table-of-contents::before {
+  content: "Na tej stronie" !important;
+  display: block !important;
+  color: var(--jc-text-secondary) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: var(--jc-spacing-md) !important;
+  opacity: 0.7 !important;
+}
+
+[data-theme='dark'] .table-of-contents::before {
+  color: var(--jc-color-gray-500) !important;
+}
+
+/* ============================================
    LINKS
    ============================================ */
 

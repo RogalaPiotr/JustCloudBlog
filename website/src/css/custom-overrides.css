@@ -275,20 +275,20 @@ main article {
 
 
 
-/* Increase main content column width - from 58.33% to 70% */
+/* Increase main content column width - adjust to accommodate wider sidebar */
 .col--7 {
-  --ifm-col-width: 70% !important;
-  max-width: 70% !important;
-  flex: 0 0 70% !important;
+  --ifm-col-width: 68% !important;
+  max-width: 68% !important;
+  flex: 0 0 68% !important;
   padding-left: var(--jc-spacing-lg) !important;
   padding-right: var(--jc-spacing-xl) !important;
 }
 
-/* Adjust sidebar column - from 25% to 30% for better balance */
+/* Adjust sidebar column - from 25% to 32% for better balance and more TOC space */
 .col--3 {
-  --ifm-col-width: 30% !important;
-  max-width: 30% !important;
-  flex: 0 0 30% !important;
+  --ifm-col-width: 32% !important;
+  max-width: 32% !important;
+  flex: 0 0 32% !important;
   padding-left: var(--jc-spacing-xl) !important;
 }
 
@@ -748,7 +748,6 @@ main .admonition {
   transition: color 0.2s ease, padding-left 0.2s ease !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
-  white-space: nowrap !important;
 }
 
 /* TOC link hover state */

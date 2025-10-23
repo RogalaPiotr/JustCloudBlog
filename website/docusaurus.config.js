@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'JustCloud Blog',
+  title: 'JustCloud.pl',
   tagline: 'Technical articles',
   favicon: 'img/favicon.ico',
 

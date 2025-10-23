@@ -12,6 +12,7 @@ on:
 
 env:
   WORKDIR: website
+  CUSTOM_DOMAIN: blog.justcloud.pl
 
 jobs:
   deploy:
@@ -25,40 +26,41 @@ jobs:
           node-version: '22.x'
 
       - name: Dump GitHub context
-        working-directory: website
+        working-directory: ${{ env.WORKDIR }}
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       
       - name: Dump job context
-        working-directory: website
+        working-directory: ${{ env.WORKDIR }}
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
         run: echo "$JOB_CONTEXT"
       
       - name: Dump steps context
-        working-directory: website
+        working-directory: ${{ env.WORKDIR }}
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
         run: echo "$STEPS_CONTEXT"
       
       - name: Dump runner context
-        working-directory: website
+        working-directory: ${{ env.WORKDIR }}
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: echo "$RUNNER_CONTEXT"
 
       - name: Install dependencies
-        working-directory: website
+        working-directory: ${{ env.WORKDIR }}
         run: npm ci
       
       - name: Build
-        working-directory: website
+        working-directory: ${{ env.WORKDIR }}
         run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./${{ env.WORKDIR }}/build
+          publish_dir: ${{ env.WORKDIR }}/build
+          cname: ${{ env.CUSTOM_DOMAIN }}
           allow_empty_commit: true

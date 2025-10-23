@@ -120,7 +120,7 @@
   --jc-max-width-wide: 1600px; /* Increased for widescreen displays */
   
   --search-local-modal-width: 480px;
-  --search-local-highlight-color: #5468ff;
+  --search-local-highlight-color: var(--jc-color-blue-primary);
 }
 
 /* ============================================
@@ -177,7 +177,7 @@
   --ifm-tabs-color-active-border: var(--jc-color-blue-primary-dark);
   --ifm-tabs-color-active: var(--jc-color-blue-primary-dark);
   
-  --search-local-highlight-color: #d23669;
+  --search-local-highlight-color: var(--jc-color-blue-primary-dark);
 }
 
 /* ============================================

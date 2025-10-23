@@ -246,7 +246,7 @@ Po wdrożeniu:
    2. Azure Portal
       ![](images/2022-02-27_21-35-04.jpg)
 
-## Instruktarz video:
+## Instruktaż video:
 
 <ReactPlayer
   controls

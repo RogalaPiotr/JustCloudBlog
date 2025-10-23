@@ -1,41 +1,45 @@
 # JustCloudBlog 🌥️
 
-Welcome to the JustCloudBlog repository! This is the place where you can find all the deployment files for my tech blog about IT, Microsoft Azure, and Cloud technologies. The blog is built with Docusaurus version 3.6.1 and includes a collection of posts that will keep you up-to-date with the latest in the tech world.
+Personal tech blog about IT, Microsoft Azure, and Cloud technologies. Built with Docusaurus and deployed on GitHub Pages.
 
-## Overview
+## 🌐 Visit
 
-- **Homepage:** 🌐 [justcloud.pl](https://justcloud.pl)
-- **Blog:** 📝 [web.justcloud.pl](https://web.justcloud.pl)
+**Blog:** [blog.justcloud.pl](https://blog.justcloud.pl)
 
-## Description
+## 📝 About
 
-This repository contains:
+This repository contains source code and content for my technical blog focused on:
+- Microsoft Azure
+- Cloud Computing
+- IT Infrastructure
+- DevOps practices
 
-- **Deployment Files:** All necessary scripts and configurations for deploying the blog.
-- **Blog Posts:** A collection of informative and engaging articles on IT, Microsoft Azure, and other Cloud topics.
+## 🛠️ Tech Stack
 
-## Technologies Used
-
-- **Docusaurus v3.6.1:** A modern static site generator optimized for building technical documentation websites quickly, easily, and efficiently.
+- **Docusaurus 3.9.2** - Static site generator
+- **GitHub Pages** - Hosting
+- **GitHub Actions** - CI/CD
 
 ---
 
 # JustCloudBlog 🌥️
 
-Witamy w repozytorium JustCloudBlog! Tutaj znajdziesz wszystkie pliki deploymentowe mojego bloga technicznego o IT, Microsoft Azure oraz technologiach Cloud. Blog został stworzony za pomocą Docusaurus w wersji 3.6.1 i zawiera kolekcję postów, które będą Cię informować o najnowszych wydarzeniach w świecie technologii.
+Blog techniczny o IT, Microsoft Azure oraz technologiach Cloud. Zbudowany za pomocą Docusaurus i wdrożony na GitHub Pages.
 
-## Przegląd
+## 🌐 Odwiedź
 
-- **Strona główna:** 🌐 [justcloud.pl](https://justcloud.pl)
-- **Blog:** 📝 [web.justcloud.pl](https://web.justcloud.pl)
+**Blog:** [blog.justcloud.pl](https://blog.justcloud.pl)
 
-## Opis
+## 📝 O projekcie
 
-To repozytorium zawiera:
+To repozytorium zawiera kod źródłowy i treści mojego bloga technicznego skupionego na:
+- Microsoft Azure
+- Cloud Computing
+- Infrastruktura IT
+- Praktyki DevOps
 
-- **Pliki Deploymentowe:** Wszystkie niezbędne skrypty i konfiguracje do wdrożenia bloga.
-- **Posty:** Kolekcja informacyjnych i angażujących artykułów na temat IT, Microsoft Azure i innych tematów związanych z Cloud.
+## 🛠️ Technologie
 
-## Użyte Technologie
-
-- **Docusaurus v3.6.1:** Nowoczesny generator statycznych witryn zoptymalizowany pod kątem szybkiego, łatwego i wydajnego tworzenia stron dokumentacji technicznej.
+- **Docusaurus 3.9.2** - Generator statycznych stron
+- **GitHub Pages** - Hosting
+- **GitHub Actions** - CI/CD

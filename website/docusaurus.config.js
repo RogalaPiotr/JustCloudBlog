@@ -186,19 +186,23 @@ const config = {
       },
     }),
 
-  // Additional webpack configuration for hot reload
+  // Additional webpack configuration for hot reload (dev mode only)
   plugins: [
     function (context, options) {
       return {
         name: 'custom-webpack-config',
         configureWebpack(config, isServer, utils) {
-          return {
-            watchOptions: {
-              poll: 1000,
-              aggregateTimeout: 300,
-              ignored: /node_modules/,
-            },
-          };
+          // Only apply watch options in development mode
+          if (process.env.NODE_ENV === 'development') {
+            return {
+              watchOptions: {
+                poll: 1000,
+                aggregateTimeout: 300,
+                ignored: /node_modules/,
+              },
+            };
+          }
+          return {};
         },
       };
     },
@@ -211,7 +215,6 @@ const config = {
         indexDocs: false,
         indexBlog: true,
         indexPages: true,
-        docsRouteBasePath: '/docs',
         blogRouteBasePath: '/',
         removeDefaultStopWordFilter: true,
         searchResultLimits: 8,

@@ -21,7 +21,7 @@ tags:
   - DevOps
   - agent
   - pipelines
-title: Jak wdrożyć Azure Pipelines agenta? (How to deploy Azure Pipelines agent?)
+title: Jak wdrożyć Azure Pipeline agenta?
 ---
 
 import ReactPlayer from 'react-player'
@@ -41,7 +41,6 @@ Bardzo często słyszę pytanie: po co mi własny serwer do wdrażania?
   height='auto'
   style={{ display: 'block', margin: '0 auto 20px auto', aspectRatio: '16/9' }}
 />
-
 <!-- truncate -->
 
 Klasyczna odpowiedź: to zależy... Przy pracy nad pracą dyplomową lub projektem PoC dla znajomego można postawić agenta na swoim laptopie. Jeśli pracujecie w grupie kilku osób, najlepiej byłoby skorzystać z własnego serwera. Jeśli jesteście firmą dostarczającą rozwiązania, zdecydowanie warto rozważyć własny serwer lub zakup agentów "Microsoft-hosted" za $40, jeśli czas wdrażania przekracza 1800 minut miesięcznie. Jest jeszcze jedna sytuacja, kiedy warto wybrać własny serwer z agentami: wiele firm korzysta z prywatnych, kontrolowanych wewnętrznych sieci z ograniczonym dostępem z zewnątrz. Wdrożenie własnego serwera w takiej sieci pozwoli na łatwą komunikację z wdrożonymi rozwiązaniami na platformie Microsoft Azure oraz zwiększy bezpieczeństwo procesowanych danych. Pamiętajmy, że agent ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) to agent "publiczny", odizolowany od waszej sieci. ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install) może zostać wdrożony jako agent odizolowany, ale można go również zintegrować z własną siecią.

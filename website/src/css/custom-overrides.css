@@ -964,3 +964,21 @@ a:hover {
   color: var(--jc-text-primary) !important;
 }
 
+/* Search suggestions dropdown - Dark Mode */
+[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 {
+  background-color: var(--jc-color-gray-800) !important;
+  color: var(--jc-text-primary) !important;
+}
+
+/* Search suggestion item - Dark Mode */
+[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf {
+  background-color: var(--jc-color-gray-800) !important;
+  color: var(--jc-text-primary) !important;
+}
+
+/* Search suggestion hover state - Dark Mode */
+[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf:hover {
+  background-color: var(--jc-color-blue-light-dark) !important;
+  color: var(--jc-color-blue-primary-dark) !important;
+}
+

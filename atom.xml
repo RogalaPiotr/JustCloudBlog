@@ -14,7 +14,7 @@
         <updated>2025-09-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Dowiedz się, co oznaczają mnożniki 1x, 0.33x, 0x w GitHub Copilot. Zrozum, jak działają kredyty i które modele są darmowe, aby efektywnie zarządzać kosztami.]]></summary>
         <content type="html"><![CDATA[<p>Zastanawiałeś się, co oznaczają mnożniki <code>1x</code>, <code>0.33x</code>, <code>0x</code> widoczne przy modelach GitHub Copilot w Visual Studio Code? Wyjaśnijmy, co się za nimi kryje.</p>
-<p><img decoding="async" loading="lazy" alt="Zrzut ekranu przedstawiający listę modeli w GitHub Copilot" src="https://blog.justcloud.pl/assets/images/Greenshot%202025-10-23%2020.00.16-361c4744da3187430f4306de3c541b34.png" width="587" height="629" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Zrzut ekranu przedstawiający listę modeli w GitHub Copilot" src="https://blog.justcloud.pl/assets/images/Greenshot%202025-10-23%2020.24.19-1f654020e72965c3709bcf108df9a696.png" width="451" height="464" class="img_ev3q"></p>
 <p>Mnożniki te określają „koszt” użycia danego modelu, który jest rozliczany z puli dostępnych kredytów na Twoim koncie GitHub Copilot. Kredyty to jednostki, które zużywasz, wysyłając zapytania do różnych modeli AI.</p>
 <p>Jeśli korzystasz z planu, który ma ograniczoną liczbę kredytów, wybór modelu ma kluczowe znaczenie.</p>
 <ul>
@@ -23,7 +23,7 @@
 </ul>
 <p>Wybierając model, decydujesz, czy wolisz oszczędzać kredyty, czy uzyskać jak najlepszą pomoc od AI.</p>
 <p>Nie wiesz, gdzie sprawdzić, ile zapytań (requestów) Ci jeszcze zostało? Poniżej zrzut ekranu z podpowiedzią.</p>
-<p><img decoding="async" loading="lazy" alt="Zrzut ekranu przedstawiający GitHub Copilot requests" src="https://blog.justcloud.pl/assets/images/Greenshot%202025-10-23%2020.00.20-5ccc42e2c632e7fe14d70ca76b25de35.png" width="588" height="484" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Zrzut ekranu przedstawiający GitHub Copilot requests" src="https://blog.justcloud.pl/assets/images/Greenshot%202025-10-23%2020.24.07-2c951402f91bd9117e759aa35427999c.png" width="446" height="468" class="img_ev3q"></p>
 <p>Mam nadzieję, że teraz wszystko jest jasne. Daj znać, czy się przydało! 💪</p>]]></content>
         <author>
             <name>Piotr Rogala</name>
@@ -198,27 +198,30 @@
         <category label="pipelines" term="pipelines"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Nowa odsłona]]></title>
+        <title type="html"><![CDATA[Nowa odsłona bloga JustCloud]]></title>
         <id>https://blog.justcloud.pl/welcome</id>
         <link href="https://blog.justcloud.pl/welcome"/>
         <updated>2022-01-22T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Nowy rok 2022 będzie czasem zmian dla moich aktywności w Internecie. Rozpoczynam od zmian związanych z blogiem i aktywnościami IT w community.]]></summary>
-        <content type="html"><![CDATA[<p>Witam na nowej stronie gdzie będę wrzucał nowe posty związane z Microsoft Azure oraz Cloud☁️. Nowy rok 2022 mam nadzieję że przyniesie wiele pozytywnych zmian. Dlatego zapraszam do kontaktu i odwiedzin mojej strony.</p>
-<p>Nowe linki i małe zmiany:</p>
+        <summary type="html"><![CDATA[Start nowego bloga o Microsoft Azure i chmurze. Dowiedz się o planach na 2022 rok, nowych aktywnościach w IT community i śledź rozwój JustCloud.]]></summary>
+        <content type="html"><![CDATA[<p>Witaj na nowej odsłonie mojego bloga! Będę tu publikować artykuły poświęcone tematyce Microsoft Azure i szeroko pojętym technologiom chmurowym (Cloud) ☁️.</p>
+<p>Mam nadzieję, że 2022 rok przyniesie wiele pozytywnych zmian i ciekawych projektów, którymi będę się tu dzielił. Zapraszam do regularnych odwiedzin i kontaktu.</p>
+<p>Na start kilka ważnych linków:</p>
 <ul>
 <li class=""><a href="https://web.justcloud.pl/" target="_blank" rel="noopener noreferrer" class="">JustCloud ☁️ Page</a></li>
 <li class=""><a href="https://blog.justcloud.pl/" target="_blank" rel="noopener noreferrer" class="">JustCloud ☁️ Blog</a></li>
 </ul>
-<p>W najbliższym czasie&nbsp;ogarnę&nbsp;również uzupełnienie bloga o stare posty 🙃.</p>
-<p>Dzięki i do zobaczenia!</p>
+<p>W najbliższym czasie planuję również uzupełnić bloga o starsze wpisy.</p>
+<p>Dziękuję i do zobaczenia w kolejnych postach!</p>
 <p><img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1472898965229-f9b06b9c9bbe?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" alt="Zdjęcie powitalne przedstawiające chmury" class="img_ev3q"></p>]]></content>
         <author>
             <name>Piotr Rogala</name>
             <uri>https://github.com/RogalaPiotr</uri>
         </author>
-        <category label="welcome" term="welcome"/>
-        <category label="first post" term="first post"/>
-        <category label="blog" term="blog"/>
+        <category label="JustCloud" term="JustCloud"/>
+        <category label="Blog" term="Blog"/>
+        <category label="Microsoft Azure" term="Microsoft Azure"/>
+        <category label="Cloud" term="Cloud"/>
+        <category label="IT Community" term="IT Community"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Przyspieszenie pracy nad tagowaniem zasobów za pomocą PowerShell - Tag raport Microsoft Azure]]></title>

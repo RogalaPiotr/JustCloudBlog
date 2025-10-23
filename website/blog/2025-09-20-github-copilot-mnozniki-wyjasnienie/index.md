@@ -20,7 +20,7 @@ title: Co oznaczają mnożniki 1x, 0.33x, 0x w GitHub Copilot?
 
 Zastanawiałeś się, co oznaczają mnożniki `1x`, `0.33x`, `0x` widoczne przy modelach GitHub Copilot w Visual Studio Code? Wyjaśnijmy, co się za nimi kryje.
 
-![Zrzut ekranu przedstawiający listę modeli w GitHub Copilot](images/Greenshot%202025-10-23%2020.00.16.png)
+![Zrzut ekranu przedstawiający listę modeli w GitHub Copilot](images/Greenshot%202025-10-23%2020.24.19.png)
 
 <!-- truncate -->
 
@@ -35,6 +35,6 @@ Wybierając model, decydujesz, czy wolisz oszczędzać kredyty, czy uzyskać jak
 
 Nie wiesz, gdzie sprawdzić, ile zapytań (requestów) Ci jeszcze zostało? Poniżej zrzut ekranu z podpowiedzią.
 
-![Zrzut ekranu przedstawiający GitHub Copilot requests](images/Greenshot%202025-10-23%2020.00.20.png)
+![Zrzut ekranu przedstawiający GitHub Copilot requests](images/Greenshot%202025-10-23%2020.24.07.png)
 
 Mam nadzieję, że teraz wszystko jest jasne. Daj znać, czy się przydało! 💪

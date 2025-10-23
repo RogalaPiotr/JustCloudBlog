@@ -23,8 +23,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
-          cache: 'npm'
-          cache-dependency-path: 'website/package-lock.json'
 
       - name: Dump GitHub context
         working-directory: website

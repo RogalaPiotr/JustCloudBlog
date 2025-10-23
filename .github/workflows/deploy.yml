@@ -20,7 +20,7 @@ jobs:
       run:
         working-directory: website
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Dump GitHub context
         env:
@@ -40,21 +40,11 @@ jobs:
         run: echo "$RUNNER_CONTEXT"
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: '22.x'
-
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-${{ env.WORKDIR }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.WORKDIR }}-
+          cache: 'yarn'
+          cache-dependency-path: '${{ env.WORKDIR }}/yarn.lock'
       - run: yarn install --frozen-lockfile
       - run: yarn build
 

@@ -206,9 +206,16 @@ const config = {
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
         hashed: true,
-        language: ["en"],
+        language: ["en", "pl"],
         highlightSearchTermsOnTargetPage: true,
         indexDocs: false,
+        indexBlog: true,
+        indexPages: true,
+        docsRouteBasePath: '/docs',
+        blogRouteBasePath: '/',
+        removeDefaultStopWordFilter: false,
+        searchResultLimits: 8,
+        searchResultContextMaxLength: 50,
       },
     ],
     require.resolve('docusaurus-plugin-image-zoom')

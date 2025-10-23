@@ -765,6 +765,34 @@ a:hover {
   --ifm-alert-border-color: var(--jc-color-blue-primary);
 }
 
+/* ============================================
+   SEARCH RESULTS - Dark Mode Fix
+   ============================================ */
+
+/* Override search plugin CSS variables for dark mode */
+[data-theme='dark'] {
+  --search-local-modal-background: var(--jc-color-gray-900);
+  --search-local-modal-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
+  --search-local-hit-background: var(--jc-color-gray-800);
+  --search-local-hit-shadow: none;
+  --search-local-hit-color: var(--jc-text-primary);
+  --search-local-highlight-color: var(--jc-color-blue-primary-dark);
+  --search-local-muted-color: var(--jc-color-gray-500);
+  --search-local-hit-active-color: var(--jc-color-white);
+}
+
+/* Additional dark mode fixes for search suggestions */
+[data-theme='dark'] .searchBar_RVTs .aa-Item {
+  background-color: var(--jc-color-gray-800) !important;
+  color: var(--jc-text-primary) !important;
+}
+
+[data-theme='dark'] .searchBar_RVTs .aa-Item:hover,
+[data-theme='dark'] .searchBar_RVTs .aa-Item[aria-selected="true"] {
+  background-color: var(--jc-color-blue-light-dark) !important;
+  color: var(--jc-color-blue-primary-dark) !important;
+}
+
 [data-theme='dark'] .alert--info,
 [data-theme='dark'] .alert--success,
 [data-theme='dark'] .alert--warning,
@@ -962,23 +990,5 @@ a:hover {
 [data-theme='dark'] .navbar__search.searchBarContainer_NW3z.focused_OWtg {
   background-color: var(--jc-color-gray-800) !important;
   color: var(--jc-text-primary) !important;
-}
-
-/* Search suggestions dropdown - Dark Mode */
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 {
-  background-color: var(--jc-color-gray-800) !important;
-  color: var(--jc-text-primary) !important;
-}
-
-/* Search suggestion item - Dark Mode */
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf {
-  background-color: var(--jc-color-gray-800) !important;
-  color: var(--jc-text-primary) !important;
-}
-
-/* Search suggestion hover state - Dark Mode */
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf:hover {
-  background-color: var(--jc-color-blue-light-dark) !important;
-  color: var(--jc-color-blue-primary-dark) !important;
 }
 

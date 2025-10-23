@@ -1,12 +1,3 @@
-Twoja obecna polityka prywatności jest już dość prosta i zwięzła, co jest świetne. Aby uczynić ją bardziej personalną (w pierwszej osobie) i jeszcze bardziej dostosowaną do formatu bloga, proponuję następujące zmiany. Skupimy się na jasności i bezpośrednim tonie.
-
-Oto propozycja w formacie Markdown:
-
-```markdown
----
-title: Polityka Prywatności
----
-
 # Polityka Prywatności
 
 Cześć! Dziękuję, że odwiedzasz mojego bloga. Chcę być z Tobą całkowicie szczery odnośnie danych, które zbieram. **Twoja prywatność jest dla mnie ważna**, a ten dokument wyjaśnia, jak to wszystko działa, w prosty sposób.
@@ -38,4 +29,3 @@ Ten blog jest stroną statyczną i jest hostowany na platformie **GitHub Pages**
 Jeśli masz jakiekolwiek pytania, wątpliwości lub chcesz porozmawiać o tej polityce prywatności (lub o czymkolwiek innym!), skontaktuj się ze mną przez [formularz kontaktowy](https://justcloud.pl/index.html#form5-28).
 
 **Dziękuję za zaufanie!**
-```

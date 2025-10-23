@@ -931,56 +931,29 @@ a:hover {
    SEARCH BAR - NAVBAR SPECIFIC STYLES
    ============================================ */
 
-/* Search input field */
-.searchBar_RVTs input.searchInput_YFbd {
+/* Search input field - Light Mode */
+[data-theme='light'] .searchBar_RVTs input.searchInput_YFbd {
   background-color: var(--jc-bg-secondary);
   color: var(--jc-text-primary);
   border: 1px solid var(--jc-color-gray-100);
 }
 
-/* Search input focus state */
-.searchBar_RVTs input.searchInput_YFbd:focus {
+/* Search input focus state - Light Mode */
+[data-theme='light'] .searchBar_RVTs input.searchInput_YFbd:focus {
   border-color: var(--jc-color-blue-primary);
   outline: none;
   box-shadow: 0 0 0 2px rgba(0, 167, 228, 0.2);
 }
 
+/* Search input field - Dark Mode */
 [data-theme='dark'] .searchBar_RVTs input.searchInput_YFbd {
-  background-color: var(--jc-color-gray-800) !important;
-  color: var(--jc-text-primary) !important;
+  background-color: var(--jc-color-gray-800);
+  color: var(--jc-text-primary);
   border: 1px solid var(--jc-color-gray-700);
 }
 
-[data-theme='dark'] .dropdownMenu_qbY6 {
-  background-color: var(--jc-color-gray-800) !important;
-  border: 1px solid var(--jc-color-gray-700) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-}
-
+/* Search input focus state - Dark Mode */
 [data-theme='dark'] .searchBar_RVTs input.searchInput_YFbd:focus {
-  background-color: var(--jc-color-gray-800) !important;
   border-color: var(--jc-color-blue-primary-dark);
   box-shadow: 0 0 0 2px rgba(31, 191, 255, 0.2);
-}
-
-/* Search input field in navbar */
-[data-theme='dark'] .navbar__search-input.searchInput_YFbd.input_FOTf {
-  background-color: var(--jc-color-gray-800) !important;
-}
-
-/* Focus state for search input in navbar */
-[data-theme='dark'] .navbar__search-input.searchInput_YFbd.input_FOTf:focus {
-  border-color: var(--jc-color-blue-primary-dark) !important;
-}
-
-/* Additional styles for aria-owns='searchBar_RVTs-listbox-4' in dark mode */
-[data-theme='dark'] [aria-owns='searchBar_RVTs-listbox-4'] {
-  background-color: var(--jc-color-gray-800) !important;
-  color: var(--jc-text-primary) !important;
-  border: 1px solid var(--jc-color-gray-700) !important;
-}
-
-[data-theme='dark'] [aria-owns='searchBar_RVTs-listbox-4']:focus {
-  border-color: var(--jc-color-blue-primary-dark) !important;
-  box-shadow: 0 0 0 2px rgba(31, 191, 255, 0.2) !important;
 }

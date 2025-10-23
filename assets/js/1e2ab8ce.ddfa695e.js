@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[4688],{64482:a=>{a.exports=JSON.parse('{"tag":{"label":"azureday","permalink":"/tags/azureday","allTagsPath":"/tags","count":2,"unlisted":false},"listMetadata":{"permalink":"/tags/azureday","page":1,"postsPerPage":4,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

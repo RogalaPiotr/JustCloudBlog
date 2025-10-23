@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[4406],{73472:a=>{a.exports=JSON.parse('{"tag":{"label":"cloud-apps","permalink":"/tags/cloud-apps","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/cloud-apps","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

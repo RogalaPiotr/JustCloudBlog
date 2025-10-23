@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[1146],{95687:e=>{e.exports=JSON.parse('{"tag":{"label":"ws2012","permalink":"/tags/ws-2012","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/ws-2012","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

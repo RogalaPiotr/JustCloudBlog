@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[1933],{51290:a=>{a.exports=JSON.parse('{"tag":{"label":"instalacja","permalink":"/tags/instalacja","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/instalacja","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

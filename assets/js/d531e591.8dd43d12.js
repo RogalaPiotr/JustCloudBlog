@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[294],{39058:a=>{a.exports=JSON.parse('{"tag":{"label":"iac","permalink":"/tags/iac","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/iac","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

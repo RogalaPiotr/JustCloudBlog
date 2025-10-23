@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[5240],{97128:a=>{a.exports=JSON.parse('{"tag":{"label":"ad-ds","permalink":"/tags/ad-ds","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/ad-ds","page":1,"postsPerPage":4,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

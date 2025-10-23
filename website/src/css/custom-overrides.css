@@ -776,100 +776,6 @@ a:hover {
 }
 
 /* ============================================
-   SEARCH BAR - Light & Dark Mode
-   ============================================ */
-
-/* Search input field */
-.searchBar_RVTs input.searchInput_YFbd {
-  background-color: var(--jc-bg-secondary);
-  color: var(--jc-text-primary);
-  border: 1px solid var(--jc-color-gray-100);
-}
-
-[data-theme='dark'] .searchBar_RVTs input.searchInput_YFbd {
-  background-color: var(--jc-color-gray-800) !important;
-  color: var(--jc-text-primary) !important;
-  border: 1px solid var(--jc-color-gray-700) !important;
-}
-
-/* Search dropdown menu (dynamic suggestions) */
-.searchBar_RVTs .dropdownMenu_qbY6 {
-  background-color: var(--jc-bg-primary) !important;
-  border: 1px solid var(--jc-color-gray-100) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-}
-
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 {
-  background-color: var(--jc-color-gray-800) !important;
-  border: 1px solid var(--jc-color-gray-700) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Override all elements inside search dropdown for dark mode */
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 * {
-  background-color: var(--jc-color-gray-800) !important;
-  color: var(--jc-text-primary) !important;
-}
-
-/* Search suggestions/items in dropdown */
-.searchBar_RVTs .dropdownMenu_qbY6 .dataset_QiCy-1 {
-  background-color: var(--jc-bg-primary) !important;
-  color: var(--jc-text-primary) !important;
-}
-
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 .dataset_QiCy-1 {
-  background-color: var(--jc-color-gray-800) !important;
-  color: var(--jc-text-primary) !important;
-}
-
-/* Individual search suggestion items */
-.searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf {
-  background-color: var(--jc-bg-primary) !important;
-  color: var(--jc-text-primary) !important;
-  border-bottom: 1px solid var(--jc-color-gray-100) !important;
-}
-
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf {
-  background-color: var(--jc-color-gray-800) !important;
-  color: var(--jc-text-primary) !important;
-  border-bottom: 1px solid var(--jc-color-gray-700) !important;
-}
-
-/* Hover state for search suggestions */
-.searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf:hover,
-.searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf.cursor_CRqx {
-  background-color: var(--jc-color-blue-light) !important;
-  color: var(--jc-color-blue-dark) !important;
-}
-
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf:hover,
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf.cursor_CRqx {
-  background-color: var(--jc-color-blue-light-dark) !important;
-  color: var(--jc-color-blue-primary-dark) !important;
-}
-
-/* All buttons and interactive elements in search dropdown - dark mode */
-[data-theme='dark'] .searchBar_RVTs button,
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 button,
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 div,
-[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 span {
-  background-color: var(--jc-color-gray-800) !important;
-  color: var(--jc-text-primary) !important;
-}
-
-/* Search input focus state */
-.searchBar_RVTs input.searchInput_YFbd:focus {
-  border-color: var(--jc-color-blue-primary);
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 167, 228, 0.2);
-}
-
-[data-theme='dark'] .searchBar_RVTs input.searchInput_YFbd:focus {
-  border-color: var(--jc-color-blue-primary-dark);
-  box-shadow: 0 0 0 2px rgba(31, 191, 255, 0.2);
-}
-
-/* ============================================
    DISQUS COMMENTS SECTION - Improved Visibility
    ============================================ */
 
@@ -1035,8 +941,33 @@ a:hover {
   border-color: var(--jc-color-blue-primary-dark) !important;
 }
 
+/* Search input field */
+.searchBar_RVTs input.searchInput_YFbd {
+  background-color: var(--jc-bg-secondary);
+  color: var(--jc-text-primary);
+  border: 1px solid var(--jc-color-gray-100);
+}
 
+[data-theme='dark'] .searchBar_RVTs input.searchInput_YFbd {
+  background-color: var(--jc-color-gray-800) !important;
+  color: var(--jc-text-primary) !important;
+  border: 1px solid var(--jc-color-gray-700);
+}
 
+[data-theme='dark'] .dropdownMenu_qbY6 {
+  background-color: var(--jc-color-gray-800) !important;
+  border: 1px solid var(--jc-color-gray-700) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
 
+/* Search input focus state */
+.searchBar_RVTs input.searchInput_YFbd:focus {
+  border-color: var(--jc-color-blue-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 167, 228, 0.2);
+}
 
-
+[data-theme='dark'] .searchBar_RVTs input.searchInput_YFbd:focus {
+  border-color: var(--jc-color-blue-primary-dark);
+  box-shadow: 0 0 0 2px rgba(31, 191, 255, 0.2);
+}

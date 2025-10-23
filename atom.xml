@@ -2,11 +2,37 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.justcloud.pl/</id>
     <title>JustCloud Blog Blog</title>
-    <updated>2023-09-04T00:00:00.000Z</updated>
+    <updated>2025-09-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.justcloud.pl/"/>
     <subtitle>JustCloud Blog Blog</subtitle>
     <icon>https://blog.justcloud.pl/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Co oznaczają mnożniki 1x, 0.33x, 0x w GitHub Copilot?]]></title>
+        <id>https://blog.justcloud.pl/github-copilot-mnozniki-wyjasnienie</id>
+        <link href="https://blog.justcloud.pl/github-copilot-mnozniki-wyjasnienie"/>
+        <updated>2025-09-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Dowiedz się, co oznaczają mnożniki 1x, 0.33x, 0x w GitHub Copilot. Zrozum, jak działają kredyty i które modele są darmowe, aby efektywnie zarządzać kosztami.]]></summary>
+        <content type="html"><![CDATA[<p>Zastanawiałeś się, co oznaczają mnożniki <code>1x</code>, <code>0.33x</code>, <code>0x</code> widoczne przy modelach GitHub Copilot w Visual Studio Code? Wyjaśnijmy, co się za nimi kryje.</p>
+<p><img decoding="async" loading="lazy" alt="Zrzut ekranu przedstawiający listę modeli w GitHub Copilot" src="https://blog.justcloud.pl/assets/images/Greenshot%202025-10-23%2020.00.16-361c4744da3187430f4306de3c541b34.png" width="587" height="629" class="img_ev3q"></p>
+<p>Mnożniki te określają „koszt” użycia danego modelu, który jest rozliczany z puli dostępnych kredytów na Twoim koncie GitHub Copilot. Kredyty to jednostki, które zużywasz, wysyłając zapytania do różnych modeli AI.</p>
+<p>Jeśli korzystasz z planu, który ma ograniczoną liczbę kredytów, wybór modelu ma kluczowe znaczenie.</p>
+<ul>
+<li class="">Modele z mnożnikiem <code>0x</code> są <strong>darmowe</strong> i nie zużywają Twoich kredytów. Pamiętaj jednak, że mogą oferować odpowiedzi niższej jakości w porównaniu do płatnych modeli.</li>
+<li class="">Modele z wyższym mnożnikiem, np. <code>1x</code> czy <code>0.33x</code>, zużywają kredyty proporcjonalnie do podanej wartości, ale zazwyczaj dostarczają bardziej zaawansowane i precyzyjne odpowiedzi.</li>
+</ul>
+<p>Wybierając model, decydujesz, czy wolisz oszczędzać kredyty, czy uzyskać jak najlepszą pomoc od AI.</p>
+<p>Nie wiesz, gdzie sprawdzić, ile zapytań (requestów) Ci jeszcze zostało? Poniżej zrzut ekranu z podpowiedzią.</p>
+<p><img decoding="async" loading="lazy" alt="Zrzut ekranu przedstawiający GitHub Copilot requests" src="https://blog.justcloud.pl/assets/images/Greenshot%202025-10-23%2020.00.20-5ccc42e2c632e7fe14d70ca76b25de35.png" width="588" height="484" class="img_ev3q"></p>
+<p>Mam nadzieję, że teraz wszystko jest jasne. Daj znać, czy się przydało! 💪</p>]]></content>
+        <author>
+            <name>Piotr Rogala</name>
+            <uri>https://github.com/RogalaPiotr</uri>
+        </author>
+        <category label="GitHub Copilot" term="GitHub Copilot"/>
+        <category label="VS Code" term="VS Code"/>
+        <category label="AI" term="AI"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Push protection w GitHub przed opublikowaniem haseł]]></title>
         <id>https://blog.justcloud.pl/github push protection leak credentials</id>
@@ -987,24 +1013,5 @@ Masz pytania? zapraszam do komentowania.</p>]]></content>
         <category label="azureday" term="azureday"/>
         <category label="konferencja" term="konferencja"/>
         <category label="microsoft" term="microsoft"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CHEF i Azure czyli Windows automation]]></title>
-        <id>https://blog.justcloud.pl/chef-i-azure-czyli-windows-automation</id>
-        <link href="https://blog.justcloud.pl/chef-i-azure-czyli-windows-automation"/>
-        <updated>2016-06-29T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Automatyzacja maszyn w Azure za pomocą Chef. Wprowadzenie do zarządzania maszynami znajdziecie właśnie w tym wpisie. Zapraszam do przeczytania.]]></summary>
-        <content type="html"><![CDATA[<p>W ostatnim czasie zrobiłem prezentację dotyczącą CHEF-a w Azure. Starałem się wyjaśnić, czym jest CHEF i co możemy zrobić za jego pomocą w Azure i przedstawić przykład zarządzania nodem postawionym na Windowsie.</p>
-<p>Ten temat jest bardzo zastanawiający, bo jak możemy zarządzać z poziomu serwera Linuxowego maszyną Windowsową? Otóż CHEF stara się bardzo dopracowywać temat związany z maszynami postawionych na Windowsach i możemy znaleźć dużo rekomendowanej dokumentacji na ten temat: <a href="https://www.chef.io/solutions/windows/" target="_blank" rel="noopener noreferrer" class="">https://www.chef.io/solutions/windows/</a>. Za pomocą CHEF-a możemy stawiać maszyny w Azure oraz nimi zarządzać. Zarządzanie odbywa się za pomocą cookbook-ów zawierające skrypty konfiguracyjne. Wszystkie pliki cookbook-ów możemy modyfikować do woli, aby otrzymać oczekiwany efekt. W przypadku tworzenia zestawu cookbook-ów warto poczytać o Berkshelf: <a href="http://berkshelf.com/" target="_blank" rel="noopener noreferrer" class="">http://berkshelf.com/</a>. Jeśli chce sami spróbować sił z CHEF-em w Azure możecie przejść przez tutorial dostępny na stronie Azure: <a href="https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-chef-automation/" target="_blank" rel="noopener noreferrer" class="">https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-chef-automation/</a> . W skrócie mogę napisać, że jeśli szukacie czegoś uniwersalnego do automatyzacji stacji Linux &amp; Windows dobrze jest przyjrzeć się właśnie CHEF-owi. Jeśli masz pytania zapraszam do komentowania bądź do kontaktu mailowego.</p>
-<p>Moją <strong>prezentację ze spotkania DevOps</strong> Wrocław z 28.06.2016 zajdziecie tutaj: <a href="https://github.com/RogalaPiotr/Presentations/tree/main/2016.06%20-%20DevOps%20Wroc%C5%82aw" target="_blank" rel="noopener noreferrer" class="">https://github.com/RogalaPiotr/Presentations/tree/main/2016.06%20-%20DevOps%20Wroc%C5%82aw</a> Zapraszam również do śledzenia grupy DevOps we Wrocławiu: <a href="http://www.meetup.com/Wroclaw-DevOps-Meetup/" target="_blank" rel="noopener noreferrer" title="http://www.meetup.com/Wroclaw-DevOps-Meetup/" class="">http://www.meetup.com/Wroclaw-DevOps-Meetup/</a></p>
-<p><img decoding="async" loading="lazy" alt="Chef" src="https://blog.justcloud.pl/assets/images/image-2f8ca32bc4560436e89b37a551639022.png" width="320" height="350" class="img_ev3q"></p>]]></content>
-        <author>
-            <name>Piotr Rogala</name>
-            <uri>https://github.com/RogalaPiotr</uri>
-        </author>
-        <category label="automation" term="automation"/>
-        <category label="azure" term="azure"/>
-        <category label="chef" term="chef"/>
-        <category label="devops" term="devops"/>
     </entry>
 </feed>

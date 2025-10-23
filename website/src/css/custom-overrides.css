@@ -957,3 +957,10 @@ a:hover {
   border-color: var(--jc-color-blue-primary-dark);
   box-shadow: 0 0 0 2px rgba(31, 191, 255, 0.2);
 }
+
+/* Focused state for search bar container - Dark Mode */
+[data-theme='dark'] .navbar__search.searchBarContainer_NW3z.focused_OWtg {
+  background-color: var(--jc-color-gray-800) !important;
+  color: var(--jc-text-primary) !important;
+}
+

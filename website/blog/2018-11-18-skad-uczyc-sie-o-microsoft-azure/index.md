@@ -2,44 +2,55 @@
 authors:
   - progala
 date: "2018-11-18"
-description: Chcesz zacząć nauke o Microsoft Azure? W tym artykule znajdziesz linki, które napewno Cię zainteresują!
+description: Gdzie uczyć się Microsoft Azure — lista kursów, wideo, blogów i materiałów praktycznych. Polecane darmowe i płatne źródła oraz zasoby do certyfikacji.
 keywords:
-  - justcloud
+  - Azure
   - nauka
-  - azure
-  - microsoft azure
+  - kursy
+  - certyfikaty
   - devops
+  - microsoft
+  - szkolenia
+  - materiały
+  - blogi
+  - kurs
 slug: skad-uczyc-sie-o-microsoft-azure
 tags:
   - azure
-  - course
-  - courses
-  - kurs
   - kursy
-  - learn
-  - microsoft azure
   - nauka
+  - certyfikaty
+  - devops
+  - microsoft-azure
+  - szkolenia
+  - blogi
+  - resources
+  - kurs
 title: Skąd uczyć się o Microsoft Azure?
 ---
-
 import ReactPlayer from 'react-player'
 
-Po ostatniej prezentacji naszedł mnie pomysł związany z utworzeniem miejsca skąd można się uczyć chmury Microsoft Azure. Stąd postanowiłem zebrać interesujące linki w jednym miejscu gdzie znajdziecie rekomendowane przeze mnie jak i przez innych ekspertów miejsca do nauki.
+Po ostatniej prezentacji przyszła mi do głowy myśl, by utworzyć miejsce, skąd można uczyć się chmury Microsoft Azure. Postanowiłem więc zebrać interesujące linki w jednym miejscu — znajdziecie tu rekomendacje moje oraz innych ekspertów.
 
-<!-- truncate -->
+Większość poniższych linków jest darmowa i takie właśnie będę starał się udostępniać. Jeśli chciałbyś dodać ciekawe miejsce, które polecasz, dodaj je w komentarzu — pomoże to w udoskonaleniu listy.
 
-Większość z poniższych linków jest darmowa i takie będę starał się udostępniać. Jeśli chciałbyś dodać ciekawe miejsce, które rekomendujesz dodaj je w komentarzu, pomoże to w udoskonaleniu listy.
+Jeśli wiesz, czego konkretnie szukasz, możesz użyć wyszukiwarki, aby skoncentrować się na danym problemie:
 
 Jeśli wiesz czego konkretnie szukasz możesz użyć wyszukiwarki aby skoncentrować się na danym problemie:
-<ReactPlayer style={{ display: 'block', margin: 'auto', marginBottom: '20px' }} controls url='[Simpsons on Google](https://www.youtube.com/watch?v=Rkxg03z2PEo)'/>
-
+<ReactPlayer
+  controls
+  src='https://www.youtube.com/watch?v=Rkxg03z2PEo'
+  width='65%'
+  height='auto'
+  style={{ display: 'block', margin: '0 auto 20px auto', aspectRatio: '16/9' }}
+/>
 <!--truncate-->
 
 A, tak na poważnie możesz zaczerpnąć wiedzy w poniższych miejscach.
 
-Grupa Microsoft Azure User Group Poland na Facebook'u: [https://www.facebook.com/groups/azureugpl/](https://www.facebook.com/groups/azureugpl/)
+Grupa Microsoft Azure User Group Poland na Facebooku: [https://www.facebook.com/groups/azureugpl/](https://www.facebook.com/groups/azureugpl/)
 
-**Video:**
+**Video**
 
 - Azure Developer: [https://docs.microsoft.com/pl-pl/learn/browse/?roles=developer&products=azure](https://docs.microsoft.com/pl-pl/learn/browse/?roles=developer&products=azure)
 - Azure Administrator: [https://docs.microsoft.com/pl-pl/learn/browse/?roles=administrator&products=azure](https://docs.microsoft.com/pl-pl/learn/browse/?roles=administrator&products=azure)
@@ -50,7 +61,7 @@ Grupa Microsoft Azure User Group Poland na Facebook'u: [https://www.facebook.co
 - Azure Tips and Tricks: [https://www.michaelcrump.net/azure-tips-and-tricks-complete-list/](https://www.michaelcrump.net/azure-tips-and-tricks-complete-list/)
 - Pluralsight: [https://www.pluralsight.com/search?q=azure](https://www.pluralsight.com/search?q=azure)
 
-**Blogi Polskich ekspertów:**
+**Blogi Polskich ekspertów**
 
 - Michał Furmankiewicz: [http://cloudarchitects.pl/](http://cloudarchitects.pl/)
 - Michał Smereczyński: [https://lnx.azurewebsites.net/](https://lnx.azurewebsites.net/)
@@ -61,16 +72,16 @@ Grupa Microsoft Azure User Group Poland na Facebook'u: [https://www.facebook.co
 - Szymon Pulka (DEV): [https://devincloud.pl/](https://devincloud.pl/)
 - Mateusz Dudek (DEV): [https://mateuszdudek.pl/blog/](https://mateuszdudek.pl/blog/)
 
-**Book's**
+## Książki
 
 - Free eBooks from Microsoft Press
-   - Microsoft Azure Essentials: Fundamentals of Azure, Second Edition
-   - Introduction to Windows Containers
-   - Microsoft Azure Essentials Migrating SQL Server Databases to Azure
-   - Microsoft Azure Essentials: Azure Web Apps for Developers
+  - Microsoft Azure Essentials: Fundamentals of Azure, Second Edition
+  - Introduction to Windows Containers
+  - Microsoft Azure Essentials Migrating SQL Server Databases to Azure
+  - Microsoft Azure Essentials: Azure Web Apps for Developers
 
 - The Developer’s Guide to Microsoft Azure: [https://azure.microsoft.com/en-us/blog/free-ebook-the-developer-s-guide-to-microsoft-azure-now-available/](https://azure.microsoft.com/en-us/blog/free-ebook-the-developer-s-guide-to-microsoft-azure-now-available/)
 
-**Certyfikaty:**
+**Certyfikaty**
 
 - Lista możliwych certyfikatów do zrobienia dot. Azure: [https://www.microsoft.com/en-us/learning/azure-exams.aspx](https://www.microsoft.com/en-us/learning/azure-exams.aspx)

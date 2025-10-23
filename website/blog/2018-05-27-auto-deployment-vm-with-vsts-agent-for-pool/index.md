@@ -2,85 +2,84 @@
 authors:
   - progala
 date: "2018-05-27"
-description: Azure DevOps agent to ważny element wszystkich wdrożeń. Potrzebujesz stworzyć własnego agenta ADO? Zobacz jak to zrobić w prosty i automatyczny sposób! Wszystko znajdziesz we wpisie.
+description: Szablon ARM automatyzuje stworzenie maszyny w Azure i instalację agenta Azure DevOps (VSTS). Szybki deployment, konfiguracja agenta i integracja z pulą. Łatwo.
 hide_table_of_contents: true
 keywords:
   - justcloud
   - ado
   - azure
-  - microsoft azure
+  - azure devops
   - devops
   - agent
   - pipelines
   - deployment
-  - azure devops agents
+  - arm
+  - vm
 slug: auto-deployment-vm-with-vsts-agent-for-pool
 tags:
   - arm
   - automation
   - azure
-  - deplyoment
+  - deployment
   - json
   - microsoft
   - vsts
   - ado
+  - vm
+  - template
 title: Auto deployment VM with VSTS agent for pool
 ---
 
-Wszyscy który robią depyolemnty z VSTS spotykają się z sytuacją, kiedy standardowe 240min się kończy i trzeba stworzyć sobie taką maszynę. Sam robiłem taką maszynę parę razy i kiedy znów pojawiła się ta konieczność postanowiłem stworzyć automatyczny deployment który nam stworzy z JSON'a cała maszynkę i podepnie ją do Agent pool w VSTS.
-
-<!-- truncate -->
+Wszyscy którzy robią depyolemnty z VSTS spotykają się z sytuacją, kiedy standardowe 240min się kończy i trzeba stworzyć sobie taką maszynę. Sam robiłem taką maszynę parę razy i kiedy znów pojawiła się ta konieczność postanowiłem stworzyć automatyczny deployment który nam stworzy z JSON'a cała maszynkę i podepnie ją do Agent pool w VSTS.
 
 Miałem parę pomysłów, aby zrobić bardzo uniwersalny template który nie tylko przyda się wam, ale również mi w przyszłości do budowania innych szablonów. Także w skrócie opiszę ciekawostki które zastosowałem szablonie, który znajdziecie na moim GitHubie.
 
-Miałem parę pomysłów, aby zrobić bardzo uniwersalny template który nie tylko przyda się wam, ale również mi w przyszłości do budowania innych szablonów. Także w skrócie opiszę ciekawostki które zastosowałem szablonie, który znajdziecie na moim GitHubie.
+##### **GitHub** [https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-with-installation-vsts-agent](https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-with-installation-vsts-agent)
 
-##### **GitHub**: [https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-with-installation-vsts-agent](https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-with-installation-vsts-agent)
-
-Założenie dotyczące szablonu: chciałbym dodać informację, gdzie ważnym jest zwrócenie uwagi, że maszyna ma być odizolowana od naszej sieci wewnętrznej, dlatego szablon jest infrastruktura stand alone, aby było bezpiecznie i w razie czego można ją usuną lub powołać więcej agentów do deployment’ów.
+Założenie dotyczące szablonu: chciałbym dodać informację, gdzie ważnym jest zwrócenie uwagi, że maszyna ma być odizolowana od naszej sieci wewnętrznej, dlatego szablon jest infrastruktura stand alone, aby było bezpiecznie i w razie czego można ją usuną lub powołać więcej agentów do deploymentów.
 
 <!--truncate-->
 
-# Opis szablonu
+## Opis szablonu
 
-## **Sekcja Parameters:**
+## Sekcja Parameters
 
-w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automatycznego podłączenia do VSTS'a.
+w tej sekcji podajemy dane które przydadzą nam się do deplymentu i automatycznego podłączenia do VSTS'a.
 
 - **adminUsername**, **adminPassword** - lokalny użytkownik i hasło,
 - **dnsLabelPrefix** - zostanie automatycznie wygenerowany podczas deployment’u, więc nie ma konieczności go zmieniać,
 - **vmName** - nazwa naszej maszyny oraz na podstawie tej nazwy zostaną nazwane wszystkie nasze resource jest: VNET, NSG, Storage...
-- **urlvsts** - adres do naszego projektu VSTS np.: https://project1.visualstudio.com,
+- **urlvsts** - adres do naszego projektu VSTS, np. [https://project1.visualstudio.com](https://project1.visualstudio.com)
 - **auth** - rodzaj poświadczenia - wybrany domyślnie PAT,
 - **token** - token security który umożliwi nam podłączenie się do projektu. Więcej informacji jak stworzyć Security Token poniżej:
-   - [**https://docs.microsoft.com/en-us/vsts/build-release/actions/agents/v2-windows?view=vsts**](https://docs.microsoft.com/en-us/vsts/build-release/actions/agents/v2-windows?view=vsts)
+  - [Dokumentacja agenta VSTS](https://docs.microsoft.com/en-us/vsts/build-release/actions/agents/v2-windows?view=vsts)
 
 - **pool** - nazwa puli, do której zostanie dodana maszyna w VSTS'ie - ustawiony jest na default
 - **AccessIPNSG** - adres, który tutaj podacie zostanie dodany do NSG i tylko z tego adresu dostaniecie się po RDP do maszyny,
 - **Tag** - tagi mogą ulec waszej modyfikacji ustawione są na Project: VSTSAgent.
 
-## **Sekcja Variables:**
+## Sekcja Variables
 
-- __vmsize__ - ustawiony na "Standard_B1s" - dosyć tani i wystarczający na maszynę deployment’owy - pamiętaj, aby sprawdzić, czy masz możliwość deploy’owania tej maszyny w swojej subskrypcji w innym przypadku zgłoś request do supportu Microsoft w celu uruchomienia wielkości B_size.
-- **urldonwloadagent** - w tym miejscu jest podany link do ściągnięcia aktualnego zip'a z agentem VSTS - w razie zmiany wersji należy zaktualizować link na aktualny
-- **filescriptURI** - skrypt napisany przeze mnie w celu automatycznego pobrania i zainstalowania agenta na maszynie: https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/vstsagent.ps1
-- **filescriptURISplit** - bardzo ciekawa funkcja, która rozbija powyższy url na tekst tam, gdzie jest slah "/" co w efekcie generuje nam obiekt
-   - więcej ciekawych informacji w dokumentacji Microsoft: **[https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions)**
+- **vmsize** - ustawiony na "Standard_B1s". To tani rozmiar wystarczający na maszynę deploymentową. Sprawdź, czy możesz deployować tę maszynę w swojej subskrypcji; w przeciwnym razie zgłoś request do supportu Microsoft.
+- **urldonwloadagent** - link do pobrania paczki agenta VSTS. W razie zmiany wersji zaktualizuj link.
+- **filescriptURI** - skrypt automatyzujący pobranie i instalację agenta: [vstsagent.ps1 na GitHubie](https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/vstsagent.ps1)
+- **filescriptURISplit** - funkcja, która rozbija powyższy URL na części według znaku "/" i tworzy tablicę.
+  - więcej informacji: [Funkcje ARM Templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions)
 
-- **filescriptName** - kolejna fajna funkcja, gdzie na podstawie powyższego splita zabieramy nazwę skryptu, który posłuży nam do instalacji w CustomScriptExtension,
-- **agentname** - każdy dodany Agent do puli w VSTS będzie nosił nazwę NazwaMaszynyagent.
+- **filescriptName** - nazwa skryptu używanego w CustomScriptExtension uzyskiwana z powyższego split.
+- **agentname** - nazwa agenta dodawanego do puli; domyślnie oparta na nazwie maszyny.
 
-## **Sekcja Resources:**
+## Sekcja Resources
 
-- **type: Microsoft.Network/networkSecurityGroups** - NSG z dostępem RDP tylko z adresu IP który dodamy podczas deploy’mentu parametr: AccessIPNSG
-- **type: Microsoft.Network/publicIPAddresses** - Publiczny adres dla naszej VM, aby móc się do niej podłączyć z zewnątrz.
-- **type: Microsoft.Network/virtualNetworks** - VNet
-- **type: Microsoft.Compute/virtualMachines** - tworzenie maszyny wirtualnej z Windows 2016 i Managed Disk
-   - **type: Microsoft.Compute/virtualMachines/extensions** - instalacja agenta VSTS, bazując na napisanym skrypcie i udostępnionym na GitHubie: vstsagent.ps1 zostanie on użyty podczas deplyoment’u a podczas jego wykonywaniu dodamy informację związane z url VSTS, tokenem itp. Pełna komenda w linii 257: "commandToExecute"
+- **type: Microsoft.Network/networkSecurityGroups** - NSG z dostępem RDP tylko z adresu IP, który podamy w parametrze AccessIPNSG.
+- **type: Microsoft.Network/publicIPAddresses** - publiczny adres dla VM, umożliwiający połączenie z zewnątrz.
+- **type: Microsoft.Network/virtualNetworks** - VNet.
+- **type: Microsoft.Compute/virtualMachines** - tworzenie maszyny wirtualnej z Windows i Managed Disk.
+  - **type: Microsoft.Compute/virtualMachines/extensions** - instalacja agenta VSTS oparta na skrypcie z GitHuba (vstsagent.ps1); pełna komenda znajduje się w polu "commandToExecute".
 
 - **type: Microsoft.DevTestLab/schedules** - dzięki temu nasza maszynie będzie wyłączana codziennie o 18:00 zona: W. Europe Standard Time - ten feature działa tylko kiedy maszyna jest włączona pozwoli to nam zapomnieć o wyłączaniu, a mimo wszystko nie będziemy tracić pieniędzy za jej bezczynność.
 
-## **Sekcja Outputs:**
+## **Sekcja Outputs**
 
 - **PublicDNS** - po wykonaniu deployment’u wyświetli nam publiczny adres DNS dla VM,
 - **Hostname** - wyświetli nazwę maszyny, którą wprowadziliśmy w parametrach,
@@ -89,7 +88,7 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
 - **ScriptURI** - wyświetli źródło z jakiego został pobrany skrypt do instalacji Agenta,
 - **AccessRDPFrom** - wyświetli adres IP który został dodany do NSG, aby miał dostęp do RDP
 
-# Szablon:
+## Szablon
 
 ```json
 {
@@ -149,7 +148,7 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
     "AccessIPNSG": {
       "type": "string",
       "metadata": {
-        "description": "Your publif IP it will added for NSG for connection via RDP."
+        "description": "Your public IP it will added for NSG for connection via RDP."
       }
     },
     "numberagents": {
@@ -429,24 +428,24 @@ w tej sekcji podajemy dane które przydadzą nam się do deplyment’u i automat
 
 ```
 
-# **Przykład:**
+## Przykład
 
-### **Aby wykonać deployment należy utworzyć Resource Group'ę:**
+### Aby wykonać deployment należy utworzyć Resource Groupę
 
 `New-AzureRMResourceGroup -Name VSTS -Location westeurope`
 
-### **Wykonanie deployment’u:**
+### Wykonanie deploymentu
 
 `New-AzureRMResourceGroupDeployment -ResourceGroupName VSTS -TemplateURI "https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/azuredeploy.json" -Verbose`
 
-**Efekt w portalu po deploy’mencie:**
+### Efekt w portalu po deploymencie
 
-![](images/Clipboard21.jpg)
+![Zrzut ekranu - efekt w portalu](images/Clipboard21.jpg)
 
-**Widok puli agentów w VSTS:**
+### Widok puli agentów w VSTS
 
-![](images/Clipboard22.jpg)
+![Zrzut ekranu - pula agentów](images/Clipboard22.jpg)
 
-Maszyna jest gotowa do deploy’mentów, jeśli potrzebujesz więcej maszyn możesz bez oporu deploy’ować większą ilość :)
+Maszyna jest gotowa do deploymentów, jeśli potrzebujesz więcej maszyn możesz bez oporu deployować większą ilość 😊
 
 Czas deplymentu to: 15 minutes 46 seconds.

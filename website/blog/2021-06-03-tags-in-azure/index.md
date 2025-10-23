@@ -2,7 +2,7 @@
 authors:
   - progala
 date: "2021-06-03"
-description: Kompletny przewodnik po tagowaniu zasobów w Azure: PowerShell, eksport CSV i automatyzacja dla małych i dużych środowisk.
+description: Kompletny przewodnik po tagowaniu zasobów w Azure PowerShell, eksport CSV i automatyzacja dla małych i dużych środowisk.
 keywords:
   - Azure
   - tagowanie

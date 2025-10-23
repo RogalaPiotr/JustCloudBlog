@@ -2,7 +2,7 @@
 authors:
   - progala
 date: "2022-01-31"
-description: Praktyczny przewodnik: jak wdrożyć własnego Azure Pipelines agenta na serwerze lub VM — krok po kroku, ze skryptami, konfiguracją i wskazówkami bezpieczeństwa.
+description: Praktyczny przewodnik - jak wdrożyć własnego Azure Pipelines agenta na serwerze lub VM krok po kroku, ze skryptami, konfiguracją i wskazówkami bezpieczeństwa.
 keywords:
     - Azure DevOps
     - Azure
@@ -248,7 +248,7 @@ Po wdrożeniu:
    2. Azure Portal
       ![](images/2022-02-27_21-35-04.jpg)
 
-## Instruktaż video:
+## Instruktaż video
 
 <ReactPlayer
   controls

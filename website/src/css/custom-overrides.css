@@ -787,8 +787,8 @@ a:hover {
 }
 
 [data-theme='dark'] .searchBar_RVTs input.searchInput_YFbd {
-  background-color: var(--jc-color-gray-800);
-  color: var(--jc-text-primary);
+  background-color: var(--jc-color-gray-800) !important;
+  color: var(--jc-text-primary) !important;
   border: 1px solid var(--jc-color-gray-700);
 }
 
@@ -803,6 +803,12 @@ a:hover {
   background-color: var(--jc-color-gray-800) !important;
   border: 1px solid var(--jc-color-gray-700) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Override all elements inside search dropdown for dark mode */
+[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 * {
+  background-color: var(--jc-color-gray-800) !important;
+  color: var(--jc-text-primary) !important;
 }
 
 /* Search suggestions/items in dropdown */
@@ -840,6 +846,15 @@ a:hover {
 [data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 .suggestion_R3Tf.cursor_CRqx {
   background-color: var(--jc-color-blue-light-dark) !important;
   color: var(--jc-color-blue-primary-dark) !important;
+}
+
+/* All buttons and interactive elements in search dropdown - dark mode */
+[data-theme='dark'] .searchBar_RVTs button,
+[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 button,
+[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 div,
+[data-theme='dark'] .searchBar_RVTs .dropdownMenu_qbY6 span {
+  background-color: var(--jc-color-gray-800) !important;
+  color: var(--jc-text-primary) !important;
 }
 
 /* Search input focus state */

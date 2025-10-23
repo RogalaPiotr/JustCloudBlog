@@ -87,7 +87,7 @@
         <category label="tokeny dostępowe" term="tokeny dostępowe"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Jak wdrożyć Azure Pipelines agenta? (How to deploy Azure Pipelines agent?)]]></title>
+        <title type="html"><![CDATA[Jak wdrożyć Azure Pipeline agenta?]]></title>
         <id>https://blog.justcloud.pl/how to deploy azure pipelines agent</id>
         <link href="https://blog.justcloud.pl/how to deploy azure pipelines agent"/>
         <updated>2022-01-31T00:00:00.000Z</updated>

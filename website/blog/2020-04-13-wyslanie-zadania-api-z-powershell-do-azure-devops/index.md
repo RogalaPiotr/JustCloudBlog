@@ -2,17 +2,18 @@
 authors:
   - progala
 date: "2020-04-13"
-description: PowerShell to nie tylko automatyzacja za pomocą modułów. Możemy go również wykorzystać do wysyłania zapytań za pomocą API do różnych serwisów. W tym artykule zobaczysz jak to zrobić.
+description: Jak wysyłać żądania API z PowerShell do Azure DevOps — przykłady, skrypty i wskazówki do automatyzacji z użyciem Invoke-WebRequest.
 keywords:
-  - justcloud
-  - powershell
-  - api
+  - PowerShell
+  - API
+  - Azure DevOps
   - automatyzacja
-  - automation
-  - azure
-  - microsoft azure
-  - ado
+  - invoke-webrequest
+  - scripts
+  - ADO
   - agents
+  - REST
+  - integracja
 slug: wyslanie-zadania-api-z-powershell-do-azure-devops
 tags:
   - api
@@ -25,13 +26,12 @@ title: Wysłanie żądania API z PowerShell do Azure DevOps
 
 Często stajemy przed wyzwaniem zintegrowania ze sobą wielu narzędzi. Jeżeli stosujemy PowerShell w celu automatyzacji swojej infrastruktury bądź budowy prostych skryptów może nam się przydać zastosowanie użycia wywołania żądania API za pomocą PowerShell.
 
-<!-- truncate -->
-
 Poniższy przykład zaprezentuje użycie wysłania żądania za pomocą API do Azure DevOps w celu dodania puli agentowej.
 
-Referencje API do Azure DevOps są dostępne tutaj: 
+Referencje API do Azure DevOps są dostępne tutaj:
 
-[https://docs.microsoft.com/en-us/rest/api/azure/devops/distributedtask/pools/add?view=azure-devops-rest-5.1](https://docs.microsoft.com/en-us/rest/api/azure/devops/distributedtask/pools/add?view=azure-devops-rest-5.1)
+- [https://docs.microsoft.com/en-us/rest/api/azure/devops/distributedtask/pools/add?view=azure-devops-rest-5.1](https://docs.microsoft.com/en-us/rest/api/azure/devops/distributedtask/pools/add?view=azure-devops-rest-5.1)
+<!-- truncate -->
 
 Poniższy przykładowy skrypt możemy rozbudować dla innych operacji stosując odpowiedni uri dla potrzebnej operacji z powyższego linku.
 
@@ -42,8 +42,6 @@ Na początku definiujemy zmienne:
 - $pool - nazwa puli, którą chcemy utworzyć
 - $encodedPat - przekonwertowanie tokenu na SecureString
 - $body - informacje do przekazania w wysyłanym żądaniu
-
-<!--truncate-->
 
 ```ps1
 $urlvsts = 'https://dev.azure.com/PROJECT-NAME'
@@ -71,15 +69,15 @@ Screens:
 
 Code:
 
-![](images/2020-04-13_14h12_09.png)
+![Kod przykładowy](images/2020-04-13_14h12_09.png)
 
 Output:
 
-![](images/2020-04-13_14h12_53.png)
+![Output przykładowy](images/2020-04-13_14h12_53.png)
 
 Azure DevOps:
 
-![](images/2020-04-13_14h14_02-1024x604.png)
+![Widok w Azure DevOps](images/2020-04-13_14h14_02-1024x604.png)
 
 W prosty sposób możemy teraz zautomatyzować operacje w Azure DevOps bez uruchamiania portalu. Niestety referencje API dla Azure DevOps nie pozwalają na wszystko co możemy wyklikać w portalu, ale na pewno pomoże to w osiągnięciu celu. Jeśli masz ciekawe przypadki użycia wspomnianego API lub zastanawiasz się, gdzie można tego użyć zapraszam do komentowania.
 

@@ -3,12 +3,18 @@ authors:
   - progala
 comments: true
 date: "2023-09-04"
-description: Dowiedz się, jak ochrona Push w GitHubie wspiera programistów i inżynierów chmury w zabezpieczaniu ich repozytoriów. Przeczytaj artykuł, aby zrozumieć, jak ta funkcja przeciwdziała przypadkowemu ujawnieniu haseł i innych wrażliwych informacji, zwiększając bezpieczeństwo na platformie.
+description: GitHub push protection chroni przed przypadkowym ujawnieniem haseł, kluczy API i tokenów. Zwiększ bezpieczeństwo repozytorium — sprawdź jak!
 keywords:
   - GitHub push protection
-  - ochrona danych GitHub
-  - bezpieczeństwo repozytoriów
-  - API secrets GitHub
+  - ochrona danych
+  - bezpieczeństwo
+  - repozytorium
+  - klucze API
+  - hasła
+  - tokeny dostępowe
+  - DevOps
+  - chmura
+  - secret scanning
 slug: github push protection leak credentials
 tags:
   - GitHub
@@ -16,14 +22,15 @@ tags:
   - bezpieczeństwo
   - repozytorium
   - ochrona danych
-  - cloud engineering
   - DevOps
+  - chmura
+  - klucze API
+  - hasła
+  - tokeny dostępowe
 title: Push protection w GitHub przed opublikowaniem haseł
 ---
 
 GitHub, jako wiodąca platforma zarządzania kodem, stale wprowadza nowe funkcje, by zapewnić bezpieczne środowisko dla repozytoriów organizacyjnych i projektów prywatnych. Jednym z najnowszych ulepszeń jest funkcja "Ochrona przed przesyłaniem do repozytoriów i organizacji" ("Push protection for repositories and organizations"), która przynosi liczne korzyści dla programistów, inżynierów chmury oraz zespołów DevOps.
-
-<!-- truncate -->
 
 W tym artykule szczegółowo omówimy, jak ta innowacyjna funkcja wpływa na Twoje repozytorium na GitHubie i jak możesz czerpać z niej korzyści.
 

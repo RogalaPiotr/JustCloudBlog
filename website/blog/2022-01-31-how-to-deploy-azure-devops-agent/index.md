@@ -2,14 +2,18 @@
 authors:
   - progala
 date: "2022-01-31"
-description: Szukasz sposobu na wdrożenie własnego serwera z agentem do deploymentów w Azure DevOps? Dowiedz się, jak szybko i łatwo zrealizować to zadanie dzięki szczegółowemu procesowi i skryptom opisanym w tym artykule.
+description: Praktyczny przewodnik: jak wdrożyć własnego Azure Pipelines agenta na serwerze lub VM — krok po kroku, ze skryptami, konfiguracją i wskazówkami bezpieczeństwa.
 keywords:
-  - Azure
-  - DevOps
-  - deployment
-  - agent
-  - pipelines
-  - wdrożenie
+    - Azure DevOps
+    - Azure
+    - agent
+    - pipelines
+    - self-hosted
+    - deployment
+    - wdrożenie
+    - automatyzacja
+    - skrypty
+    - bezpieczeństwo
 slug: how to deploy azure pipelines agent
 tags:
   - deploy
@@ -23,8 +27,6 @@ title: Jak wdrożyć Azure Pipelines agenta? (How to deploy Azure Pipelines agen
 import ReactPlayer from 'react-player'
 
 Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tzw. ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) przez 1800 minut (30 godzin) miesięcznie. Po przekroczeniu tego czasu nie możemy wykonywać deploymentów.
-
-<!-- truncate -->
 
 Można jednak dokupić nielimitowany dostęp do agenta za $40 miesięcznie lub korzystać ze swojego serwera, np. laptopa, instalując agenta — ta opcja wdrażania jest znana w dokumentacji jako ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install). Dodam tylko, że wykorzystywanie własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym 🙃.
 
@@ -40,9 +42,9 @@ Bardzo często słyszę pytanie: po co mi własny serwer do wdrażania?
   style={{ display: 'block', margin: '0 auto 20px auto', aspectRatio: '16/9' }}
 />
 
-Klasyczna odpowiedź: to zależy... Przy pracy nad pracą dyplomową lub projektem PoC dla znajomego można postawić agenta na swoim laptopie. Jeśli pracujecie w grupie kilku osób, najlepiej byłoby skorzystać z własnego serwera. Jeśli jesteście firmą dostarczającą rozwiązania, zdecydowanie warto rozważyć własny serwer lub zakup agentów "Microsoft-hosted" za $40, jeśli czas wdrażania przekracza 1800 minut miesięcznie. Jest jeszcze jedna sytuacja, kiedy warto wybrać własny serwer z agentami: wiele firm korzysta z prywatnych, kontrolowanych wewnętrznych sieci z ograniczonym dostępem z zewnątrz. Wdrożenie własnego serwera w takiej sieci pozwoli na łatwą komunikację z wdrożonymi rozwiązaniami na platformie Microsoft Azure oraz zwiększy bezpieczeństwo procesowanych danych. Pamiętajmy, że agent ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) to agent "publiczny", odizolowany od waszej sieci. ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install) może zostać wdrożony jako agent odizolowany, ale można go również zintegrować z własną siecią.
+<!-- truncate -->
 
-<!--truncate-->
+Klasyczna odpowiedź: to zależy... Przy pracy nad pracą dyplomową lub projektem PoC dla znajomego można postawić agenta na swoim laptopie. Jeśli pracujecie w grupie kilku osób, najlepiej byłoby skorzystać z własnego serwera. Jeśli jesteście firmą dostarczającą rozwiązania, zdecydowanie warto rozważyć własny serwer lub zakup agentów "Microsoft-hosted" za $40, jeśli czas wdrażania przekracza 1800 minut miesięcznie. Jest jeszcze jedna sytuacja, kiedy warto wybrać własny serwer z agentami: wiele firm korzysta z prywatnych, kontrolowanych wewnętrznych sieci z ograniczonym dostępem z zewnątrz. Wdrożenie własnego serwera w takiej sieci pozwoli na łatwą komunikację z wdrożonymi rozwiązaniami na platformie Microsoft Azure oraz zwiększy bezpieczeństwo procesowanych danych. Pamiętajmy, że agent ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) to agent "publiczny", odizolowany od waszej sieci. ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install) może zostać wdrożony jako agent odizolowany, ale można go również zintegrować z własną siecią.
 
 Poniżej odsyłam was do dokumentacji, w której można dowiedzieć się więcej o możliwościach oferowanych przez Microsoft w zakresie agentów Azure Pipelines.
 
@@ -221,15 +223,15 @@ process {
 variables:
 - name: SPNName
   value: 'Subscription-JustCloudPublic'
-* name: location
-  value: 'westeurope'
-* name: urlProjectADO
-  value: 'https://justcloudpublic.visualstudio.com'
-* name: pool
-  value: 'Default'
-* name: numberagents
-  value: 3
-* group: 'justcloudpublickeyvault'
+- name: location
+    value: 'westeurope'
+- name: urlProjectADO
+    value: 'https://justcloudpublic.visualstudio.com'
+- name: pool
+    value: 'Default'
+- name: numberagents
+    value: 3
+- group: 'justcloudpublickeyvault'
 
 ```
 

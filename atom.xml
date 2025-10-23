@@ -423,7 +423,7 @@
 <!--$?--><template id="B:0"></template><!--/$-->
 <p>A, tak na poważnie możesz zaczerpnąć wiedzy w poniższych miejscach.</p>
 <p>Grupa Microsoft Azure User Group Poland na Facebooku:&nbsp;<a href="https://www.facebook.com/groups/azureugpl/" target="_blank" rel="noopener noreferrer" class="">https://www.facebook.com/groups/azureugpl/</a></p>
-<p><strong>Video</strong></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="video">Video<a href="https://blog.justcloud.pl/skad-uczyc-sie-o-microsoft-azure#video" class="hash-link" aria-label="Direct link to Video" title="Direct link to Video" translate="no">​</a></h2>
 <ul>
 <li class="">Azure Developer:&nbsp;<a href="https://docs.microsoft.com/pl-pl/learn/browse/?roles=developer&amp;products=azure" target="_blank" rel="noopener noreferrer" class="">https://docs.microsoft.com/pl-pl/learn/browse/?roles=developer&amp;products=azure</a></li>
 <li class="">Azure Administrator:&nbsp;<a href="https://docs.microsoft.com/pl-pl/learn/browse/?roles=administrator&amp;products=azure" target="_blank" rel="noopener noreferrer" class="">https://docs.microsoft.com/pl-pl/learn/browse/?roles=administrator&amp;products=azure</a></li>
@@ -434,7 +434,7 @@
 <li class="">Azure Tips and Tricks:&nbsp;<a href="https://www.michaelcrump.net/azure-tips-and-tricks-complete-list/" target="_blank" rel="noopener noreferrer" class="">https://www.michaelcrump.net/azure-tips-and-tricks-complete-list/</a></li>
 <li class="">Pluralsight:&nbsp;<a href="https://www.pluralsight.com/search?q=azure" target="_blank" rel="noopener noreferrer" class="">https://www.pluralsight.com/search?q=azure</a></li>
 </ul>
-<p><strong>Blogi&nbsp;Polskich ekspertów</strong></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="blogipolskich-ekspertów">Blogi&nbsp;Polskich ekspertów<a href="https://blog.justcloud.pl/skad-uczyc-sie-o-microsoft-azure#blogipolskich-ekspert%C3%B3w" class="hash-link" aria-label="Direct link to Blogi&nbsp;Polskich ekspertów" title="Direct link to Blogi&nbsp;Polskich ekspertów" translate="no">​</a></h2>
 <ul>
 <li class="">Michał Furmankiewicz: <a href="http://cloudarchitects.pl/" target="_blank" rel="noopener noreferrer" class="">http://cloudarchitects.pl/</a></li>
 <li class="">Michał Smereczyński: <a href="https://lnx.azurewebsites.net/" target="_blank" rel="noopener noreferrer" class="">https://lnx.azurewebsites.net/</a></li>
@@ -460,7 +460,7 @@
 <p>The Developer’s Guide to Microsoft Azure:&nbsp;<a href="https://azure.microsoft.com/en-us/blog/free-ebook-the-developer-s-guide-to-microsoft-azure-now-available/" target="_blank" rel="noopener noreferrer" class="">https://azure.microsoft.com/en-us/blog/free-ebook-the-developer-s-guide-to-microsoft-azure-now-available/</a></p>
 </li>
 </ul>
-<p><strong>Certyfikaty</strong></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="certyfikaty">Certyfikaty<a href="https://blog.justcloud.pl/skad-uczyc-sie-o-microsoft-azure#certyfikaty" class="hash-link" aria-label="Direct link to Certyfikaty" title="Direct link to Certyfikaty" translate="no">​</a></h2>
 <ul>
 <li class="">Lista możliwych certyfikatów do zrobienia dot. Azure:&nbsp;<a href="https://www.microsoft.com/en-us/learning/azure-exams.aspx" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/en-us/learning/azure-exams.aspx</a></li>
 </ul>]]></content>

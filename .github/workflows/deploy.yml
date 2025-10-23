@@ -23,24 +23,27 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
-          cache: 'yarn'
-          cache-dependency-path: 'website/yarn.lock'
+          cache: 'npm'
+          cache-dependency-path: 'website/package-lock.json'
 
       - name: Dump GitHub context
         working-directory: website
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      
       - name: Dump job context
         working-directory: website
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
         run: echo "$JOB_CONTEXT"
+      
       - name: Dump steps context
         working-directory: website
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
         run: echo "$STEPS_CONTEXT"
+      
       - name: Dump runner context
         working-directory: website
         env:
@@ -49,11 +52,11 @@ jobs:
 
       - name: Install dependencies
         working-directory: website
-        run: yarn install --frozen-lockfile
+        run: npm ci
       
       - name: Build
         working-directory: website
-        run: yarn build
+        run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

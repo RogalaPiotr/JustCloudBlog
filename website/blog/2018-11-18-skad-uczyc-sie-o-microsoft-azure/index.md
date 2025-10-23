@@ -50,7 +50,7 @@ A, tak na poważnie możesz zaczerpnąć wiedzy w poniższych miejscach.
 
 Grupa Microsoft Azure User Group Poland na Facebooku: [https://www.facebook.com/groups/azureugpl/](https://www.facebook.com/groups/azureugpl/)
 
-**Video**
+## Video
 
 - Azure Developer: [https://docs.microsoft.com/pl-pl/learn/browse/?roles=developer&products=azure](https://docs.microsoft.com/pl-pl/learn/browse/?roles=developer&products=azure)
 - Azure Administrator: [https://docs.microsoft.com/pl-pl/learn/browse/?roles=administrator&products=azure](https://docs.microsoft.com/pl-pl/learn/browse/?roles=administrator&products=azure)
@@ -61,7 +61,7 @@ Grupa Microsoft Azure User Group Poland na Facebooku: [https://www.facebook.com
 - Azure Tips and Tricks: [https://www.michaelcrump.net/azure-tips-and-tricks-complete-list/](https://www.michaelcrump.net/azure-tips-and-tricks-complete-list/)
 - Pluralsight: [https://www.pluralsight.com/search?q=azure](https://www.pluralsight.com/search?q=azure)
 
-**Blogi Polskich ekspertów**
+## Blogi Polskich ekspertów
 
 - Michał Furmankiewicz: [http://cloudarchitects.pl/](http://cloudarchitects.pl/)
 - Michał Smereczyński: [https://lnx.azurewebsites.net/](https://lnx.azurewebsites.net/)
@@ -82,6 +82,6 @@ Grupa Microsoft Azure User Group Poland na Facebooku: [https://www.facebook.com
 
 - The Developer’s Guide to Microsoft Azure: [https://azure.microsoft.com/en-us/blog/free-ebook-the-developer-s-guide-to-microsoft-azure-now-available/](https://azure.microsoft.com/en-us/blog/free-ebook-the-developer-s-guide-to-microsoft-azure-now-available/)
 
-**Certyfikaty**
+## Certyfikaty
 
 - Lista możliwych certyfikatów do zrobienia dot. Azure: [https://www.microsoft.com/en-us/learning/azure-exams.aspx](https://www.microsoft.com/en-us/learning/azure-exams.aspx)

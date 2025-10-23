@@ -1,22 +1,37 @@
 ---
-slug: tags-in-azure
-title: "Przyspieszenie pracy nad tagowaniem zasobów za pomocą PowerShell - Tag raport Microsoft Azure"
-description: "Zastanawiasz się jak tagować zasoby w Azure? W tym artykule dokładnie opisuje jak to zrobić dla małych i dużych środowisk w Auzre."
+authors:
+  - progala
 date: "2021-06-03"
-authors: [progala]
-tags: 
-  - "azutomation"
-  - "csv"
-  - "microsoft azure"
-  - "raport"
-  - "report"
-  - "tag"
-  - "tagging"
-  - "tags"
-keywords: [justcloud, powershell, api, tagowanie, tags, automatyzacja, automation, csv, azure, microsoft azure]
+description: Zastanawiasz się jak tagować zasoby w Azure? W tym artykule dokładnie opisuje jak to zrobić dla małych i dużych środowisk w Auzre.
+keywords:
+  - justcloud
+  - powershell
+  - api
+  - tagowanie
+  - tags
+  - automatyzacja
+  - automation
+  - csv
+  - azure
+  - microsoft azure
+slug: tags-in-azure
+tags:
+  - azutomation
+  - csv
+  - microsoft azure
+  - raport
+  - report
+  - tag
+  - tagging
+  - tags
+title: Przyspieszenie pracy nad tagowaniem zasobów za pomocą PowerShell - Tag raport Microsoft Azure
 ---
 
-Kiedyś przygotowałem ten skrypt żeby szybko móc otagować wiele zasobów wdrożonych na platformie Microsoft Azure. Jest wiele możliwości jak to zrobić szybko, prosto, ale starałem się zrobić uniwersalne rozwiązanie będące łatwe oraz bezpieczne w użyciu. Dlatego postanowiłem zrobić jeden skrypt, który generuje nam wszystkie zasoby do pliku CSV. A drugi skrypt na podstawie pliku CSV będzie pobierał z niego dane zasobów i nadpisywał je na platformie.
+Kiedyś przygotowałem ten skrypt żeby szybko móc otagować wiele zasobów wdrożonych na platformie Microsoft Azure. Jest wiele możliwości jak to zrobić szybko, prosto, ale starałem się zrobić uniwersalne rozwiązanie będące łatwe oraz bezpieczne w użyciu.
+
+<!-- truncate -->
+
+Dlatego postanowiłem zrobić jeden skrypt, który generuje nam wszystkie zasoby do pliku CSV. A drugi skrypt na podstawie pliku CSV będzie pobierał z niego dane zasobów i nadpisywał je na platformie.
 
 Skrypty są dostępne na GitHub:
 
@@ -39,19 +54,20 @@ Taki podział daje nam:
 Jak działają skrypty?
 
 1. GetAllTags
-    1. Zapis do pliku odbywa się automatycznie do lokalizacji gdzie wykonujemy skrypt lub możemy użyć opcji -path gdzie mają być zapisane pliki.
-    2. Nazwa pliku zawiera datę, jeśli plik istnieje zostanie on nadpisany.
-    3. Skrypt sprawdza czy jesteś zalogowany do Azure. Podczas wykonywania skryptu możesz podać parametr -tenantId, aby mieć pewność że logujesz się do odpowiedniego Azure Directory i -subId w celu wybrania subskrypcji.
+   1. Zapis do pliku odbywa się automatycznie do lokalizacji gdzie wykonujemy skrypt lub możemy użyć opcji -path gdzie mają być zapisane pliki.
+   2. Nazwa pliku zawiera datę, jeśli plik istnieje zostanie on nadpisany.
+   3. Skrypt sprawdza czy jesteś zalogowany do Azure. Podczas wykonywania skryptu możesz podać parametr -tenantId, aby mieć pewność że logujesz się do odpowiedniego Azure Directory i -subId w celu wybrania subskrypcji.
+
 2. SetTagsResourceGroups oraz SetTagsResources
-    1. Import danych z plików odbywa się automatycznie na podstawie konwencji nazewniczej wygenerowanego wcześniej pliku. Skrypt importuje najnowszy plik CSV we wskazanym katalogu. Istnieje podanie ścieżki poprzez parametr -path.
-    2. Tagi powinny być oddzielone między sobą przecinkami.
-    3. Tagi zapisane w pliku CSV działają na zasadzie par “Key:Value” w osobnych kolumnach.
-    4. Skrypt pobiera wszystkie elementy z pliku CSV. Następnie skrypt usuwa tagi w Microsoft Azure następnie wprowadzony z pliku CSV.
-    5. Jeśli nie chcemy danego zasobu ruszać, wystarczy go usunąć z pliku CSV.
-    6. Skrypt działa w trybie parallel co pozwala na szybsze wprowadzanie zmian. Throttle dla zapisu tagów wynosi 5, pamiętaj, że jest to optymalna wartość.
-    7. Skrypt sprawdza czy jesteś zalogowany do Azure. Podczas wykonywania skryptu możesz podać parametr -tenantId.
-    8. Jeśli chcesz wyczyścić tagi na zasobach wystarczy że zostawisz pustą komórkę lub wpiszesz “empty”.
-    9. Wprowadzanie tagów możemy testować wprowadzając w pliku CSV tylko ten zasób który chcemy zmienić. Reszta zasobów nie będzie brana pod uwagę podczas wdrażania tagów.
+   1. Import danych z plików odbywa się automatycznie na podstawie konwencji nazewniczej wygenerowanego wcześniej pliku. Skrypt importuje najnowszy plik CSV we wskazanym katalogu. Istnieje podanie ścieżki poprzez parametr -path.
+   2. Tagi powinny być oddzielone między sobą przecinkami.
+   3. Tagi zapisane w pliku CSV działają na zasadzie par “Key:Value” w osobnych kolumnach.
+   4. Skrypt pobiera wszystkie elementy z pliku CSV. Następnie skrypt usuwa tagi w Microsoft Azure następnie wprowadzony z pliku CSV.
+   5. Jeśli nie chcemy danego zasobu ruszać, wystarczy go usunąć z pliku CSV.
+   6. Skrypt działa w trybie parallel co pozwala na szybsze wprowadzanie zmian. Throttle dla zapisu tagów wynosi 5, pamiętaj, że jest to optymalna wartość.
+   7. Skrypt sprawdza czy jesteś zalogowany do Azure. Podczas wykonywania skryptu możesz podać parametr -tenantId.
+   8. Jeśli chcesz wyczyścić tagi na zasobach wystarczy że zostawisz pustą komórkę lub wpiszesz “empty”.
+   9. Wprowadzanie tagów możemy testować wprowadzając w pliku CSV tylko ten zasób który chcemy zmienić. Reszta zasobów nie będzie brana pod uwagę podczas wdrażania tagów.
 
 Poniżej przedstawiam przykład jak to działa na mojej subskrypcji.
 

@@ -1,27 +1,41 @@
 ---
-slug: wyslanie-zadania-api-z-powershell-do-azure-devops
-title: "Wysłanie żądania API z PowerShell do Azure DevOps"
-description: "PowerShell to nie tylko automatyzacja za pomocą modułów. Możemy go również wykorzystać do wysyłania zapytań za pomocą API do różnych serwisów. W tym artykule zobaczysz jak to zrobić."
+authors:
+  - progala
 date: "2020-04-13"
-authors: [progala]
-tags: 
-  - "api"
-  - "automation"
-  - "azure"
-  - "azure devops"
-  - "powershell"
-keywords: [justcloud, powershell, api, automatyzacja, automation, azure, microsoft azure, ado, agents]
+description: PowerShell to nie tylko automatyzacja za pomocą modułów. Możemy go również wykorzystać do wysyłania zapytań za pomocą API do różnych serwisów. W tym artykule zobaczysz jak to zrobić.
+keywords:
+  - justcloud
+  - powershell
+  - api
+  - automatyzacja
+  - automation
+  - azure
+  - microsoft azure
+  - ado
+  - agents
+slug: wyslanie-zadania-api-z-powershell-do-azure-devops
+tags:
+  - api
+  - automation
+  - azure
+  - azure devops
+  - powershell
+title: Wysłanie żądania API z PowerShell do Azure DevOps
 ---
 
-Często stajemy przed wyzwaniem zintegrowania ze sobą wielu narzędzi. Jeżeli stosujemy PowerShell w celu automatyzacji swojej infrastruktury bądź budowy prostych skryptów może nam się przydać zastosowanie użycia wywołania żądania API za pomocą PowerShell. Poniższy przykład zaprezentuje użycie wysłania żądania za pomocą API do Azure DevOps w celu dodania puli agentowej.
+Często stajemy przed wyzwaniem zintegrowania ze sobą wielu narzędzi. Jeżeli stosujemy PowerShell w celu automatyzacji swojej infrastruktury bądź budowy prostych skryptów może nam się przydać zastosowanie użycia wywołania żądania API za pomocą PowerShell.
+
+<!-- truncate -->
+
+Poniższy przykład zaprezentuje użycie wysłania żądania za pomocą API do Azure DevOps w celu dodania puli agentowej.
 
 Referencje API do Azure DevOps są dostępne tutaj: 
 
 [https://docs.microsoft.com/en-us/rest/api/azure/devops/distributedtask/pools/add?view=azure-devops-rest-5.1](https://docs.microsoft.com/en-us/rest/api/azure/devops/distributedtask/pools/add?view=azure-devops-rest-5.1)
 
-Poniższy przykładowy skrypt możemy rozbudować dla innych operacji stosując odpowiedni uri dla potrzebnej operacji z powyższego linku.  
+Poniższy przykładowy skrypt możemy rozbudować dla innych operacji stosując odpowiedni uri dla potrzebnej operacji z powyższego linku.
 
-Na początku definiujemy zmienne:  
+Na początku definiujemy zmienne:
 
 - $urlvsts - URL do naszego projektu Azure DevOps
 - $token - PAT token (Instrukcja jak wygenerować token: [https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page))
@@ -30,15 +44,19 @@ Na początku definiujemy zmienne:
 - $body - informacje do przekazania w wysyłanym żądaniu
 
 <!--truncate-->
-```
+
+```ps1
 $urlvsts = 'https://dev.azure.com/PROJECT-NAME'
 $token = 'YOUR-PAT-TOKEN'
 $pool = 'YOUR-POOL-NAME'
 $encodedPat = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes( ":$token"))
 $body = "{name:`"$pool`", autoProvision: `"true`"}"
+
 ```
+
 Komenda `Invoke-WebRequest` wykonuje wysłania żądania podając wcześniej zdefiniowane zmienne oraz zawiera Uri, czyli miejsce, w które zapuka żądanie, aby ustawić nową pulę w Azure DevOps.
-```
+
+```ps1
 Invoke-WebRequest `
     -Method POST `
     -Uri "$urlvsts/_apis/distributedtask/pools?api-version=5.0-  preview.1" `
@@ -46,7 +64,9 @@ Invoke-WebRequest `
     -Headers @{Authorization = "Basic $encodedPat"} `
     -Body $body `
     -ContentType "application/json"
+
 ```
+
 Screens:
 
 Code:

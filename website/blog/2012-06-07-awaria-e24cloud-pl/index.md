@@ -1,24 +1,28 @@
 ---
-slug: awaria-e24cloud-pl
-title: "Awaria - e24cloud.pl"
-description: "4 czerwca w jednej z największych serwerowni w Polsce udostępniającej Cloud powstała awaria z poważnymi skutkami. Chodzi tu o serwerownię utrzymywaną przez firmę Beyond. Awaria została spowodowana przepięciem elektrycznym, jak tłumaczy Prezes Zarządu Michał Grzybkowski w krótkiej relacji na YouTube."
-authors: [progala]
+authors:
+  - progala
+categories:
+  - cloud-computing
 date: "2012-06-07"
-categories: 
-  - "cloud-computing"
-tags: 
-  - "awaria"
-  - "beyond"
-  - "e24cloud"
-keywords:
-  - "awaria"
-  - "beyond"
-  - "e24cloud"
+description: 4 czerwca w jednej z największych serwerowni w Polsce udostępniającej Cloud powstała awaria z poważnymi skutkami. Chodzi tu o serwerownię utrzymywaną przez firmę Beyond. Awaria została spowodowana przepięciem elektrycznym, jak tłumaczy Prezes Zarządu Michał Grzybkowski w krótkiej relacji na YouTube.
 hide_table_of_contents: true
+keywords:
+  - awaria
+  - beyond
+  - e24cloud
+slug: awaria-e24cloud-pl
+tags:
+  - awaria
+  - beyond
+  - e24cloud
+title: Awaria - e24cloud.pl
 ---
+
 import ReactPlayer from 'react-player'
 
 4 czerwca w jednej z największych serwerowni w Polsce udostępniającej Cloud powstała awaria z poważnymi skutkami. Chodzi tu o serwerownię utrzymywaną przez firmę Beyond. Awaria została spowodowana przepięciem elektrycznym, jak tłumaczy Prezes Zarządu Michał Grzybkowski w krótkiej relacji na YouTube.
+
+<!-- truncate -->
 
 <ReactPlayer style={{ display: 'block', margin: 'auto', marginBottom: '20px' }} controls url='[](https://www.youtube.com/watch?v=FXBIeetKuIk)'/>
 

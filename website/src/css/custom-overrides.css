@@ -1,0 +1,934 @@
+/**
+ * JustCloud.pl - Custom Design System
+ * Colors and Fonts Override
+ * This file overrides default Docusaurus styles
+ * Last updated: 2025-10-22
+ */
+
+/* ============================================
+   TYPOGRAPHY - Space Grotesk Font Family
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ============================================
+     FONT FAMILIES
+     ============================================ */
+  --jc-font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --jc-font-code: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  
+/* ============================================
+     FLUID TYPOGRAPHY - Responsive Font Sizes
+     ============================================ */
+    --jc-font-h1: clamp(2rem, 4vw + 1rem, 4rem);
+    --jc-font-h2: clamp(1.5rem, 3vw + 0.75rem, 3rem);
+    --jc-font-h3: clamp(1.25rem, 2.5vw + 0.5rem, 2.25rem);
+    --jc-font-h4: clamp(1.125rem, 2vw + 0.5rem, 1.75rem);
+    --jc-font-h5: clamp(1.0625rem, 1.5vw + 0.5rem, 1.5rem);
+    --jc-font-h6: clamp(1rem, 1.25vw + 0.5rem, 1.25rem);
+    --jc-font-body: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+    --jc-font-small: clamp(0.875rem, 0.8vw + 0.4rem, 1rem);
+    --jc-font-code-size: clamp(0.875rem, 0.9vw + 0.4rem, 1.125rem);
+
+    /* ============================================
+     LINE HEIGHTS
+     ============================================ */
+    --jc-line-height-heading-large: 1.2;
+    --jc-line-height-heading-medium: 1.3;
+    --jc-line-height-body: 1.6;
+    --jc-line-height-code: 1.5;
+
+    /* ============================================
+     LETTER SPACING
+     ============================================ */
+    --jc-letter-spacing-tight: -0.02em;
+    --jc-letter-spacing-normal: -0.01em;
+    --jc-letter-spacing-wide: 0.05em;
+  
+  /* ============================================
+     COLOR PALETTE - LIGHT MODE
+     ============================================ */
+  
+  /* Base Colors */
+  --jc-color-white: #FFFFFF;
+  --jc-color-black: #000000;
+  
+  /* Grays */
+  --jc-color-gray-50: #F5F5F7;
+  --jc-color-gray-100: #E5E7EB;
+  --jc-color-gray-400: #6B7280;
+  --jc-color-gray-600: #374151;
+  
+  /* Blue Accent - Primary */
+  --jc-color-blue-primary: #00A7E4;
+  --jc-color-blue-hover: #0090C7;
+  --jc-color-blue-light: #E6F7FD;
+  --jc-color-blue-dark: #007AAA;
+  
+  /* Applied Colors */
+  --jc-bg-primary: var(--jc-color-white);
+  --jc-bg-secondary: var(--jc-color-gray-50);
+  
+  --jc-text-primary: var(--jc-color-black);
+  --jc-text-secondary: var(--jc-color-gray-400);
+  
+  --jc-link-color: var(--jc-color-blue-primary);
+  --jc-link-hover: var(--jc-color-blue-hover);
+  
+  /* ============================================
+     OVERRIDE DOCUSAURUS VARIABLES
+     ============================================ */
+  --ifm-font-family-base: var(--jc-font-primary);
+  --ifm-font-family-monospace: var(--jc-font-code);
+  
+  --ifm-color-primary: var(--jc-color-blue-primary);
+  --ifm-color-primary-dark: var(--jc-color-blue-hover);
+  --ifm-color-primary-darker: #008ec2;
+  --ifm-color-primary-darkest: var(--jc-color-blue-dark);
+  --ifm-color-primary-light: #00b8fb;
+  --ifm-color-primary-lighter: #07bdff;
+  --ifm-color-primary-lightest: #29c6ff;
+  
+  --ifm-link-color: var(--jc-link-color);
+  --ifm-link-hover-color: var(--jc-link-hover);
+  
+  --ifm-background-color: var(--jc-bg-primary);
+  
+  /* Grayscale overrides */
+  --ifm-color-gray-100: var(--jc-color-gray-100);
+  --ifm-color-gray-400: var(--jc-color-gray-400);
+  --ifm-color-gray-600: var(--jc-color-gray-600);
+  
+  /* Tabs active border - blue instead of green */
+  --ifm-tabs-color-active-border: var(--jc-color-blue-primary);
+  --ifm-tabs-color-active: var(--jc-color-blue-primary);
+  
+  /* Spacing - modern, generous whitespace */
+  --jc-spacing-xs: 0.5rem;
+  --jc-spacing-sm: 0.75rem;
+  --jc-spacing-md: 1rem;
+  --jc-spacing-lg: 1.5rem;
+  --jc-spacing-xl: 2rem;
+  --jc-spacing-2xl: 3rem;
+  --jc-spacing-3xl: 4rem;
+  
+  /* Max widths for readability */
+  --jc-max-width-narrow: 680px;
+  --jc-max-width-medium: 880px;
+  --jc-max-width-wide: 1600px; /* Increased for widescreen displays */
+  
+  --search-local-modal-width: 480px;
+  --search-local-highlight-color: #5468ff;
+}
+
+/* ============================================
+   DARK MODE - Color Palette
+   ============================================ */
+[data-theme='dark'] {
+  /* Dark Mode Colors */
+  --jc-color-gray-900: #111827;
+  --jc-color-gray-800: #1F2937;
+  --jc-color-gray-700: #374151;
+  --jc-color-gray-500: #9CA3AF;
+  --jc-color-gray-300: #D1D5DB;
+  --jc-color-gray-50: #F9FAFB;
+  
+  /* Dark Blue Accent */
+  --jc-color-blue-primary-dark: #1FBFFF;
+  --jc-color-blue-hover-dark: #0AACEC;
+  --jc-color-blue-light-dark: #1A3A4D;
+  --jc-color-blue-dark-dark: #00C4FF;
+  
+  /* Applied Colors - Dark Mode */
+  --jc-bg-primary: var(--jc-color-gray-900);
+  --jc-bg-secondary: var(--jc-color-gray-800);
+  
+  --jc-text-primary: var(--jc-color-gray-50);
+  --jc-text-secondary: var(--jc-color-gray-500);
+  
+  --jc-link-color: var(--jc-color-blue-primary-dark);
+  --jc-link-hover: var(--jc-color-blue-hover-dark);
+  
+  /* Override Docusaurus Dark Mode */
+  --ifm-color-primary: var(--jc-color-blue-primary-dark);
+  --ifm-color-primary-dark: var(--jc-color-blue-hover-dark);
+  --ifm-color-primary-darker: #0090C7;
+  --ifm-color-primary-darkest: #007AAA;
+  --ifm-color-primary-light: var(--jc-color-blue-dark-dark);
+  --ifm-color-primary-lighter: #33CCFF;
+  --ifm-color-primary-lightest: #5CD6FF;
+  
+  --ifm-link-color: var(--jc-link-color);
+  --ifm-link-hover-color: var(--jc-link-hover);
+  
+  --ifm-background-color: var(--jc-bg-primary);
+  --ifm-background-surface-color: var(--jc-bg-secondary);
+  
+  /* Grayscale overrides for dark mode */
+  --ifm-color-gray-100: var(--jc-color-gray-900);
+  --ifm-color-gray-300: var(--jc-color-gray-700);
+  --ifm-color-gray-400: var(--jc-color-gray-500);
+  --ifm-color-gray-600: var(--jc-color-gray-300);
+  --ifm-color-gray-900: var(--jc-color-gray-50);
+  
+  /* Tabs for dark mode */
+  --ifm-tabs-color-active-border: var(--jc-color-blue-primary-dark);
+  --ifm-tabs-color-active: var(--jc-color-blue-primary-dark);
+  
+  --search-local-highlight-color: #d23669;
+}
+
+/* ============================================
+   TYPOGRAPHY APPLICATION
+   ============================================ */
+
+body {
+  font-family: var(--jc-font-primary);
+  color: var(--jc-text-primary);
+  background-color: var(--jc-bg-primary);
+  font-size: var(--jc-font-body);
+  line-height: var(--jc-line-height-body);
+}
+
+h1 {
+  font-family: var(--jc-font-primary);
+  color: var(--jc-text-primary);
+  font-size: var(--jc-font-h1);
+  line-height: var(--jc-line-height-heading-large);
+  letter-spacing: var(--jc-letter-spacing-tight);
+  font-weight: 700;
+  margin-bottom: var(--jc-spacing-lg);
+}
+
+h2 {
+  font-family: var(--jc-font-primary);
+  color: var(--jc-text-primary);
+  font-size: var(--jc-font-h2);
+  line-height: var(--jc-line-height-heading-large);
+  letter-spacing: var(--jc-letter-spacing-tight);
+  font-weight: 600;
+  margin-top: var(--jc-spacing-xl);
+  margin-bottom: var(--jc-spacing-md);
+}
+
+h3 {
+  font-family: var(--jc-font-primary);
+  color: var(--jc-text-primary);
+  font-size: var(--jc-font-h3);
+  line-height: var(--jc-line-height-heading-medium);
+  letter-spacing: var(--jc-letter-spacing-normal);
+  font-weight: 600;
+  margin-top: var(--jc-spacing-lg);
+  margin-bottom: var(--jc-spacing-sm);
+}
+
+h4, h5, h6 {
+  font-family: var(--jc-font-primary);
+  color: var(--jc-text-primary);
+  line-height: var(--jc-line-height-heading-medium);
+  letter-spacing: var(--jc-letter-spacing-normal);
+  font-weight: 600;
+}
+
+code {
+  font-family: var(--jc-font-code);
+  font-size: var(--jc-font-code-size);
+}
+
+pre {
+  font-family: var(--jc-font-code);
+}
+
+/* ============================================
+   MAIN CONTENT AREA - Modern SpaceX/Tesla Style
+   ============================================ */
+
+/* Main content wrapper - generous spacing */
+main[id="__docusaurus_skipToContent_fallback"] {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: var(--jc-spacing-3xl) var(--jc-spacing-md);
+}
+
+/* Article/Post container */
+main article {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Blog post row - increase font size and spacing */
+.row {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  max-width: var(--jc-max-width-wide);
+  margin: 0 auto;
+  padding: 0 !important;
+}
+
+/* Add padding-top for homepage content row */
+.row.docusaurus-mt-lg {
+  padding-top: var(--jc-spacing-2xl) !important;
+}
+
+
+
+/* Increase main content column width - from 58.33% to 70% */
+.col--7 {
+  --ifm-col-width: 70% !important;
+  max-width: 70% !important;
+  flex: 0 0 70% !important;
+  padding-left: var(--jc-spacing-lg) !important;
+  padding-right: var(--jc-spacing-xl) !important;
+}
+
+/* Adjust sidebar column - from 25% to 30% for better balance */
+.col--3 {
+  --ifm-col-width: 30% !important;
+  max-width: 30% !important;
+  flex: 0 0 30% !important;
+  padding-left: var(--jc-spacing-xl) !important;
+}
+
+/* For ultra-wide displays (>1600px), use even wider layout */
+@media (min-width: 1600px) {
+  .col--7 {
+    --ifm-col-width: 75% !important;
+    max-width: 75% !important;
+    flex: 0 0 75% !important;
+  }
+  
+  .col--3 {
+    --ifm-col-width: 25% !important;
+    max-width: 25% !important;
+    flex: 0 0 25% !important;
+  }
+}
+
+/* Footer links - center text */
+.row.footer__links {
+  text-align: center !important;
+}
+
+.footer__items.clean-list {
+  text-align: -webkit-center !important;
+}
+
+.footer__copyright {
+  margin-top: 60px !important;
+}
+
+/* Container overrides - remove extra padding */
+.container,
+.container-fluid {
+  max-width: var(--jc-max-width-wide);
+  padding-left: var(--jc-spacing-md);
+  padding-right: var(--jc-spacing-md);
+}
+
+.container.margin-vert--lg {
+  max-width: 95%; /* Increased width for better use of screen space */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1400px) {
+  .container.margin-vert--lg {
+    max-width: 90%; /* Even wider for ultra-wide displays */
+  }
+}
+
+@media (min-width: 1920px) {
+  .container.margin-vert--lg {
+    max-width: 85%; /* Maximum width for very large screens */
+  }
+}
+
+/* Mobile fixes - full width columns on small screens */
+@media (max-width: 996px) {
+  /* Main content full width on mobile */
+  main[id="__docusaurus_skipToContent_fallback"] {
+    padding: var(--jc-spacing-xl) var(--jc-spacing-sm);
+  }
+  
+  /* Full width content on mobile */
+  .col--7 {
+    --ifm-col-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+  
+  /* Stack sidebar below content */
+  .col--3 {
+    --ifm-col-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 0 !important;
+    margin-top: var(--jc-spacing-xl);
+  }
+  
+  /* Remove all horizontal padding on mobile */
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .container,
+  .container-fluid {
+    padding-left: var(--jc-spacing-sm);
+    padding-right: var(--jc-spacing-sm);
+  }
+}
+
+/* Improved paragraph spacing and readability */
+main p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: var(--jc-spacing-xl);
+  color: var(--jc-text-primary);
+  max-width: none;
+}
+
+/* Lists - better spacing and visibility */
+/* Exclude tags, badges, and navigation elements */
+main ul:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs),
+main ol:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs) {
+  margin-bottom: var(--jc-spacing-xl);
+  margin-top: var(--jc-spacing-lg);
+  padding-left: var(--jc-spacing-2xl);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+/* Unordered lists - custom bullets */
+main ul:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs) {
+  list-style: none;
+}
+
+main ul:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs) > li {
+  position: relative;
+  padding-left: var(--jc-spacing-md);
+  margin-bottom: var(--jc-spacing-md);
+}
+
+main ul:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs) > li::before {
+  content: "▸";
+  position: absolute;
+  left: -1.5rem;
+  color: var(--jc-color-blue-primary);
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.75;
+}
+
+[data-theme='dark'] main ul:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs) > li::before {
+  color: var(--jc-color-blue-primary-dark);
+}
+
+/* Ordered lists - better numbering */
+main ol:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs) {
+  counter-reset: custom-counter;
+  list-style: none;
+}
+
+main ol:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs) > li {
+  position: relative;
+  padding-left: var(--jc-spacing-md);
+  margin-bottom: var(--jc-spacing-md);
+  counter-increment: custom-counter;
+}
+
+main ol:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs) > li::before {
+  content: counter(custom-counter) ".";
+  position: absolute;
+  left: -1.5rem;
+  color: var(--jc-color-blue-primary);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  min-width: 1.5rem;
+  text-align: right;
+}
+
+[data-theme='dark'] main ol:not([class*="tag"]):not([class*="badge"]):not(.pagination):not(.breadcrumbs) > li::before {
+  color: var(--jc-color-blue-primary-dark);
+}
+
+/* Nested lists */
+main ul:not([class*="tag"]):not([class*="badge"]) ul,
+main ol:not([class*="tag"]):not([class*="badge"]) ol,
+main ul:not([class*="tag"]):not([class*="badge"]) ol,
+main ol:not([class*="tag"]):not([class*="badge"]) ul {
+  margin-top: var(--jc-spacing-sm);
+  margin-bottom: var(--jc-spacing-sm);
+  font-size: 1rem;
+}
+
+/* Nested list items - lighter bullets/numbers */
+main ul:not([class*="tag"]):not([class*="badge"]) ul > li::before {
+  content: "•";
+  font-size: 1rem;
+  color: var(--jc-color-gray-400);
+}
+
+main ol:not([class*="tag"]):not([class*="badge"]) ol > li::before {
+  color: var(--jc-color-gray-600);
+  font-weight: 600;
+}
+
+[data-theme='dark'] main ul:not([class*="tag"]):not([class*="badge"]) ul > li::before {
+  color: var(--jc-color-gray-500);
+}
+
+[data-theme='dark'] main ol:not([class*="tag"]):not([class*="badge"]) ol > li::before {
+  color: var(--jc-color-gray-300);
+}
+
+/* List item text */
+main li:not([class*="tag"]):not([class*="badge"]) {
+  line-height: 1.75;
+  color: var(--jc-text-primary);
+}
+
+/* Add subtle background to list items on hover for better interaction */
+main li:not([class*="tag"]):not([class*="badge"]):hover {
+  background-color: rgba(0, 167, 228, 0.03);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+[data-theme='dark'] main li:not([class*="tag"]):not([class*="badge"]):hover {
+  background-color: rgba(31, 191, 255, 0.05);
+}
+
+/* Code blocks - modern look */
+main pre {
+  margin: var(--jc-spacing-xl) 0;
+  padding: var(--jc-spacing-lg);
+  border-radius: 12px;
+  border-left: 4px solid var(--jc-color-blue-primary);
+  background-color: var(--jc-bg-secondary) !important;
+}
+
+[data-theme='dark'] main pre {
+  background-color: var(--jc-color-gray-800) !important;
+  border-left-color: var(--jc-color-blue-primary-dark);
+}
+
+/* Inline code */
+main code:not(pre code) {
+  background-color: var(--jc-bg-secondary);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--jc-color-blue-dark);
+}
+
+[data-theme='dark'] main code:not(pre code) {
+  background-color: var(--jc-color-gray-800);
+  color: var(--jc-color-blue-primary-dark);
+}
+
+/* Blockquotes - emphasized style */
+main blockquote {
+  margin: var(--jc-spacing-xl) 0;
+  padding: var(--jc-spacing-md) var(--jc-spacing-lg);
+  border-left: 4px solid var(--jc-color-blue-primary);
+  background-color: var(--jc-color-blue-light);
+  border-radius: 8px;
+  font-style: italic;
+}
+
+[data-theme='dark'] main blockquote {
+  background-color: var(--jc-color-blue-light-dark);
+  border-left-color: var(--jc-color-blue-primary-dark);
+}
+
+/* Lists inside blockquotes - reset custom styling */
+main blockquote ul > li::before,
+main blockquote ol > li::before {
+  color: var(--jc-color-blue-dark);
+}
+
+[data-theme='dark'] main blockquote ul > li::before,
+[data-theme='dark'] main blockquote ol > li::before {
+  color: var(--jc-color-blue-dark-dark);
+}
+
+/* Strong emphasis in list items */
+main li strong,
+main li b {
+  color: var(--jc-color-blue-dark);
+  font-weight: 700;
+}
+
+[data-theme='dark'] main li strong,
+[data-theme='dark'] main li b {
+  color: var(--jc-color-blue-primary-dark);
+}
+
+/* Code in list items */
+main li code {
+  font-size: 0.95em;
+  padding: 0.15em 0.4em;
+  background-color: var(--jc-bg-secondary);
+  border-radius: 3px;
+  color: var(--jc-color-blue-dark);
+}
+
+[data-theme='dark'] main li code {
+  background-color: var(--jc-color-gray-800);
+  color: var(--jc-color-blue-primary-dark);
+}
+
+/* Task lists (checkboxes) - GitHub style */
+main input[type="checkbox"] {
+  margin-right: var(--jc-spacing-sm);
+  cursor: pointer;
+  width: 1.125rem;
+  height: 1.125rem;
+  vertical-align: middle;
+}
+
+/* Compact lists for specific cases */
+main .compact-list li {
+  margin-bottom: var(--jc-spacing-xs);
+}
+
+/* Images - modern spacing and styling */
+main img {
+  max-width: 100%;
+  height: auto;
+  margin: var(--jc-spacing-xl) auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] main img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Tables - clean design */
+main table {
+  width: 100%;
+  margin: var(--jc-spacing-xl) 0;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+main th {
+  background-color: var(--jc-color-blue-primary);
+  color: white;
+  padding: var(--jc-spacing-md);
+  text-align: left;
+  font-weight: 600;
+}
+
+main td {
+  padding: var(--jc-spacing-md);
+  border-bottom: 1px solid var(--jc-color-gray-100);
+}
+
+[data-theme='dark'] main td {
+  border-bottom-color: var(--jc-color-gray-700);
+}
+
+main tr:hover {
+  background-color: var(--jc-bg-secondary);
+}
+
+/* Horizontal rules - subtle dividers */
+main hr {
+  margin: var(--jc-spacing-2xl) 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--jc-color-blue-primary),
+    transparent
+  );
+}
+
+/* Admonitions/Callouts - if using them */
+main .admonition {
+  margin: var(--jc-spacing-xl) 0;
+  padding: var(--jc-spacing-lg);
+  border-radius: 8px;
+  border-left: 4px solid var(--jc-color-blue-primary);
+}
+
+/* Blog post metadata */
+.theme-doc-markdown header {
+  margin-bottom: var(--jc-spacing-2xl);
+  padding-bottom: var(--jc-spacing-lg);
+  border-bottom: 2px solid var(--jc-color-gray-100);
+}
+
+[data-theme='dark'] .theme-doc-markdown header {
+  border-bottom-color: var(--jc-color-gray-700);
+}
+
+/* Pagination - cleaner look */
+.pagination-nav {
+  margin-top: var(--jc-spacing-3xl);
+  padding-top: var(--jc-spacing-xl);
+  border-top: 2px solid var(--jc-color-gray-100);
+}
+
+[data-theme='dark'] .pagination-nav {
+  border-top-color: var(--jc-color-gray-700);
+}
+
+/* ============================================
+   BLOG AUTHORS - Fix spacing and margins
+   ============================================ */
+
+.avatar__photo.authorImage_XqGP {
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+a {
+  color: var(--jc-link-color);
+}
+
+a:hover {
+  color: var(--jc-link-hover);
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar__link {
+  color: var(--jc-text-primary);
+  font-weight: 500;
+}
+
+.navbar__link:hover {
+  color: var(--jc-link-color);
+}
+
+.navbar__search.searchBarContainer_NW3z {
+  margin-left: 5px !important;
+}
+
+.toggle_vylO.colorModeToggle_DEke {
+  padding-left: 5px !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.button--primary {
+  background-color: var(--jc-color-blue-primary);
+  color: var(--jc-color-white);
+  border-color: var(--jc-color-blue-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--jc-color-blue-hover);
+  border-color: var(--jc-color-blue-hover);
+}
+
+[data-theme='dark'] .button--primary {
+  background-color: var(--jc-color-blue-primary-dark);
+  color: var(--jc-color-gray-900);
+  border-color: var(--jc-color-blue-primary-dark);
+}
+
+[data-theme='dark'] .button--primary:hover {
+  background-color: var(--jc-color-blue-hover-dark);
+  border-color: var(--jc-color-blue-hover-dark);
+}
+
+/* ============================================
+   ALERTS - Blue Theme
+   ============================================ */
+
+.alert--info,
+.alert--success,
+.alert--warning,
+.alert--danger {
+  --ifm-alert-background-color: var(--jc-color-blue-light);
+  --ifm-alert-background-color-highlight: rgba(0, 167, 228, 0.15);
+  --ifm-alert-foreground-color: var(--jc-color-blue-dark);
+  --ifm-alert-border-color: var(--jc-color-blue-primary);
+}
+
+[data-theme='dark'] .alert--info,
+[data-theme='dark'] .alert--success,
+[data-theme='dark'] .alert--warning,
+[data-theme='dark'] .alert--danger {
+  --ifm-alert-background-color: var(--jc-color-blue-light-dark);
+  --ifm-alert-background-color-highlight: rgba(31, 191, 255, 0.15);
+  --ifm-alert-foreground-color: var(--jc-color-blue-dark-dark);
+  --ifm-alert-border-color: var(--jc-color-blue-primary-dark);
+}
+
+/* ============================================
+   DISQUS COMMENTS SECTION - Improved Visibility
+   ============================================ */
+
+/* Comments Container */
+#disqus_thread {
+    max-width: var(--jc-max-width-narrow);
+    margin: var(--jc-spacing-2xl) auto var(--jc-spacing-xl);
+    padding: var(--jc-spacing-xl);
+    border-radius: 8px;
+    border: 2px solid var(--jc-color-blue-primary);
+    background: var(--jc-bg-primary);
+}
+
+/* Dark mode - specific background for Disqus */
+[data-theme='dark'] #disqus_thread {
+    background: #121212 !important;
+}
+
+/* Comments Header */
+#disqus_thread::before {
+    content: "💬 Komentarze";
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--jc-color-blue-primary);
+    margin-bottom: var(--jc-spacing-lg);
+    padding-bottom: var(--jc-spacing-md);
+    border-bottom: 3px solid var(--jc-color-blue-primary);
+    text-align: center;
+}
+
+/* ============================================
+   BLOG SIDEBAR - Minimalist Design
+   ============================================ */
+
+/* Remove blue background, use subtle transparent background */
+.col--3 aside {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Sidebar container */
+.col--3 .margin-vert--md {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Sidebar sections (Recent Posts, Archive) */
+.col--3 section {
+  background: transparent !important;
+  border: none !important;
+  margin-bottom: var(--jc-spacing-2xl) !important;
+}
+
+/* Sidebar headings (Recent Posts, Archive) */
+.col--3 h3,
+.col--3 .margin-bottom--md {
+  color: var(--jc-text-secondary) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: var(--jc-spacing-md) !important;
+  opacity: 0.7 !important;
+}
+
+[data-theme='dark'] .col--3 h3,
+[data-theme='dark'] .col--3 .margin-bottom--md {
+  color: var(--jc-color-gray-500) !important;
+}
+
+/* Sidebar lists */
+.col--3 ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Sidebar list items - increase spacing */
+.col--3 ul li {
+  margin-bottom: var(--jc-spacing-lg) !important;
+  padding: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Remove custom bullets for sidebar lists */
+.col--3 ul li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Sidebar links - white by default, blue on hover */
+.col--3 a {
+  color: var(--jc-text-primary) !important;
+  text-decoration: none !important;
+  font-size: 0.9375rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  transition: color 0.2s ease, padding-left 0.2s ease !important;
+  display: block !important;
+  padding: var(--jc-spacing-xs) 0 !important;
+}
+
+.col--3 a:hover {
+  color: var(--jc-color-blue-primary) !important;
+  padding-left: var(--jc-spacing-sm) !important;
+}
+
+[data-theme='dark'] .col--3 a {
+  color: var(--jc-text-primary) !important;
+}
+
+[data-theme='dark'] .col--3 a:hover {
+  color: var(--jc-color-blue-primary-dark) !important;
+}
+
+/* Year headers in archive - blue and subtle */
+.col--3 h3:not(.margin-bottom--md) {
+  color: var(--jc-color-blue-primary) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  margin-top: var(--jc-spacing-xl) !important;
+  margin-bottom: var(--jc-spacing-md) !important;
+  opacity: 0.6 !important;
+  padding-bottom: var(--jc-spacing-xs) !important;
+  border-bottom: 1px solid rgba(0, 167, 228, 0.2) !important;
+}
+
+[data-theme='dark'] .col--3 h3:not(.margin-bottom--md) {
+  color: var(--jc-color-blue-primary-dark) !important;
+  border-bottom-color: rgba(31, 191, 255, 0.2) !important;
+}
+
+/* Remove any background colors from sidebar containers */
+.col--3 div[class*="sidebar"],
+.col--3 nav {
+  background: transparent !important;
+}
+
+/* Subtle divider between sections */
+.col--3 section + section {
+  border-top: 1px solid var(--jc-color-gray-100) !important;
+  padding-top: var(--jc-spacing-xl) !important;
+}
+
+[data-theme='dark'] .col--3 section + section {
+  border-top-color: var(--jc-color-gray-800) !important;
+}
+
+
+
+
+
+

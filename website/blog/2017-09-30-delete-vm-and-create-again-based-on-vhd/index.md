@@ -1,22 +1,37 @@
 ---
-slug: delete-vm-and-create-again-based-on-vhd
-title: "Delete VM and create again based on .vhd"
-description: "Rekreowanie maszyny z istniejącego dysku może być konieczne kiedy mamy migrację lub problemy z maszyną. Ten artykuł opisuje jak sprawnie przejść przed ten proces."
+authors:
+  - progala
 date: "2017-09-30"
-authors: [progala]
-tags: 
-  - "azure"
-  - "blob"
-  - "devops"
-  - "powershell"
-  - "storage"
-  - "vm"
-  - "migracja"
-keywords: [powershell, azure, microsoft azure, storage account, vhd, migracja, migration, network, sieć, blog]
+description: Rekreowanie maszyny z istniejącego dysku może być konieczne kiedy mamy migrację lub problemy z maszyną. Ten artykuł opisuje jak sprawnie przejść przed ten proces.
 hide_table_of_contents: true
+keywords:
+  - powershell
+  - azure
+  - microsoft azure
+  - storage account
+  - vhd
+  - migracja
+  - migration
+  - network
+  - sieć
+  - blog
+slug: delete-vm-and-create-again-based-on-vhd
+tags:
+  - azure
+  - blob
+  - devops
+  - powershell
+  - storage
+  - vm
+  - migracja
+title: Delete VM and create again based on .vhd
 ---
 
-W tej części tytuł jest angielski, ponieważ nie stosuje spolszczeń dla technicznego języka. Ten post jest spowodowany tym co Microsoft niestety przestał wspierać w Azure a mianowicie breaklease dla blobów podpiętych do wirtualnej maszyny. Było mi to potrzebne do jednego zadania, dlatego byłem zmuszony zrobić coś innego. Mianowicie potrzebne mi było usunięcie maszyny i stworzenie jej bazując na istniejących vhd'kach w innym kontenerze dodatkowo moje założenie wymagało powershell'a. W skrócie odtworzenie maszyny z jakiegoś stanu, który jest przechowywany jako kopia dysków wirtualnej maszyny. Myślę, że są osoby, którym się to przyda.
+W tej części tytuł jest angielski, ponieważ nie stosuje spolszczeń dla technicznego języka. Ten post jest spowodowany tym co Microsoft niestety przestał wspierać w Azure a mianowicie breaklease dla blobów podpiętych do wirtualnej maszyny.
+
+<!-- truncate -->
+
+Było mi to potrzebne do jednego zadania, dlatego byłem zmuszony zrobić coś innego. Mianowicie potrzebne mi było usunięcie maszyny i stworzenie jej bazując na istniejących vhd'kach w innym kontenerze dodatkowo moje założenie wymagało powershell'a. W skrócie odtworzenie maszyny z jakiegoś stanu, który jest przechowywany jako kopia dysków wirtualnej maszyny. Myślę, że są osoby, którym się to przyda.
 
 Krótki opis:
 
@@ -37,7 +52,7 @@ Puenta jest taka. Jeśli okaże się, że któregoś razu Microsoft Support powi
 
 Skrpyt w bardziej czytelnej formie na github: [https://github.com/RogalaPiotr/JustCloudPublic/tree/master/recreate-vm-from-vhd](https://github.com/RogalaPiotr/JustCloudPublic/tree/master/recreate-vm-from-vhd)
 
-```
+```ps1
 $vms = @("SimpleWindowsVM")
 $sourcecontainerimage = "images"
 function recreatevms {
@@ -117,4 +132,5 @@ function recreatevms {
 ############################################################################################################
 
 recreatevms
+
 ```

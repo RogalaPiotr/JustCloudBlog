@@ -1,23 +1,28 @@
 ---
-slug: maugp-wroclaw
-title: "Microsoft Azure User Group Poland - Wrocław"
-description: "Uruchamiamy Microsoft Azure User Group Poland - Wrocław, meetupy techniczne dzięki którym możemy się spotkać i porozmawiać ze specjalistami IT we Wrocławiu"
-authors: [progala]
+authors:
+  - progala
 date: "2016-05-03"
-tags: 
-  - "azure"
-  - "maugp"
-  - "microsoft-azure-group-user-poland"
-  - "wroclaw"
-keywords:
-  - "azure"
-  - "maugp"
-  - "microsoft-azure-group-user-poland"
-  - "wroclaw"
+description: Uruchamiamy Microsoft Azure User Group Poland - Wrocław, meetupy techniczne dzięki którym możemy się spotkać i porozmawiać ze specjalistami IT we Wrocławiu
 hide_table_of_contents: true
+keywords:
+  - azure
+  - maugp
+  - microsoft-azure-group-user-poland
+  - wroclaw
+slug: maugp-wroclaw
+tags:
+  - azure
+  - maugp
+  - microsoft-azure-group-user-poland
+  - wroclaw
+title: Microsoft Azure User Group Poland - Wrocław
 ---
 
-Serdecznie zapraszam wszystkich zainteresowanych rozwiązaniami Microsoft Azure na Wrocławskie spotkania grupy Microsoft Azure User Group Poland, które będę miał przyjemność organizować. Spotkania są przeznaczone dla wszystkich, którzy pracują z rozwiązanymi w oparciu o Azure na co dzień bądź chcieli by poznać bliżej Azure i rozpocząć swoją przygodę w tym kierunku. Jeśli słyszałeś coś o Azure i nie jesteś przekonany tym rozwiązaniom na pewno rozwiniesz swoją wiedzę w tym kierunku ponieważ podczas sesji dowiesz się w jakich projektach Azure może mieć wysoki potencjał wykorzystania. Osoby znające Azure na pewno znajdą coś ciekawego dla siebie gdyż chciałbym poruszać praktyczne problemy, a nie tylko omawiać je w sposób marketingowy. Spotkania będą w formie prezentacji i demo, które będzie przedstawiać na żywo omówiony wcześniej temat. Wszystkie informacje na temat spotkania znajdziesz tutaj: [http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/events/230146750/](http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/events/230146750/)
+Serdecznie zapraszam wszystkich zainteresowanych rozwiązaniami Microsoft Azure na Wrocławskie spotkania grupy Microsoft Azure User Group Poland, które będę miał przyjemność organizować.
+
+<!-- truncate -->
+
+Spotkania są przeznaczone dla wszystkich, którzy pracują z rozwiązanymi w oparciu o Azure na co dzień bądź chcieli by poznać bliżej Azure i rozpocząć swoją przygodę w tym kierunku. Jeśli słyszałeś coś o Azure i nie jesteś przekonany tym rozwiązaniom na pewno rozwiniesz swoją wiedzę w tym kierunku ponieważ podczas sesji dowiesz się w jakich projektach Azure może mieć wysoki potencjał wykorzystania. Osoby znające Azure na pewno znajdą coś ciekawego dla siebie gdyż chciałbym poruszać praktyczne problemy, a nie tylko omawiać je w sposób marketingowy. Spotkania będą w formie prezentacji i demo, które będzie przedstawiać na żywo omówiony wcześniej temat. Wszystkie informacje na temat spotkania znajdziesz tutaj: [http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/events/230146750/](http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/events/230146750/)
 
 Pierwsze spotkanie odbędzie się 24.05.2016 godz. 18.30 w pubie Fuga Mundi! Facebook page: [https://www.facebook.com/FugaMundiWroclaw](https://www.facebook.com/FugaMundiWroclaw) Mapa: [https://goo.gl/maps/fcE2Ez6hXPD2](https://goo.gl/maps/fcE2Ez6hXPD2) Adres: Pl. Grunwaldzki 12-14, Wrocław.
 

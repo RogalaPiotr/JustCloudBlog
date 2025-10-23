@@ -1,90 +1,30 @@
-:root {
-  --ifm-color-primary: #00a7e4;
-  --ifm-color-primary-dark: #0096cd;
-  --ifm-color-primary-darker: #008ec2;
-  --ifm-color-primary-darkest: #0075a0;
-  --ifm-color-primary-light: #00b8fb;
-  --ifm-color-primary-lighter: #07bdff;
-  --ifm-color-primary-lightest: #29c6ff;
-}
-
-[data-theme='dark'] {
-  --ifm-color-primary: #00a7e4;
-  --ifm-color-primary-dark: #0096cd;
-  --ifm-color-primary-darker: #008ec2;
-  --ifm-color-primary-darkest: #0075a0;
-  --ifm-color-primary-light: #00b8fb;
-  --ifm-color-primary-lighter: #07bdff;
-  --ifm-color-primary-lightest: #29c6ff;
-}
-
-.footer {
-  text-align: center;
-}
-
 /**
-*.footer {
-*  background-color: #000000;
-*  color: var(--ifm-footer-color);
-*  padding: var(--ifm-footer-padding-vertical) var(--ifm-footer-padding-horizontal);
-*}
-*
-*.footer--dark {
-*    background-color: #ffffff;
-*  --ifm-footer-background-color: #ffffff;
-*  --ifm-footer-color: var(--ifm-footer-link-color);
-*  --ifm-footer-link-color: var(--ifm-color-secondary);
-*  --ifm-footer-title-color: var(--ifm-color-white);
-*}
-*/
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
 
-/* More on the sceen */
+/* You can override the default Infima variables here. */
 :root {
-  --ifm-container-width-xl: 1600px;
-  --ifm-container-width: 1280px;
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* Remove right row for small and big screen - START */
-@media (max-width: 997px) {
-  .row .col.col--7 {
-    --ifm-col-width: 100%;
-  }
-}
-@media (min-width: 997px) {
-  .row .col.col--7 {
-    --ifm-col-width: 75%;
-  }
-}
-/* Remove right row for small and big screen - END*/
-
-.title_f1Hy {
-  color: #00a7e4;
-}
-
-.yearGroupHeading_rMGB {
-  background: #00a7e4;
-  color: #fff;
-  line-height: 2rem;
-}
-
-.markdown {
-  text-align: justify;
-}
-
-.react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.player-wrapper {
-  position: relative;
-  padding-top: 56.25%;
-  justify-content: center;
-  /* Player ratio: 100 / (1280 / 720) */
-}
-
-.img_ev3q {
-  display: block;
-  margin: auto;
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }

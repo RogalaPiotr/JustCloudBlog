@@ -1,20 +1,34 @@
 ---
-slug: iac-control-via-powershell-module-for-arm-templates
-title: "IaC control via PowerShell module for ARM templates"
-description: Walidowanie szablonów ARM za pomocą modułu PowerShell jest możliwe dzięki nowemu modułowi. Użycie tego modułu pomoże Ci sprawdzić czy szablon jest poprawny i jakie zmiany wprowadzi na wdrażanym środowisku Azure.
-authors: [progala]
+authors:
+  - progala
 date: "2019-09-15"
-tags: 
-  - "arm"
-  - "azure"
-  - "iac"
-  - "module"
-  - "powershell"
-  - "templates"
-keywords: [justcloud, powershell, arm, template, szablon, automatyzacja, automation, azure, microsoft azure, iac, module]
+description: Walidowanie szablonów ARM za pomocą modułu PowerShell jest możliwe dzięki nowemu modułowi. Użycie tego modułu pomoże Ci sprawdzić czy szablon jest poprawny i jakie zmiany wprowadzi na wdrażanym środowisku Azure.
+keywords:
+  - justcloud
+  - powershell
+  - arm
+  - template
+  - szablon
+  - automatyzacja
+  - automation
+  - azure
+  - microsoft azure
+  - iac
+  - module
+slug: iac-control-via-powershell-module-for-arm-templates
+tags:
+  - arm
+  - azure
+  - iac
+  - module
+  - powershell
+  - templates
+title: IaC control via PowerShell module for ARM templates
 ---
 
 Debug natywnych szablonów ARM jest ciężkim procesem dla wielu osób. Utrzymanie infrastruktury jako kod również nie jest prostą sprawą, dlatego często używa się Terraforma dla wdrożeń w Microsoft Azure.
+
+<!-- truncate -->
 
 Szablony ARM nie posiadają pliku stanu jak to jest w Terraform dlatego często spotykam się z opinią, że, ARM'y są beznadziejnie. Po wdrożeniu trudno jest utrzymać stały rozwój infrastruktury z tego samego szablonu oraz często problemem jest przewidywalność co się stanie z obiektami, które już masz. Nie będę się rozwodził co lepsze co gorsze, ponieważ wiele zależy od naszej wiedzy, podejścia, problemu lub zlecenia, które wykonujemy. Jako Inżynier nie przywiązuje się do rozwiązań i uważam, że do każdego problemu należy podchodzić indywidualnie. Moim zdaniem najlepsze rozwiązania to rozwiązania natywne nie wymagające tworzenia koła na nowo. Stąd zachęcam do pisania szablonów ARM dla Azure.
 
@@ -58,6 +72,5 @@ Ostatni test to z argumentem "-Mode Complete" czyli wykonanie szablonu, który d
 ![](images/2019-09-15_13h02_32.png)
 
 Teraz można być pewniejszym co się stanie z wdrożeniem po małych zmianach w szablonie.
-
 
 Mam nadzieje że przyda Ci się ta wiedza :)

@@ -1,34 +1,39 @@
 ---
-slug: 3-spotkanie-grupy-microsoft-group-poland-za-nami
-title: "#3 Spotkanie grupy Microsoft Group Poland za nami"
-description: "#3 meetup grupy Microsoft Azure User Group Poland za nami. Chcesz uczestniczyć w lokalnych spotkaniach grupy we Wrocławiu? Zapraszamy do udziału w naszych wydarzeniach."
-authors: [progala]
+authors:
+  - progala
 date: "2016-09-18"
-tags: 
-  - "azure"
-  - "cdn"
-  - "microsoft-azure-group-user-poland"
-  - "oms"
-  - "softserve"
-  - "web-apps"
-keywords:
-  - "azure"
-  - "cdn"
-  - "microsoft-azure-group-user-poland"
-  - "oms"
-  - "softserve"
-  - "web-apps"
+description: '#3 meetup grupy Microsoft Azure User Group Poland za nami. Chcesz uczestniczyć w lokalnych spotkaniach grupy we Wrocławiu? Zapraszamy do udziału w naszych wydarzeniach.'
 hide_table_of_contents: true
+keywords:
+  - azure
+  - cdn
+  - microsoft-azure-group-user-poland
+  - oms
+  - softserve
+  - web-apps
+slug: 3-spotkanie-grupy-microsoft-group-poland-za-nami
+tags:
+  - azure
+  - cdn
+  - microsoft-azure-group-user-poland
+  - oms
+  - softserve
+  - web-apps
+title: '#3 Spotkanie grupy Microsoft Group Poland za nami'
 ---
 
 Wrocławska grupa Azure powoli się rozwija i pojawia się na niej coraz więcej ciekawych osób. Jeśli chcecie być na bieżąco ze wszystkimi news'ami podam wam parę linków jak dotrzeć do grupy i jak monitorować wszystkie wydarzenia.
 
+<!-- truncate -->
+
 1. **Meetup - kliknij Join us.**
-    - [http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/](http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/)
+   - [http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/](http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/)
+
 2. **Facebook Page Like grupy MAUGP**
-    - [https://www.facebook.com/groups/azureugpl/](https://www.facebook.com/groups/azureugpl/)
+   - [https://www.facebook.com/groups/azureugpl/](https://www.facebook.com/groups/azureugpl/)
+
 3. **Facebook Page Like grupy JustCloud** (informacje o spotkaniach Wrocławskiej grupy)
-    - [https://www.facebook.com/justcloudpl/](https://www.facebook.com/justcloudpl/)
+   - [https://www.facebook.com/justcloudpl/](https://www.facebook.com/justcloudpl/)
 
 Ponadto za nami wiele ciekawych tematów gdzie udzielają się głównie **Piotr Rogala** i **Marek Zalewski**. Prezentacje w ostatnim czasie dotoczyły takich tematów jak: ARM, Docker, Licencjonowanie w Azure, Azure Web Apps, CDN, OMS. Prezentacje możecie odszukać za pomocą poniższego linku:
 

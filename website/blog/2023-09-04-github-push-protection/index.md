@@ -1,15 +1,31 @@
 ---
-slug: github push protection leak credentials
-title: "Push protection w GitHub przed opublikowaniem haseł"
-description: "Dowiedz się, jak ochrona Push w GitHubie wspiera programistów i inżynierów chmury w zabezpieczaniu ich repozytoriów. Przeczytaj artykuł, aby zrozumieć, jak ta funkcja przeciwdziała przypadkowemu ujawnieniu haseł i innych wrażliwych informacji, zwiększając bezpieczeństwo na platformie."
-authors: [progala]
-date: "2023-09-04"
-tags: [GitHub, push protection, bezpieczeństwo, repozytorium, ochrona danych, cloud engineering, DevOps]
-keywords: [GitHub push protection, ochrona danych GitHub, bezpieczeństwo repozytoriów, API secrets GitHub]
+authors:
+  - progala
 comments: true
+date: "2023-09-04"
+description: Dowiedz się, jak ochrona Push w GitHubie wspiera programistów i inżynierów chmury w zabezpieczaniu ich repozytoriów. Przeczytaj artykuł, aby zrozumieć, jak ta funkcja przeciwdziała przypadkowemu ujawnieniu haseł i innych wrażliwych informacji, zwiększając bezpieczeństwo na platformie.
+keywords:
+  - GitHub push protection
+  - ochrona danych GitHub
+  - bezpieczeństwo repozytoriów
+  - API secrets GitHub
+slug: github push protection leak credentials
+tags:
+  - GitHub
+  - push protection
+  - bezpieczeństwo
+  - repozytorium
+  - ochrona danych
+  - cloud engineering
+  - DevOps
+title: Push protection w GitHub przed opublikowaniem haseł
 ---
 
-GitHub, jako wiodąca platforma zarządzania kodem, stale wprowadza nowe funkcje, by zapewnić bezpieczne środowisko dla repozytoriów organizacyjnych i projektów prywatnych. Jednym z najnowszych ulepszeń jest funkcja "Ochrona przed przesyłaniem do repozytoriów i organizacji" ("Push protection for repositories and organizations"), która przynosi liczne korzyści dla programistów, inżynierów chmury oraz zespołów DevOps. W tym artykule szczegółowo omówimy, jak ta innowacyjna funkcja wpływa na Twoje repozytorium na GitHubie i jak możesz czerpać z niej korzyści.
+GitHub, jako wiodąca platforma zarządzania kodem, stale wprowadza nowe funkcje, by zapewnić bezpieczne środowisko dla repozytoriów organizacyjnych i projektów prywatnych. Jednym z najnowszych ulepszeń jest funkcja "Ochrona przed przesyłaniem do repozytoriów i organizacji" ("Push protection for repositories and organizations"), która przynosi liczne korzyści dla programistów, inżynierów chmury oraz zespołów DevOps.
+
+<!-- truncate -->
+
+W tym artykule szczegółowo omówimy, jak ta innowacyjna funkcja wpływa na Twoje repozytorium na GitHubie i jak możesz czerpać z niej korzyści.
 
 Czym jest "**Push protection for repositories and organizations**"?
 
@@ -29,9 +45,9 @@ Aby włączyć funkcję "Ochrona przed przesyłaniem" dla swojego profilu na Git
 
 1. Przejdź do ustawień swojego profilu na GitHubie.
 2. Wybierz zakładkę "Code security and analysis".
-3. W sekcji "Push protection for yourself" wybierz opcję "Enable" 
+3. W sekcji "Push protection for yourself" wybierz opcję "Enable"
 
-![example](images/2023-09-04_13-43-26.png)
+![Zrzut ekranu przedstawiający konfigurację ochrony push w GitHubie](images/2023-09-04_13-43-26.png)
 
 <aside>
 
@@ -46,9 +62,10 @@ Natomiast jeśli chcesz skonfigurować tę funkcję na poziomie repozytorium, wy
 3. W sekcji "Push protection" (Ochrona przed przesyłaniem) skonfiguruj preferowane ustawienia ochrony. Możesz zdecydować, które typy wrażliwych danych zablokować oraz czy chcesz włączyć powiadomienia o naruszeniach dla właściciela repozytorium lub zespołów bezpieczeństwa.
 4. Zapisz zmiany.
 
-![example](images/2023-09-04_13-53-10.png)
+![Zrzut ekranu przedstawiający ustawienia ochrony push w repozytorium GitHub](images/2023-09-04_13-53-10.png)
 
-Link do pełnej dokumentacji: 
+Link do pełnej dokumentacji:
+
 * [Link do dokumentacji GitHub](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/push-protection-for-repositories-and-organizations)
 
 Jeśli masz jakieś pytania, zachęcam do zadawania ich w komentarzach 🙂.

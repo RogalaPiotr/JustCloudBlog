@@ -1,19 +1,32 @@
 ---
-slug: google-cloud-platform-deployment-vm-z-ubuntu
-title: "Google Cloud Platform deployment VM z Ubuntu"
-description: "Pierwszy deployment w Google Cloud Platform nie musi być trudny. Zapraszam to sprawdzenia rozwiązań dostępnyw GCP, a zaczniemy od wdrożenia wirtualnej maszyny za pomocą szablonu."
+authors:
+  - progala
 date: "2017-10-08"
-authors: [progala]
-tags: 
-  - "gcloud"
-  - "gcp"
-  - "google cloud-platform"
-  - "ubuntu"
-keywords: [justcloud, gcp, azure, devops, template, szablon, google cloud platform, ubuntu]
+description: Pierwszy deployment w Google Cloud Platform nie musi być trudny. Zapraszam to sprawdzenia rozwiązań dostępnyw GCP, a zaczniemy od wdrożenia wirtualnej maszyny za pomocą szablonu.
 hide_table_of_contents: true
+keywords:
+  - justcloud
+  - gcp
+  - azure
+  - devops
+  - template
+  - szablon
+  - google cloud platform
+  - ubuntu
+slug: google-cloud-platform-deployment-vm-z-ubuntu
+tags:
+  - gcloud
+  - gcp
+  - google cloud-platform
+  - ubuntu
+title: Google Cloud Platform deployment VM z Ubuntu
 ---
 
-Zastanawialiście się jak działają szablony w Google Cloud Platform? Miałem jakiś czas temu możliwość dowiedzieć się jak to działa, dlatego postanowiłem zrobić mały wpis na ten temat. Czym jest GCP (Google Cloud Platform)? Jeśli wiesz czym jest Azure i Amazon Web Services (AWS) to GCP jest kolejnym dostawcą z podobnymi rozwiązaniami. Od ponad roku GCP jest prężnie rozwijane w stronę rynku wirtualnych maszyn i web serwisów wychodząc na przeciw AWS'owi i Azure'owi powstał portal analogicznie podobny do zarządzania własnymi projektami można to odwzorować tak jakby do subskrypcji w Azure.
+Zastanawialiście się jak działają szablony w Google Cloud Platform? Miałem jakiś czas temu możliwość dowiedzieć się jak to działa, dlatego postanowiłem zrobić mały wpis na ten temat.
+
+<!-- truncate -->
+
+Czym jest GCP (Google Cloud Platform)? Jeśli wiesz czym jest Azure i Amazon Web Services (AWS) to GCP jest kolejnym dostawcą z podobnymi rozwiązaniami. Od ponad roku GCP jest prężnie rozwijane w stronę rynku wirtualnych maszyn i web serwisów wychodząc na przeciw AWS'owi i Azure'owi powstał portal analogicznie podobny do zarządzania własnymi projektami można to odwzorować tak jakby do subskrypcji w Azure.
 
 Portal: [https://console.cloud.google.com](https://console.cloud.google.com)
 
@@ -27,7 +40,7 @@ Zajrzyjmy do przygotowanego przeze mnie deploymentu VM z systemem ubuntu: [http
 
 W poniższym kodzie należy zaktualizować go o wartości nazwy projektu podmieniając "wartość your-project-name", plik vm .yaml:
 
-```
+```yaml
 resources:
 - type: compute.v1.instance
   name: simple-ubuntu
@@ -47,7 +60,9 @@ resources:
       accessConfigs:
       - name: External NAT
         type: ONE_TO_ONE_NAT
+
 ```
+
 Na pierwszy rzut oka plik nie jest skomplikowany, ponieważ plik .yaml jest tylko skrótem definicji które są wysyłane dalej do schematu gdzie pod spodem ma dużo więcej funkcji, których nie musimy definiować.
 
 Po zalogowaniu się z cmd do GCP możemy wywołać powyższy deployment używając polecenia:

@@ -1,25 +1,36 @@
 ---
-slug: skad-uczyc-sie-o-microsoft-azure
-title: "Skąd uczyć się o Microsoft Azure?"
-description: Chcesz zacząć nauke o Microsoft Azure? W tym artykule znajdziesz linki, które napewno Cię zainteresują!
-authors: [progala]
+authors:
+  - progala
 date: "2018-11-18"
-tags: 
-  - "azure"
-  - "course"
-  - "courses"
-  - "kurs"
-  - "kursy"
-  - "learn"
-  - "microsoft azure"
-  - "nauka"
-keywords: [justcloud, nauka, azure, microsoft azure, devops]
+description: Chcesz zacząć nauke o Microsoft Azure? W tym artykule znajdziesz linki, które napewno Cię zainteresują!
+keywords:
+  - justcloud
+  - nauka
+  - azure
+  - microsoft azure
+  - devops
+slug: skad-uczyc-sie-o-microsoft-azure
+tags:
+  - azure
+  - course
+  - courses
+  - kurs
+  - kursy
+  - learn
+  - microsoft azure
+  - nauka
+title: Skąd uczyć się o Microsoft Azure?
 ---
+
 import ReactPlayer from 'react-player'
 
-Po ostatniej prezentacji naszedł mnie pomysł związany z utworzeniem miejsca skąd można się uczyć chmury Microsoft Azure. Stąd postanowiłem zebrać interesujące linki w jednym miejscu gdzie znajdziecie rekomendowane przeze mnie jak i przez innych ekspertów miejsca do nauki. Większość z poniższych linków jest darmowa i takie będę starał się udostępniać. Jeśli chciałbyś dodać ciekawe miejsce, które rekomendujesz dodaj je w komentarzu, pomoże to w udoskonaleniu listy.
+Po ostatniej prezentacji naszedł mnie pomysł związany z utworzeniem miejsca skąd można się uczyć chmury Microsoft Azure. Stąd postanowiłem zebrać interesujące linki w jednym miejscu gdzie znajdziecie rekomendowane przeze mnie jak i przez innych ekspertów miejsca do nauki.
 
-Jeśli wiesz czego konkretnie szukasz możesz użyć wyszukiwarki aby skoncentrować się na danym problemie: 
+<!-- truncate -->
+
+Większość z poniższych linków jest darmowa i takie będę starał się udostępniać. Jeśli chciałbyś dodać ciekawe miejsce, które rekomendujesz dodaj je w komentarzu, pomoże to w udoskonaleniu listy.
+
+Jeśli wiesz czego konkretnie szukasz możesz użyć wyszukiwarki aby skoncentrować się na danym problemie:
 <ReactPlayer style={{ display: 'block', margin: 'auto', marginBottom: '20px' }} controls url='[Simpsons on Google](https://www.youtube.com/watch?v=Rkxg03z2PEo)'/>
 
 <!--truncate-->
@@ -53,10 +64,11 @@ Grupa Microsoft Azure User Group Poland na Facebook'u: [https://www.facebook.co
 **Book's**
 
 - Free eBooks from Microsoft Press
-    - Microsoft Azure Essentials: Fundamentals of Azure, Second Edition
-    - Introduction to Windows Containers
-    - Microsoft Azure Essentials Migrating SQL Server Databases to Azure
-    - Microsoft Azure Essentials: Azure Web Apps for Developers
+   - Microsoft Azure Essentials: Fundamentals of Azure, Second Edition
+   - Introduction to Windows Containers
+   - Microsoft Azure Essentials Migrating SQL Server Databases to Azure
+   - Microsoft Azure Essentials: Azure Web Apps for Developers
+
 - The Developer’s Guide to Microsoft Azure: [https://azure.microsoft.com/en-us/blog/free-ebook-the-developer-s-guide-to-microsoft-azure-now-available/](https://azure.microsoft.com/en-us/blog/free-ebook-the-developer-s-guide-to-microsoft-azure-now-available/)
 
 **Certyfikaty:**

@@ -1,19 +1,22 @@
 ---
-slug: nowe-funkcje-hyper-v-w-windows-server-2012-r
-title: "Nowe funkcje Hyper-V w Windows Server 2012 R2"
-description: "Nowe funkcje Hyper-V w Windows Server 2012 R2 dowiedz się co nowego w nowym systemie od firmy Microsoft."
-authors: [progala]
+authors:
+  - progala
 date: "2013-06-06"
-tags: 
-  - "hyper-v"
-  - "windows-2012"
-keywords:
-  - "hyper-v"
-  - "windows-2012"
+description: Nowe funkcje Hyper-V w Windows Server 2012 R2 dowiedz się co nowego w nowym systemie od firmy Microsoft.
 hide_table_of_contents: true
+keywords:
+  - hyper-v
+  - windows-2012
+slug: nowe-funkcje-hyper-v-w-windows-server-2012-r
+tags:
+  - hyper-v
+  - windows-2012
+title: Nowe funkcje Hyper-V w Windows Server 2012 R2
 ---
 
 W nowych systemach Windows Server 2012 zauważyliśmy dużo zmian dotyczących Hyper-V oraz nowością jest dodany do Windows 8 jako klient dla tworzenia VM. Jest to duży krok w przód, jeśli chodzi podejście Microsoft-u do wirtualizacji. Jak widać nie jest to koniec wprowadzania zmian dla Hyper-V. W nowym wydaniu Server 2012 R2 dostaniemy kolejne nowe funkcje.
+
+<!-- truncate -->
 
 **1. Wirtualne maszyny drugiej generacji** — jest to funkcja, która dotyczy wyłącznie systemów Windows 8 i Windows Server 2012 x64(jak i nadchodzących wersji). Zamiana dotyczy boot-owania systemów, który może zostać skonfigurowany z wirtualnego dyski SCSI i kart sieciowych. Dodatkowo maszyny tworzone w nowym rozwiązaniu pozbawione będą dotychczasowego „klasycznego” BIOS-u, a zastąpiony zostanie UEFI.
 

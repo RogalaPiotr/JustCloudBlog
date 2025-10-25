@@ -31,6 +31,9 @@ const config = {
   projectName: 'JustCloudBlog',
 
   onBrokenLinks: 'throw',
+  
+  // Trailing slash behavior - ważne dla SEO
+  trailingSlash: false,
 
   // Noindex dla środowisk staging/dev
   noIndex: false, // Set to true for staging environments

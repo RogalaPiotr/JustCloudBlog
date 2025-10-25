@@ -162,8 +162,8 @@ const config = {
             title: 'Stay in touch!',
             items: [
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/RogalaPiotr',
+                label: 'X',
+                href: 'https://x.com/RogalaPiotr',
               },
               {
                 label: 'LinkedIn',

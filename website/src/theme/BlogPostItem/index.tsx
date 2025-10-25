@@ -5,6 +5,7 @@ import type {WrapperProps} from '@docusaurus/types';
 import { DiscussionEmbed } from 'disqus-react';
 import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
 import { useColorMode } from '@docusaurus/theme-common';
+import BlogPostSEO from '../../components/BlogPostSEO';
 
 type Props = WrapperProps<typeof BlogPostItemType>;
 
@@ -19,6 +20,7 @@ export default function BlogPostItemWrapper(props: Props): JSX.Element {
   
   return (
     <>
+      <BlogPostSEO />
       <BlogPostItem {...props} />
       {shouldDisplayComments && (
       <DiscussionEmbed

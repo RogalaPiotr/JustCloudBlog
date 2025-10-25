@@ -24,12 +24,15 @@ const CookieSettings = () => {
       style={{
         background: 'transparent',
         border: 'none',
-        color: 'inherit',
+        color: 'var(--ifm-footer-link-color, var(--ifm-color-secondary))',
         cursor: 'pointer',
-        padding: 0,
+        padding: '4px 8px',
         textDecoration: 'underline',
-        fontSize: 'inherit'
+        fontSize: 'inherit',
+        transition: 'opacity 0.2s ease'
       }}
+      onMouseEnter={(e) => e.target.style.opacity = '0.7'}
+      onMouseLeave={(e) => e.target.style.opacity = '1'}
     >
       Zmień ustawienia cookies
     </button>

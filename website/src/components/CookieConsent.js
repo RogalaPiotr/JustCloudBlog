@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import styles from './CookieConsent.module.css';
 
 const CookieConsentBanner = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Sprawdź czy jesteśmy w przeglądarce (nie podczas SSR)
+    if (!ExecutionEnvironment.canUseDOM) {
+      return;
+    }
+
     // Sprawdź czy decyzja cookies jest już zapisana
     const consent = localStorage.getItem('cookieConsent');
     
@@ -19,6 +25,8 @@ const CookieConsentBanner = () => {
   }, []);
 
   const acceptCookies = () => {
+    if (!ExecutionEnvironment.canUseDOM) return;
+    
     localStorage.setItem('cookieConsent', 'accepted');
     setVisible(false);
     // Załaduj Google Analytics dopiero po akceptacji
@@ -26,6 +34,8 @@ const CookieConsentBanner = () => {
   };
 
   const rejectCookies = () => {
+    if (!ExecutionEnvironment.canUseDOM) return;
+    
     localStorage.setItem('cookieConsent', 'rejected');
     setVisible(false);
     // Nie wczytujemy GA i usuwamy ewentualne cookies analityczne
@@ -33,6 +43,8 @@ const CookieConsentBanner = () => {
   };
 
   const loadGoogleAnalytics = () => {
+    if (!ExecutionEnvironment.canUseDOM) return;
+    
     // Sprawdź czy GA nie jest już załadowane
     if (window.gtag) {
       return;
@@ -55,6 +67,8 @@ const CookieConsentBanner = () => {
   };
 
   const removeGoogleAnalyticsCookies = () => {
+    if (!ExecutionEnvironment.canUseDOM) return;
+    
     // Usuń cookies Google Analytics
     const cookies = document.cookie.split(';');
     for (let i = 0; i < cookies.length; i++) {

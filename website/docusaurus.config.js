@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'JustCloud.pl',
-  tagline: 'Technical articles',
+  title: 'JustCloud.pl - Azure, DevOps & Cloud Engineering Blog',
+  tagline: 'Ekspertyczne artykuły o Azure, DevOps, automatyzacji i transformacji chmurowej',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -32,6 +32,62 @@ const config = {
 
   onBrokenLinks: 'throw',
 
+  // Noindex dla środowisk staging/dev
+  noIndex: false, // Set to true for staging environments
+  
+  // SEO Headtags
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'canonical',
+        href: 'https://blog.justcloud.pl',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'author',
+        content: 'Piotr Rogala',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'robots',
+        content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:type',
+        content: 'website',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:locale',
+        content: 'pl_PL',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:creator',
+        content: '@RogalaPiotr',
+      },
+    },
+  ],
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -39,6 +95,14 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  // SEO: Structured data and JSON-LD
+  scripts: [
+    {
+      src: 'https://blog.justcloud.pl/scripts/structured-data.js',
+      async: false,
+    },
+  ],
 
   presets: [
     [
@@ -51,19 +115,33 @@ const config = {
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
+            title: 'JustCloud.pl - Azure & DevOps Blog',
+            description: 'Ekspertyczne artykuły o Microsoft Azure, DevOps, automatyzacji i transformacji chmurowej',
+            copyright: `Copyright © ${new Date().getFullYear()} JustCloud.pl`,
+            language: 'pl-PL',
           },
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/RogalaPiotr/JustCloudBlog/tree/main/website/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
           routeBasePath: '/',
           blogSidebarCount: 'ALL',
+          blogTitle: 'JustCloud.pl Blog - Azure, DevOps & Cloud Engineering',
+          blogDescription: 'Ekspertyczne artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla cloud transformation',
+          postsPerPage: 10,
+          blogSidebarTitle: 'Ostatnie artykuły',
         },
         theme: {
           customCss: [
             './src/css/custom-overrides.css',
           ],
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
         // Google Analytics został wyłączony z automatycznego ładowania
         // Teraz ładuje się dynamicznie po akceptacji cookies w CookieConsent.js
@@ -79,7 +157,26 @@ const config = {
   
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{ name: 'JustCloud the best quality of knowledge', content: 'azure, aws, gcp, devops, automation, azure devops, blog, microsoft, linux, azure policy, cloud transformation, digital transformation, governance, security, pipelines, github' }],
+      // SEO - Enhanced metadata
+      metadata: [
+        { name: 'keywords', content: 'Azure, Microsoft Azure, DevOps, Azure DevOps, Cloud Computing, Automatyzacja, Infrastructure as Code, Bicep, Terraform, Azure Policy, Governance, Security, CI/CD, Pipelines, GitHub Actions, Kubernetes, AKS, Container Apps, Cloud Transformation, Digital Transformation' },
+        { name: 'description', content: 'Blog techniczny JustCloud.pl - ekspertyczne artykuły o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla transformacji chmurowej' },
+        { property: 'og:title', content: 'JustCloud.pl - Azure, DevOps & Cloud Engineering Blog' },
+        { property: 'og:description', content: 'Ekspertyczne artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation' },
+        { property: 'og:url', content: 'https://blog.justcloud.pl' },
+        { property: 'og:site_name', content: 'JustCloud.pl Blog' },
+        { name: 'twitter:title', content: 'JustCloud.pl - Azure, DevOps & Cloud Engineering Blog' },
+        { name: 'twitter:description', content: 'Ekspertyczne artykuły techniczne o Microsoft Azure, Azure DevOps i cloud transformation' },
+        { name: 'twitter:site', content: '@RogalaPiotr' },
+      ],
+      // SEO - Image metadata
+      image: 'img/justcloud-social-card.png', // Add this image to static/img/
+      // Algolia DocSearch (opcjonalnie - jeśli masz DocSearch)
+      // algolia: {
+      //   appId: 'YOUR_APP_ID',
+      //   apiKey: 'YOUR_API_KEY',
+      //   indexName: 'justcloud',
+      // },
       zoom: {
         selector: '.markdown :not(em) > img',
         config: {

@@ -8,8 +8,8 @@ Gotowe środowisko Docker dla **Docusaurus 3.9.2** z automatyczną instalacją i
 
 ```powershell
 docker build -t docusaurus:latest .
-mkdir site
-docker run -d -p 80:80 -v ${PWD}/site:/app --name docusaurus-dev docusaurus:latest
+mkdir website
+docker run -d -p 80:80 -v ${PWD}/website:/app --name docusaurus-dev docusaurus:latest
 ```
 
 **Poczekaj ~5 minut na instalację**, potem otwórz: **http://localhost:80** 
@@ -27,7 +27,7 @@ Kontener automatycznie:
 1.  Tworzy nowy projekt Docusaurus (przy pierwszym uruchomieniu)
 2.  Instaluje wszystkie zależności npm
 3.  Uruchamia serwer deweloperski z hot reload
-4.  Montuje projekt do katalogu `./site` (edycja na żywo!)
+4.  Montuje projekt do katalogu `./website` (edycja na żywo!)
 
 ##  Pliki w projekcie
 
@@ -43,7 +43,7 @@ docusaurus-docker/
  README.md                 # Ten plik
  QUICKSTART.md             # Szybki start
  COMMANDS.md               # Komendy i przykłady
- site/                     # Twój projekt Docusaurus
+ website/                     # Twój projekt Docusaurus
 ```
 
 ##  Opcje uruchomienia
@@ -66,8 +66,8 @@ docker-compose logs -f
 
 ```powershell
 docker build -t docusaurus:latest .
-mkdir site
-docker run -d -p 80:80 -v ${PWD}/site:/app --name docusaurus-dev docusaurus:latest
+mkdir website
+docker run -d -p 80:80 -v ${PWD}/website:/app --name docusaurus-dev docusaurus:latest
 docker logs -f docusaurus-dev
 ```
 
@@ -92,9 +92,9 @@ docker exec -it docusaurus-dev sh
 
 ##  Edycja projektu
 
-Po uruchomieniu edytuj pliki w katalogu `site/`:
+Po uruchomieniu edytuj pliki w katalogu `website/`:
 ```powershell
-cd site
+cd website
 # Edytuj: docs/, blog/, src/pages/, docusaurus.config.js
 ```
 
@@ -127,7 +127,7 @@ docker build -t docusaurus:latest .
 
 ```powershell
 # Zbuduj obraz produkcyjny (z nginx)
-docker build -f Dockerfile.production -t docusaurus:prod ./site
+docker build -f Dockerfile.production -t docusaurus:prod ./website
 
 # Uruchom na porcie 80
 docker run -d -p 80:80 --name docusaurus-prod docusaurus:prod
@@ -137,7 +137,7 @@ docker run -d -p 80:80 --name docusaurus-prod docusaurus:prod
 
 ### Port zajęty?
 ```powershell
-docker run -d -p 8080:80 -v ${PWD}/site:/app --name docusaurus-dev docusaurus:latest
+docker run -d -p 8080:80 -v ${PWD}/website:/app --name docusaurus-dev docusaurus:latest
 ```
 
 ### Instalacja za długo trwa?

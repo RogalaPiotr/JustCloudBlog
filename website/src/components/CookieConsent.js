@@ -1,50 +1,89 @@
-import React from 'react';
-import CookieConsent from 'react-cookie-consent';
+import React, { useState, useEffect } from 'react';
+import styles from './CookieConsent.module.css';
 
 const CookieConsentBanner = () => {
-  return (
-    <CookieConsent
-      location="bottom"
-      buttonText="Akceptuję"
-      declineButtonText="Odrzuć"
-      enableDeclineButton
-      cookieName="justcloudCookieConsent"
-      style={{ 
-        background: "var(--jc-bg-secondary)",
-        color: "var(--jc-text-primary)",
-        borderTop: "1px solid var(--ifm-color-gray-300)",
-        padding: "16px 20px",
-        boxShadow: "0 -2px 8px rgba(0, 0, 0, 0.08)",
-        fontSize: "15px",
-        lineHeight: "1.5"
-      }}
-      buttonStyle={{ 
-        background: "var(--jc-color-blue-primary)", 
-        color: "#fff", 
-        fontSize: "14px",
-        fontWeight: "600",
-        padding: "10px 24px",
-        borderRadius: "6px",
-        border: "none",
-        cursor: "pointer",
-        transition: "all 0.2s ease"
-      }}
-      declineButtonStyle={{ 
-        color: "var(--jc-text-secondary)", 
-        background: "transparent", 
-        fontSize: "14px",
-        fontWeight: "500",
-        padding: "10px 24px",
-        borderRadius: "6px",
-        border: "1px solid var(--ifm-color-gray-300)",
-        cursor: "pointer",
-        transition: "all 0.2s ease"
-      }}
-      expires={150}
-    >
-      Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. Dowiedz się więcej w naszej <a href="/privacy-policy" style={{ color: "var(--jc-link-color)", textDecoration: "underline" }}>Polityce Prywatności</a>.
-    </CookieConsent>
-  );
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    // Sprawdź czy decyzja cookies jest już zapisana
+    const consent = localStorage.getItem('cookieConsent');
+    
+    if (consent === 'accepted') {
+      // Użytkownik wcześniej zaakceptował - załaduj GA
+      loadGoogleAnalytics();
+    } else if (!consent) {
+      // Brak decyzji - pokaż baner
+      setVisible(true);
+    }
+    // Jeśli consent === 'rejected', nie pokazujemy banera i nie ładujemy GA
+  }, []);
+
+  const acceptCookies = () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    setVisible(false);
+    // Załaduj Google Analytics dopiero po akceptacji
+    loadGoogleAnalytics();
+  };
+
+  const rejectCookies = () => {
+    localStorage.setItem('cookieConsent', 'rejected');
+    setVisible(false);
+    // Nie wczytujemy GA i usuwamy ewentualne cookies analityczne
+    removeGoogleAnalyticsCookies();
+  };
+
+  const loadGoogleAnalytics = () => {
+    // Sprawdź czy GA nie jest już załadowane
+    if (window.gtag) {
+      return;
+    }
+
+    // Dodanie skryptu GA dynamicznie
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-T278Y9D28E';
+    document.head.appendChild(script);
+
+    // Inicjalizacja gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-T278Y9D28E', {
+      anonymize_ip: true
+    });
+  };
+
+  const removeGoogleAnalyticsCookies = () => {
+    // Usuń cookies Google Analytics
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith('_ga') || cookie.startsWith('_gid')) {
+        const cookieName = cookie.split('=')[0];
+        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+      }
+    }
+  };
+
+  return visible ? (
+    <div className={styles.banner}>
+      <div className={styles.content}>
+        <p className={styles.text}>
+          Używamy plików cookie do analizy ruchu (Google Analytics), aby zapewnić najlepsze doświadczenia na naszej stronie. 
+          Czy wyrażasz zgodę? Dowiedz się więcej w naszej <a href="/privacy-policy" className={styles.link}>Polityce Prywatności</a>.
+        </p>
+        <div className={styles.buttons}>
+          <button onClick={acceptCookies} className={styles.acceptButton}>
+            Akceptuję
+          </button>
+          <button onClick={rejectCookies} className={styles.rejectButton}>
+            Nie akceptuję
+          </button>
+        </div>
+      </div>
+    </div>
+  ) : null;
 };
 
 export default CookieConsentBanner;

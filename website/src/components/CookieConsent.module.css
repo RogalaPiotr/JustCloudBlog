@@ -1,0 +1,129 @@
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: var(--jc-bg-secondary, #f8f9fa);
+  color: var(--jc-text-primary, #1c1e21);
+  border-top: 1px solid var(--ifm-color-gray-300);
+  padding: 16px 20px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 9999;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  flex: 1;
+  min-width: 300px;
+}
+
+.link {
+  color: var(--jc-link-color, #0066cc);
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.acceptButton,
+.rejectButton {
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.acceptButton {
+  background: var(--jc-color-blue-primary, #0066cc);
+  color: #fff;
+}
+
+.acceptButton:hover {
+  background: var(--jc-color-blue-dark, #0052a3);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.rejectButton {
+  background: transparent;
+  color: var(--jc-text-secondary, #606770);
+  border: 1px solid var(--ifm-color-gray-300);
+  font-weight: 500;
+}
+
+.rejectButton:hover {
+  background: var(--ifm-color-gray-100, #f0f0f0);
+  border-color: var(--ifm-color-gray-400);
+}
+
+/* Responsywność dla mobile */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .text {
+    min-width: auto;
+  }
+
+  .buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .acceptButton,
+  .rejectButton {
+    flex: 1;
+  }
+}
+
+/* Dark mode support */
+html[data-theme='dark'] .banner {
+  background: var(--jc-bg-secondary, #242526);
+  color: var(--jc-text-primary, #e3e3e3);
+  border-top-color: var(--ifm-color-gray-700);
+}
+
+html[data-theme='dark'] .rejectButton {
+  color: var(--jc-text-secondary, #b0b3b8);
+}
+
+html[data-theme='dark'] .rejectButton:hover {
+  background: var(--ifm-color-gray-800, #3a3b3c);
+}

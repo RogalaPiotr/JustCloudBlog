@@ -8,8 +8,8 @@ Witaj! Cieszę się, że odwiedzasz mój blog. Poniżej znajdziesz informacje o 
 
 Administratorem danych osobowych jest:
 
-**Piotr Rogala**  
-Formularz kontaktowy: [Formularz kontaktowy](https://web.justcloud.pl/index.html#form5-28)
+👨‍💼 **Piotr Rogala**
+✉️ [Formularz kontaktowy](https://web.justcloud.pl/index.html#form5-28)
 
 Ponieważ strona jest hobbystycznym blogiem, nie wyznaczono Inspektora Ochrony Danych.
 
@@ -51,7 +51,7 @@ Wyłączenie cookies analitycznych nie wpływa na korzystanie z podstawowych fun
 ## 6. Okres przechowywania danych
 
 - Cookies analityczne – maksymalnie 24 miesiące od momentu zapisania.
-- Dane techniczne zbierane przez Cloudflare – zgodnie z okresem przechowywania tych danych przez usługodawcę (zazwyczaj nie dłużej niż 30 dni dla logów bezpieczeństwa).
+- Dane techniczne zbierane przez Cloudflare – zgodnie z okresem przechowywania tych danych przez usługodawcę (zazwyczaj nie dłużej niż 7 dni dla logów bezpieczeństwa).
 
 ## 7. Twoje prawa
 

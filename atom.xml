@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.justcloud.pl/</id>
+    <id>https://blog.justcloud.pl</id>
     <title>JustCloud.pl - Azure &amp; DevOps Blog</title>
     <updated>2025-09-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.justcloud.pl/"/>
+    <link rel="alternate" href="https://blog.justcloud.pl"/>
     <subtitle>Ekspertyczne artykuły o Microsoft Azure, DevOps, automatyzacji i transformacji chmurowej</subtitle>
     <icon>https://blog.justcloud.pl/img/favicon.ico</icon>
     <rights>Copyright © 2025 JustCloud.pl</rights>

@@ -9,7 +9,7 @@ Witaj! Cieszę się, że odwiedzasz mój blog. Poniżej znajdziesz informacje o 
 Administratorem danych osobowych jest:
 
 **Piotr Rogala**  
-E-mail kontaktowy: [Formularz kontaktowy](https://web.justcloud.pl/index.html#form5-28)
+Formularz kontaktowy: [Formularz kontaktowy](https://web.justcloud.pl/index.html#form5-28)
 
 Ponieważ strona jest hobbystycznym blogiem, nie wyznaczono Inspektora Ochrony Danych.
 

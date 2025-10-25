@@ -24,15 +24,15 @@ const CookieSettings = () => {
       style={{
         background: 'transparent',
         border: 'none',
-        color: 'var(--ifm-footer-link-color, var(--ifm-color-secondary))',
+        color: 'var(--ifm-link-color)',
         cursor: 'pointer',
         padding: '4px 8px',
         textDecoration: 'underline',
         fontSize: 'inherit',
-        transition: 'opacity 0.2s ease'
+        transition: 'color 0.2s ease'
       }}
-      onMouseEnter={(e) => e.target.style.opacity = '0.7'}
-      onMouseLeave={(e) => e.target.style.opacity = '1'}
+      onMouseEnter={(e) => e.target.style.color = 'var(--ifm-link-hover-color)'}
+      onMouseLeave={(e) => e.target.style.color = 'var(--ifm-link-color)'}
     >
       Zmień ustawienia cookies
     </button>

@@ -75,7 +75,11 @@ export default function BlogPostSEO() {
         "headline": title,
         "name": title,
         "description": description,
-        "image": {
+        "image": [
+            imageUrl
+        ],
+        "thumbnailUrl": imageUrl,
+        "primaryImageOfPage": {
             "@type": "ImageObject",
             "url": imageUrl,
             "width": 1200,

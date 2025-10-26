@@ -50,17 +50,18 @@ export default function BlogPostSEO() {
     // Truncate title for Bing SEO (max 70 chars including site suffix)
     // Format: "Post Title · JustCloud.pl Blog" should be <= 70 chars
     const truncateTitle = (postTitle) => {
-        const siteSuffix = ' · JustCloud.pl Blog'; // 20 chars
-        const maxTitleLength = 70 - siteSuffix.length; // 50 chars for post title
+        const siteSuffix = ' · JustCloud.pl Blog'; // 23 chars (with spaces around ·)
+        const maxLength = 70; // Total max length
+        const maxTitleLength = maxLength - siteSuffix.length; // 47 chars for post title
         
-        if (postTitle.length <= maxTitleLength) {
+        if ((postTitle.length + siteSuffix.length) <= maxLength) {
             return `${postTitle}${siteSuffix}`;
         }
         
-        // Truncate at word boundary
-        const truncated = postTitle.substring(0, maxTitleLength - 3); // Reserve 3 chars for "..."
+        // Truncate at word boundary - reserve 3 chars for "..."
+        const truncated = postTitle.substring(0, maxTitleLength - 3);
         const lastSpace = truncated.lastIndexOf(' ');
-        const finalTitle = (lastSpace > 30 ? truncated.substring(0, lastSpace) : truncated) + '...';
+        const finalTitle = (lastSpace > 25 ? truncated.substring(0, lastSpace) : truncated) + '...';
         
         return `${finalTitle}${siteSuffix}`;
     };

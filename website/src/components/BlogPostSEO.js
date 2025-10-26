@@ -75,9 +75,12 @@ export default function BlogPostSEO() {
         "headline": title,
         "name": title,
         "description": description,
-        "image": [
-            imageUrl
-        ],
+        "image": {
+            "@type": "ImageObject",
+            "url": imageUrl,
+            "width": 1200,
+            "height": 630
+        },
         "datePublished": date,
         "dateModified": frontMatter.last_update?.date || date,
         "author": {
@@ -98,7 +101,7 @@ export default function BlogPostSEO() {
             "url": "https://blog.justcloud.pl",
             "logo": {
                 "@type": "ImageObject",
-                "url": `${siteUrl}/img/logo.svg`,
+                "url": `${siteUrl}/img/logo.png`,
                 "width": 200,
                 "height": 200
             },

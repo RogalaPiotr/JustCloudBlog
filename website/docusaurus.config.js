@@ -236,7 +236,7 @@ const config = {
         title: 'JustCloud.pl',
         logo: {
           alt: 'JustCloud.pl Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {

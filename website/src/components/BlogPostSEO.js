@@ -26,6 +26,23 @@ export default function BlogPostSEO() {
         ? `${siteUrl}${frontMatter.image}`
         : `${siteUrl}/img/justcloud-social-card.png`;
 
+    // Normalize description for Bing (25-160 chars) while keeping original for Google
+    const normalizeDescription = (desc) => {
+        if (!desc || desc.length < 25) {
+            // Too short - extend with title or generic text
+            return `${desc || title}. Dowiedz się więcej na JustCloud.pl Blog.`.substring(0, 160);
+        }
+        if (desc.length > 160) {
+            // Too long - truncate at word boundary
+            const truncated = desc.substring(0, 157);
+            const lastSpace = truncated.lastIndexOf(' ');
+            return (lastSpace > 130 ? truncated.substring(0, lastSpace) : truncated) + '...';
+        }
+        return desc;
+    };
+
+    const metaDescription = normalizeDescription(description);
+
     // Generate keywords from tags
     const keywords = tags.map(tag => tag.label); // Array for schema
     const keywordsString = keywords.join(', '); // String for meta tags
@@ -143,7 +160,7 @@ export default function BlogPostSEO() {
     return (
         <Head>
             {/* Enhanced SEO meta tags */}
-            <meta name="description" content={description} />
+            <meta name="description" content={metaDescription} />
             <meta name="keywords" content={keywordsString} />
             <meta name="author" content={authorName} />
             <meta name="publish_date" property="og:publish_date" content={date} />

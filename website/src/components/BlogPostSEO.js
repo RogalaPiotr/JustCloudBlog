@@ -30,11 +30,27 @@ export default function BlogPostSEO() {
         }
         // Check if already absolute URL
         if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
-            return imagePath;
+            // Encode URL while preserving protocol and domain
+            try {
+                const url = new URL(imagePath);
+                // Encode pathname parts
+                const encodedPathname = url.pathname
+                    .split('/')
+                    .map(part => encodeURIComponent(decodeURIComponent(part)))
+                    .join('/');
+                return `${url.protocol}//${url.host}${encodedPathname}${url.search}${url.hash}`;
+            } catch {
+                // If URL parsing fails, return as-is
+                return imagePath;
+            }
         }
         // Relative path - ensure leading slash
         const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
-        return `${siteUrl}${path}`;
+
+        // Encode special characters (spaces, etc.) but preserve slashes
+        const encodedPath = path.split('/').map(part => encodeURIComponent(part)).join('/');
+
+        return `${siteUrl}${encodedPath}`;
     };
     
     const imageUrl = buildImageUrl(frontMatter.image);
@@ -59,7 +75,12 @@ export default function BlogPostSEO() {
         "headline": title,
         "name": title,
         "description": description,
-        "image": imageUrl,
+        "image": {
+            "@type": "ImageObject",
+            "url": imageUrl,
+            "width": 1200,
+            "height": 630
+        },
         "datePublished": date,
         "dateModified": frontMatter.last_update?.date || date,
         "author": {

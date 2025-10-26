@@ -326,7 +326,7 @@ const config = {
 
   // Additional webpack configuration for hot reload (dev mode only)
   plugins: [
-    './plugins/blog-title-truncate', // Truncate long blog titles for Bing SEO
+    // './plugins/blog-title-truncate', // Disabled - using wrapper approach instead
     function (context, options) {
       return {
         name: 'custom-webpack-config',

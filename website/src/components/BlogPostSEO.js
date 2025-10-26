@@ -162,8 +162,35 @@ export default function BlogPostSEO() {
         }))
     } : null;
 
+    // Truncate title for Bing SEO (max 70 chars total)
+    const truncateTitle = (title) => {
+        const siteSuffix = ' · JustCloud.pl Blog';
+        const maxLength = 70;
+        const maxTitleLength = maxLength - siteSuffix.length;
+        
+        if ((title.length + siteSuffix.length) <= maxLength) {
+            return title + siteSuffix;
+        }
+        
+        // Truncate at word boundary
+        const truncated = title.substring(0, maxTitleLength - 3);
+        const lastSpace = truncated.lastIndexOf(' ');
+        const shortTitle = (lastSpace > 25 
+            ? truncated.substring(0, lastSpace) 
+            : truncated) + '...';
+        
+        console.log(`[BlogPostSEO] Truncated title: "${title}" -> "${shortTitle}"`);
+        return shortTitle + siteSuffix;
+    };
+
+    const pageTitle = truncateTitle(title); // For <title> tag only
+    // Keep using fullTitle for schemas and social media (titleOriginal || title)
+
     return (
         <Head>
+            {/* Page title - truncated for Bing SEO */}
+            <title>{pageTitle}</title>
+            
             {/* Enhanced SEO meta tags */}
             <meta name="description" content={metaDescription} />
             <meta name="keywords" content={keywordsString} />

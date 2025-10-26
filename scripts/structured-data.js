@@ -65,6 +65,12 @@
     "name": "JustCloud.pl Blog",
       "description": "Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices",
     "url": "https://blog.justcloud.pl",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://blog.justcloud.pl/img/justcloud-social-card.png",
+      "width": 1200,
+      "height": 630
+    },
     "author": {
       "@type": "Person",
       "name": "Piotr Rogala",

@@ -112,6 +112,25 @@ const config = {
         content: '@RogalaPiotr',
       },
     },
+    // RSS/Atom Autodiscovery
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'alternate',
+        type: 'application/rss+xml',
+        title: 'JustCloud.pl RSS Feed',
+        href: 'https://blog.justcloud.pl/rss.xml',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'alternate',
+        type: 'application/atom+xml',
+        title: 'JustCloud.pl Atom Feed',
+        href: 'https://blog.justcloud.pl/atom.xml',
+      },
+    },
   ],
 
   // Even if you don't use internationalization, you can use this field to set

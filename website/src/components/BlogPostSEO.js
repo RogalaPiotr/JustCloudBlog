@@ -175,6 +175,11 @@ export default function BlogPostSEO() {
             <meta name="twitter:creator" content="@RogalaPiotr" />
             <meta name="twitter:site" content="@RogalaPiotr" />
 
+            {/* LinkedIn-specific Article Tags */}
+            <meta property="article:publisher" content="https://www.linkedin.com/in/rogalapiotr" />
+            <meta property="profile:first_name" content="Piotr" />
+            <meta property="profile:last_name" content="Rogala" />
+
             {/* Canonical URL */}
             <link rel="canonical" href={fullUrl} />
 

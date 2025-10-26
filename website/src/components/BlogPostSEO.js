@@ -91,7 +91,12 @@ export default function BlogPostSEO() {
             "@type": "Person",
             "name": authorName,
             "url": authorUrl,
-            "image": "https://blog.justcloud.pl/img/author.png",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://blog.justcloud.pl/img/author.png",
+                "width": 457,
+                "height": 457
+            },
             "description": authors?.[0]?.title || "MVP Azure & owner JustCloud.pl",
             "sameAs": [
                 "https://linkedin.com/in/rogalapiotr",

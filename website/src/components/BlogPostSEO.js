@@ -86,8 +86,8 @@ export default function BlogPostSEO() {
             "logo": {
                 "@type": "ImageObject",
                 "url": `${siteUrl}/img/logo.svg`,
-                "width": 600,
-                "height": 60
+                "width": 200,
+                "height": 200
             },
             "sameAs": [
                 "https://linkedin.com/in/rogalapiotr",

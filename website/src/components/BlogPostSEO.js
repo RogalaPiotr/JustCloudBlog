@@ -27,7 +27,8 @@ export default function BlogPostSEO() {
         : `${siteUrl}/img/justcloud-social-card.png`;
 
     // Generate keywords from tags
-    const keywords = tags.map(tag => tag.label).join(', ');
+    const keywords = tags.map(tag => tag.label); // Array for schema
+    const keywordsString = keywords.join(', '); // String for meta tags
 
     // Get author info
     const authorName = authors?.[0]?.name || 'Piotr Rogala';
@@ -41,20 +42,27 @@ export default function BlogPostSEO() {
     const articleSchema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
+        "@id": fullUrl,
         "headline": title,
+        "name": title,
         "description": description,
-        "image": {
-            "@type": "ImageObject",
-            "url": imageUrl,
-            "width": 1200,
-            "height": 630
-        },
+        "image": [
+            imageUrl,
+            {
+                "@type": "ImageObject",
+                "url": imageUrl,
+                "width": 1200,
+                "height": 630
+            }
+        ],
         "datePublished": date,
         "dateModified": frontMatter.last_update?.date || date,
         "author": {
             "@type": "Person",
             "name": authorName,
             "url": authorUrl,
+            "image": authors?.[0]?.imageURL || "https://avatars.githubusercontent.com/u/31566956?v=4",
+            "description": authors?.[0]?.title || "MVP Azure & owner JustCloud.pl",
             "sameAs": [
                 "https://linkedin.com/in/rogalapiotr",
                 "https://twitter.com/RogalaPiotr",
@@ -77,10 +85,7 @@ export default function BlogPostSEO() {
                 "https://github.com/RogalaPiotr"
             ]
         },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": fullUrl
-        },
+        "mainEntityOfPage": fullUrl,
         "url": fullUrl,
         "keywords": keywords,
         "articleSection": tags.length > 0 ? tags[0].label : "Cloud Computing",
@@ -139,7 +144,7 @@ export default function BlogPostSEO() {
         <Head>
             {/* Enhanced SEO meta tags */}
             <meta name="description" content={description} />
-            <meta name="keywords" content={keywords} />
+            <meta name="keywords" content={keywordsString} />
             <meta name="author" content={authorName} />
             <meta name="publish_date" property="og:publish_date" content={date} />
             <meta property="article:published_time" content={date} />

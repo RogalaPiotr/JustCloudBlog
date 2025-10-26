@@ -76,12 +76,12 @@ export default function BlogPostSEO() {
         "name": title,
         "description": description,
         "image": [
-            "https://blog.justcloud.pl/img/logo.png"
+            "https://blog.justcloud.pl/img/justcloud-social-card.png"
         ],
-        "thumbnailUrl": "https://blog.justcloud.pl/img/logo.png",
+        "thumbnailUrl": "https://blog.justcloud.pl/img/justcloud-social-card.png",
         "primaryImageOfPage": {
             "@type": "ImageObject",
-            "url": "https://blog.justcloud.pl/img/logo.png",
+            "url": "https://blog.justcloud.pl/img/justcloud-social-card.png",
             "width": 1200,
             "height": 630
         },

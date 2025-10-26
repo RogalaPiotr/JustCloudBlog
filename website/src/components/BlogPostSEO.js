@@ -11,6 +11,7 @@ export default function BlogPostSEO() {
 
     const {
         title,
+        titleOriginal, // Full title if truncated
         description,
         date,
         formattedDate,
@@ -19,6 +20,9 @@ export default function BlogPostSEO() {
         frontMatter,
         permalink,
     } = metadata;
+
+    // Use original full title for schemas and social media
+    const fullTitle = titleOriginal || title;
 
     const siteUrl = 'https://blog.justcloud.pl';
     const fullUrl = `${siteUrl}${permalink}`;
@@ -47,29 +51,6 @@ export default function BlogPostSEO() {
 
     const metaDescription = normalizeDescription(description);
 
-    // Truncate title for Bing SEO (max 70 chars including site suffix)
-    // Format: "Post Title · JustCloud.pl Blog" should be <= 70 chars
-    const truncateTitle = (postTitle) => {
-        // Docusaurus adds extra spaces around delimiter, so actual format is: "Title  ·  Site"
-        // We need to match this: 2 spaces + · + 2 spaces = 5 chars for separator
-        const siteSuffix = '  ·  JustCloud.pl Blog'; // 25 chars (2+1+2 for separator + 20 for site name)
-        const maxLength = 70; // Total max length
-        const maxTitleLength = maxLength - siteSuffix.length; // 45 chars for post title
-        
-        if ((postTitle.length + siteSuffix.length) <= maxLength) {
-            return `${postTitle}${siteSuffix}`;
-        }
-        
-        // Truncate at word boundary - reserve 3 chars for "..."
-        const truncated = postTitle.substring(0, maxTitleLength - 3);
-        const lastSpace = truncated.lastIndexOf(' ');
-        const finalTitle = (lastSpace > 25 ? truncated.substring(0, lastSpace) : truncated) + '...';
-        
-        return `${finalTitle}${siteSuffix}`;
-    };
-
-    const metaTitle = truncateTitle(title);
-
     // Generate keywords from tags
     const keywords = tags.map(tag => tag.label); // Array for schema
     const keywordsString = keywords.join(', '); // String for meta tags
@@ -87,8 +68,8 @@ export default function BlogPostSEO() {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "@id": fullUrl,
-        "headline": title,
-        "name": title,
+        "headline": fullTitle,
+        "name": fullTitle,
         "description": description,
         "image": {
             "@type": "ImageObject",
@@ -168,7 +149,7 @@ export default function BlogPostSEO() {
     const howToSchema = howToSteps.length > 0 ? {
         "@context": "https://schema.org",
         "@type": "HowTo",
-        "name": title,
+        "name": fullTitle,
         "description": description,
         "image": imageUrl,
         "totalTime": `PT${Math.round(readingTime)}M`,
@@ -183,9 +164,6 @@ export default function BlogPostSEO() {
 
     return (
         <Head>
-            {/* SEO: Truncated title for Bing (max 70 chars) */}
-            <title>{metaTitle}</title>
-            
             {/* Enhanced SEO meta tags */}
             <meta name="description" content={metaDescription} />
             <meta name="keywords" content={keywordsString} />
@@ -207,7 +185,7 @@ export default function BlogPostSEO() {
 
             {/* Open Graph */}
             <meta property="og:type" content="article" />
-            <meta property="og:title" content={title} />
+            <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={description} />
             <meta property="og:url" content={fullUrl} />
             <meta property="og:image" content={imageUrl} />
@@ -218,7 +196,7 @@ export default function BlogPostSEO() {
 
             {/* Twitter Card */}
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={title} />
+            <meta name="twitter:title" content={fullTitle} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={imageUrl} />
             <meta name="twitter:creator" content="@RogalaPiotr" />

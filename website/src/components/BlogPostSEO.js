@@ -22,9 +22,22 @@ export default function BlogPostSEO() {
 
     const siteUrl = 'https://blog.justcloud.pl';
     const fullUrl = `${siteUrl}${permalink}`;
-    const imageUrl = frontMatter.image
-        ? `${siteUrl}${frontMatter.image}`
-        : `${siteUrl}/img/justcloud-social-card.png`;
+    
+    // Build image URL - handle both relative and absolute URLs
+    const buildImageUrl = (imagePath) => {
+        if (!imagePath) {
+            return `${siteUrl}/img/justcloud-social-card.png`;
+        }
+        // Check if already absolute URL
+        if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+            return imagePath;
+        }
+        // Relative path - ensure leading slash
+        const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
+        return `${siteUrl}${path}`;
+    };
+    
+    const imageUrl = buildImageUrl(frontMatter.image);
 
     // Normalize description for Bing (25-160 chars) while keeping original for Google
     const normalizeDescription = (desc) => {
@@ -63,12 +76,15 @@ export default function BlogPostSEO() {
         "headline": title,
         "name": title,
         "description": description,
-        "logo": {
-            "@type": "ImageObject",
-            "url": imageUrl,
-            "width": 1200,
-            "height": 630
-        },
+        "image": [
+            imageUrl,
+            {
+                "@type": "ImageObject",
+                "url": imageUrl,
+                "width": 1200,
+                "height": 630
+            }
+        ],
         "datePublished": date,
         "dateModified": frontMatter.last_update?.date || date,
         "author": {

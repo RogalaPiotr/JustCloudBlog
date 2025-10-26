@@ -22,38 +22,26 @@ export default function BlogPostSEO() {
 
     const siteUrl = 'https://blog.justcloud.pl';
     const fullUrl = `${siteUrl}${permalink}`;
-    
-    // Build image URL - handle both relative and absolute URLs
-    const buildImageUrl = (imagePath) => {
-        if (!imagePath) {
-            return `${siteUrl}/img/justcloud-social-card.png`;
-        }
-        // Check if already absolute URL
-        if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
-            // Encode URL while preserving protocol and domain
-            try {
-                const url = new URL(imagePath);
-                // Encode pathname parts
-                const encodedPathname = url.pathname
-                    .split('/')
-                    .map(part => encodeURIComponent(decodeURIComponent(part)))
-                    .join('/');
-                return `${url.protocol}//${url.host}${encodedPathname}${url.search}${url.hash}`;
-            } catch {
-                // If URL parsing fails, return as-is
-                return imagePath;
-            }
-        }
-        // Relative path - ensure leading slash
-        const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
+    const imageUrl = frontMatter.image
+        ? `${siteUrl}${frontMatter.image}`
+        : `${siteUrl}/img/justcloud-social-card.png`;
 
-        // Encode special characters (spaces, etc.) but preserve slashes
-        const encodedPath = path.split('/').map(part => encodeURIComponent(part)).join('/');
-
-        return `${siteUrl}${encodedPath}`;
+    // Normalize description for Bing (25-160 chars) while keeping original for Google
+    const normalizeDescription = (desc) => {
+        if (!desc || desc.length < 25) {
+            // Too short - extend with title or generic text
+            return `${desc || title}. Dowiedz się więcej na JustCloud.pl Blog.`.substring(0, 160);
+        }
+        if (desc.length > 160) {
+            // Too long - truncate at word boundary
+            const truncated = desc.substring(0, 157);
+            const lastSpace = truncated.lastIndexOf(' ');
+            return (lastSpace > 130 ? truncated.substring(0, lastSpace) : truncated) + '...';
+        }
+        return desc;
     };
-    
-    const imageUrl = buildImageUrl(frontMatter.image);
+
+    const metaDescription = normalizeDescription(description);
 
     // Generate keywords from tags
     const keywords = tags.map(tag => tag.label); // Array for schema
@@ -75,27 +63,19 @@ export default function BlogPostSEO() {
         "headline": title,
         "name": title,
         "description": description,
-        "image": [
-            imageUrl,
-            {
-                "@type": "ImageObject",
-                "url": imageUrl,
-                "width": 1200,
-                "height": 630
-            }
-        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": imageUrl,
+            "width": 1200,
+            "height": 630
+        },
         "datePublished": date,
         "dateModified": frontMatter.last_update?.date || date,
         "author": {
             "@type": "Person",
             "name": authorName,
             "url": authorUrl,
-            "image": {
-                "@type": "ImageObject",
-                "url": "https://blog.justcloud.pl/img/author.jpg",
-                "width": 457,
-                "height": 457
-            },
+            "image": authors?.[0]?.imageURL || "https://avatars.githubusercontent.com/u/31566956?v=4",
             "description": authors?.[0]?.title || "MVP Azure & owner JustCloud.pl",
             "sameAs": [
                 "https://linkedin.com/in/rogalapiotr",
@@ -109,9 +89,9 @@ export default function BlogPostSEO() {
             "url": "https://blog.justcloud.pl",
             "logo": {
                 "@type": "ImageObject",
-                "url": `${siteUrl}/img/logo.png`,
-                "width": 200,
-                "height": 200
+                "url": `${siteUrl}/img/logo.svg`,
+                "width": 600,
+                "height": 60
             },
             "sameAs": [
                 "https://linkedin.com/in/rogalapiotr",
@@ -177,7 +157,7 @@ export default function BlogPostSEO() {
     return (
         <Head>
             {/* Enhanced SEO meta tags */}
-            <meta name="description" content={description} />
+            <meta name="description" content={metaDescription} />
             <meta name="keywords" content={keywordsString} />
             <meta name="author" content={authorName} />
             <meta name="publish_date" property="og:publish_date" content={date} />

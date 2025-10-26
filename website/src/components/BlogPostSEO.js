@@ -76,15 +76,14 @@ export default function BlogPostSEO() {
         "name": title,
         "description": description,
         "image": [
-            "https://blog.justcloud.pl/img/justcloud-social-card.png"
+            imageUrl,
+            {
+                "@type": "ImageObject",
+                "url": imageUrl,
+                "width": 1200,
+                "height": 630
+            }
         ],
-        "thumbnailUrl": "https://blog.justcloud.pl/img/justcloud-social-card.png",
-        "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": "https://blog.justcloud.pl/img/justcloud-social-card.png",
-            "width": 1200,
-            "height": 630
-        },
         "datePublished": date,
         "dateModified": frontMatter.last_update?.date || date,
         "author": {

@@ -215,7 +215,7 @@ const config = {
         { name: 'twitter:site', content: '@RogalaPiotr' },
       ],
       // SEO - Image metadata
-      image: 'img/justcloud-social-card.png', // Add this image to static/img/
+      image: 'img/justcloud-social-card.png',
       // Algolia DocSearch (opcjonalnie - jeśli masz DocSearch)
       // algolia: {
       //   appId: 'YOUR_APP_ID',

@@ -93,7 +93,7 @@ export default function BlogPostSEO() {
             "url": authorUrl,
             "image": {
                 "@type": "ImageObject",
-                "url": "https://blog.justcloud.pl/img/author.png",
+                "url": "https://blog.justcloud.pl/img/author.jpg",
                 "width": 457,
                 "height": 457
             },

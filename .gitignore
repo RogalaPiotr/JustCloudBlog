@@ -27,4 +27,6 @@ supervisord.pid
 **/.DS_Store
 */.DS_Store
 
+# tmp
 backup-wordpress
+ai-plans

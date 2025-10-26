@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'JustCloud.pl - Azure, DevOps & Cloud Engineering Blog',
-  tagline: 'Ekspertyczne artykuły o Azure, DevOps, automatyzacji i transformacji chmurowej',
+  tagline: 'Eksperckie artykuły o Azure, DevOps, automatyzacji i transformacji chmurowej',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -45,6 +45,22 @@ const config = {
       attributes: {
         rel: 'canonical',
         href: 'https://blog.justcloud.pl',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/img/favicon.ico',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'shortcut icon',
+        type: 'image/x-icon',
+        href: '/img/favicon.ico',
       },
     },
     {
@@ -119,7 +135,7 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
             title: 'JustCloud.pl - Azure & DevOps Blog',
-            description: 'Ekspertyczne artykuły o Microsoft Azure, DevOps, automatyzacji i transformacji chmurowej',
+            description: 'Eksperckie artykuły o Microsoft Azure, DevOps, automatyzacji i transformacji chmurowej',
             copyright: `Copyright © ${new Date().getFullYear()} JustCloud.pl`,
             language: 'pl-PL',
           },
@@ -131,7 +147,7 @@ const config = {
           routeBasePath: '/',
           blogSidebarCount: 'ALL',
           blogTitle: 'JustCloud.pl Blog - Azure, DevOps & Cloud Engineering',
-          blogDescription: 'Ekspertyczne artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla cloud transformation',
+          blogDescription: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla cloud transformation',
           postsPerPage: 10,
           blogSidebarTitle: 'Ostatnie artykuły',
         },
@@ -163,13 +179,13 @@ const config = {
       // SEO - Enhanced metadata
       metadata: [
         { name: 'keywords', content: 'Azure, Microsoft Azure, DevOps, Azure DevOps, Cloud Computing, Automatyzacja, Infrastructure as Code, Bicep, Terraform, Azure Policy, Governance, Security, CI/CD, Pipelines, GitHub Actions, Kubernetes, AKS, Container Apps, Cloud Transformation, Digital Transformation' },
-        { name: 'description', content: 'Blog techniczny JustCloud.pl - ekspertyczne artykuły o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla transformacji chmurowej' },
+        { name: 'description', content: 'Blog techniczny JustCloud.pl - eksperckie artykuły o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla transformacji chmurowej' },
         { property: 'og:title', content: 'JustCloud.pl - Azure, DevOps & Cloud Engineering Blog' },
-        { property: 'og:description', content: 'Ekspertyczne artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation' },
+        { property: 'og:description', content: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation' },
         { property: 'og:url', content: 'https://blog.justcloud.pl' },
         { property: 'og:site_name', content: 'JustCloud.pl Blog' },
         { name: 'twitter:title', content: 'JustCloud.pl - Azure, DevOps & Cloud Engineering Blog' },
-        { name: 'twitter:description', content: 'Ekspertyczne artykuły techniczne o Microsoft Azure, Azure DevOps i cloud transformation' },
+        { name: 'twitter:description', content: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps i cloud transformation' },
         { name: 'twitter:site', content: '@RogalaPiotr' },
       ],
       // SEO - Image metadata

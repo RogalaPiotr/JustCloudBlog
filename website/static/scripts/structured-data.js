@@ -11,7 +11,7 @@
     "name": "JustCloud.pl",
     "url": "https://blog.justcloud.pl",
     "logo": "https://blog.justcloud.pl/img/logo.svg",
-    "description": "Ekspertyczne artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation",
+    "description": "Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
@@ -63,7 +63,7 @@
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "JustCloud.pl Blog",
-    "description": "Ekspertyczne artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices",
+      "description": "Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices",
     "url": "https://blog.justcloud.pl",
     "author": {
       "@type": "Person",

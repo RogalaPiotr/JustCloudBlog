@@ -75,12 +75,9 @@ export default function BlogPostSEO() {
         "headline": title,
         "name": title,
         "description": description,
-        "image": {
-            "@type": "ImageObject",
-            "url": imageUrl,
-            "width": 1200,
-            "height": 630
-        },
+        "image": [
+            imageUrl
+        ],
         "datePublished": date,
         "dateModified": frontMatter.last_update?.date || date,
         "author": {

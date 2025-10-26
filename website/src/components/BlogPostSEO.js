@@ -50,9 +50,11 @@ export default function BlogPostSEO() {
     // Truncate title for Bing SEO (max 70 chars including site suffix)
     // Format: "Post Title · JustCloud.pl Blog" should be <= 70 chars
     const truncateTitle = (postTitle) => {
-        const siteSuffix = ' · JustCloud.pl Blog'; // 23 chars (with spaces around ·)
+        // Docusaurus adds extra spaces around delimiter, so actual format is: "Title  ·  Site"
+        // We need to match this: 2 spaces + · + 2 spaces = 5 chars for separator
+        const siteSuffix = '  ·  JustCloud.pl Blog'; // 25 chars (2+1+2 for separator + 20 for site name)
         const maxLength = 70; // Total max length
-        const maxTitleLength = maxLength - siteSuffix.length; // 47 chars for post title
+        const maxTitleLength = maxLength - siteSuffix.length; // 45 chars for post title
         
         if ((postTitle.length + siteSuffix.length) <= maxLength) {
             return `${postTitle}${siteSuffix}`;

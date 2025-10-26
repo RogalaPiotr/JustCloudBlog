@@ -22,8 +22,12 @@ export default function BlogPostSEO() {
 
     const siteUrl = 'https://blog.justcloud.pl';
     const fullUrl = `${siteUrl}${permalink}`;
+    
+    // Ensure we always have a valid image URL - fallback to social card
     const imageUrl = frontMatter.image
-        ? `${siteUrl}${frontMatter.image}`
+        ? (frontMatter.image.startsWith('http') 
+            ? frontMatter.image 
+            : `${siteUrl}${frontMatter.image}`)
         : `${siteUrl}/img/justcloud-social-card.png`;
 
     // Normalize description for Bing (25-160 chars) while keeping original for Google
@@ -63,7 +67,7 @@ export default function BlogPostSEO() {
         "headline": title,
         "name": title,
         "description": description,
-        "logo": {
+        "image": {
             "@type": "ImageObject",
             "url": imageUrl,
             "width": 1200,

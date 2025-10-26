@@ -10,7 +10,7 @@
     "@type": "Organization",
     "name": "JustCloud.pl",
     "url": "https://blog.justcloud.pl",
-    "logo": "https://blog.justcloud.pl/img/logo.svg",
+    "logo": "https://blog.justcloud.pl/img/logo.png",
     "description": "Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -48,7 +48,7 @@
       "name": "JustCloud.pl",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://blog.justcloud.pl/img/logo.svg"
+        "url": "https://blog.justcloud.pl/img/logo.png"
       }
     },
     "potentialAction": {
@@ -75,7 +75,7 @@
       "name": "JustCloud.pl",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://blog.justcloud.pl/img/logo.svg"
+        "url": "https://blog.justcloud.pl/img/logo.png"
       }
     }
   };

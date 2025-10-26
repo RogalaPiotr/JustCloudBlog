@@ -1,35 +1,75 @@
 # JustCloud.pl Blog - Robots.txt
 # https://blog.justcloud.pl/robots.txt
 
+# Default rules for all crawlers
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
-# Sitemaps
+# Sitemaps (for all search engines)
 Sitemap: https://blog.justcloud.pl/sitemap.xml
 
-# Disallow search results and filter pages (if any)
+# Disallow search results and filter pages
 Disallow: /search
 Disallow: /*?*
+Disallow: /.docusaurus/
+Disallow: /node_modules/
 
-# Allow crawling of RSS feeds
+# Allow crawling of important resources
+Allow: /img/
+Allow: /assets/
 Allow: /rss.xml
 Allow: /atom.xml
 Allow: /blog-feed.xml
 
-# Common crawlers
+# Google-specific rules
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Googlebot-Image
+Allow: /img/
+Allow: /assets/
+
+User-agent: Googlebot-News
 Allow: /
 
+# Bing-specific rules (IMPORTANT for Bing SEO!)
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
-User-agent: Slurp
+User-agent: BingPreview
 Allow: /
 
-# Block AI scrapers (optional - if you don't want AI training on your content)
+User-agent: msnbot
+Allow: /
+
+User-agent: msnbot-media
+Allow: /img/
+Allow: /assets/
+
+# Yahoo (powered by Bing)
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo (uses Bing index)
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Block AI scrapers (optional - uncomment if you want to block)
 # User-agent: GPTBot
 # Disallow: /
 
@@ -45,7 +85,10 @@ Allow: /
 # User-agent: Claude-Web
 # Disallow: /
 
-# Block bad bots
+# User-agent: Google-Extended
+# Disallow: /
+
+# Rate limit aggressive SEO crawlers
 User-agent: AhrefsBot
 Crawl-delay: 10
 
@@ -54,3 +97,40 @@ Crawl-delay: 10
 
 User-agent: DotBot
 Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: Rogerbot
+Crawl-delay: 10
+
+# Block known bad bots
+User-agent: MauiBot
+Disallow: /
+
+User-agent: AlphaBot
+Disallow: /
+
+User-agent: sqlmap
+Disallow: /
+
+User-agent: Nuclei
+Disallow: /
+
+User-agent: wikto
+Disallow: /
+
+User-agent: nikto
+Disallow: /
+
+User-agent: wpscan
+Disallow: /
+
+User-agent: Nmap
+Disallow: /
+
+User-agent: masscan
+Disallow: /
+
+User-agent: ZmEu
+Disallow: /

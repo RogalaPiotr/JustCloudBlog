@@ -101,6 +101,13 @@ const config = {
     {
       tagName: 'meta',
       attributes: {
+        httpEquiv: 'content-language',
+        content: 'pl',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
         name: 'twitter:creator',
         content: '@RogalaPiotr',
       },

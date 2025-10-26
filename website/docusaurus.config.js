@@ -10,7 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'JustCloud.pl - Azure, DevOps & Cloud Engineering Blog',
+  title: 'JustCloud.pl Blog',
+  titleDelimiter: ' · ',
   tagline: 'Eksperckie artykuły o Azure, DevOps, automatyzacji i transformacji chmurowej',
   favicon: 'img/favicon.ico',
 
@@ -40,13 +41,6 @@ const config = {
   
   // SEO Headtags
   headTags: [
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'canonical',
-        href: 'https://blog.justcloud.pl',
-      },
-    },
     {
       tagName: 'link',
       attributes: {

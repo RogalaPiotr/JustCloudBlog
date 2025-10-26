@@ -1,16 +1,13 @@
 import React, { useMemo } from 'react';
-import BlogPostPage from '@theme-original/BlogPostPage';
-import { BlogPostProvider } from '@docusaurus/plugin-content-blog/client';
-import BlogPostSEO from '../../components/BlogPostSEO';
+import OriginalBlogPostPage from '@theme-original/BlogPostPage';
 
 export default function BlogPostPageWrapper(props) {
   // Truncate title for SEO if it's too long (Bing requirement: max 70 chars total)
-  const modifiedContent = useMemo(() => {
-    // Create deep copy of content to avoid mutating immutable objects
-    const originalTitle = props.content.metadata?.title;
+  const modifiedProps = useMemo(() => {
+    const originalTitle = props.content?.metadata?.title;
     
     if (!originalTitle) {
-      return props.content;
+      return props;
     }
     
     const siteSuffix = ' · JustCloud.pl Blog';
@@ -28,26 +25,22 @@ export default function BlogPostPageWrapper(props) {
       
       console.log(`[BlogPost] Truncated title: "${originalTitle}" -> "${shortTitle}"`);
       
-      // Return new content object with modified metadata
+      // Return new props with modified content
       return {
-        ...props.content,
-        metadata: {
-          ...props.content.metadata,
-          titleOriginal: originalTitle,
-          title: shortTitle
+        ...props,
+        content: {
+          ...props.content,
+          metadata: {
+            ...props.content.metadata,
+            titleOriginal: originalTitle,
+            title: shortTitle
+          }
         }
       };
     }
     
-    return props.content;
-  }, [props.content]);
+    return props;
+  }, [props]);
   
-  return (
-    <>
-      <BlogPostProvider content={modifiedContent} isBlogPostPage={true}>
-        <BlogPostSEO />
-      </BlogPostProvider>
-      <BlogPostPage {...props} content={modifiedContent} />
-    </>
-  );
+  return <OriginalBlogPostPage {...modifiedProps} />;
 }

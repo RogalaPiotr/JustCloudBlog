@@ -47,6 +47,26 @@ export default function BlogPostSEO() {
 
     const metaDescription = normalizeDescription(description);
 
+    // Truncate title for Bing SEO (max 70 chars including site suffix)
+    // Format: "Post Title · JustCloud.pl Blog" should be <= 70 chars
+    const truncateTitle = (postTitle) => {
+        const siteSuffix = ' · JustCloud.pl Blog'; // 20 chars
+        const maxTitleLength = 70 - siteSuffix.length; // 50 chars for post title
+        
+        if (postTitle.length <= maxTitleLength) {
+            return `${postTitle}${siteSuffix}`;
+        }
+        
+        // Truncate at word boundary
+        const truncated = postTitle.substring(0, maxTitleLength - 3); // Reserve 3 chars for "..."
+        const lastSpace = truncated.lastIndexOf(' ');
+        const finalTitle = (lastSpace > 30 ? truncated.substring(0, lastSpace) : truncated) + '...';
+        
+        return `${finalTitle}${siteSuffix}`;
+    };
+
+    const metaTitle = truncateTitle(title);
+
     // Generate keywords from tags
     const keywords = tags.map(tag => tag.label); // Array for schema
     const keywordsString = keywords.join(', '); // String for meta tags
@@ -160,6 +180,9 @@ export default function BlogPostSEO() {
 
     return (
         <Head>
+            {/* SEO: Truncated title for Bing (max 70 chars) */}
+            <title>{metaTitle}</title>
+            
             {/* Enhanced SEO meta tags */}
             <meta name="description" content={metaDescription} />
             <meta name="keywords" content={keywordsString} />

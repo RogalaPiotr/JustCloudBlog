@@ -121,6 +121,34 @@ const config = {
     {
       tagName: 'meta',
       attributes: {
+        property: 'og:image',
+        content: 'https://blog.justcloud.pl/img/justcloud-social-card.png',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:image:width',
+        content: '1200',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:image:height',
+        content: '630',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:image:alt',
+        content: 'JustCloud.pl Blog - Azure, DevOps & Cloud Engineering',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
         property: 'og:locale',
         content: 'pl_PL',
       },
@@ -130,6 +158,20 @@ const config = {
       attributes: {
         name: 'twitter:card',
         content: 'summary_large_image',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:image',
+        content: 'https://blog.justcloud.pl/img/justcloud-social-card.png',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:image:alt',
+        content: 'JustCloud.pl Blog - Azure, DevOps & Cloud Engineering',
       },
     },
     {
@@ -246,8 +288,8 @@ const config = {
         { name: 'twitter:description', content: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps i cloud transformation' },
         { name: 'twitter:site', content: '@RogalaPiotr' },
       ],
-      // SEO - Image metadata
-      image: 'img/justcloud-social-card.png',
+      // SEO - Image metadata (MUST be absolute URL for search engines)
+      image: 'https://blog.justcloud.pl/img/justcloud-social-card.png',
       // Algolia DocSearch (opcjonalnie - jeśli masz DocSearch)
       // algolia: {
       //   appId: 'YOUR_APP_ID',

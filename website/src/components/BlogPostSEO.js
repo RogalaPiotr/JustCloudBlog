@@ -194,7 +194,7 @@ export default function BlogPostSEO() {
         const maxTitleLength = maxLength - siteSuffix.length;
         
         if ((title.length + siteSuffix.length) <= maxLength) {
-            return title; // Don't add suffix here - Docusaurus will add it
+            return title + siteSuffix; // Add suffix manually
         }
         
         // Truncate at word boundary
@@ -204,17 +204,17 @@ export default function BlogPostSEO() {
             ? truncated.substring(0, lastSpace) 
             : truncated) + '...';
         
-        console.log(`[BlogPostSEO] Truncated title: "${title}" -> "${shortTitle}" (suffix: "${siteSuffix}")`);
-        return shortTitle; // Don't add suffix here - Docusaurus will add it
+        const finalTitle = shortTitle + siteSuffix;
+        console.log(`[BlogPostSEO] Truncated title: "${title}" -> "${finalTitle}" (${finalTitle.length} chars)`);
+        return finalTitle;
     };
 
-    const pageTitle = truncateTitle(title); // For <title> tag - Docusaurus will add suffix
+    const pageTitle = truncateTitle(title); // Final title with suffix, max 70 chars
     // Keep using fullTitle for schemas and social media (titleOriginal || title)
 
     return (
         <Head>
-            {/* Page title - truncated for Bing SEO (max 70 chars with suffix) 
-                Note: Docusaurus will automatically add " · JustCloud.pl Blog" suffix */}
+            {/* Page title - truncated for Bing SEO (max 70 chars including suffix) */}
             <title>{pageTitle}</title>
             
             {/* Enhanced SEO meta tags */}

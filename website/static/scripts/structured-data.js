@@ -4,34 +4,46 @@
 (function() {
   if (typeof window === 'undefined') return;
 
+  // Base configuration
+  const siteUrl = 'https://blog.justcloud.pl';
+  const siteName = 'JustCloud.pl';
+  const blogName = 'JustCloud.pl Blog';
+  const mainSiteUrl = 'https://justcloud.pl';
+  const contactFormUrl = `${mainSiteUrl}/index.html#form5-28`;
+  const logoUrl = `${siteUrl}/img/logo.png`;
+  const socialCardUrl = `${siteUrl}/img/justcloud-social-card.png`;
+  
+  // Author/Founder data
+  const authorName = 'Piotr Rogala';
+  const linkedInUrl = 'https://linkedin.com/in/rogalapiotr';
+  const twitterUrl = 'https://twitter.com/RogalaPiotr';
+  const githubUrl = 'https://github.com/RogalaPiotr';
+  const mediumUrl = 'https://piotr-rogala.medium.com';
+  const socialLinks = [twitterUrl, linkedInUrl, githubUrl, mediumUrl];
+
+  // Descriptions
+  const shortDescription = 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation';
+  const fullDescription = 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices';
+
   // Organization Schema
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "JustCloud.pl",
-    "url": "https://blog.justcloud.pl",
-    "logo": "https://blog.justcloud.pl/img/logo.png",
-    "description": "Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation",
+    "name": siteName,
+    "url": siteUrl,
+    "logo": logoUrl,
+    "description": shortDescription,
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
-      "url": "https://justcloud.pl/index.html#form5-28"
+      "url": contactFormUrl
     },
-    "sameAs": [
-      "https://twitter.com/RogalaPiotr",
-      "https://linkedin.com/in/rogalapiotr",
-      "https://github.com/RogalaPiotr",
-      "https://piotr-rogala.medium.com"
-    ],
+    "sameAs": socialLinks,
     "founder": {
       "@type": "Person",
-      "name": "Piotr Rogala",
-      "url": "https://linkedin.com/in/rogalapiotr",
-      "sameAs": [
-        "https://twitter.com/RogalaPiotr",
-        "https://github.com/RogalaPiotr",
-        "https://piotr-rogala.medium.com"
-      ]
+      "name": authorName,
+      "url": linkedInUrl,
+      "sameAs": socialLinks
     }
   };
 
@@ -39,16 +51,16 @@
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "JustCloud.pl Blog",
-    "alternateName": "JustCloud",
-    "url": "https://blog.justcloud.pl",
-    "description": "Blog techniczny o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation",
+    "name": blogName,
+    "alternateName": siteName,
+    "url": siteUrl,
+    "description": shortDescription,
     "publisher": {
       "@type": "Organization",
-      "name": "JustCloud.pl",
+      "name": siteName,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://blog.justcloud.pl/img/logo.png"
+        "url": logoUrl
       }
     }
   };
@@ -57,26 +69,26 @@
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "JustCloud.pl Blog",
-      "description": "Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices",
-    "url": "https://blog.justcloud.pl",
+    "name": blogName,
+    "description": fullDescription,
+    "url": siteUrl,
     "image": {
       "@type": "ImageObject",
-      "url": "https://blog.justcloud.pl/img/justcloud-social-card.png",
+      "url": socialCardUrl,
       "width": 1200,
       "height": 630
     },
     "author": {
       "@type": "Person",
-      "name": "Piotr Rogala",
-      "url": "https://linkedin.com/in/rogalapiotr"
+      "name": authorName,
+      "url": linkedInUrl
     },
     "publisher": {
       "@type": "Organization",
-      "name": "JustCloud.pl",
+      "name": siteName,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://blog.justcloud.pl/img/logo.png"
+        "url": logoUrl
       }
     }
   };
@@ -95,15 +107,16 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://blog.justcloud.pl"
+        "item": siteUrl
       }
     ];
 
     if (pathParts.length > 0) {
+      const pageTitle = document.title.replace(` | ${siteName}`, '').replace(` · ${blogName}`, '');
       itemListElement.push({
         "@type": "ListItem",
         "position": 2,
-        "name": document.title.replace(' | JustCloud.pl', ''),
+        "name": pageTitle,
         "item": window.location.href
       });
     }

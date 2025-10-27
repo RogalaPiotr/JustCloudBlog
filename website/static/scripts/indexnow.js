@@ -14,13 +14,10 @@
     const INDEXNOW_CONFIG = {
         apiKey: '792ebbd3423a4ae7856e0dfbb76d355b',
         host: 'blog.justcloud.pl',
-        
         // Use Bing endpoint with GET method (no CORS issues)
         endpoint: 'https://www.bing.com/indexnow',
-        
         // Auto-submit on page load
         autoSubmit: true,
-        
         // Delay before auto-submit (milliseconds)
         submitDelay: 3000 // 3s delay to let analytics fire first
     };

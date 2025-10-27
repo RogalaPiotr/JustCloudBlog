@@ -22,10 +22,7 @@
         autoSubmit: true,
         
         // Delay before auto-submit (milliseconds)
-        submitDelay: 3000, // 3s delay to let analytics fire first
-        
-        // Only submit blog posts (not tags, archive pages, etc.)
-        urlPattern: /^https:\/\/blog\.justcloud\.pl\/\d{4}\/\d{2}\/\d{2}\//
+        submitDelay: 3000 // 3s delay to let analytics fire first
     };
 
     /**
@@ -34,12 +31,6 @@
      */
     function submitToIndexNow() {
         const currentUrl = window.location.href;
-        
-        // Only submit blog posts
-        if (!INDEXNOW_CONFIG.urlPattern.test(currentUrl)) {
-            console.log('[IndexNow] Skipped - not a blog post URL:', currentUrl);
-            return;
-        }
 
         // Check if already submitted in this session
         const sessionKey = `indexnow_submitted_${currentUrl}`;

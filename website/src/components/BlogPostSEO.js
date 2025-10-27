@@ -64,6 +64,7 @@ export default function BlogPostSEO() {
     const estimatedWordCount = Math.round(readingTime * 200);
 
     // Article structured data - ENHANCED for Bing & Google
+    // Updated 2025-10-27: Aligned with Google's latest BlogPosting schema requirements
     const articleSchema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -71,20 +72,20 @@ export default function BlogPostSEO() {
         "headline": fullTitle,
         "name": fullTitle,
         "description": description,
-        "image": {
-            "@type": "ImageObject",
-            "url": imageUrl,
-            "width": 1200,
-            "height": 630
-        },
+        "image": [
+            {
+                "@type": "ImageObject",
+                "url": imageUrl,
+                "width": 1200,
+                "height": 630
+            }
+        ],
         "datePublished": date,
         "dateModified": frontMatter.last_update?.date || date,
         "author": {
             "@type": "Person",
             "name": authorName,
             "url": authorUrl,
-            "image": authors?.[0]?.imageURL || "https://avatars.githubusercontent.com/u/31566956?v=4",
-            "description": authors?.[0]?.title || "MVP Azure & owner JustCloud.pl",
             "sameAs": [
                 "https://linkedin.com/in/rogalapiotr",
                 "https://twitter.com/RogalaPiotr",
@@ -107,7 +108,10 @@ export default function BlogPostSEO() {
                 "https://github.com/RogalaPiotr"
             ]
         },
-        "mainEntityOfPage": fullUrl,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": fullUrl
+        },
         "url": fullUrl,
         "keywords": keywords,
         "articleSection": tags.length > 0 ? tags[0].label : "Cloud Computing",
@@ -145,13 +149,14 @@ export default function BlogPostSEO() {
     };
 
     // Bing-specific: Add HowTo schema if article contains steps
+    // Updated 2025-10-27: Image as array for better compatibility
     const howToSteps = frontMatter.howto_steps || [];
     const howToSchema = howToSteps.length > 0 ? {
         "@context": "https://schema.org",
         "@type": "HowTo",
         "name": fullTitle,
         "description": description,
-        "image": imageUrl,
+        "image": [imageUrl],
         "totalTime": `PT${Math.round(readingTime)}M`,
         "step": howToSteps.map((step, index) => ({
             "@type": "HowToStep",

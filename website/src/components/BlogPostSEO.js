@@ -1,10 +1,11 @@
 import React from 'react';
 import Head from '@docusaurus/Head';
 import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
-import { PageMetadata } from '@docusaurus/theme-common';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function BlogPostSEO() {
     const { metadata, isBlogPostPage } = useBlogPost();
+    const { siteConfig } = useDocusaurusContext();
 
     if (!isBlogPostPage) {
         return null;
@@ -184,12 +185,16 @@ export default function BlogPostSEO() {
 
     // Truncate title for Bing SEO (max 70 chars total)
     const truncateTitle = (title) => {
-        const siteSuffix = ' · JustCloud.pl Blog';
+        // Dynamically build suffix from Docusaurus config
+        const delimiter = siteConfig.titleDelimiter || '|';
+        const siteTitle = siteConfig.title || 'Blog';
+        const siteSuffix = ` ${delimiter} ${siteTitle}`;
+        
         const maxLength = 70;
         const maxTitleLength = maxLength - siteSuffix.length;
         
         if ((title.length + siteSuffix.length) <= maxLength) {
-            return title + siteSuffix;
+            return title; // Don't add suffix here - Docusaurus will add it
         }
         
         // Truncate at word boundary
@@ -199,19 +204,19 @@ export default function BlogPostSEO() {
             ? truncated.substring(0, lastSpace) 
             : truncated) + '...';
         
-        console.log(`[BlogPostSEO] Truncated title: "${title}" -> "${shortTitle}"`);
-        return shortTitle + siteSuffix;
+        console.log(`[BlogPostSEO] Truncated title: "${title}" -> "${shortTitle}" (suffix: "${siteSuffix}")`);
+        return shortTitle; // Don't add suffix here - Docusaurus will add it
     };
 
-    const pageTitle = truncateTitle(title); // For <title> tag only
+    const pageTitle = truncateTitle(title); // For <title> tag - Docusaurus will add suffix
     // Keep using fullTitle for schemas and social media (titleOriginal || title)
 
     return (
-        <>
-            {/* Override default title with truncated version for Bing SEO */}
-            <PageMetadata title={pageTitle} />
+        <Head>
+            {/* Page title - truncated for Bing SEO (max 70 chars with suffix) 
+                Note: Docusaurus will automatically add " · JustCloud.pl Blog" suffix */}
+            <title>{pageTitle}</title>
             
-            <Head>
             {/* Enhanced SEO meta tags */}
             <meta name="description" content={metaDescription} />
             <meta name="keywords" content={keywordsString} />
@@ -272,6 +277,5 @@ export default function BlogPostSEO() {
                 </script>
             )}
         </Head>
-        </>
     );
 }

@@ -223,6 +223,7 @@ const config = {
       src: 'https://blog.justcloud.pl/scripts/structured-data.js',
       async: false,
     },
+    // IndexNow - client-side instant indexing (GET method, no CORS)
     {
       src: 'https://blog.justcloud.pl/scripts/indexnow.js',
       async: true,

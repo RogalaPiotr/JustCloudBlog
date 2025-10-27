@@ -2,8 +2,42 @@
  * JustCloud.pl - Custom Design System
  * Colors and Fonts Override
  * This file overrides default Docusaurus styles
- * Last updated: 2025-10-22
+ * Last updated: 2025-10-27
  */
+
+/* ============================================
+   ACCESSIBILITY - Screen Reader Only
+   ============================================ */
+
+/**
+ * Screen Reader Only (sr-only) utility class
+ * Hides content visually but keeps it accessible to screen readers and search engines
+ * Used for SEO-required elements like hidden H1 tags
+ * WCAG 2.1 compliant technique
+ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Optional: Allow focus for keyboard navigation */
+.sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
 
 /* ============================================
    TYPOGRAPHY - Space Grotesk Font Family

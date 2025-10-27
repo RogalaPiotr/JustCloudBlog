@@ -76,6 +76,16 @@ export default function BlogListPageWrapper(props) {
           {JSON.stringify(blogListSchema)}
         </script>
       </Head>
+      
+      {/* 
+        Hidden H1 for SEO (Google & Bing requirement)
+        Uses screen-reader friendly "visually-hidden" technique
+        Visible to search engines but hidden from visual users
+      */}
+      <h1 className="sr-only">
+        JustCloud.pl Blog - Azure, DevOps & Cloud Engineering
+      </h1>
+      
       <BlogListPage {...props} />
     </>
   );

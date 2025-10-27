@@ -50,11 +50,6 @@
         "@type": "ImageObject",
         "url": "https://blog.justcloud.pl/img/logo.png"
       }
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://blog.justcloud.pl/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
     }
   };
 

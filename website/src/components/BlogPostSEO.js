@@ -97,9 +97,9 @@ export default function BlogPostSEO() {
             "url": "https://blog.justcloud.pl",
             "logo": {
                 "@type": "ImageObject",
-                "url": `${siteUrl}/img/logo.svg`,
-                "width": 600,
-                "height": 60
+                "url": `${siteUrl}/img/logo.png`,
+                "width": 200,
+                "height": 200
             },
             "sameAs": [
                 "https://linkedin.com/in/rogalapiotr",

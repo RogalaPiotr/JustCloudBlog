@@ -182,12 +182,6 @@ const config = {
           ignorePatterns: ['/tags/**'],
           filename: 'sitemap.xml',
         },
-        // Google Analytics został wyłączony z automatycznego ładowania
-        // Teraz ładuje się dynamicznie po akceptacji cookies w CookieConsent.js
-        // gtag: {
-        //   trackingID: 'G-T278Y9D28E',
-        //   anonymizeIP: true,
-        // },
       }),
     ],
   ],

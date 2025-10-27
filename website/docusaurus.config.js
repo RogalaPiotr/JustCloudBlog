@@ -41,6 +41,7 @@ const config = {
   
   // SEO Headtags
   headTags: [
+    // Favicon - różne rozmiary dla różnych urządzeń
     {
       tagName: 'link',
       attributes: {
@@ -52,9 +53,48 @@ const config = {
     {
       tagName: 'link',
       attributes: {
-        rel: 'shortcut icon',
-        type: 'image/x-icon',
-        href: '/img/favicon.ico',
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/img/favicon-32x32.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/img/favicon-16x16.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/img/apple-touch-icon.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'manifest',
+        href: '/img/site.webmanifest',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'theme-color',
+        content: '#00A7E4',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'msapplication-TileColor',
+        content: '#00A7E4',
       },
     },
     {

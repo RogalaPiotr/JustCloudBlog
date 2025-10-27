@@ -21,6 +21,14 @@ Allow: /assets/
 Allow: /rss.xml
 Allow: /atom.xml
 Allow: /blog-feed.xml
+Allow: /sitemap.xml
+Allow: /favicon.ico
+Allow: /site.webmanifest
+
+# Logo and social media images (important for rich snippets!)
+Allow: /img/logo.png
+Allow: /img/logo.svg
+Allow: /img/justcloud-social-card.png
 
 # Google-specific rules
 User-agent: Googlebot

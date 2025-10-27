@@ -1,13 +1,7 @@
 import React from 'react';
 import BlogPostPage from '@theme-original/BlogPostPage';
-import BlogPostSEO from '../../components/BlogPostSEO';
 
-// Enhanced SEO with title truncation for Bing Webmaster
+// Simple passthrough - SEO handled in BlogPostItem
 export default function BlogPostPageWrapper(props) {
-  return (
-    <>
-      <BlogPostSEO />
-      <BlogPostPage {...props} />
-    </>
-  );
+  return <BlogPostPage {...props} />;
 }

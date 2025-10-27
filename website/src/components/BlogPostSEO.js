@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from '@docusaurus/Head';
 import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
+import { PageMetadata } from '@docusaurus/theme-common';
 
 export default function BlogPostSEO() {
     const { metadata, isBlogPostPage } = useBlogPost();
@@ -206,10 +207,11 @@ export default function BlogPostSEO() {
     // Keep using fullTitle for schemas and social media (titleOriginal || title)
 
     return (
-        <Head>
-            {/* Page title - truncated for Bing SEO */}
-            <title>{pageTitle}</title>
+        <>
+            {/* Override default title with truncated version for Bing SEO */}
+            <PageMetadata title={pageTitle} />
             
+            <Head>
             {/* Enhanced SEO meta tags */}
             <meta name="description" content={metaDescription} />
             <meta name="keywords" content={keywordsString} />
@@ -270,5 +272,6 @@ export default function BlogPostSEO() {
                 </script>
             )}
         </Head>
+        </>
     );
 }

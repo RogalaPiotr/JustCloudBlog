@@ -49,7 +49,21 @@ export default function BlogPostSEO() {
         return desc;
     };
 
-    const metaDescription = normalizeDescription(description);
+    // Enhanced description for Bing with keyword optimization
+    // Bing prefers keywords in first 120 characters
+    const enhanceDescriptionForBing = (desc, tags) => {
+        const normalized = normalizeDescription(desc);
+        const primaryTag = tags[0]?.label || '';
+        
+        // If primary keyword not in description, add it at the beginning
+        if (primaryTag && normalized.length < 140 && !normalized.toLowerCase().includes(primaryTag.toLowerCase())) {
+            const enhanced = `${primaryTag}: ${normalized}`;
+            return enhanced.length <= 160 ? enhanced : normalized;
+        }
+        return normalized;
+    };
+
+    const metaDescription = enhanceDescriptionForBing(description, tags);
 
     // Generate keywords from tags
     const keywords = tags.map(tag => tag.label); // Array for schema
@@ -209,6 +223,8 @@ export default function BlogPostSEO() {
             <meta name="language" content="Polish" />
             <meta name="geo.region" content="PL" />
             <meta name="geo.placename" content="Poland" />
+            <meta name="geo.position" content="51.1079;17.0385" /> {/* Wrocław coordinates */}
+            <meta name="ICBM" content="51.1079, 17.0385" /> {/* Alternative geo format */}
 
             {/* Tags as article:tag */}
             {tags.map((tag) => (

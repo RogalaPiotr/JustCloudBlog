@@ -141,6 +141,10 @@ const config = {
       src: 'https://blog.justcloud.pl/scripts/structured-data.js',
       async: false,
     },
+    {
+      src: 'https://blog.justcloud.pl/scripts/indexnow.js',
+      async: true,
+    },
   ],
 
   presets: [

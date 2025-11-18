@@ -346,7 +346,7 @@ const config = {
               },
               {
                 label: 'Contact',
-                to: 'https://web.justcloud.pl/index.html#form5-28',
+                to: 'https://web.justcloud.pl/#contact',
               },
               {
                 label: 'Github',

@@ -9,7 +9,7 @@ Witaj! Cieszę się, że odwiedzasz mój blog. Poniżej znajdziesz informacje o 
 Administratorem danych osobowych jest:
 
 👨‍💼 **Piotr Rogala**  
-✉️ [Formularz kontaktowy](https://web.justcloud.pl/index.html#form5-28)
+✉️ [Formularz kontaktowy](https://web.justcloud.pl/#contact)
 
 Ponieważ strona jest hobbystycznym blogiem, nie wyznaczono Inspektora Ochrony Danych.
 
@@ -63,7 +63,7 @@ Masz prawo do:
 - cofnięcia zgody w dowolnym momencie (bez wpływu na zgodność z prawem przetwarzania przed jej cofnięciem),
 - wniesienia skargi do organu nadzorczego (Prezesa Urzędu Ochrony Danych Osobowych – [https://uodo.gov.pl](https://uodo.gov.pl)).
 
-Aby skorzystać z tych praw, skontaktuj się ze mną przez [formularz kontaktowy](https://web.justcloud.pl/index.html#form5-28).
+Aby skorzystać z tych praw, skontaktuj się ze mną przez [formularz kontaktowy](https://web.justcloud.pl/#contact).
 
 ## 8. Baner cookies
 

@@ -405,7 +405,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} JustCloud.pl, Inc. Built with Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} 2025 JustCloud.pl. All rights reserved, Inc. Built with Docusaurus.<br/><a href="/privacy-policy" style="color: var(--ifm-footer-link-color); text-decoration: underline;">Polityka Prywatności i Cookies</a> | <span id="footer-cookie-settings" style="color: var(--ifm-footer-link-color); text-decoration: underline; cursor: pointer;">Ustawienia Cookies</span>`,
       },
       prism: {
         theme: prismThemes.github,

@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Footer from '@theme-original/Footer';
-import CookieSettings from '../../components/CookieSettings';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 export default function FooterWrapper(props) {
-  return (
-    <>
-      <Footer {...props} />
-      <div style={{
-        textAlign: 'center',
-        padding: '12px 20px',
-        background: '#303846',
-        color: 'var(--ifm-footer-color)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-        fontSize: '0.9rem'
-      }}>
-        <CookieSettings />
-      </div>
-    </>
-  );
+  useEffect(() => {
+    if (ExecutionEnvironment.canUseDOM) {
+      const cookieSettingsLink = document.getElementById('footer-cookie-settings');
+      if (cookieSettingsLink) {
+        cookieSettingsLink.addEventListener('click', () => {
+          localStorage.removeItem('cookieConsent');
+          // Opcjonalnie: usuń istniejące cookies GA
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith('_ga') || cookie.startsWith('_gid')) {
+              const cookieName = cookie.split('=')[0];
+              document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+            }
+          }
+          window.location.reload();
+        });
+      }
+    }
+  }, []);
+
+  return <Footer {...props} />;
 }

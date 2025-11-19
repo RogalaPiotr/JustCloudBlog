@@ -323,7 +323,7 @@ const config = {
         },
         items: [
           {
-            href: 'https://justcloud.pl/index.html#form5-28',
+            href: 'https://web.justcloud.pl/index.html#contact',
             label: 'Contact',
             position: 'right',
           },

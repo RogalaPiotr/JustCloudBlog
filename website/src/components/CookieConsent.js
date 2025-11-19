@@ -85,7 +85,7 @@ const CookieConsentBanner = () => {
       <div className={styles.content}>
         <p className={styles.text}>
           Używamy plików cookie do analizy ruchu (Google Analytics), aby zapewnić najlepsze doświadczenia na naszej stronie. 
-          Czy wyrażasz zgodę? <a href="/privacy-policy" className={styles.link}>Polityka Prywatności</a>.
+          Czy wyrażasz zgodę? <a href="/privacy-policy" className={styles.link}>Polityka Prywatności</a>
         </p>
         <div className={styles.buttons}>
           <button onClick={rejectCookies} className={styles.rejectButton}>

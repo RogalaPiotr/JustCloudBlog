@@ -254,8 +254,6 @@ const config = {
             copyright: `Copyright © ${new Date().getFullYear()} JustCloud.pl`,
             language: 'pl-PL',
           },
-          editUrl:
-            'https://github.com/RogalaPiotr/JustCloudBlog/tree/main/website/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',

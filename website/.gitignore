@@ -28,3 +28,4 @@ supervisord.pid
 */.DS_Store
 
 backup-wordpress
+tmp-posts

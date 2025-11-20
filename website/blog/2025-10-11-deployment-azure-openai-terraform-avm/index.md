@@ -69,6 +69,8 @@ module "openai" {
 }
 ```
 
+<!-- truncate -->
+
 Pełny kod źródłowy znajdziesz w moim repozytorium GitHub: [simple-openai-terraform](https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-openai-terraform). Udostępniłem tam kompletną konfigurację gotową do przetestowania w Twoim środowisku. Wykorzystanie modułu AVM znacząco upraszcza proces wdrażania i ułatwia późniejszą rozbudowę o dodatkowe funkcje bezpieczeństwa czy nowe modele.
 
 Poniżej widok Azure AI Foundry po wdrożeniu wraz z dwoma modelami:

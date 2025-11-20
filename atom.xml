@@ -2,12 +2,44 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.justcloud.pl</id>
     <title>JustCloud.pl - Azure &amp; DevOps Blog</title>
-    <updated>2025-09-20T00:00:00.000Z</updated>
+    <updated>2025-10-11T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.justcloud.pl"/>
     <subtitle>Eksperckie artykuły o Microsoft Azure, DevOps, automatyzacji i transformacji chmurowej</subtitle>
     <icon>https://blog.justcloud.pl/img/favicon.ico</icon>
     <rights>Copyright © 2025 JustCloud.pl</rights>
+    <entry>
+        <title type="html"><![CDATA[Szybkie wdrożenie Azure OpenAI z Terraform i AVM]]></title>
+        <id>https://blog.justcloud.pl/deployment-azure-openai-terraform-avm</id>
+        <link href="https://blog.justcloud.pl/deployment-azure-openai-terraform-avm"/>
+        <updated>2025-10-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Dowiedz się, jak szybko wdrożyć usługę Azure OpenAI Service przy użyciu Terraform i modułów Azure Verified Modules (AVM). Gotowy kod i instrukcja.]]></summary>
+        <content type="html"><![CDATA[<p>Moduły AVM (Azure Verified Modules) oferują gotowe i sprawdzone rozwiązania do tworzenia zasobów w Azure. Poniżej pokażę, jak błyskawicznie wdrożyć usługę Azure OpenAI Service przy użyciu Terraform. Prezentowana konfiguracja korzysta z publicznego dostępu sieciowego, co jest odpowiednie do testów i nauki (w środowiskach produkcyjnych zaleca się wdrożenie przy użyciu Private Endpoints).</p>
+<ul>
+<li class=""><strong>Link do modułu:</strong> <a href="https://registry.terraform.io/modules/Azure/avm-res-cognitiveservices-account/azurerm/latest" target="_blank" rel="noopener noreferrer" class="">avm-res-cognitiveservices-account</a></li>
+<li class=""><strong>Więcej modeli AVM:</strong> <a href="https://azure.github.io/Azure-Verified-Modules/indexes/terraform/tf-resource-modules/" target="_blank" rel="noopener noreferrer" class="">Azure Verified Modules</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="jak-tego-użyć">Jak tego użyć?<a href="https://blog.justcloud.pl/deployment-azure-openai-terraform-avm#jak-tego-u%C5%BCy%C4%87" class="hash-link" aria-label="Bezpośredni link do Jak tego użyć?" title="Bezpośredni link do Jak tego użyć?" translate="no">​</a></h2>
+<p>W pliku <code>main.tf</code> definiujemy grupę zasobów oraz wywołujemy moduł AVM:</p>
+<div class="language-hcl codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-hcl codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">resource "azurerm_resource_group" "this" {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  name     = var.resource_group_name</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  location = var.location</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  tags = var.tags</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">module "openai" {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  source  = "Azure/avm-res-cognitiveservices-account/azurerm"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  version = "~&gt; 0.7"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  name                = var.openai_service_name</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  resource_group_name = azurerm_resource_group.this.name</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  location            = azurerm_resource_group.this.location</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  kind                = "OpenAI"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  sku_name            = "S0"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  cognitive_deployments = { for d in var.openai_models : d.deployment_name =&gt; {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    name = d.deployment_name</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    model = {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      format  = "OpenAI"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      name    = d.model_name</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      version = d.model_version</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    scale = {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      type     = d.sku_name</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      capacity = d.sku_capacity</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  } }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  public_network_access_enabled      = var.public_network_access == "Enabled"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  outbound_network_access_restricted = !var.outbound_network_access_enabled</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  tags = var.tags</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  depends_on = [azurerm_resource_group.this]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<p>Pełny kod źródłowy znajdziesz w moim repozytorium GitHub: <a href="https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-openai-terraform" target="_blank" rel="noopener noreferrer" class="">simple-openai-terraform</a>. Udostępniłem tam kompletną konfigurację gotową do przetestowania w Twoim środowisku. Wykorzystanie modułu AVM znacząco upraszcza proces wdrażania i ułatwia późniejszą rozbudowę o dodatkowe funkcje bezpieczeństwa czy nowe modele.</p>
+<p>Poniżej widok Azure AI Foundry po wdrożeniu wraz z dwoma modelami:</p>
+<p><img decoding="async" loading="lazy" alt="Azure AI Foundry" src="https://blog.justcloud.pl/assets/images/2025-11-20_22-15-22-80c75e4d3125eec6e7d06b4fa7c10cdd.png" width="3196" height="1208" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="weryfikacja-dostępnych-modeli">Weryfikacja dostępnych modeli<a href="https://blog.justcloud.pl/deployment-azure-openai-terraform-avm#weryfikacja-dost%C4%99pnych-modeli" class="hash-link" aria-label="Bezpośredni link do Weryfikacja dostępnych modeli" title="Bezpośredni link do Weryfikacja dostępnych modeli" translate="no">​</a></h2>
+<p>Dostępność modeli w danym regionie warto zweryfikować przy użyciu Azure CLI. Poniższa komenda wyświetli listę modeli dla wdrożonego zasobu:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">az cognitiveservices account list-models \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  --resource-group rg-openai-simple-dev \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  --name oai-simple-dev \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  --output table</span><br></span></code></pre></div></div>
+<p>Komenda zwraca czytelną tabelę z informacjami. Jest to bardzo przydatne, ponieważ dostępność wersji modeli różni się w zależności od regionu Azure. Możesz to również sprawdzić w <a href="https://learn.microsoft.com/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry-classic&amp;WT.mc_id=AZ-MVP-5002690" target="_blank" rel="noopener noreferrer" class="">oficjalnej dokumentacji</a>.</p>
+<p><img decoding="async" loading="lazy" alt="Lista modeli w CLI" src="https://blog.justcloud.pl/assets/images/2025-11-20_22-13-27-4a273456b7f2298ad4d140df36635c3f.png" width="1804" height="1054" class="img_ev3q"></p>
+<p>Jeśli interesuje Cię wdrożenie prywatnej i bezpiecznej instancji OpenAI, daj znać w komentarzu!</p>]]></content>
+        <author>
+            <name>Piotr Rogala</name>
+            <uri>https://github.com/RogalaPiotr</uri>
+        </author>
+        <category label="Azure" term="Azure"/>
+        <category label="Terraform" term="Terraform"/>
+        <category label="OpenAI" term="OpenAI"/>
+        <category label="AVM" term="AVM"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Co oznaczają mnożniki 1x, 0.33x, 0x w GitHub Copilot?]]></title>
         <id>https://blog.justcloud.pl/github-copilot-mnozniki-wyjasnienie</id>
@@ -1001,30 +1033,5 @@ Masz pytania? zapraszam do komentowania.</p>]]></content>
         <category label="oms" term="oms"/>
         <category label="softserve" term="softserve"/>
         <category label="web-apps" term="web-apps"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AzureDay North Poland 2016 - JustCloud]]></title>
-        <id>https://blog.justcloud.pl/azureday-north-poland-2016</id>
-        <link href="https://blog.justcloud.pl/azureday-north-poland-2016"/>
-        <updated>2016-09-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Największa konferencja Microsoft Azure w Polsce AzureDay North Poland 2016!]]></summary>
-        <content type="html"><![CDATA[<p>Wiesz że <strong>3-4 Października</strong> jest konferencja <strong>AzureDay</strong> w Gdyni? I piszę o tym nie bez powodu na łamach bloga ponieważ będę miał przyjemność poprowadzić tam swoją autorką sesję na temat: Azure Resource Manager – zautomatyzowane powoływanie wirtualnych maszyn w chmurze.</p>
-<p><strong>Krótki opis mojej prezentacji</strong>: Sesja będzie techniczna, a zarazem prezentująca Azure Resource Manager gdzie dowiemy się, co to tak naprawdę jest i jakie wniosło zmiany w Azure. Zostanie omówiony i zaprezentowany proces automatyzacji z wykorzystaniem skryptów .json. Podczas demo na żywo obejrzymy jak działa z bliska konfigurowanie własnego skryptu .json, który powoła maszyny wirtualne w Azure. Deployment zostanie zaprezentowany z wykorzystaniem Visual Studio oraz konsoli PowerShell. Jeśli interesują Cię tematy ułatwiające administrację i chcesz uprościć swoją pracę to ta sesja zaprezentuje Ci, że praca Administratora nie sprowadza się tylko do przeglądania logów 🙂 Podczas prezentacji zobaczysz: czym jest ARM, organizację pracy z Azure, pracę nad skryptami .json, PowerShell ARM, Visual Studio do deployment'ów w Azure.</p>
-<p>Czy wiecie już o ARM wystarczająco żeby ominąć moją sesję? nie wydaje mi sie&nbsp;🙂&nbsp;Dlatego szybko kupujcie bileciki na konferencje! Dla wszystkich fanów bloga JustCloud 20% zniżki na wstęp z kodem:&nbsp;WROAZURE</p>
-<p>Dlaczego dostajesz taki kod? Ponieważ mam nadzieję że wzbudzę w Tobie chęć przyjechania i budowania nowej społeczności wraz z nami, która rozwija się w Polsce. Jeśli masz pytania nie wahaj się wpisuj w komentarzach na dole.</p>
-<p><strong>Link do strony konferencji:</strong></p>
-<ul>
-<li class="">
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="httpazuredaypro"><a href="http://azureday.pro/" target="_blank" rel="noopener noreferrer" class="">http://azureday.pro/</a><a href="https://blog.justcloud.pl/azureday-north-poland-2016#httpazuredaypro" class="hash-link" aria-label="Bezpośredni link do httpazuredaypro" title="Bezpośredni link do httpazuredaypro" translate="no">​</a></h3>
-</li>
-</ul>
-<p><img decoding="async" loading="lazy" alt="azureday north poland" src="https://blog.justcloud.pl/assets/images/maxresdefault-077d39259579d0176b9403a9fe5b999e.jpg" width="1920" height="1080" class="img_ev3q"></p>]]></content>
-        <author>
-            <name>Piotr Rogala</name>
-            <uri>https://github.com/RogalaPiotr</uri>
-        </author>
-        <category label="azureday" term="azureday"/>
-        <category label="konferencja" term="konferencja"/>
-        <category label="microsoft" term="microsoft"/>
     </entry>
 </feed>

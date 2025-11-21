@@ -4,6 +4,11 @@ progala:
   url: https://github.com/RogalaPiotr
   image_url: https://avatars.githubusercontent.com/u/31566956?v=4
   page: true
+  description: >
+    Microsoft Azure MVP i właściciel JustCloud.pl. Ekspert w dziedzinie cloud computing, 
+    Azure DevOps, automatyzacji i governance. Dzielę się wiedzą praktyczną z wdrożeń 
+    enterprise oraz best practices dla transformacji chmurowej. Prowadzę warsztaty, 
+    prelekcje i konsultacje z zakresu Microsoft Azure.
   socials:
     x: https://x.com/RogalaPiotr
     linkedin: https://www.linkedin.com/in/rogalapiotr/

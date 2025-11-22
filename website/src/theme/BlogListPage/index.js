@@ -15,6 +15,50 @@ export default function BlogListPageWrapper(props) {
   const siteUrl = siteConfig.url;
   const blogPosts = props.items || [];
   
+  // Organization Schema - only on homepage
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "JustCloud.pl",
+    "url": siteUrl,
+    "logo": `${siteUrl}/img/logo.png`,
+    "description": "Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps i cloud transformation",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "url": "https://justcloud.pl/index.html#form5-28"
+    },
+    "sameAs": [
+      "https://twitter.com/RogalaPiotr",
+      "https://linkedin.com/in/rogalapiotr",
+      "https://github.com/RogalaPiotr",
+      "https://piotr-rogala.medium.com"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Piotr Rogala",
+      "url": "https://linkedin.com/in/rogalapiotr"
+    }
+  };
+
+  // Website Schema - only on homepage
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "JustCloud.pl Blog",
+    "alternateName": "JustCloud.pl",
+    "url": siteUrl,
+    "description": "Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps i cloud transformation",
+    "publisher": {
+      "@type": "Organization",
+      "name": "JustCloud.pl",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/img/logo.png`
+      }
+    }
+  };
+  
   const blogListSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -71,7 +115,17 @@ export default function BlogListPageWrapper(props) {
         <meta property="og:description" content={description} />
         <meta name="twitter:description" content={description} />
         
-        {/* Enhanced JSON-LD with images for all blog posts */}
+        {/* Organization schema - only on homepage */}
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+
+        {/* Website schema - only on homepage */}
+        <script type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
+        </script>
+        
+        {/* Blog list with all posts */}
         <script type="application/ld+json">
           {JSON.stringify(blogListSchema)}
         </script>

@@ -227,10 +227,9 @@ const config = {
 
   // SEO: Structured data and JSON-LD
   scripts: [
-    {
-      src: 'https://blog.justcloud.pl/scripts/structured-data.js',
-      async: false,
-    },
+    // Note: structured-data.js removed - JSON-LD is now dynamically generated
+    // per-page in React components (BlogPostSEO.js, BlogListPage) for better SPA support
+    
     // IndexNow - client-side instant indexing (GET method, no CORS)
     {
       src: 'https://blog.justcloud.pl/scripts/indexnow.js',
@@ -286,14 +285,8 @@ const config = {
       // SEO - Enhanced metadata
       metadata: [
         { name: 'keywords', content: 'Azure, Microsoft Azure, DevOps, Azure DevOps, Cloud Computing, Automatyzacja, Infrastructure as Code, Bicep, Terraform, Azure Policy, Governance, Security, CI/CD, Pipelines, GitHub Actions, Kubernetes, AKS, Container Apps, Cloud Transformation, Digital Transformation' },
-        { name: 'description', content: 'Blog techniczny JustCloud.pl - eksperckie artykuły o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla transformacji chmurowej' },
-        { property: 'og:title', content: 'JustCloud.pl - Azure, DevOps & Cloud Engineering Blog' },
-        { property: 'og:description', content: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji i cloud transformation' },
-        { property: 'og:url', content: 'https://blog.justcloud.pl' },
-        { property: 'og:site_name', content: 'JustCloud.pl Blog' },
-        { name: 'twitter:title', content: 'JustCloud.pl - Azure, DevOps & Cloud Engineering Blog' },
-        { name: 'twitter:description', content: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps i cloud transformation' },
-        { name: 'twitter:site', content: '@RogalaPiotr' },
+        // Note: og:title, og:description, twitter:title, twitter:description 
+        // are dynamically generated per-page in BlogPostSEO.js and BlogListPage
       ],
       // SEO - Image metadata (MUST be absolute URL for search engines)
       image: 'https://blog.justcloud.pl/img/justcloud-social-card.png',

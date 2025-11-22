@@ -226,13 +226,6 @@ export default function BlogPostSEO() {
             <meta property="article:modified_time" content={frontMatter.last_update?.date || date} />
             <meta property="article:author" content={authorName} />
 
-            {/* Bing-specific meta tags */}
-            <meta name="language" content="Polish" />
-            <meta name="geo.region" content="PL" />
-            <meta name="geo.placename" content="Poland" />
-            <meta name="geo.position" content="51.1079;17.0385" /> {/* Wrocław coordinates */}
-            <meta name="ICBM" content="51.1079, 17.0385" /> {/* Alternative geo format */}
-
             {/* Tags as article:tag */}
             {tags.map((tag) => (
                 <meta key={tag.label} property="article:tag" content={tag.label} />

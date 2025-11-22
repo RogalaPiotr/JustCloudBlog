@@ -45,8 +45,31 @@ const CookieConsentBanner = () => {
   const loadGoogleAnalytics = () => {
     if (!ExecutionEnvironment.canUseDOM) return;
     
-    // Sprawdź czy GA nie jest już załadowane
-    if (window.gtag) {
+    // Update consent mode
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    } else {
+      // Fallback if gtag is not defined yet (should be defined in head)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      window.gtag = gtag;
+      window.gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+    
+    // Sprawdź czy skrypt GA nie jest już załadowany
+    // Note: window.gtag is now defined in head, so we check for the script element
+    const existingScript = document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=G-T278Y9D28E"]`);
+    if (existingScript) {
       return;
     }
 
@@ -56,12 +79,9 @@ const CookieConsentBanner = () => {
     script.src = 'https://www.googletagmanager.com/gtag/js?id=G-T278Y9D28E';
     document.head.appendChild(script);
 
-    // Inicjalizacja gtag
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', 'G-T278Y9D28E', {
+    // Inicjalizacja gtag (config)
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-T278Y9D28E', {
       anonymize_ip: true
     });
   };

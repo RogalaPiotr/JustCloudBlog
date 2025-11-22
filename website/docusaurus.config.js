@@ -357,7 +357,7 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Blog JustCloud.pl',
+                label: 'Blog: JustCloud.pl',
                 to: '/',
               },
               {
@@ -382,6 +382,9 @@ const config = {
             title: 'Stay in touch!',
             items: [
               {
+                html: '<a href="https://blog.justcloud.pl/rss.xml" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/RSS-blog.justcloud.pl-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Feed" /></a>',
+              },
+              {
                 html: '<a href="https://x.com/RogalaPiotr" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/X-@RogalaPiotr-000000?style=for-the-badge&logo=x&logoColor=white" alt="X (Twitter)" /></a>',
               },
               {
@@ -389,9 +392,6 @@ const config = {
               },
               {
                 html: '<a href="https://piotr-rogala.medium.com" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Medium-@piotr--rogala-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium" /></a>',
-              },
-              {
-                html: '<a href="https://blog.justcloud.pl/rss.xml" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/RSS-blog.justcloud.pl-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Feed" /></a>',
               },
               {
                 html: '<a href="https://www.buymeacoffee.com/justcloudpl" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" /></a>',

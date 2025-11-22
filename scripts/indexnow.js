@@ -67,6 +67,7 @@
     if (INDEXNOW_CONFIG.autoSubmit) {
         console.log('[IndexNow] 🚀 Auto-submit enabled, will submit in', INDEXNOW_CONFIG.submitDelay, 'ms');
         
+        // Initial page load
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(submitToIndexNow, INDEXNOW_CONFIG.submitDelay);
@@ -74,6 +75,19 @@
         } else {
             setTimeout(submitToIndexNow, INDEXNOW_CONFIG.submitDelay);
         }
+
+        // Listen for Docusaurus route changes (SPA navigation)
+        // Docusaurus fires this event on every route change
+        window.addEventListener('docusaurus.route', function() {
+            console.log('[IndexNow] 🔄 Route changed, will submit new URL');
+            setTimeout(submitToIndexNow, INDEXNOW_CONFIG.submitDelay);
+        });
+
+        // Fallback: listen for popstate (browser back/forward)
+        window.addEventListener('popstate', function() {
+            console.log('[IndexNow] ⬅️ Browser navigation detected');
+            setTimeout(submitToIndexNow, INDEXNOW_CONFIG.submitDelay);
+        });
     }
 
     // Expose to global scope for manual testing

@@ -62,6 +62,21 @@
     }
 
     /**
+     * Monitor URL changes for SPA navigation
+     * Uses MutationObserver to detect DOM changes + URL monitoring
+     */
+    let lastUrl = window.location.href;
+    
+    function checkUrlChange() {
+        const currentUrl = window.location.href;
+        if (currentUrl !== lastUrl) {
+            console.log('[IndexNow] 🔄 URL changed:', lastUrl, '->', currentUrl);
+            lastUrl = currentUrl;
+            setTimeout(submitToIndexNow, INDEXNOW_CONFIG.submitDelay);
+        }
+    }
+
+    /**
      * Auto-submit on page load (if enabled)
      */
     if (INDEXNOW_CONFIG.autoSubmit) {
@@ -76,18 +91,37 @@
             setTimeout(submitToIndexNow, INDEXNOW_CONFIG.submitDelay);
         }
 
-        // Listen for Docusaurus route changes (SPA navigation)
-        // Docusaurus fires this event on every route change
-        window.addEventListener('docusaurus.route', function() {
-            console.log('[IndexNow] 🔄 Route changed, will submit new URL');
-            setTimeout(submitToIndexNow, INDEXNOW_CONFIG.submitDelay);
+        // Monitor for SPA navigation using multiple strategies:
+        
+        // 1. MutationObserver - detects DOM changes (Docusaurus/React Router updates)
+        const observer = new MutationObserver(function() {
+            checkUrlChange();
+        });
+        
+        // Start observing the document with the configured parameters
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
         });
 
-        // Fallback: listen for popstate (browser back/forward)
+        // 2. Popstate - browser back/forward buttons
         window.addEventListener('popstate', function() {
             console.log('[IndexNow] ⬅️ Browser navigation detected');
-            setTimeout(submitToIndexNow, INDEXNOW_CONFIG.submitDelay);
+            checkUrlChange();
         });
+
+        // 3. Click interceptor - catch link clicks
+        document.addEventListener('click', function(e) {
+            // Check if clicked element is a link or inside a link
+            const link = e.target.closest('a');
+            if (link && link.href && link.href.startsWith(window.location.origin)) {
+                console.log('[IndexNow] 🔗 Internal link clicked');
+                // Check URL after a small delay to let navigation happen
+                setTimeout(checkUrlChange, 100);
+            }
+        }, true);
+
+        console.log('[IndexNow] 👀 Monitoring SPA navigation (MutationObserver + popstate + clicks)');
     }
 
     // Expose to global scope for manual testing

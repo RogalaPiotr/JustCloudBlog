@@ -11,6 +11,17 @@ const CookieConsentBanner = () => {
       return;
     }
 
+    // Inicjalizacja Google Consent Mode (denied by default)
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    window.gtag = gtag;
+    window.gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+
     // Sprawdź czy decyzja cookies jest już zapisana
     const consent = localStorage.getItem('cookieConsent');
     

@@ -408,7 +408,7 @@ const config = {
                 html: '<a href="https://piotr-rogala.medium.com" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Medium-@piotr--rogala-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium" /></a>',
               },
               {
-                html: '<a href="https://buycoffee.to/justcloud" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Buy%20Coffee-Support%20Me-4E3620?style=for-the-badge&logo=buymeacoffee&logoColor=white" alt="Buy Coffee" /></a>',
+                html: '<a href="https://buycoffee.to/justcloud" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Buy%20Coffee-Support-4E3620?style=for-the-badge&logo=buymeacoffee&logoColor=white" alt="Buy Coffee" /></a>',
               }
             ],
           },

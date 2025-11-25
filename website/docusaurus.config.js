@@ -260,7 +260,7 @@ const config = {
           blogSidebarCount: 'ALL',
           blogTitle: 'JustCloud.pl Blog - Azure, DevOps & Cloud Engineering',
           blogDescription: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla cloud transformation',
-          postsPerPage: 10,
+          postsPerPage: 5,
           blogSidebarTitle: 'Ostatnie artykuły',
         },
         theme: {

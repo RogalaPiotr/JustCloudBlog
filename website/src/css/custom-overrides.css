@@ -1141,3 +1141,26 @@ a:hover {
   color: var(--jc-text-primary) !important;
 }
 
+/* ============================================
+   DISQUS - HIDE ADS
+   ============================================ */
+
+/**
+ * Hide Disqus advertisement iframes
+ * This removes unwanted ads from Disqus comments section
+ * Note: This is a CSS-based solution and may need updates if Disqus changes their markup
+ */
+iframe[src*="ads-iframe"],
+iframe[src*="disqus.com/ads/"],
+iframe[id*="dsq-app"][src*="ads"],
+iframe[title*="3rd party ad content"],
+#disqus_thread iframe[src*="ads"],
+.disqus-footer-ad,
+div[id*="ad-slot"],
+div[class*="disqus-ad"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+}

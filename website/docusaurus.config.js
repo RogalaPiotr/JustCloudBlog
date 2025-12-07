@@ -339,6 +339,17 @@ const config = {
         docs: false,
         blog: {
           showReadingTime: true,
+          blogSidebarCount: 'ALL',
+          blogTitle: 'Piotr Rogala - JustCloud.pl Blog · Azure, DevOps & Cloud',
+          blogDescription: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla cloud transformation',
+          postsPerPage: 5,
+          blogSidebarTitle: 'Ostatnie artykuły',
+          routeBasePath: '/',
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+          // Disable TOC for blog posts
+          blogPostComponent: require.resolve('./src/theme/BlogPostPage/index.js'),
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -347,15 +358,6 @@ const config = {
             copyright: `Copyright © ${new Date().getFullYear()} JustCloud.pl`,
             language: 'pl-PL',
           },
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-          routeBasePath: '/',
-          blogSidebarCount: 'ALL',
-          blogTitle: 'Piotr Rogala - JustCloud.pl Blog · Azure, DevOps & Cloud',
-          blogDescription: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla cloud transformation',
-          postsPerPage: 5,
-          blogSidebarTitle: 'Ostatnie artykuły',
         },
         theme: {
           customCss: [

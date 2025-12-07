@@ -730,10 +730,16 @@ main .admonition {
    TABLE OF CONTENTS - Minimalist Design
    ============================================ */
 
-/* Hide TOC on blog posts, show only on pages (like privacy-policy) */
+/* Hide TOC completely on blog posts */
 article .table-of-contents,
 .theme-blog-post-page .table-of-contents,
-.theme-doc-markdown .table-of-contents {
+.theme-blog-post-page .theme-doc-toc-desktop,
+.theme-blog-post-page .theme-doc-toc-mobile,
+.theme-blog-post-page aside[class*="tocCollapsible"],
+.theme-blog-post-page div[class*="tableOfContents"],
+div[class*="blogPostPage"] .table-of-contents,
+div[class*="blogPostPage"] aside[class*="tocCollapsible"],
+div[class*="blogPostPage"] div[class*="tableOfContents"] {
   display: none !important;
 }
 

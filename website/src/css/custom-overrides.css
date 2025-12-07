@@ -730,6 +730,11 @@ main .admonition {
    TABLE OF CONTENTS - Minimalist Design
    ============================================ */
 
+/* Hide TOC on blog posts, show only on pages (like privacy-policy) */
+article .table-of-contents {
+  display: none !important;
+}
+
 /* Main TOC container - remove default styling */
 .table-of-contents {
   padding: 0 !important;

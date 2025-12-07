@@ -1,7 +1,7 @@
 ---
 slug: azure-storage-explorer-review
 title: "Azure Storage Explorer - review"
-description: "Azure Storage Explorer aplikacja do przeglądu danych ze Storage Account w Microsoft Azure."
+description: "Recenzja Azure Storage Explorer - darmowe narzędzie do zarządzania Azure Storage Account. Jak połączyć, przeglądać i przenosić pliki VHD do chmury Azure."
 authors: [progala]
 date: "2014-11-06"
 tags: 

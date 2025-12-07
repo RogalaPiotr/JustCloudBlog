@@ -2,7 +2,7 @@
 authors:
   - progala
 date: "2013-05-26"
-description: Zmiany na stronie justcloud.azurewebsites.net
+description: "Nowa odsłona bloga JustCloud.pl na platformie Azure. Zapraszam do śledzenia wpisów o Cloud Computing, rozwiązaniach Microsoft i technologiach Xen."
 hide_table_of_contents: true
 slug: zmiany-na-stronie-justcloud-pl
 title: Zmiany na stronie justcloud.azurewebsites.net

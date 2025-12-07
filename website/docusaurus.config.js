@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'JustCloud.pl Blog',
+  title: 'JustCloud.pl Blog · Piotr Rogala',
   titleDelimiter: '·',
   tagline: 'Eksperckie artykuły o Azure, DevOps, automatyzacji i transformacji chmurowej',
   favicon: 'img/favicon.ico',
@@ -215,6 +215,100 @@ const config = {
         href: 'https://blog.justcloud.pl/atom.xml',
       },
     },
+    // JSON-LD Structured Data - Person/Author Profile (Piotr Rogala)
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://blog.justcloud.pl/authors/progala#person",
+        "name": "Piotr Rogala",
+        "givenName": "Piotr",
+        "familyName": "Rogala",
+        "jobTitle": "MVP Azure & owner JustCloud.pl",
+        "description": "Microsoft Azure MVP od 2017 roku, certyfikowany trener MCT. Ekspert w dziedzinie cloud computing, Azure DevOps, automatyzacji i governance.",
+        "url": "https://blog.justcloud.pl/authors/progala",
+        "image": "https://avatars.githubusercontent.com/u/31566956?v=4",
+        "sameAs": [
+          "https://www.linkedin.com/in/rogalapiotr/",
+          "https://github.com/RogalaPiotr",
+          "https://x.com/RogalaPiotr",
+          "https://web.justcloud.pl/",
+          "https://mvp.microsoft.com/en-us/mvp/profile/0f5a4d6f-7c21-e711-8114-3863bb2ed1f8"
+        ],
+        "knowsAbout": [
+          "Microsoft Azure",
+          "Cloud Architecture",
+          "DevOps",
+          "Terraform",
+          "Bicep",
+          "Infrastructure as Code",
+          "Azure DevOps",
+          "GitHub Actions",
+          "Cloud Governance",
+          "Azure Landing Zone",
+          "Azure Security"
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "Microsoft Most Valuable Professional (MVP) - Azure",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Microsoft"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "Microsoft Certified Trainer (MCT)",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Microsoft"
+            }
+          }
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "JustCloud.pl",
+          "url": "https://web.justcloud.pl/"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Wrocław",
+          "addressRegion": "Dolnośląskie",
+          "addressCountry": "PL"
+        }
+      }),
+    },
+    // JSON-LD Structured Data - Blog/WebSite
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "@id": "https://blog.justcloud.pl/#blog",
+        "name": "JustCloud.pl Blog",
+        "description": "Eksperckie artykuły o Microsoft Azure, DevOps, automatyzacji i transformacji chmurowej",
+        "url": "https://blog.justcloud.pl/",
+        "inLanguage": "pl-PL",
+        "publisher": {
+          "@type": "Person",
+          "@id": "https://blog.justcloud.pl/authors/progala#person"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://blog.justcloud.pl/authors/progala#person"
+        }
+      }),
+    },
   ],
 
   // Even if you don't use internationalization, you can use this field to set
@@ -248,7 +342,7 @@ const config = {
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
-            title: 'JustCloud.pl - Azure & DevOps Blog',
+            title: 'Piotr Rogala - JustCloud.pl Blog',
             description: 'Eksperckie artykuły o Microsoft Azure, DevOps, automatyzacji i transformacji chmurowej',
             copyright: `Copyright © ${new Date().getFullYear()} JustCloud.pl`,
             language: 'pl-PL',
@@ -258,7 +352,7 @@ const config = {
           onUntruncatedBlogPosts: 'warn',
           routeBasePath: '/',
           blogSidebarCount: 'ALL',
-          blogTitle: 'JustCloud.pl Blog - Azure, DevOps & Cloud Engineering',
+          blogTitle: 'Piotr Rogala - JustCloud.pl Blog · Azure, DevOps & Cloud',
           blogDescription: 'Eksperckie artykuły techniczne o Microsoft Azure, Azure DevOps, automatyzacji, governance, security i best practices dla cloud transformation',
           postsPerPage: 5,
           blogSidebarTitle: 'Ostatnie artykuły',
@@ -284,7 +378,7 @@ const config = {
     ({
       // SEO - Enhanced metadata
       metadata: [
-        { name: 'keywords', content: 'Azure, Microsoft Azure, DevOps, Azure DevOps, Cloud Computing, Automatyzacja, Infrastructure as Code, Bicep, Terraform, Azure Policy, Governance, Security, CI/CD, Pipelines, GitHub Actions, Kubernetes, AKS, Container Apps, Cloud Transformation, Digital Transformation' },
+        { name: 'keywords', content: 'blog Azure, blog techniczny, blog o chmurze, blog cloud, blog IT, blog DevOps, artykuły Azure, poradniki Azure, tutoriale Azure, Azure, Microsoft Azure, DevOps, Azure DevOps, Cloud Computing, Automatyzacja, Infrastructure as Code, Bicep, Terraform, Azure Policy, Governance, Security, CI/CD, Pipelines, GitHub Actions, Kubernetes, AKS, Container Apps, Cloud Transformation, Digital Transformation, Piotr Rogala, JustCloud, MVP Azure, MCT, Microsoft MVP, certyfikowany trener Microsoft, szkolenia Azure, warsztaty Azure, Wrocław, ekspert Azure Polska, Azure Architect, Azure Engineer, mentoring IT, coaching Azure, AZ-104, AZ-140, AZ-204, AZ-305, AZ-400, AZ-500, AZ-700, AZ-900, Landing Zone, migracja do chmury, blog Microsoft, wpisy techniczne, porady chmurowe' },
         // Note: og:title, og:description, twitter:title, twitter:description 
         // are dynamically generated per-page in BlogPostSEO.js and BlogListPage
       ],

@@ -1,7 +1,7 @@
 ---
 slug: migracja-dysku-vhd-do-azure-migration-disc-vhd-to-azure
 title: "Migracja dysku .vhd do Azure – Migration disc .vhd to Azure"
-description: "Migracja dysku vhd z on-prem do Azure krok po kroku."
+description: "Jak przenieść dysk VHD z on-premises do Microsoft Azure? Poradnik migracji z konwersją VHDX na VHD przy użyciu PowerShell i upload do Azure Storage."
 authors: [progala]
 date: "2014-10-20"
 tags: 

@@ -1,7 +1,7 @@
 ---
 slug: azure-cli-logowanie
 title: "Azure CLI – Logowanie"
-description: "Chcesz się zalogować do Azure używając Azure CLI?"
+description: "Jak zalogować się do Microsoft Azure przez Azure CLI? Praktyczny poradnik instalacji i konfiguracji Azure CLI na Windows i Linux krok po kroku."
 authors: [progala]
 date: "2016-01-22"
 tags: 

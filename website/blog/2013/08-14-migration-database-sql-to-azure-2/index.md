@@ -1,7 +1,7 @@
 ---
 slug: migration-database-sql-to-azure-2
 title: "Migracja bazy SQL do Azure - Migration database SQL to Azure"
-description: "Migracja bazy Microsoft SQL do Azure SQL krok po kroku."
+description: "Jak przenieść bazę Microsoft SQL Server do Azure SQL? Praktyczny poradnik migracji z użyciem SQL Database Migration Wizard z CodePlex krok po kroku."
 authors: [progala]
 date: "2013-08-14"
 tags: 

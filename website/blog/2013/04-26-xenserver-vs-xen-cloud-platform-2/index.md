@@ -1,7 +1,7 @@
 ---
 slug: xenserver-vs-xen-cloud-platform-2
 title: "Porównanie produktów: XenServer vs. Xen Cloud Platform"
-description: "Porównanie produktów XenServer oraz Xen Cloud Platform, porównanie cenowe."
+description: "Szczegółowe porównanie XenServer vs Xen Cloud Platform - funkcje, ceny i możliwości. Dowiedz się czy OpenSource dorównuje wersji Enterprise za 2500$."
 authors: [progala]
 date: "2013-04-26"
 tags: 

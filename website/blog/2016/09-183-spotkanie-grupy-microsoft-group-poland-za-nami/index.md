@@ -22,7 +22,7 @@ tags:
 title: '#3 Spotkanie grupy Microsoft Group Poland za nami'
 ---
 
-Wrocławska grupa Azure powoli się rozwija i pojawia się na niej coraz więcej ciekawych osób. Jeśli chcecie być na bieżąco ze wszystkimi news'ami podam wam parę linków jak dotrzeć do grupy i jak monitorować wszystkie wydarzenia.
+Wrocławska grupa Azure powoli się rozwija i pojawia się na niej coraz więcej ciekawych osób. Jeśli chcecie być na bieżąco ze wszystkimi newsami, podam wam parę linków, jak dotrzeć do grupy i jak monitorować wszystkie wydarzenia.
 
 <!-- truncate -->
 
@@ -35,10 +35,10 @@ Wrocławska grupa Azure powoli się rozwija i pojawia się na niej coraz więcej
 3. **Facebook Page Like grupy JustCloud** (informacje o spotkaniach Wrocławskiej grupy)
    - [https://www.facebook.com/justcloudpl/](https://www.facebook.com/justcloudpl/)
 
-Ponadto za nami wiele ciekawych tematów gdzie udzielają się głównie **Piotr Rogala** i **Marek Zalewski**. Prezentacje w ostatnim czasie dotoczyły takich tematów jak: ARM, Docker, Licencjonowanie w Azure, Azure Web Apps, CDN, OMS. Prezentacje możecie odszukać za pomocą poniższego linku:
+Ponadto za nami wiele ciekawych tematów, gdzie udzielają się głównie **Piotr Rogala** i **Marek Zalewski**. Prezentacje w ostatnim czasie dotyczyły takich tematów jak: ARM, Docker, Licencjonowanie w Azure, Azure Web Apps, CDN, OMS. Prezentacje możecie odszukać za pomocą poniższego linku:
 
 - [http://maugp.justcloud.azurewebsites.net](http://maugp.justcloud.azurewebsites.net)
 
-Jeśli chcecie się udzielać i rozwijać w stronę nowych rozwiązań dołącz do nas i zaprezentuj się! Na koniec dziękuję za sponsoring ostatniego spotkania firmie SOFTSERVE i zapraszam kolejne zainteresowane nowymi rozwiązaniami w oparciu o chmury: Azure, AWS, GPC.
+Jeśli chcecie się udzielać i rozwijać w stronę nowych rozwiązań, dołącz do nas i zaprezentuj się! Na koniec dziękuję za sponsoring ostatniego spotkania firmie SOFTSERVE i zapraszam kolejne zainteresowane nowymi rozwiązaniami w oparciu o chmury: Azure, AWS, GPC.
 
-![softserve_logo_new](images/SoftServe_logo_new.png)
+![SoftServe - logo - grafika 1](images/SoftServe_logo_new.png)

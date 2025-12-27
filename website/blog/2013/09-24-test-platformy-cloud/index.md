@@ -2,17 +2,17 @@
 authors:
   - progala
 date: "2013-09-24"
-description: Pierwsze testy nowej cloud-owej platformy. Używaj aplikacji na każdym urządzeniu bez ich instalacji, a o mocy potężnych serwerów obliczeniowych.
+description: Pierwsze testy nowej platformy cloud. Używaj aplikacji na każdym urządzeniu bez instalacji z mocą potężnych serwerów obliczeniowych.
 hide_table_of_contents: true
 keywords:
-  - chmura
-  - cloud
-  - cloud-applications
-slug: test-platformy-cloud
+  - Chmura
+  - Cloud Computing
+  - Cloud Applications
+  - Aplikacje w chmurze
 tags:
-  - chmura
-  - cloud
-  - cloud-applications
+  - Chmura
+  - Cloud Computing
+  - Cloud Applications
 title: Pierwsze testy nowej cloud-owej platformy. The first tests of the new cloud platform.
 ---
 

@@ -2,14 +2,13 @@
 authors:
   - progala
 date: "2012-03-08"
-description: Czym jest Cloud Computing? Dowiedz się, jakie korzyści przynosi infrastruktura chmurowa i jak działa technologia cloud. Praktyczny przewodnik po chmurze obliczeniowej dla firm.
+description: Czym jest Cloud Computing? Dowiedz się, jakie korzyści przynosi infrastruktura chmurowa i jak działa technologia cloud.
 hide_table_of_contents: true
 keywords:
   - cloud computing
   - infrastruktura chmurowa
   - chmura obliczeniowa
   - IBM
-  - justcloud
   - technologia cloud
   - wdrożenie cloud
   - korzyści cloud computing

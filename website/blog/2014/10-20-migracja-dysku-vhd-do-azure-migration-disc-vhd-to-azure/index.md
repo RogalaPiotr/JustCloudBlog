@@ -5,28 +5,31 @@ description: "Jak przenieść dysk VHD z on-premises do Microsoft Azure? Poradni
 authors: [progala]
 date: "2014-10-20"
 tags: 
-  - "azure"
-  - "migracja"
-  - "powershell"
+  - "Azure"
+  - "Migracja"
+  - "PowerShell"
+  - "VHD"
 keywords:
-  - "azure"
-  - "migracja"
-  - "powershell"
+  - "Azure"
+  - "Migracja"
+  - "PowerShell"
+  - "VHD"
+  - "VHDX"
 hide_table_of_contents: true
 ---
 
-W tym artykule opiszę jak możemy przemigrować do Azure dysk z Windows 10 TechPreview.
+W tym artykule opiszę, jak możemy przemigrować do Azure dysk z Windows 10 TechPreview.
 
-1. Przygotowujemy dysk .vhd
-    - Jeśli posiadamy dysk .vhdx możemy użyć polecenia PS w celu przekonwertowania:
+1. Przygotowujemy dysk .vhd.
+    - Jeśli posiadamy dysk .vhdx, możemy użyć polecenia PS w celu przekonwertowania:
 
-Convert-VHD –Path “D:\Hyper-V\Windows10\Virtual Hard Disks\Windows10.vhdx" –DestinationPath “D:\Hyper-V\Windows10\Virtual Hard Disks\Windows10.vhd
+Convert-VHD -Path "D:\Hyper-V\Windows10\Virtual Hard Disks\Windows10.vhdx" -DestinationPath "D:\Hyper-V\Windows10\Virtual Hard Disks\Windows10.vhd"
 
-![azure-migracja-1](images/102014_1550_Migracjadys1.png)
+![Migracja dysku VHD do Azure - grafika 1](images/102014_1550_Migracjadys1.png)
 
 <!--truncate-->
 
-![azure-migracja-2](images/102014_1550_Migracjadys2.png)
+![Migracja dysku VHD do Azure - grafika 2](images/102014_1550_Migracjadys2.png)
 
 1. Wybieramy storage, na który będziemy migrować dysk, najbardziej nas interesuje linki blobs.
 2. Odpalamy PowerShell-a dla Azure
@@ -53,16 +56,16 @@ Add-AzureVhd -LocalFilePath $sourceVHD -Destination $destinationVHD -NumberOfUpl
     
     - Wypełniamy nazwę obrazu oraz wskazujemy go w naszym kontenerze z dyskami.
 
-![azure-migracja-4](images/102014_1550_Migracjadys4.png)
+![Migracja dysku VHD do Azure - grafika 4](images/102014_1550_Migracjadys4.png)
 
-1. Chcąc teraz skorzystać z naszego dysku przechodzimy do galerii z systemami New > Compute > Virtual Machine > From Gallery
-    - Klikając na My Images zobaczymy nasz przygotowany dysk.
+7. Chcąc teraz skorzystać z naszego dysku, przechodzimy do galerii z systemami New > Compute > Virtual Machine > From Gallery.
+    - Klikając na My Images, zobaczymy nasz przygotowany dysk.
 
-I tak udało nam się przenieść wirtualkę do Azure, może to być skonfigurowana gotowa do pracy bądź dysk bazowy „template” który możemy wykorzystywać przy tworzeniu innych maszyn.
+I tak udało nam się przenieść wirtualkę do Azure - może to być skonfigurowana, gotowa do pracy maszyna bądź dysk bazowy "template", który możemy wykorzystywać przy tworzeniu innych maszyn.
 
 **Opcja ściągnięcia dysku .vhd z Azure:**
 
-1. Odpalamy konsole PowerShell Azure
+1. Odpalamy konsolę PowerShell Azure.
     - Wklepujemy:
 ```
 $cred = Get-Credential

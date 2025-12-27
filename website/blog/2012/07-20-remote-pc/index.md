@@ -2,19 +2,19 @@
 authors:
   - progala
 date: "2012-07-20"
-description: Citrix przedstawił bardzo fajny filmik przedstawiający możliwość używania jednego systemu na różnych urządzeniach za pomocą zdalnego pulpitu. Sądzę, że coraz bliżej nam do korzystania z jednego systemu nie zależnie od tego gdzie jesteśmy i jakie urządzenia są wokół nas.
+description: Citrix zaprezentował możliwość korzystania z jednego systemu na różnych urządzeniach za pomocą zdalnego pulpitu.
 slug: remote-pc
 tags:
-  - citrix
-  - rdp
-  - remote
-  - remote-pc
+  - Citrix
+  - RDP
+  - Remote
+  - Remote Desktop
 title: Citrix - Remote PC
 ---
 
 import ReactPlayer from 'react-player'
 
-Citrix przedstawił bardzo fajny filmik przedstawiający możliwość używania jednego systemu na różnych urządzeniach za pomocą zdalnego pulpitu. Sądzę, że coraz bliżej nam do korzystania z jednego systemu nie zależnie od tego gdzie jesteśmy i jakie urządzenia są wokół nas. Filmik wygląda ciekawie, aczkolwiek interesuje mnie jak to działa w rzeczywistości 😉.
+Citrix przedstawił bardzo fajny filmik przedstawiający możliwość używania jednego systemu na różnych urządzeniach za pomocą zdalnego pulpitu. Sądzę, że coraz bliżej nam do korzystania z jednego systemu niezależnie od tego, gdzie jesteśmy i jakie urządzenia są wokół nas. Filmik wygląda ciekawie, aczkolwiek interesuje mnie, jak to działa w rzeczywistości 😉.
 
 <!-- truncate -->
 

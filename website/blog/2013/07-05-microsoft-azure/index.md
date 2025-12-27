@@ -2,17 +2,19 @@
 authors:
   - progala
 date: "2013-07-05"
-description: Microsoft Azure test dostępu do platformy Cloud Computing i serwerów na żądanie.
+description: Microsoft Azure - test dostępu do platformy Cloud Computing i serwerów na żądanie. Sprawdź darmową wersję testową.
 hide_table_of_contents: true
 keywords:
-  - azure
-  - cloud
-  - microsoft
+  - Azure
+  - Cloud Computing
+  - Microsoft
+  - IaaS
 slug: microsoft-azure
 tags:
-  - azure
-  - cloud
-  - microsoft
+  - Azure
+  - Cloud Computing
+  - Microsoft
+  - IaaS
 title: Microsoft Azure
 ---
 

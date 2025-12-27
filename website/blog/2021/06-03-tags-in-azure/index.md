@@ -2,7 +2,7 @@
 authors:
   - progala
 date: "2021-06-03"
-description: Kompletny przewodnik po tagowaniu zasobów w Azure PowerShell, eksport CSV i automatyzacja dla małych i dużych środowisk.
+description: Kompletny przewodnik po tagowaniu zasobów w Azure - PowerShell, eksport CSV i automatyzacja. Skrypty do szybkiego zarządzania tagami w małych i dużych środowiskach.
 keywords:
   - Azure
   - tagowanie
@@ -14,6 +14,8 @@ keywords:
   - raport
   - zasoby
   - Azure Tags
+  - tags
+  - resource groups
 slug: tags-in-azure
 tags:
   - csv
@@ -26,6 +28,7 @@ tags:
   - tags
   - zasoby
   - skrypty
+  - resource-groups
 title: Przyspieszenie pracy nad tagowaniem zasobów za pomocą PowerShell - Tag raport Microsoft Azure
 ---
 
@@ -39,15 +42,15 @@ Skrypty są dostępne na GitHub:
 
 Opis skryptów:
 
-- GetAllTags.ps1 — generuje dwa pliki CSV: jeden dla Resource Group, a drugi dla Resources. Jest to istotne, ponieważ grupy i zasoby są rozdzielone, co pozwala tagować je niezależnie, bez wyszukiwania typów zasobów.
-- SetTagsResourceGroups.ps1 — skrypt, który pobiera dane z pliku CSV zawierającego spis Resource Group z tagami do wdrożenia.
-- SetTagsResources.ps1 — skrypt, który pobiera dane z pliku CSV, w którym zapisane są zasoby z tagami do wdrożenia.
+- GetAllTags.ps1 - generuje dwa pliki CSV: jeden dla Resource Group, a drugi dla Resources. Jest to istotne, ponieważ grupy i zasoby są rozdzielone, co pozwala tagować je niezależnie, bez wyszukiwania typów zasobów.
+- SetTagsResourceGroups.ps1 - skrypt, który pobiera dane z pliku CSV zawierającego spis Resource Group z tagami do wdrożenia.
+- SetTagsResources.ps1 - skrypt, który pobiera dane z pliku CSV, w którym zapisane są zasoby z tagami do wdrożenia.
 
 <!--truncate-->
 
 Taki podział daje nam:
 
-1. Zapis stanu obecnego tagów zapisanych do pliku CSV. Jest to raport tagów czyli obecny stan wdrożony tagów.
+1. Zapis stanu obecnego tagów zapisanych do pliku CSV. Jest to raport tagów, czyli obecny stan wdrożonych tagów.
 2. Podział na grupy i zasoby.
 3. Możliwość poprawiania tagów tylko na zasobach lub tylko na grupach zasobów.
 
@@ -77,30 +80,30 @@ Uruchomienie skryptu:
 
 `Komenda: ./GetAllTags.ps1 -path /tags`
 
-![Output skryptu](https://lh6.googleusercontent.com/g2uknxvVr-r8zuu_JNgHwzMEWXDS_lCkJkvP0w2nsaraF1iUI-PfsBGgFDAMnSqGiPEN-oG5sg0RR5aQWAqnixT1BRO0RBcsIWEpJ48Jfztk-ioLi0NlKg-fFfHPUxjXg60DReVG)
+![Tagowanie zasobów w Azure - output skryptu GetAllTags](https://lh6.googleusercontent.com/g2uknxvVr-r8zuu_JNgHwzMEWXDS_lCkJkvP0w2nsaraF1iUI-PfsBGgFDAMnSqGiPEN-oG5sg0RR5aQWAqnixT1BRO0RBcsIWEpJ48Jfztk-ioLi0NlKg-fFfHPUxjXg60DReVG)
 
-Na printscreenie możesz zauważyć output z informacjami jakie generowane są przez skrypt.
+Na printscreenie możesz zauważyć output z informacjami, jakie generowane są przez skrypt.
 
-- Czy jesteś zalogowany, jeśli nie to poprosi Cię o zalogowanie się
-- Ilość znalezionych grup zasobów oraz zasobów
-- Informacja gdzie i jakie pliki są tworzone
+- Czy jesteś zalogowany, jeśli nie, to poprosi Cię o zalogowanie się
+- Ilość znalezionych grup zasobów oraz zasobów
+- Informacja, gdzie i jakie pliki są tworzone
 - Lista zasobów
 
 Pliki CSV wyglądają następująco:
 
 - Resource Group
 
-![CSV Resource Group](https://lh3.googleusercontent.com/XiatuhcE3vx4Lr6g5rkz-JP48TjhJ-ydCdwySuAGgBccaVpVZKD9CfPF5xVpIuzU6IFM7PNj939dMpEviYAR3287SCr6F5y2cM4pu1i8500uzKNdRNSh16t8dX9GSosf7J2oDJFa)
+![Tagowanie zasobów w Azure - CSV Resource Group](https://lh3.googleusercontent.com/XiatuhcE3vx4Lr6g5rkz-JP48TjhJ-ydCdwySuAGgBccaVpVZKD9CfPF5xVpIuzU6IFM7PNj939dMpEviYAR3287SCr6F5y2cM4pu1i8500uzKNdRNSh16t8dX9GSosf7J2oDJFa)
 
 - Resources
 
-![CSV Resources](https://lh4.googleusercontent.com/m5u5NLpGw8DNyroSByMny-rIZsH11sZMs4tgFMixm_Lepfn0rjNf4XqLET6MvsT3YnK48PesD9GJQUkDtWJIuDKsUh7IolWD7BCDfHSQN4Ug_f6qdWpuPF2ns-8vRmnlRNtWptbp)
+![Tagowanie zasobów w Azure - CSV Resources](https://lh4.googleusercontent.com/m5u5NLpGw8DNyroSByMny-rIZsH11sZMs4tgFMixm_Lepfn0rjNf4XqLET6MvsT3YnK48PesD9GJQUkDtWJIuDKsUh7IolWD7BCDfHSQN4Ug_f6qdWpuPF2ns-8vRmnlRNtWptbp)
 
 Poniżej przedstawię edycję tagów dla pliku z zasobami.
 
 _Uwaga! Jeśli chcesz zachować kopię obecnego stanu, zabezpiecz wygenerowany plik lub zmień jego nazwę na zupełnie inną._
 
-Poprawiony plik wygląda następująco. Zauważ, że wypełniłem tagi dla wszystkich obiektów oraz dodałem nowy tag: Test:Key, aby pokazać jak wygląda przypisywanie wielu tagów.
+Poprawiony plik wygląda następująco. Zauważ, że wypełniłem tagi dla wszystkich obiektów oraz dodałem nowy tag: Test:Key, aby pokazać, jak wygląda przypisywanie wielu tagów.
 
 ![Edycja tagów](https://lh6.googleusercontent.com/q4_FhHhAden4hD-gq6IJjhVRras8g-lAgwqCo4evhui6_dSF1wjIt6rZwHV23YbOWIuvlJihRbleddX46VkkUudBByLuX_lfGlrab1_U8Ya14-pdg9Xhrqd7hdzoQqpsxwaseZle)
 

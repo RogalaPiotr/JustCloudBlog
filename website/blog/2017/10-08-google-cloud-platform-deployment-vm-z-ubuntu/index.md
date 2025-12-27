@@ -2,7 +2,7 @@
 authors:
   - progala
 date: "2017-10-08"
-description: Pierwszy deployment w Google Cloud Platform nie musi być trudny. Zapraszam to sprawdzenia rozwiązań dostępnyw GCP, a zaczniemy od wdrożenia wirtualnej maszyny za pomocą szablonu.
+description: Pierwszy deployment w Google Cloud Platform - jak wdrożyć wirtualną maszynę Ubuntu za pomocą szablonów YAML i Jinja w GCP?
 hide_table_of_contents: true
 keywords:
   - justcloud
@@ -13,6 +13,8 @@ keywords:
   - szablon
   - google cloud platform
   - ubuntu
+  - yaml
+  - deployment manager
 slug: google-cloud-platform-deployment-vm-z-ubuntu
 tags:
   - gcloud
@@ -63,16 +65,16 @@ resources:
 
 ```
 
-Na pierwszy rzut oka plik nie jest skomplikowany, ponieważ plik .yaml jest tylko skrótem definicji które są wysyłane dalej do schematu gdzie pod spodem ma dużo więcej funkcji, których nie musimy definiować.
+Na pierwszy rzut oka plik nie jest skomplikowany, ponieważ plik .yaml jest tylko skrótem definicji, które są wysyłane dalej do schematu, gdzie pod spodem ma dużo więcej funkcji, których nie musimy definiować.
 
-Po zalogowaniu się z cmd do GCP możemy wywołać powyższy deployment używając polecenia:
+Po zalogowaniu się z CMD do GCP możemy wywołać powyższy deployment używając polecenia:
 
 `gcloud deployment-manager deployments create simple-ubuntu --config vm.yaml`
 
-Po wykonaniu tego polecenia rozpocznie się deployment a następnie zostanie uruchomiona maszyna z systemem ubuntu. Zapraszam do testowania i zadawani pytań.
+Po wykonaniu tego polecenia rozpocznie się deployment, a następnie zostanie uruchomiona maszyna z systemem Ubuntu. Zapraszam do testowania i zadawania pytań.
 
-![](images/capture_012_08102017_145512.jpg)
+![Google Cloud Platform - deployment - grafika 2](images/capture_012_08102017_145512.jpg)
 
-![](images/capture_013_08102017_145520.jpg)
+![Google Cloud Platform - VM w portalu - grafika 3](images/capture_013_08102017_145520.jpg)
 
-![](images/capture_014_08102017_145606.jpg)
+![Google Cloud Platform - szczegóły VM - grafika 4](images/capture_014_08102017_145606.jpg)

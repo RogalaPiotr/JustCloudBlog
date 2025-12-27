@@ -36,7 +36,6 @@ Większość poniższych linków jest darmowa i takie właśnie będę starał s
 
 Jeśli wiesz, czego konkretnie szukasz, możesz użyć wyszukiwarki, aby skoncentrować się na danym problemie:
 
-Jeśli wiesz czego konkretnie szukasz możesz użyć wyszukiwarki aby skoncentrować się na danym problemie:
 <ReactPlayer
   controls
   src='https://www.youtube.com/watch?v=Rkxg03z2PEo'
@@ -46,7 +45,7 @@ Jeśli wiesz czego konkretnie szukasz możesz użyć wyszukiwarki aby skoncentro
 />
 <!--truncate-->
 
-A, tak na poważnie możesz zaczerpnąć wiedzy w poniższych miejscach.
+A tak na poważnie, możesz zaczerpnąć wiedzy w poniższych miejscach.
 
 Grupa Microsoft Azure User Group Poland na Facebooku: [https://www.facebook.com/groups/azureugpl/](https://www.facebook.com/groups/azureugpl/)
 

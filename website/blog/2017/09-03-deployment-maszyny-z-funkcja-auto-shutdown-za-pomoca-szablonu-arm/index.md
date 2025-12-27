@@ -2,34 +2,36 @@
 authors:
   - progala
 date: "2017-09-03"
-description: Jak wyłączyć maszynę automatycznie o danej godzinie? Zapomocą tego skryptu zrobisz to!
+description: Jak automatycznie wyłączać maszyny wirtualne w Azure o określonej godzinie? Szablon ARM z funkcją Auto-Shutdown krok po kroku.
 hide_table_of_contents: true
 keywords:
   - arm
   - auto-shutdown
-  - azure-resource-manager
-  - deplyment
+  - azure resource manager
+  - deployment
+  - azure
+  - szablon arm
 slug: deployment-maszyny-z-funkcja-auto-shutdown-za-pomoca-szablonu-arm
 tags:
   - arm
   - auto-shutdown
   - azure-resource-manager
   - deplyment
-title: Deployment maszyny z funkcją Auto-Shutdown  za pomocą szablonu arm
+title: Deployment maszyny z funkcją Auto-Shutdown za pomocą szablonu ARM
 ---
 
-Szablony ARM mają nam pomać w pracy dlatego kiedy testuję wiele szablonów zdarza mi się, że zapominam o resource'ach, które utworzyłem w Azure co powoduje, że marnuję pieniądzę na subskrypcji. Powodem są zazwyczaj późne godziny pracy i przemęczenie, a później te z deploy'owane wirtualki działają przez parę dni nic nie robiąc.
+Szablony ARM mają nam pomóc w pracy, dlatego kiedy testuję wiele szablonów, zdarza mi się, że zapominam o resourcach, które utworzyłem w Azure, co powoduje, że marnuję pieniądze na subskrypcji. Powodem są zazwyczaj późne godziny pracy i przemęczenie, a później te deployowane wirtualki działają przez parę dni nic nie robiąc.
 
 <!-- truncate -->
 
-Dlatego postanowiłem sobie pomóc i do każego deploy'mentu dodaję wpis który wyłączy wirtualkę o jakiejś godzinie. Poniższy przykład zaprezentuje deplyment Windows'a 2016 z manage disk'iem i "Microsoft.DevTestLab/schedules".
+Dlatego postanowiłem sobie pomóc i do każdego deploymentu dodaję wpis, który wyłączy wirtualkę o jakiejś godzinie. Poniższy przykład zaprezentuje deployment Windowsa 2016 z managed diskiem i "Microsoft.DevTestLab/schedules".
 
-W poprzendich moich postach możesz przeczytać jak zalogować się do Azure za pomocą PowerShell i CLI oraz jak używać do deploymentów Visual Studio Code i Visual Studio.
+W poprzednich moich postach możesz przeczytać, jak zalogować się do Azure za pomocą PowerShell i CLI oraz jak używać do deploymentów Visual Studio Code i Visual Studio.
 
 **Przydatne linki:**
 
 - Wygodny profil logowania: [https://justcloud.azurewebsites.net/blog/profil-logowania-do-azure/](https://justcloud.azurewebsites.net/blog/profil-logowania-do-azure/)
-- Logowanie za pomacą CLI: https://justcloud.azurewebsites.net/blog/azure-cli-logowanie/
+- Logowanie za pomocą CLI: [https://justcloud.azurewebsites.net/blog/azure-cli-logowanie/](https://justcloud.azurewebsites.net/blog/azure-cli-logowanie/)
 - Visual Studio Code: [https://justcloud.azurewebsites.net/blog/visual-studio-code-i-git-zamiast-powershell-ise/](https://justcloud.azurewebsites.net/blog/visual-studio-code-i-git-zamiast-powershell-ise/)
 - Visual Studio: [https://justcloud.azurewebsites.net/blog/tworzenie-szablonu-arm-visual-studio-2017/](https://justcloud.azurewebsites.net/blog/tworzenie-szablonu-arm-visual-studio-2017/)
 
@@ -84,7 +86,7 @@ Poniżej mamy zaprezentowaną sekcję parameters. W niej możemy zdefiniować na
 
 ```
 
-Sekcja variables. W tej sekcji zefiniowane zostały wszystkie istotne wartości dla deploy'mentu. Wielkość maszyny, wersje Windows'a, adresacje itp. możesz modyfikować tutaj.
+Sekcja variables. W tej sekcji zdefiniowane zostały wszystkie istotne wartości dla deploymentu. Wielkość maszyny, wersje Windowsa, adresacje itp. możesz modyfikować tutaj.
 
 ```json
   "variables": {
@@ -102,7 +104,7 @@ Sekcja variables. W tej sekcji zefiniowane zostały wszystkie istotne wartości 
 
 ```
 
-Najważniejsza sekcja odpowidająca za wyłączenie maszyny to "type":"Microsoft.DevTestLab/schedules" w niej definiujemy strefę czasową według której powinien być wyłączony serwer oraz godzinę.
+Najważniejsza sekcja odpowiadająca za wyłączenie maszyny to "type":"Microsoft.DevTestLab/schedules", w niej definiujemy strefę czasową, według której powinien być wyłączony serwer oraz godzinę.
 
 Link do wszystkich stref znajdziesz na górze posta.
 
@@ -134,8 +136,8 @@ Link do wszystkich stref znajdziesz na górze posta.
 
 Efekt widoczny w portalu:
 
-![](images/capture_001_03092017_160447.jpg)
+![Deployment maszyny z Auto-Shutdown - widok w portalu - grafika 1](images/capture_001_03092017_160447.jpg)
 
-![](images/capture_002_03092017_160519.jpg)
+![Deployment maszyny z Auto-Shutdown - ustawienia harmonogramu - grafika 2](images/capture_002_03092017_160519.jpg)
 
-Mam nadzięję, że się przyda :)
+Mam nadzieję, że się przyda 😊

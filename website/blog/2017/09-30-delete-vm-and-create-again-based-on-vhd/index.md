@@ -27,11 +27,11 @@ tags:
 title: Delete VM and create again based on .vhd
 ---
 
-W tej części tytuł jest angielski, ponieważ nie stosuje spolszczeń dla technicznego języka. Ten post jest spowodowany tym co Microsoft niestety przestał wspierać w Azure a mianowicie breaklease dla blobów podpiętych do wirtualnej maszyny.
+W tej części tytuł jest angielski, ponieważ nie stosuję polszczenia dla technicznego języka. Ten post jest spowodowany tym, co Microsoft niestety przestał wspierać w Azure, a mianowicie break lease dla blobów podpiętych do wirtualnej maszyny.
 
 <!-- truncate -->
 
-Było mi to potrzebne do jednego zadania, dlatego byłem zmuszony zrobić coś innego. Mianowicie potrzebne mi było usunięcie maszyny i stworzenie jej bazując na istniejących vhd'kach w innym kontenerze dodatkowo moje założenie wymagało powershell'a. W skrócie odtworzenie maszyny z jakiegoś stanu, który jest przechowywany jako kopia dysków wirtualnej maszyny. Myślę, że są osoby, którym się to przyda.
+Było mi to potrzebne do jednego zadania, dlatego byłem zmuszony zrobić coś innego. Mianowicie potrzebne mi było usunięcie maszyny i stworzenie jej bazując na istniejących VHD w innym kontenerze, dodatkowo moje założenie wymagało PowerShella. W skrócie odtworzenie maszyny z jakiegoś stanu, który jest przechowywany jako kopia dysków wirtualnej maszyny. Myślę, że są osoby, którym się to przyda.
 
 Krótki opis:
 

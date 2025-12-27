@@ -30,13 +30,13 @@ tags:
 title: Auto deployment VM with VSTS agent for pool
 ---
 
-Wszyscy którzy robią depyolemnty z VSTS spotykają się z sytuacją, kiedy standardowe 240min się kończy i trzeba stworzyć sobie taką maszynę. Sam robiłem taką maszynę parę razy i kiedy znów pojawiła się ta konieczność postanowiłem stworzyć automatyczny deployment który nam stworzy z JSON'a cała maszynkę i podepnie ją do Agent pool w VSTS.
+Wszyscy, którzy robią deploymenty z VSTS, spotykają się z sytuacją, kiedy standardowe 240 min się kończy i trzeba stworzyć sobie taką maszynę. Sam robiłem taką maszynę parę razy i kiedy znów pojawiła się ta konieczność, postanowiłem stworzyć automatyczny deployment, który nam stworzy z JSON-a całą maszynkę i podepnie ją do Agent pool w VSTS.
 
-Miałem parę pomysłów, aby zrobić bardzo uniwersalny template który nie tylko przyda się wam, ale również mi w przyszłości do budowania innych szablonów. Także w skrócie opiszę ciekawostki które zastosowałem szablonie, który znajdziecie na moim GitHubie.
+Miałem parę pomysłów, aby zrobić bardzo uniwersalny template, który nie tylko przyda się wam, ale również mi w przyszłości do budowania innych szablonów. Także w skrócie opiszę ciekawostki, które zastosowałem w szablonie, który znajdziecie na moim GitHubie.
 
 ##### **GitHub** [https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-with-installation-vsts-agent](https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-with-installation-vsts-agent)
 
-Założenie dotyczące szablonu: chciałbym dodać informację, gdzie ważnym jest zwrócenie uwagi, że maszyna ma być odizolowana od naszej sieci wewnętrznej, dlatego szablon jest infrastruktura stand alone, aby było bezpiecznie i w razie czego można ją usuną lub powołać więcej agentów do deploymentów.
+Założenie dotyczące szablonu: chciałbym dodać informację, gdzie ważnym jest zwrócenie uwagi, że maszyna ma być odizolowana od naszej sieci wewnętrznej, dlatego szablon jest infrastrukturą stand alone, aby było bezpiecznie i w razie czego można ją usunąć lub powołać więcej agentów do deploymentów.
 
 <!--truncate-->
 
@@ -44,7 +44,7 @@ Założenie dotyczące szablonu: chciałbym dodać informację, gdzie ważnym je
 
 ## Sekcja Parameters
 
-w tej sekcji podajemy dane które przydadzą nam się do deplymentu i automatycznego podłączenia do VSTS'a.
+W tej sekcji podajemy dane, które przydadzą nam się do deploymentu i automatycznego podłączenia do VSTS-a.
 
 - **adminUsername**, **adminPassword** - lokalny użytkownik i hasło,
 - **dnsLabelPrefix** - zostanie automatycznie wygenerowany podczas deployment’u, więc nie ma konieczności go zmieniać,
@@ -64,7 +64,7 @@ w tej sekcji podajemy dane które przydadzą nam się do deplymentu i automatycz
 - **urldonwloadagent** - link do pobrania paczki agenta VSTS. W razie zmiany wersji zaktualizuj link.
 - **filescriptURI** - skrypt automatyzujący pobranie i instalację agenta: [vstsagent.ps1 na GitHubie](https://raw.githubusercontent.com/RogalaPiotr/JustCloudPublic/master/simple-vm-with-installation-vsts-agent/vstsagent.ps1)
 - **filescriptURISplit** - funkcja, która rozbija powyższy URL na części według znaku "/" i tworzy tablicę.
-  - więcej informacji: [Funkcje ARM Templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions)
+  - Więcej informacji: [Funkcje ARM Templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions)
 
 - **filescriptName** - nazwa skryptu używanego w CustomScriptExtension uzyskiwana z powyższego split.
 - **agentname** - nazwa agenta dodawanego do puli; domyślnie oparta na nazwie maszyny.
@@ -77,16 +77,16 @@ w tej sekcji podajemy dane które przydadzą nam się do deplymentu i automatycz
 - **type: Microsoft.Compute/virtualMachines** - tworzenie maszyny wirtualnej z Windows i Managed Disk.
   - **type: Microsoft.Compute/virtualMachines/extensions** - instalacja agenta VSTS oparta na skrypcie z GitHuba (vstsagent.ps1); pełna komenda znajduje się w polu "commandToExecute".
 
-- **type: Microsoft.DevTestLab/schedules** - dzięki temu nasza maszynie będzie wyłączana codziennie o 18:00 zona: W. Europe Standard Time - ten feature działa tylko kiedy maszyna jest włączona pozwoli to nam zapomnieć o wyłączaniu, a mimo wszystko nie będziemy tracić pieniędzy za jej bezczynność.
+- **type: Microsoft.DevTestLab/schedules** - dzięki temu nasza maszyna będzie wyłączana codziennie o 18:00, zona: W. Europe Standard Time - ten feature działa tylko, kiedy maszyna jest włączona, pozwoli to nam zapomnieć o wyłączaniu, a mimo wszystko nie będziemy tracić pieniędzy za jej bezczynność.
 
 ## **Sekcja Outputs**
 
-- **PublicDNS** - po wykonaniu deployment’u wyświetli nam publiczny adres DNS dla VM,
+- **PublicDNS** - po wykonaniu deploymentu wyświetli nam publiczny adres DNS dla VM,
 - **Hostname** - wyświetli nazwę maszyny, którą wprowadziliśmy w parametrach,
-- **VSTSAgentName** - wyświetli nazwę agenta jaka będzie widoczna w VSTS,
-- **VSTSProjectName** - wyświetli nazwę projektu VSTS jaki został wprowadzony,
-- **ScriptURI** - wyświetli źródło z jakiego został pobrany skrypt do instalacji Agenta,
-- **AccessRDPFrom** - wyświetli adres IP który został dodany do NSG, aby miał dostęp do RDP
+- **VSTSAgentName** - wyświetli nazwę agenta, jaka będzie widoczna w VSTS,
+- **VSTSProjectName** - wyświetli nazwę projektu VSTS, jaki został wprowadzony,
+- **ScriptURI** - wyświetli źródło, z jakiego został pobrany skrypt do instalacji Agenta,
+- **AccessRDPFrom** - wyświetli adres IP, który został dodany do NSG, aby miał dostęp do RDP
 
 ## Szablon
 
@@ -440,12 +440,12 @@ w tej sekcji podajemy dane które przydadzą nam się do deplymentu i automatycz
 
 ### Efekt w portalu po deploymencie
 
-![Zrzut ekranu - efekt w portalu](images/Clipboard21.jpg)
+![Auto deployment VM with VSTS agent for pool - efekt w portalu](images/Clipboard21.jpg)
 
 ### Widok puli agentów w VSTS
 
-![Zrzut ekranu - pula agentów](images/Clipboard22.jpg)
+![Auto deployment VM with VSTS agent for pool - pula agentów](images/Clipboard22.jpg)
 
-Maszyna jest gotowa do deploymentów, jeśli potrzebujesz więcej maszyn możesz bez oporu deployować większą ilość 😊
+Maszyna jest gotowa do deploymentów, jeśli potrzebujesz więcej maszyn, możesz bez oporu deployować większą ilość 😊
 
-Czas deplymentu to: 15 minutes 46 seconds.
+Czas deploymentu to: 15 minutes 46 seconds.

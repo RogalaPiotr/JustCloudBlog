@@ -29,4 +29,5 @@ supervisord.pid
 
 # tmp
 backup-wordpress
+backups
 ai-plans

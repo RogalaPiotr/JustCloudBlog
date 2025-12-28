@@ -28,7 +28,7 @@ import ReactPlayer from 'react-player'
 
 Azure DevOps pozwala na wdrażanie rozwiązań za pośrednictwem agentów tzw. ["Microsoft-hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#microsoft-hosted-agents) przez 1800 minut (30 godzin) miesięcznie. Po przekroczeniu tego czasu nie możemy wykonywać deploymentów.
 
-Można jednak dokupić nielimitowany dostęp do agenta za $40 miesięcznie lub korzystać ze swojego serwera, np. laptopa, instalując agenta — ta opcja wdrażania jest znana w dokumentacji jako ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install). Dodam tylko, że wykorzystywanie własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym 🙃.
+Można jednak dokupić nielimitowany dostęp do agenta za $40 miesięcznie lub korzystać ze swojego serwera, np. laptopa, instalując agenta — ta opcja wdrażania jest znana w dokumentacji jako ["Self-Hosted"](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&WT.mc_id=AZ-MVP-5002690#install). Dodam tylko, że wykorzystywanie własnego laptopa do wdrażania nie jest rozwiązaniem produkcyjnym �.
 
 Strona z cenami Azure DevOps: (https://azure.microsoft.com/pricing/details/devops/azure-devops-services/?WT.mc_id=AZ-MVP-5002690)
 
@@ -65,7 +65,7 @@ Przygotowałem ilustracje związane z całym projektem dla wdrożenia Azure Pipe
 
 2. Skrypty
    1. Parametry
-   2. [azuredeploy.param.json](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/azuredeploy.param.json&version=GBmain&_a=contents) - te parametry możesz przerobić lub zmienić tak, aby odpowiadały potrzebom wdrożenia. Ważne: te dane testowe są nadpisywane podczas deploymentu — sprawdź to w pliku: [vm-azure-devops-self-hosted-agents-ci.yml](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/pipelines/vm-azure-devops-self-hosted-agents-ci.yml&version=GBmain&_a=contents) "overrideParameters".
+   1. [azuredeploy.param.json](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/scripts/azuredeploy.param.json&version=GBmain&_a=contents) - te parametry możesz przerobić lub zmienić tak, aby odpowiadały potrzebom wdrożenia. Ważne: te dane testowe są nadpisywane podczas deploymentu — sprawdź to w pliku: [vm-azure-devops-self-hosted-agents-ci.yml](https://dev.azure.com/justcloudpublic/_git/How%20to%20deploy%20ADO%20agent?path=/vm-azure-devops-self-hosted-agents/pipelines/vm-azure-devops-self-hosted-agents-ci.yml&version=GBmain&_a=contents) w sekcji "overrideParameters".
 
 3. Opis zmiennych
    1. adminUsername [nazwa użytkownika]
@@ -243,9 +243,9 @@ variables:
 Po wdrożeniu:
 
    1. Azure DevOps agents
-      ![](images/2022-02-26_20-11-11.jpg)
+      ![Azure DevOps agents - widok puli agentów](images/2022-02-26_20-11-11.jpg)
    2. Azure Portal
-      ![](images/2022-02-27_21-35-04.jpg)
+      ![Azure Portal - wdrożone zasoby](images/2022-02-27_21-35-04.jpg)
 
 ## Instruktaż video
 
@@ -257,7 +257,7 @@ Po wdrożeniu:
   style={{ display: 'block', margin: '0 auto 20px auto', aspectRatio: '16/9' }}
 />
 
-Jeśli masz jakieś pytania, zapraszam do komentowania 🙂.
+Jeśli masz jakieś pytania, zapraszam do komentowania �.
 
 Artykuł dostępny również na Medium i LinkedIn:
 

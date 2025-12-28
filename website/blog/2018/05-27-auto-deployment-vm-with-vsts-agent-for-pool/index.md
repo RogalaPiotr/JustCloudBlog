@@ -36,7 +36,7 @@ Miałem parę pomysłów, aby zrobić bardzo uniwersalny template, który nie ty
 
 ##### **GitHub** [https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-with-installation-vsts-agent](https://github.com/RogalaPiotr/JustCloudPublic/tree/master/simple-vm-with-installation-vsts-agent)
 
-Założenie dotyczące szablonu: chciałbym dodać informację, gdzie ważnym jest zwrócenie uwagi, że maszyna ma być odizolowana od naszej sieci wewnętrznej, dlatego szablon jest infrastrukturą stand alone, aby było bezpiecznie i w razie czego można ją usunąć lub powołać więcej agentów do deploymentów.
+Założenie dotyczące szablonu: chciałbym dodać informację, gdzie ważnym jest zwrócenie uwagi, że maszyna ma być odizolowana od naszej sieci wewnętrznej. Dlatego szablon jest infrastrukturą stand alone, aby było bezpiecznie i w razie czego można ją usunąć lub powołać więcej agentów do deploymentów.
 
 <!--truncate-->
 
@@ -47,16 +47,16 @@ Założenie dotyczące szablonu: chciałbym dodać informację, gdzie ważnym je
 W tej sekcji podajemy dane, które przydadzą nam się do deploymentu i automatycznego podłączenia do VSTS-a.
 
 - **adminUsername**, **adminPassword** - lokalny użytkownik i hasło,
-- **dnsLabelPrefix** - zostanie automatycznie wygenerowany podczas deployment’u, więc nie ma konieczności go zmieniać,
-- **vmName** - nazwa naszej maszyny oraz na podstawie tej nazwy zostaną nazwane wszystkie nasze resource jest: VNET, NSG, Storage...
+- **dnsLabelPrefix** - zostanie automatycznie wygenerowany podczas deploymentu, więc nie ma konieczności go zmieniać,
+- **vmName** - nazwa naszej maszyny oraz na podstawie tej nazwy zostaną nazwane wszystkie nasze resource, jest: VNET, NSG, Storage...
 - **urlvsts** - adres do naszego projektu VSTS, np. [https://project1.visualstudio.com](https://project1.visualstudio.com)
 - **auth** - rodzaj poświadczenia - wybrany domyślnie PAT,
-- **token** - token security który umożliwi nam podłączenie się do projektu. Więcej informacji jak stworzyć Security Token poniżej:
+- **token** - token security, który umożliwi nam podłączenie się do projektu. Więcej informacji, jak stworzyć Security Token poniżej:
   - [Dokumentacja agenta VSTS](https://docs.microsoft.com/en-us/vsts/build-release/actions/agents/v2-windows?view=vsts)
 
-- **pool** - nazwa puli, do której zostanie dodana maszyna w VSTS'ie - ustawiony jest na default
-- **AccessIPNSG** - adres, który tutaj podacie zostanie dodany do NSG i tylko z tego adresu dostaniecie się po RDP do maszyny,
-- **Tag** - tagi mogą ulec waszej modyfikacji ustawione są na Project: VSTSAgent.
+- **pool** - nazwa puli, do której zostanie dodana maszyna w VSTS-ie - ustawiony jest na default
+- **AccessIPNSG** - adres, który tutaj podacie, zostanie dodany do NSG i tylko z tego adresu dostaniecie się po RDP do maszyny,
+- **Tag** - tagi mogą ulec waszej modyfikacji, ustawione są na Project: VSTSAgent.
 
 ## Sekcja Variables
 
@@ -77,7 +77,7 @@ W tej sekcji podajemy dane, które przydadzą nam się do deploymentu i automaty
 - **type: Microsoft.Compute/virtualMachines** - tworzenie maszyny wirtualnej z Windows i Managed Disk.
   - **type: Microsoft.Compute/virtualMachines/extensions** - instalacja agenta VSTS oparta na skrypcie z GitHuba (vstsagent.ps1); pełna komenda znajduje się w polu "commandToExecute".
 
-- **type: Microsoft.DevTestLab/schedules** - dzięki temu nasza maszyna będzie wyłączana codziennie o 18:00, zona: W. Europe Standard Time - ten feature działa tylko, kiedy maszyna jest włączona, pozwoli to nam zapomnieć o wyłączaniu, a mimo wszystko nie będziemy tracić pieniędzy za jej bezczynność.
+- **type: Microsoft.DevTestLab/schedules** - dzięki temu nasza maszyna będzie wyłączana codziennie o 18:00, zona: W. Europe Standard Time - ten feature działa tylko, kiedy maszyna jest włączona. Pozwoli to nam zapomnieć o wyłączaniu, a mimo wszystko nie będziemy tracić pieniędzy za jej bezczynność.
 
 ## **Sekcja Outputs**
 
@@ -430,7 +430,7 @@ W tej sekcji podajemy dane, które przydadzą nam się do deploymentu i automaty
 
 ## Przykład
 
-### Aby wykonać deployment należy utworzyć Resource Groupę
+### Aby wykonać deployment, należy utworzyć Resource Groupę
 
 `New-AzureRMResourceGroup -Name VSTS -Location westeurope`
 

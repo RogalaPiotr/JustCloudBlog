@@ -75,4 +75,4 @@ Link do pełnej dokumentacji:
 
 * [Link do dokumentacji GitHub](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/push-protection-for-repositories-and-organizations)
 
-Jeśli masz jakieś pytania, zachęcam do zadawania ich w komentarzach 🙂.
+Jeśli masz jakieś pytania, zachęcam do zadawania ich w komentarzach �.

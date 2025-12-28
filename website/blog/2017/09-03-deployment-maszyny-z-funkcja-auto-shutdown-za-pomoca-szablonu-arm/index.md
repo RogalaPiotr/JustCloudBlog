@@ -53,7 +53,7 @@ New-AzureRMResourceGroupDeployment -ResourceGroupName XXX -TemplateURI "https://
 
 ```
 
-Poniżej mamy zaprezentowaną sekcję parameters. W niej możemy zdefiniować nazwę VM'ki jaka ma powstać oraz nazwę użytkownika i hasło. Aby ułatwić sobię pracę to dla DNS'u wykorzystałem funkcję unicqueString, aby generować sobię unikatową nazwę dla powstającego serwera.
+Poniżej mamy zaprezentowaną sekcję parameters. W niej możemy zdefiniować nazwę VM-ki, jaka ma powstać oraz nazwę użytkownika i hasło. Aby ułatwić sobie pracę, to dla DNS-u wykorzystałem funkcję unicqueString, aby generować sobie unikatową nazwę dla powstającego serwera.
 
 ```json
   "parameters": {

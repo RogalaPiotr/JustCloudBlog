@@ -31,7 +31,7 @@ W tej części tytuł jest angielski, ponieważ nie stosuję polszczenia dla tec
 
 <!-- truncate -->
 
-Było mi to potrzebne do jednego zadania, dlatego byłem zmuszony zrobić coś innego. Mianowicie potrzebne mi było usunięcie maszyny i stworzenie jej bazując na istniejących VHD w innym kontenerze, dodatkowo moje założenie wymagało PowerShella. W skrócie odtworzenie maszyny z jakiegoś stanu, który jest przechowywany jako kopia dysków wirtualnej maszyny. Myślę, że są osoby, którym się to przyda.
+Było mi to potrzebne do jednego zadania, dlatego byłem zmuszony zrobić coś innego. Mianowicie potrzebne mi było usunięcie maszyny i stworzenie jej bazując na istniejących VHD w innym kontenerze, dodatkowo moje założenie wymagało PowerShell-a. W skrócie odtworzenie maszyny z jakiegoś stanu, który jest przechowywany jako kopia dysków wirtualnej maszyny. Myślę, że są osoby, którym się to przyda.
 
 Krótki opis:
 
@@ -48,11 +48,11 @@ Krótki opis:
 
 <!--truncate-->
 
-Puenta jest taka. Jeśli okaże się, że któregoś razu Microsoft Support powie wam, że trzeba usunąć maszynę i stworzyć ją ponownie dzięki temu skryptowi możecie to zrobić zaledwie w 5 minut i potwierdzić, czy to pomogło czy diagnoza Supportu była niewłaściwa. Zdarza się, że MS sugeruje usunięcie maszyny i stworzenie jej ponownie i mając np. 5 maszyn wiecie, że nie jest to zabawa na 5 minut. Ale teraz wykorzystując ten skrypt możecie to zrobić. Wcześniejszym etapem będzie poprawienie skryptu, aby nie usuwać dysków vhd tylko użyć obecnych. Natomiast jeśli chcecie zrobić sobie kopie bezpieczeństwa dysków vhd to będzie należeć przeprowadzić procedurę wyłączenia maszyn skopiowania vhd'ków np. do kontenera "images" i puścić poniższy skrypt.
+Puenta jest taka. Jeśli okaże się, że któregoś razu Microsoft Support powie wam, że trzeba usunąć maszynę i stworzyć ją ponownie, dzięki temu skryptowi możecie to zrobić zaledwie w 5 minut i potwierdzić, czy to pomogło czy diagnoza Supportu była niewłaściwa. Zdarza się, że MS sugeruje usunięcie maszyny i stworzenie jej ponownie i mając np. 5 maszyn wiecie, że nie jest to zabawa na 5 minut. Ale teraz wykorzystując ten skrypt możecie to zrobić. Wcześniejszym etapem będzie poprawienie skryptu, aby nie usuwać dysków vhd, tylko użyć obecnych. Natomiast jeśli chcecie zrobić sobie kopię bezpieczeństwa dysków vhd, to będzie należało przeprowadzić procedurę wyłączenia maszyn, skopiowania vhd-ków np. do kontenera "images" i puścić poniższy skrypt.
 
-Skrpyt w bardziej czytelnej formie na github: [https://github.com/RogalaPiotr/JustCloudPublic/tree/master/recreate-vm-from-vhd](https://github.com/RogalaPiotr/JustCloudPublic/tree/master/recreate-vm-from-vhd)
+Skrypt w bardziej czytelnej formie na github: [https://github.com/RogalaPiotr/JustCloudPublic/tree/master/recreate-vm-from-vhd](https://github.com/RogalaPiotr/JustCloudPublic/tree/master/recreate-vm-from-vhd)
 
-```ps1
+```powershell
 $vms = @("SimpleWindowsVM")
 $sourcecontainerimage = "images"
 function recreatevms {

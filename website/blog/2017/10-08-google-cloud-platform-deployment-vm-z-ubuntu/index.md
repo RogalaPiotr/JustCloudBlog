@@ -24,17 +24,17 @@ tags:
 title: Google Cloud Platform deployment VM z Ubuntu
 ---
 
-Zastanawialiście się jak działają szablony w Google Cloud Platform? Miałem jakiś czas temu możliwość dowiedzieć się jak to działa, dlatego postanowiłem zrobić mały wpis na ten temat.
+Zastanawialiście się, jak działają szablony w Google Cloud Platform? Miałem jakiś czas temu możliwość dowiedzieć się, jak to działa, dlatego postanowiłem zrobić mały wpis na ten temat.
 
 <!-- truncate -->
 
-Czym jest GCP (Google Cloud Platform)? Jeśli wiesz czym jest Azure i Amazon Web Services (AWS) to GCP jest kolejnym dostawcą z podobnymi rozwiązaniami. Od ponad roku GCP jest prężnie rozwijane w stronę rynku wirtualnych maszyn i web serwisów wychodząc na przeciw AWS'owi i Azure'owi powstał portal analogicznie podobny do zarządzania własnymi projektami można to odwzorować tak jakby do subskrypcji w Azure.
+Czym jest GCP (Google Cloud Platform)? Jeśli wiesz, czym jest Azure i Amazon Web Services (AWS), to GCP jest kolejnym dostawcą z podobnymi rozwiązaniami. Od ponad roku GCP jest prężnie rozwijane w stronę rynku wirtualnych maszyn i web serwisów, wychodząc na przeciw AWS-owi i Azure-owi. Powstał portal analogicznie podobny do zarządzania własnymi projektami, można to odwzorować tak, jakby do subskrypcji w Azure.
 
 Portal: [https://console.cloud.google.com](https://console.cloud.google.com)
 
-[![](images/capture_010_08102017_140927.jpg)](images/capture_010_08102017_140927.jpg)
+[![Google Cloud Platform - portal - grafika 1](images/capture_010_08102017_140927.jpg)](images/capture_010_08102017_140927.jpg)
 
-Google udostępnia własne CLI do zarządzania projektami: [https://cloud.google.com/sdk/](https://cloud.google.com/sdk/) po instalacji SDK możemy używać komend np. do deploymentu. Deploment wirtualnej maszyny różni się znacząco od tych których używamy w Azure i AWS, mają one rozszerzenia. jinja lub. yaml gdzie możemy wspomagać nasz deployment plikami python'owymi .py. Daje to nam duże możliwości konstruowania skomplikowanych delpoymentów.
+Google udostępnia własne CLI do zarządzania projektami: [https://cloud.google.com/sdk/](https://cloud.google.com/sdk/) po instalacji SDK możemy używać komend np. do deploymentu. Deployment wirtualnej maszyny różni się znacząco od tych, których używamy w Azure i AWS, mają one rozszerzenia .jinja lub .yaml, gdzie możemy wspomagać nasz deployment plikami pythonowymi .py. Daje to nam duże możliwości konstruowania skomplikowanych deploymentów.
 
 <!--truncate-->
 

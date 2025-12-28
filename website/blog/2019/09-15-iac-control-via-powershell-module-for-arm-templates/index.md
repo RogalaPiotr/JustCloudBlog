@@ -29,9 +29,9 @@ tags:
 title: IaC control via PowerShell module for ARM templates
 ---
 
-Debug natywnych szablonów ARM jest ciężkim procesem dla wielu osób. Utrzymanie infrastruktury jako kod również nie jest prostą sprawą, dlatego często używa się Terraforma dla wdrożeń w Microsoft Azure.
+Debug natywnych szablonów ARM jest ciężkim procesem dla wielu osób. Utrzymanie infrastruktury jako kod również nie jest prostą sprawą, dlatego często używa się Terraform-a dla wdrożeń w Microsoft Azure.
 
-Szablony ARM nie posiadają pliku stanu jak to jest w Terraform, dlatego często spotykam się z opinią, że ARM-y są beznadziejne. Po wdrożeniu trudno jest utrzymać stały rozwój infrastruktury z tego samego szablonu oraz często problemem jest przewidywalność, co się stanie z obiektami, które już masz. Nie będę się rozwodził, co lepsze, co gorsze, ponieważ wiele zależy od naszej wiedzy, podejścia, problemu lub zlecenia, które wykonujemy. Jako inżynier nie przywiązuję się do rozwiązań i uważam, że do każdego problemu należy podchodzić indywidualnie. Moim zdaniem najlepsze rozwiązania to rozwiązania natywne, nie wymagające tworzenia koła na nowo. Stąd zachęcam do pisania szablonów ARM dla Azure.
+Szablony ARM nie posiadają pliku stanu, jak to jest w Terraform, dlatego często spotykam się z opinią, że ARM-y są beznadziejne. Po wdrożeniu trudno jest utrzymać stały rozwój infrastruktury z tego samego szablonu oraz często problemem jest przewidywalność, co się stanie z obiektami, które już masz. Nie będę się rozwodził, co lepsze, co gorsze, ponieważ wiele zależy od naszej wiedzy, podejścia, problemu lub zlecenia, które wykonujemy. Jako inżynier nie przywiązuję się do rozwiązań i uważam, że do każdego problemu należy podchodzić indywidualnie. Moim zdaniem najlepsze rozwiązania to rozwiązania natywne, nie wymagające tworzenia koła na nowo. Stąd zachęcam do pisania szablonów ARM dla Azure.
 
 Jako pomoc w tworzeniu infrastruktury jako kod (IaC) w Microsoft Azure polecam zapoznać się z modułem PowerShell: **ARMHelper**
 
@@ -47,7 +47,7 @@ Tworzenie nowej resource grupy:
 
 `New-AzResourceGroup -Name 'simple-vm-shutdown-on-time' -Location westeurope`
 
-Sprawdzenie co wyświetli polecenie Test-ARMExistingResource:
+Sprawdzenie, co wyświetli polecenie Test-ARMExistingResource:
 
 `Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose`
 
@@ -57,7 +57,7 @@ Wynikiem jest informacja, co zostanie utworzone. Super sprawa, to teraz zrobię 
 
 `New-AzResourceGroupDeployment -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose`
 
-Niestety miałem problem z modułem Shutdown i szablon wdrożył się niepoprawnie, dlatego sprawdziłem co wyświetli Test-ARMExistResource.
+Niestety miałem problem z modułem Shutdown i szablon wdrożył się niepoprawnie, dlatego sprawdziłem, co wyświetli Test-ARMExistResource.
 
 `Test-ARMExistingResource -ResourceGroupName 'simple-vm-shutdown-on-time' -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose`
 

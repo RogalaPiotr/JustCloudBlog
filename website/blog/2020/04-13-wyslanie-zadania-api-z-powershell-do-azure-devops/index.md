@@ -38,7 +38,7 @@ Poniższy przykładowy skrypt możemy rozbudować dla innych operacji, stosując
 Na początku definiujemy zmienne:
 
 - $urlvsts - URL do naszego projektu Azure DevOps
-- $token - PAT token (Instrukcja jak wygenerować token: [https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page))
+- $token - PAT token (Instrukcja, jak wygenerować token: [https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page))
 - $pool - nazwa puli, którą chcemy utworzyć
 - $encodedPat - przekonwertowanie tokenu na SecureString
 - $body - informacje do przekazania w wysyłanym żądaniu

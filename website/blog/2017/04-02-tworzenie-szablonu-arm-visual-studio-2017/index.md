@@ -33,7 +33,7 @@ Do realizacji celu potrzebujemy:
 - Visual Studio 2017 Community **(FREE)**: [https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)
 - Uwaga: podczas instalacji należy dodać moduł: **"Azure development"**
 
-Utworzenie projektu nie jest niczym nadzwyczajnym poza wybraniem odpowiedniego template'a. Aby utworzyć projekt związany z szablonem ARM należy wybrać z grupy Cloud: Azure Resource Group.
+Utworzenie projektu nie jest niczym nadzwyczajnym poza wybraniem odpowiedniego template'a. Aby utworzyć projekt związany z szablonem ARM, należy wybrać z grupy Cloud: Azure Resource Group.
 
 <!--truncate-->
 

@@ -18,7 +18,7 @@ keywords:
 hide_table_of_contents: true
 ---
 
-Jeśli korzystacie z Azure i zastanawialiście się, jak w prosty sposob zarzadzać storage'ami, polecam Azure Storage Explorer wydany przez CodePlex. Narzędzie możemy pobrać tutaj: [http://bit.ly/1O4n0pX](http://bit.ly/1O4n0pX "https://azurestorageexplorer.codeplex.com/releases/view/54430"). Jak połączyć je z Azure? Logujemy się do portalu, klikamy na kontener z zawartością dysków. Na dole strony pojawi się ikona "Keys" dotycząca Manage Access Keys. Są to wygenerowane dane, które umożliwiają tworzenie federacji pomiędzy portalami lub programami, takimi jak ASE.
+Jeśli korzystacie z Azure i zastanawialiście się, jak w prosty sposob zarządzać storage'ami, polecam Azure Storage Explorer wydany przez CodePlex (Dziś w 2025 roku, Storage Explorer jest wydany przez Microsoft). Narzędzie możemy pobrać tutaj: [https://azure.microsoft.com/pl-pl/products/storage/storage-explorer]([http://bit.ly/1O4n0pX "https://azurestorageexplorer.codeplex.com/releases/view/54430](https://azure.microsoft.com/pl-pl/products/storage/storage-explorer)"). Jak połączyć je z Azure? Logujemy się do portalu, klikamy na kontener z zawartością dysków. Na dole strony pojawi się ikona "Keys" dotycząca Manage Access Keys. Są to wygenerowane dane, które umożliwiają tworzenie federacji pomiędzy portalami lub programami, takimi jak ASE.
 
 ![Azure Storage Explorer - zarządzanie kluczami dostępu](images/image.png)
 

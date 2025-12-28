@@ -14,7 +14,7 @@ title: Citrix - Remote PC
 
 import ReactPlayer from 'react-player'
 
-Citrix przedstawił bardzo fajny filmik przedstawiający możliwość używania jednego systemu na różnych urządzeniach za pomocą zdalnego pulpitu. Sądzę, że coraz bliżej nam do korzystania z jednego systemu niezależnie od tego, gdzie jesteśmy i jakie urządzenia są wokół nas. Filmik wygląda ciekawie, aczkolwiek interesuje mnie, jak to działa w rzeczywistości 😉.
+Citrix przedstawił bardzo fajny filmik przedstawiający możliwość używania jednego systemu na różnych urządzeniach za pomocą zdalnego pulpitu. Sądzę, że coraz bliżej nam do korzystania z jednego systemu niezależnie od tego, gdzie jesteśmy i jakie urządzenia nas otaczają. Filmik wygląda ciekawie, aczkolwiek interesuje mnie, jak to działa w rzeczywistości 😉
 
 <!-- truncate -->
 

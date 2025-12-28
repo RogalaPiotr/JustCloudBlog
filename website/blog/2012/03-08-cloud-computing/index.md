@@ -22,7 +22,7 @@ title: Cloud Computing
 
 import ReactPlayer from 'react-player'
 
-Najważniejszym elementem rozpoczęcia budowy infrastruktury chmurowej w swojej firmie jest wiedza o tym, co możemy dzięki niej osiągnąć. Pozwoli to nam na wyciągnięcie maksymalnej ilości korzyści z nowego wdrożenia. Zaprezentowany poniżej film wyjaśnia niemal jak dla małego dziecka ideę działania chmury. Zapraszam do oglądania:
+Najważniejszym elementem rozpoczęcia budowy infrastruktury chmurowej w swojej firmie jest wiedza o tym, co możemy dzięki niej osiągnąć. Pozwoli nam to wyciągnąć maksymalną liczbę korzyści z nowego wdrożenia. Zaprezentowany poniżej film wyjaśnia ideę działania chmury niemal jak dla małego dziecka. Zapraszam do oglądania:
 <!-- truncate -->
 
 <ReactPlayer

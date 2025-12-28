@@ -19,17 +19,17 @@ keywords:
 hide_table_of_contents: true
 ---
 
-W nowym Windows Server 2012 spotkała mnie mała niespodzianka. Po wpisaniu dotychczas używanej komendy "dcpromo" zostaje wyświetlona informacja o tym, że instalacja roli AD DS została przeniesiona w inne miejsce w Server Manager-a.
+W nowym Windows Server 2012 spotkała mnie mała niespodzianka. Po wpisaniu dotychczas używanej komendy "dcpromo" zostaje wyświetlona informacja o tym, że instalacja roli AD DS została przeniesiona w inne miejsce - do Server Manager'a.
 
-![Photobucket](images/capture_025_01122012_222924.jpg)
+![Instalacja Active Directory - zmiana interfejsu - grafika 1](images/capture_025_01122012_222924.jpg)
 
-![Photobucket](images/capture_026_01122012_222929.jpg)
+![Instalacja Active Directory - zmiana interfejsu - grafika 2](images/capture_026_01122012_222929.jpg)
 
 <!--truncate-->
 
-Instalacja
+## Instalacja
 
-Przechodzimy więc do Server Manager-a i wybieramy opcję "Add roles and features":
+Przechodzimy więc do Server Manager'a i wybieramy opcję "Add roles and features":
 
 ![Instalacja Active Directory - grafika 1](images/capture_027_01122012_222945.jpg)
 
@@ -63,9 +63,9 @@ W kolejnych krokach klikamy NEXT, aż do podsumowania konfiguracji:
 
 Po udanej instalacji należy ponownie uruchomić komputer.
 
-Konfiguracja
+## Konfiguracja
 
-Po instalacji przechodzimy do Server Manager-a, wybierając po lewej stronie AD DS. Następnie klikamy na link "More...", który znajduje się na żółtym pasku:
+Po instalacji przechodzimy do Server Manager'a, wybierając po lewej stronie AD DS. Następnie klikamy na link "More...", który znajduje się na żółtym pasku:
 
 ![Instalacja Active Directory - grafika 11](images/capture_038_01122012_223214.jpg)
 
@@ -79,52 +79,52 @@ Następne okna dotyczą ściśle tworzenia domeny, tak jak było to w poprzednic
 
 W kolejnym etapie wybieramy właściwości domeny. Może ona współpracować ze starszymi kontrolerami domen (od AD w Windows Server 2003). Poniżej wprowadzamy hasło dostępowe:
 
-![Instalacja Active Directory - grafika 3](images/capture_041_01122012_223428.jpg)
+![Instalacja Active Directory - grafika 14](images/capture_041_01122012_223428.jpg)
 
 Warto zauważyć, że instalacja Active Directory wykryła brak usługi DNS na naszym serwerze, dlatego zostanie automatycznie doinstalowana:
 
-![Instalacja Active Directory - grafika 4](images/capture_042_01122012_223441.jpg)
+![Instalacja Active Directory - grafika 15](images/capture_042_01122012_223441.jpg)
 
 W kolejnym kroku potwierdzamy i klikamy NEXT:
 
-![Instalacja Active Directory - grafika 5](images/capture_043_01122012_223510.jpg)
+![Instalacja Active Directory - grafika 16](images/capture_043_01122012_223510.jpg)
 
-![Instalacja Active Directory - grafika 6](images/capture_044_01122012_223519.jpg)
+![Instalacja Active Directory - grafika 17](images/capture_044_01122012_223519.jpg)
 
 Kolejne dwa kroki przedstawiają podsumowanie i konfigurowanie usługi Active Directory Domain Services wraz z usługą DNS:
 
-![Instalacja Active Directory - grafika 7](images/capture_045_01122012_223526.jpg)
+![Instalacja Active Directory - grafika 18](images/capture_045_01122012_223526.jpg)
 
-![Instalacja Active Directory - grafika 8](images/capture_046_01122012_223618.jpg)
+![Instalacja Active Directory - grafika 19](images/capture_046_01122012_223618.jpg)
 
 Potwierdzamy lub czekamy na ponowne uruchomienie:
 
-![Instalacja Active Directory - grafika 9](images/capture_049_01122012_224151.jpg)
+![Instalacja Active Directory - grafika 20](images/capture_049_01122012_224151.jpg)
 
 W tym momencie została poprawnie skonfigurowana nasza domena. W kolejnym kroku przedstawię jeszcze dodawanie nowego użytkownika i grupy.
 
-Dodawanie użytkownika i grupy
+## Dodawanie użytkownika i grupy
 
-W Windows Server 2012 wygląd AD DS został nieco zmieniony ze względu na integrację panelu z PowerShell-em. Myślę, że to bardzo dobry krok w przód, ponieważ wszystko, co robimy (klikamy), możemy podejrzeć, naciskając na dole okna przycisk "Windows PowerShell History". Umożliwi to nam gromadzenie w formie skryptowej naszych działań i późniejsze wykonywanie pracy poprzez zwykłe wklejanie poleceń w PowerShell. Na początku wybierzmy "Active Directory Administrative Center" ze Startu:
+W Windows Server 2012 wygląd AD DS został nieco zmieniony ze względu na integrację panelu z PowerShell'em. Myślę, że to bardzo dobry krok w przód, ponieważ wszystko, co robimy (klikamy), możemy podejrzeć, naciskając na dole okna przycisk "Windows PowerShell History". Umożliwi to nam gromadzenie w formie skryptowej naszych działań i późniejsze wykonywanie pracy poprzez zwykłe wklejanie poleceń w PowerShell. Na początku wybierzmy "Active Directory Administrative Center" z menu Start:
 
-![Instalacja Active Directory - grafika 10](images/capture_001_01122012_231131.jpg)
+![Instalacja Active Directory - grafika 21](images/capture_001_01122012_231131.jpg)
 
 Łatwo zauważyć, że okno "Active Directory Administrative Center" jest przejrzyste i czytelne:
 
-![Instalacja Active Directory - grafika 11](images/capture_002_01122012_231147.jpg)
+![Instalacja Active Directory - grafika 22](images/capture_002_01122012_231147.jpg)
 
 Przechodzimy do naszej domeny po lewej stronie. Z listy możemy wybrać "User", kliknąć prawym przyciskiem myszy i wybrać nowego użytkownika lub grupę:
 
-![Instalacja Active Directory - grafika 12](images/capture_007_01122012_231336.jpg)
+![Instalacja Active Directory - grafika 23](images/capture_007_01122012_231336.jpg)
 
 Samo dodawanie użytkownika i grupy nie zmieniło się szczególnie poza wyglądem okna:
 
-![Instalacja Active Directory - grafika 13](images/capture_006_01122012_231318.jpg)
+![Instalacja Active Directory - grafika 24](images/capture_006_01122012_231318.jpg)
 
-![Instalacja Active Directory - grafika 14](images/capture_008_01122012_231351.jpg)
+![Instalacja Active Directory - grafika 25](images/capture_008_01122012_231351.jpg)
 
 Na końcu możemy zobaczyć, jak to wszystko wygląda od strony PowerShell-a, o którym wspomniałem na początku. Na screenie przedstawione jest usunięcie i dodanie ponownie tej samej grupy dla użytkowników:
 
-![Instalacja Active Directory - grafika 15](images/capture_001_02122012_133020.jpg)
+![Instalacja Active Directory - grafika 26](images/capture_001_02122012_133020.jpg)
 
-Wklejając te polecenia do PowerShell-a, zrobimy to samo bez konieczności wchodzenia do panelu AD. Dzięki takiemu rozwiązaniu możemy ćwiczyć pisanie poleceń do PowerShell-a :).
+Wklejając te polecenia do PowerShell-a, zrobimy to samo bez konieczności wchodzenia do panelu AD. Dzięki takiemu rozwiązaniu możemy ćwiczyć pisanie poleceń do PowerShell-a 😊

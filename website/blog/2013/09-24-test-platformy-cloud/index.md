@@ -22,4 +22,4 @@ Witam, justcloud jako pierwszy otrzyma możliwość przetestowania nowej platfor
 
 Obecnie użytkownik ,w zależności od potrzeb, otrzymuje możliwość dowolnego skalowania swojego środowiska. Co ciekawe aplikacje będą działać na wszystkich platformach PC, Mac, Linux, Android, iPhone! Wszystkich informacji nie mogę teraz zdradzać, ale rozwiązanie jest naprawdę rewolucyjne, nie mogę się doczekać. W najbliższym czasie opublikuję test platformy, zapowiada się ciekawa notka, pozdrawiam!
 
-![clouds](images/clouds.png)]
+![Testy nowej platformy cloud - grafika 1](images/clouds.png)

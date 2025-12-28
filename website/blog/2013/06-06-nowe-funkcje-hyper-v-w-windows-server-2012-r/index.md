@@ -38,7 +38,7 @@ W nowych systemach Windows Server 2012 zauważyliśmy dużo zmian dotyczących H
 
 **7. Eksport VM na żywo** — funkcja, która przyda się przy tworzeniu kopi zapasowej maszyny z danej chwili. Obecnie, aby utworzyć eksport należało zgasić VM. Udoskonalenie będzie tworzyć w danym momencie snapshot względem, którego będzie tworzyć eksport w czasie rzeczywistym bez konieczności Shutdown-u.
 
-**8. Extended Replica for DR** —ponoć jest bardzo popularna funkcja, której nie miałem możliwości jeszcze używać aczkolwiek polega na replikowaniu VM na inną maszynę z Hyper-V w celu zwiększenia jej redundantności – w czasie krytycznego punktu. Rozszerzenie replikacji daje możliwość tworzenie logów, które są wysyłane ze źródłowego target-u.
+**8. Extended Replica for DR** — ponoć jest bardzo popularna funkcja, której nie miałem możliwości jeszcze używać. Aczkolwiek polega na replikowaniu VM na inną maszynę z Hyper-V w celu zwiększenia jej redundantności – w czasie krytycznego punktu. Rozszerzenie replikacji daje możliwość tworzenia logów, które są wysyłane ze źródłowego target-u.
 
 **9. Wsparcie dla USB pass-through** — wsparcie dla urządzeń USB pozwala na szybką komunikację przez USB z VM. Jest to funkcja wbudowana w system, która pozwoli na szybki dostęp do USB, bardzo przydatne do szybkiego wgrywania danych z zewnątrz do VM.
 

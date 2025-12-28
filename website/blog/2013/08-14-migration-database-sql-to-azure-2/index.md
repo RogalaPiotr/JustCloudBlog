@@ -23,21 +23,21 @@ hide_table_of_contents: true
 
 Migracja bazy SQL do chmury Azure jest prostym procesem, aby go dokonać bez większych problemów, należy zrozumieć, jak to działa. CODEPLEX udostępnia programik do migracji bazy SQL bezpośrednio z serwera bazodanowego w chmurę. Brzmi prosto, prawda? Pomimo tego warto wspomnieć o pewnych wymaganiach, jakie stawiane są przez Azure. Po pierwsze: omawiamy kwestie, w których korzystamy z Cloud Services - gdzie baza SQL stoi na zdefiniowanej przez nas instancji - wybieramy, w jakim rejonie świata znajduje się serwer oraz moc instancji. Po drugie: aby tego dokonać, musimy sobie zdać sprawę, że mamy ograniczony dostęp do ustawień bazy. Cloud Services cechuje się tym, że korzystamy z interfejsu Azure-owego do zarządzania bazą lub łączymy się z serwerem przez Management Studio, gdzie otrzymujemy okrojone możliwości, o których wspomnijmy w dalszej części. Głównym problemem jest to, że nie możemy w prosty sposób użyć funkcji przywrócenia bazy SQL z pliku .bak, ponieważ nie mamy takiej opcji. Jedyna możliwość to deploy bazy z pliku .bacpac. Dlatego aby dokonać migracji bazy ze środowiska produkcyjnego, potrzebujemy narzędzia SQL Database Migration Wizard: [sqlazuremw.codeplex.com](http://sqlazuremw.codeplex.com/ "http://sqlazuremw.codeplex.com/"). Zanim jeszcze rozpoczniemy pracę z programem, należy zdefiniować dostęp, z jakiego adresu IP będziemy dokonywać migracji. Wygląda to tak:
 
-![capture_012_06082013_161238.jpg](images/capture_012_06082013_161238.jpg)
+![Migracja bazy SQL do Azure - grafika 1](images/capture_012_06082013_161238.jpg)
 
 <!--truncate-->
 
 Powyższa ilustracja obrazuje jak wygląda zdefiniowany scope IP dostępowy dla naszej instancji SQL. Po dokonaniu tej czynności przechodzimy do narzędzia CODEPLEX-a (warto go uruchomić jako administrator):
 
-![capture_001_06082013_105051.jpg](images/capture_001_06082013_105051.jpg)
+![Migracja bazy SQL do Azure - grafika 2](images/capture_001_06082013_105051.jpg)
 
 Po uruchomieniu wybieramy Migrate Database, przechodząc dalej wybieramy połączenia się z naszą bazą lokalną, którą chcemy migrować. W kolejnych krokach wybieramy bazę z z serwera SQL i generujemy dla niej skrypt, który będzie interpretowany w chmurze Azure w celu jej importu. Klikamy dalej aby generować kod.
 
-![capture_015_07082013_101605.jpg](images/capture_015_07082013_101605.jpg)
+![Migracja bazy SQL do Azure - grafika 3](images/capture_015_07082013_101605.jpg)
 
 Wygenerowany kod możemy zapisać, ale nie jest to wymagane. Warto przejrzeć powyższe okienko czy nie pojawiły się błędy podczas generowania skryptu. Po weryfikacji proponuję również zajrzeć na dysk C: do katalogu SQLAzureMW. Znajdziemy w nim pliki wygenerowane, które będą eksportowane do naszej chmury w następnych krokach.
 
-![capture_014_06082013_162200.jpg](images/capture_014_06082013_162200.jpg)
+![Migracja bazy SQL do Azure - grafika 4](images/capture_014_06082013_162200.jpg)
 
 Wróćmy zatem do migracji, połączmy się z naszą bazą w Azure. Aby zalogować się do bazy podajesz utworzone wcześniej dane, a nazwę serwera znajdziesz a panelu Azure.
 

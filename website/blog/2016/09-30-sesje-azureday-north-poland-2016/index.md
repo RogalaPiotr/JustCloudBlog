@@ -1,7 +1,7 @@
 ---
 slug: sesje-azureday-north-poland-2016
 title: "Sesje AzureDay North Poland 2016"
-description: "Przegąd sesji na konferencji AzureDay North Poland 2016 - zestawienie ścieżek dla IT Pro, Developerów i IT Managerów."
+description: "Przegląd sesji na konferencji AzureDay North Poland 2016 - zestawienie ścieżek dla IT Pro, Developerów i IT Managerów."
 authors: [progala]
 date: "2016-09-30"
 keywords: 

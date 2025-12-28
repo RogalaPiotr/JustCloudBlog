@@ -17,7 +17,7 @@ keywords:
 hide_table_of_contents: true
 ---
 
-Każdy prawdziwy admin powinien korzystać nie tylko z okienek, ale między innymi z PowerShell. Dlatego napiszę parę słów na temat zarządzania Azure oraz zaprezentuje, jak łatwo można się połączyć z Azure za pomocą konsoli PS. W dwóch krokach opiszę, co należy zrobić, aby zrobić to szybko i ze zrozumieniem tematu.
+Każdy prawdziwy admin powinien korzystać nie tylko z okienek, ale między innymi z PowerShell. Dlatego napiszę parę słów na temat zarządzania Azure oraz prezentuję, jak łatwo można się połączyć z Azure za pomocą konsoli PS. W dwóch krokach opiszę, co należy zrobić, aby zrobić to szybko i ze zrozumieniem tematu.
 
 Małe wprowadzenie: Azure przechodzi domyślnie w tryb kontenerowy, tak zwany Resource Groups, nazywany też ARM, czyli Azure Resource Manager. Z punktu widzenia architekta, admina, specjalisty IT zmienia to wiele rzeczy, począwszy od poleceń PowerShell, aż po budowanie aplikacji w chmurze. Wszystkich szczegółowych informacji dowiemy się na stronach MS, natomiast my skupimy się, jak postawić pierwsze kroki w Azure poprzez konsolę PS.
 

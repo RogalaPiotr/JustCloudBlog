@@ -19,7 +19,7 @@ keywords:
 hide_table_of_contents: true
 ---
 
-W poniższym artykule opiszę w skrócie jak zabrać się do Azure CLI. Z jego pomocą będziemy mogli administrować chmurą Azure z systemu Windows jak i Linux. Aby wystartować potrzebujemy pliki instalacyjne:
+W poniższym artykule opiszę w skrócie, jak zabrać się do Azure CLI. Z jego pomocą będziemy mogli administrować chmurą Azure z systemu Windows jak i Linux. Aby wystartować, potrzebujemy plików instalacyjnych:
 
 **node.js:** [https://nodejs.org/en/download/](https://nodejs.org/en/download/ "https://nodejs.org/en/download/")
 

@@ -4,11 +4,120 @@
         <title>Piotr Rogala - JustCloud.pl Blog</title>
         <link>https://blog.justcloud.pl</link>
         <description>Eksperckie artykuły o Microsoft Azure, DevOps, automatyzacji i transformacji chmurowej</description>
-        <lastBuildDate>Mon, 08 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 19 Jan 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>pl-PL</language>
         <copyright>Copyright © 2026 JustCloud.pl</copyright>
+        <item>
+            <title><![CDATA[Azure DevOps MCP Server w VS Code instalacja i automatyzacja w 5 krokach]]></title>
+            <link>https://blog.justcloud.pl/mcp-server-azure-devops-vscode</link>
+            <guid>https://blog.justcloud.pl/mcp-server-azure-devops-vscode</guid>
+            <pubDate>Mon, 19 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Podłącz Azure DevOps do Copilota z MCP. Instalacja w 5 krokach, uwierzytelnianie i automatyzacja zadań DevOps. Gotowe przykłady i lista możliwości.]]></description>
+            <content:encoded><![CDATA[<p>Chcesz bezpiecznie podłączyć Azure DevOps do Copilota przez MCP? Poniżej masz krótką, konkretną instrukcję i listę możliwości serwera.</p>
+<blockquote>
+<p><strong>Ważna uwaga:</strong> używaj wyłącznie zaufanych serwerów MCP. To bezpośredni dostęp do Twoich zasobów, więc nie podawaj danych logowania, jeśli nie masz pewności co do źródła.</p>
+</blockquote>
+<p>Serwery MCP znajdziesz na: <a href="https://mcpservers.org/" target="_blank" rel="noopener noreferrer" class="">https://mcpservers.org</a></p>
+<p>Visual Studio Code ma natywną obsługę serwerów MCP – możesz je wyszukiwać i instalować bezpośrednio z wbudowanego Marketplace rozszerzeń, filtrując wyniki po słowie kluczowym "MCP".
+<img decoding="async" loading="lazy" alt="Filtr MCP w VS Code" src="https://blog.justcloud.pl/assets/images/image-1-05e6fa746d0c77839d28166c1347a7b9.png" width="1274" height="846" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wymagania">Wymagania<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#wymagania" class="hash-link" aria-label="Bezpośredni link do Wymagania" title="Bezpośredni link do Wymagania" translate="no">​</a></h2>
+<ul>
+<li class="">Visual Studio Code</li>
+<li class="">Azure DevOps (organizacja + konto z dostępem)</li>
+<li class="">Wtyczka: <a href="https://github.com/microsoft/azure-devops-mcp" target="_blank" rel="noopener noreferrer" class="">https://github.com/microsoft/azure-devops-mcp</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="instalacja-i-konfiguracja-krok-po-kroku">Instalacja i konfiguracja (krok po kroku)<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#instalacja-i-konfiguracja-krok-po-kroku" class="hash-link" aria-label="Bezpośredni link do Instalacja i konfiguracja (krok po kroku)" title="Bezpośredni link do Instalacja i konfiguracja (krok po kroku)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-zainstaluj-wtyczkę-mcp-dla-azure-devops">1. Zainstaluj wtyczkę MCP dla Azure DevOps<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#1-zainstaluj-wtyczk%C4%99-mcp-dla-azure-devops" class="hash-link" aria-label="Bezpośredni link do 1. Zainstaluj wtyczkę MCP dla Azure DevOps" title="Bezpośredni link do 1. Zainstaluj wtyczkę MCP dla Azure DevOps" translate="no">​</a></h3>
+<p>Wyszukaj "Azure DevOps" i zainstaluj wtyczkę w VS Code.</p>
+<p><img decoding="async" loading="lazy" alt="Instalacja wtyczki MCP" src="https://blog.justcloud.pl/assets/images/image-2-13c5ee5997fcda62a425d220f37f81b3.png" width="772" height="308" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-włącz-serwer-mcp-w-copilocie">2. Włącz serwer MCP w Copilocie<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#2-w%C5%82%C4%85cz-serwer-mcp-w-copilocie" class="hash-link" aria-label="Bezpośredni link do 2. Włącz serwer MCP w Copilocie" title="Bezpośredni link do 2. Włącz serwer MCP w Copilocie" translate="no">​</a></h3>
+<p>Kliknij ustawienia pod oknem prompta i włącz narzędzie microsoft/azure-devops-mcp, czyli MCP dla ADO. Na screenie zaznaczyłem liczbę uruchomionych narzędzi, ponieważ ostatnio miałem tam limit 128 (<a href="https://github.com/microsoft/vscode-copilot-release/issues/13065" target="_blank" rel="noopener noreferrer" class="">https://github.com/microsoft/vscode-copilot-release/issues/13065</a>). Gdybyś miał ten sam problem, musisz odznacyć inne narzędzia.</p>
+<p><img decoding="async" loading="lazy" alt="Włączenie serwera MCP" src="https://blog.justcloud.pl/assets/images/image-3-48c5041b68c6344f61b0d229ab6fbf33.png" width="1792" height="1602" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-skonfiguruj-organizację-w-pliku-mcpjson">3. Skonfiguruj organizację w pliku <code>mcp.json</code><a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#3-skonfiguruj-organizacj%C4%99-w-pliku-mcpjson" class="hash-link" aria-label="Bezpośredni link do 3-skonfiguruj-organizację-w-pliku-mcpjson" title="Bezpośredni link do 3-skonfiguruj-organizację-w-pliku-mcpjson" translate="no">​</a></h3>
+<p>Wejdź ponownie w wybieranie narzędzi, kliknij koło zębate i w pliku mcp.json dodaj w ustawieniach serwera wpis <code>default = "NAZWA_ORGANIZACJI_AZURE_DEVOPS"</code> z nazwą Twojej organizacji Azure DevOps.</p>
+<p><img decoding="async" loading="lazy" alt="Edycja mcp.json" src="https://blog.justcloud.pl/assets/images/image-4-36fc899cdecf546b99526b54a714ca0e.png" width="1226" height="296" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Edycja mcp.json" src="https://blog.justcloud.pl/assets/images/image-5-9da3005b9cac631105c16b564069506a.png" width="1600" height="802" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-uruchom-serwer-mcp">4. Uruchom serwer MCP<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#4-uruchom-serwer-mcp" class="hash-link" aria-label="Bezpośredni link do 4. Uruchom serwer MCP" title="Bezpośredni link do 4. Uruchom serwer MCP" translate="no">​</a></h3>
+<p>Kliknij prawym przyciskiem myszy na serwer i wybierz <strong>Start</strong>.</p>
+<p><img decoding="async" loading="lazy" alt="Start serwera MCP" src="https://blog.justcloud.pl/assets/images/image-6-20fb16c99ac8ad480e57a5261e5d8b1b.png" width="1054" height="806" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-zaloguj-się-do-azure-devops">5. Zaloguj się do Azure DevOps<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#5-zaloguj-si%C4%99-do-azure-devops" class="hash-link" aria-label="Bezpośredni link do 5. Zaloguj się do Azure DevOps" title="Bezpośredni link do 5. Zaloguj się do Azure DevOps" translate="no">​</a></h3>
+<p>W przeglądarce pojawi się okno logowania. Po autoryzacji serwer jest gotowy do użycia.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="przykładowe-zastosowanie">Przykładowe zastosowanie<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#przyk%C5%82adowe-zastosowanie" class="hash-link" aria-label="Bezpośredni link do Przykładowe zastosowanie" title="Bezpośredni link do Przykładowe zastosowanie" translate="no">​</a></h2>
+<p>W kilka sekund możesz wygenerować raport o repozytoriach i pipeline’ach, pobierać dane o work items, PR-ach i buildach albo automatyzować pracę zespołu.</p>
+<p><img decoding="async" loading="lazy" alt="Autoryzacja i przykład raportu" src="https://blog.justcloud.pl/assets/images/image-7-ae597928a150c5da04c9fb6592fca8cf.png" width="2188" height="1974" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="najważniejsze-możliwości-serwera">Najważniejsze możliwości serwera<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#najwa%C5%BCniejsze-mo%C5%BCliwo%C5%9Bci-serwera" class="hash-link" aria-label="Bezpośredni link do Najważniejsze możliwości serwera" title="Bezpośredni link do Najważniejsze możliwości serwera" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-projekty-i-organizacja">📋 Projekty i organizacja<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-projekty-i-organizacja" class="hash-link" aria-label="Bezpośredni link do 📋 Projekty i organizacja" title="Bezpośredni link do 📋 Projekty i organizacja" translate="no">​</a></h3>
+<ul>
+<li class="">listowanie projektów</li>
+<li class="">listowanie zespołów w projekcie</li>
+<li class="">pobieranie ID tożsamości użytkowników</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-work-items">👥 Work items<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-work-items" class="hash-link" aria-label="Bezpośredni link do 👥 Work items" title="Bezpośredni link do 👥 Work items" translate="no">​</a></h3>
+<ul>
+<li class="">tworzenie, pobieranie i aktualizacja work items</li>
+<li class="">linkowanie i usuwanie linków</li>
+<li class="">komentarze i rewizje</li>
+<li class="">praca z iteracjami i zapytaniami</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-iteracje-i-planowanie">🔄 Iteracje i planowanie<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-iteracje-i-planowanie" class="hash-link" aria-label="Bezpośredni link do 🔄 Iteracje i planowanie" title="Bezpośredni link do 🔄 Iteracje i planowanie" translate="no">​</a></h3>
+<ul>
+<li class="">listowanie i tworzenie iteracji</li>
+<li class="">przypisywanie iteracji do zespołów</li>
+<li class="">aktualizacja capacity zespołu</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-pipelines-i-buildy">🔨 Pipelines i buildy<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-pipelines-i-buildy" class="hash-link" aria-label="Bezpośredni link do 🔨 Pipelines i buildy" title="Bezpośredni link do 🔨 Pipelines i buildy" translate="no">​</a></h3>
+<ul>
+<li class="">listowanie definicji buildów</li>
+<li class="">pobieranie buildów i logów</li>
+<li class="">uruchamianie pipeline’ów i runów</li>
+<li class="">aktualizacja etapów</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-repozytoria-git">📦 Repozytoria (Git)<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-repozytoria-git" class="hash-link" aria-label="Bezpośredni link do 📦 Repozytoria (Git)" title="Bezpośredni link do 📦 Repozytoria (Git)" translate="no">​</a></h3>
+<ul>
+<li class="">listowanie repozytoriów i branchy</li>
+<li class="">tworzenie branchy</li>
+<li class="">wyszukiwanie commitów</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-pull-requests">🔀 Pull requests<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-pull-requests" class="hash-link" aria-label="Bezpośredni link do 🔀 Pull requests" title="Bezpośredni link do 🔀 Pull requests" translate="no">​</a></h3>
+<ul>
+<li class="">tworzenie i aktualizacja PR-ów</li>
+<li class="">dodawanie reviewerów</li>
+<li class="">komentarze i wątki</li>
+<li class="">linkowanie work items do PR</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-wiki">📖 Wiki<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-wiki" class="hash-link" aria-label="Bezpośredni link do 📖 Wiki" title="Bezpośredni link do 📖 Wiki" translate="no">​</a></h3>
+<ul>
+<li class="">pobieranie i aktualizacja stron</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-test-plans">🧪 Test plans<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-test-plans" class="hash-link" aria-label="Bezpośredni link do 🧪 Test plans" title="Bezpośredni link do 🧪 Test plans" translate="no">​</a></h3>
+<ul>
+<li class="">test plans, suites i cases</li>
+<li class="">dodawanie test cases do suites</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-wyszukiwanie">🔍 Wyszukiwanie<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-wyszukiwanie" class="hash-link" aria-label="Bezpośredni link do 🔍 Wyszukiwanie" title="Bezpośredni link do 🔍 Wyszukiwanie" translate="no">​</a></h3>
+<ul>
+<li class="">search w kodzie, wiki i work items</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-advanced-security">🔐 Advanced Security<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#-advanced-security" class="hash-link" aria-label="Bezpośredni link do 🔐 Advanced Security" title="Bezpośredni link do 🔐 Advanced Security" translate="no">​</a></h3>
+<ul>
+<li class="">alerty bezpieczeństwa i lista alertów</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="przydatne-linki">Przydatne linki<a href="https://blog.justcloud.pl/mcp-server-azure-devops-vscode#przydatne-linki" class="hash-link" aria-label="Bezpośredni link do Przydatne linki" title="Bezpośredni link do Przydatne linki" translate="no">​</a></h2>
+<ul>
+<li class="">MCP servers: <a href="https://mcpservers.org/" target="_blank" rel="noopener noreferrer" class="">https://mcpservers.org</a></li>
+<li class="">Azure DevOps MCP (repo): <a href="https://github.com/microsoft/azure-devops-mcp" target="_blank" rel="noopener noreferrer" class="">https://github.com/microsoft/azure-devops-mcp</a></li>
+</ul>
+<p>Mam nadzieję, że teraz wszystko jest jasne. Daj znać, czy się przydało! 💪</p>]]></content:encoded>
+            <category>azure-devops</category>
+            <category>mcp</category>
+            <category>vscode</category>
+            <category>copilot</category>
+            <category>devops</category>
+            <category>security</category>
+            <category>ai</category>
+        </item>
         <item>
             <title><![CDATA[Czytelne podsumowanie wdrożenia Terraform w GitHub Actions - Terraform Summary]]></title>
             <link>https://blog.justcloud.pl/2025/12/08/github-actions-terraform-summary</link>
@@ -939,22 +1048,6 @@ Wtyczka świetnie sprawdza się w większości przypadków, ale warto przetestow
             <category>microsoft</category>
             <category>template</category>
             <category>visual-studio</category>
-        </item>
-        <item>
-            <title><![CDATA[Azure Resource Manager - JSON Automation]]></title>
-            <link>https://blog.justcloud.pl/azure-resource-manager-json-automation</link>
-            <guid>https://blog.justcloud.pl/azure-resource-manager-json-automation</guid>
-            <pubDate>Fri, 02 Dec 2016 00:00:00 GMT</pubDate>
-            <description><![CDATA[Nagranie sesji Azure Resource Manager - JSON Automation z AzureDay North Poland 2016 dostępne na Channel 9.]]></description>
-            <content:encoded><![CDATA[<p>Jeśli nie mogliście być na AzureDay North Poland 2016, zapraszam do obejrzenia mojej sesji, która została umieszczona na 9channel. Podczas sesji dowiecie się, jak działa ARM w Azure oraz jakimi sposobami można deployować własne środowiska.</p>
-<p>Podczas sesji zauważycie trochę errorów, które są spowodowane błędnymi nazwami używanymi w konsoli. Jeśli masz problem z deploymentami, zapraszam do dyskusji w komentarzach. Dziękuję wszystkim, którzy przybyli na moją sesję i do zobaczenia na meetupach, które organizuję we Wrocławiu, więcej informacji tutaj: <a href="http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/" target="_blank" rel="noopener noreferrer" class="">http://www.meetup.com/Microsoft-Azure-Users-Group-Poland/</a>.</p>
-<p>(<a href="https://channel9.msdn.com/Events/Azure-Day-Poland/AzureDay-North-Poland-2016/Azure-Resource-Manager-JSON-Automation/player" target="_blank" rel="noopener noreferrer" class="">https://channel9.msdn.com/Events/Azure-Day-Poland/AzureDay-North-Poland-2016/Azure-Resource-Manager-JSON-Automation/player</a>)</p>]]></content:encoded>
-            <category>9channel</category>
-            <category>arm</category>
-            <category>azure</category>
-            <category>cloud</category>
-            <category>microsoft</category>
-            <category>resource-manager</category>
         </item>
     </channel>
 </rss>

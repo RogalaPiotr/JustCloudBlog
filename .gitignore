@@ -31,3 +31,5 @@ supervisord.pid
 backup-wordpress
 backups
 ai-plans
+ai-data
+copilot-instructions.md

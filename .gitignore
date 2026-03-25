@@ -33,3 +33,4 @@ backups
 ai-plans
 ai-data
 copilot-instructions.md
+.github/instructions/**

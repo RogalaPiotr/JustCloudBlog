@@ -21,7 +21,7 @@ tags:
   - governance
   - PowerShell
   - IaC
-title: "Automatyzacja Azure Policy z EPAC - jak zacząć?"
+title: "Automatyzacja Azure Policy z EPAC jak zacząć?"
 ---
 
 Zarządzasz większą liczbą Azure Policy i przypisań na poziomie Management Groups? Portal Azure szybko robi się niewygodny, a trzymanie wszystkiego w dużych plikach Terraform też nie zawsze kończy się czytelną strukturą. EPAC rozwiązuje ten problem podejściem **Policy as Code**.

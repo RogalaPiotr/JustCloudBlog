@@ -12,7 +12,7 @@
 
     // IndexNow Configuration
     const INDEXNOW_CONFIG = {
-        apiKey: '792ebbd3423a4ae7856e0dfbb76d355b',
+        apiKey: '9c73a302800923840d6de5b4939fad61',
         host: 'blog.justcloud.pl',
         // Use Bing endpoint with GET method (no CORS issues)
         endpoint: 'https://www.bing.com/indexnow',

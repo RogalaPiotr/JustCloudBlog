@@ -53,6 +53,14 @@ jobs:
         working-directory: ${{ env.WORKDIR }}
         run: npm ci
       
+      - name: Inject IndexNow API Key
+        working-directory: ${{ env.WORKDIR }}
+        env:
+          INDEXNOW_API_KEY: ${{ secrets.INDEXNOW_API_KEY }}
+        run: |
+          sed -i "s/__INDEXNOW_API_KEY__/${INDEXNOW_API_KEY}/g" static/scripts/indexnow.js
+          echo "${INDEXNOW_API_KEY}" > static/${INDEXNOW_API_KEY}.txt
+
       - name: Build
         working-directory: ${{ env.WORKDIR }}
         run: npm run build
